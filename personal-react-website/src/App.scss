@@ -1,0 +1,65 @@
+@import 'Styles/colors.scss';
+
+.view {
+  padding: 75px 1rem 1rem 1rem;
+}
+
+@font-face {
+    font-family: century-gothic;
+    src: url(./fonts/century-gothic.ttf)
+}
+
+@font-face {
+    font-family: Montserrat Alternates;
+    src: url(./fonts/MontserratAlternates-Regular.ttf)
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    width: 100vw;
+    background: #f6f6f6;
+    font-size: 14pt;
+    font-weight: 700;
+    overflow-x: hidden
+}
+
+h1 {
+    text-align: center;
+    border-bottom: 2px solid $black;
+    padding-bottom: 1rem;
+}
+
+body,
+h1,
+h2,
+h3 {
+    font-family: century-gothic, sans-serif;
+    font-weight: 100
+}
+
+h1,
+h2,
+h3 {
+    letter-spacing: 2px
+}
+
+h2 {
+    font-size: 1.4em
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 75px;
+    width: 100vw;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
