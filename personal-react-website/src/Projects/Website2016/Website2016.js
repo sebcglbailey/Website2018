@@ -3,10 +3,18 @@ import Project from '../../Components/Project/Project';
 
 import styles from './Website2016.css';
 
-const Website2016 = ({ match }) => {
-  return (
-    <Project styles={styles} path={match.url} />
-  )
+import manifest from './manifest';
+
+class Website2016 extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <h2>Website design: 2016</h2>
+    )
+  }
 }
 
 export default Website2016;

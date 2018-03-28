@@ -1,0 +1,248 @@
+.header {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 75px;
+    background: rgba(0, 0, 0, .85);
+    font-family: Montserrat Alternates, sans-serif;
+    color: #fff;
+    padding: 0 25px
+}
+
+.header,
+.logoBurgerWrapper {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.logoBurgerWrapper {
+    width: 100%
+}
+
+.logo {
+    height: 60px
+}
+
+.logo img {
+    height: 100%
+}
+
+.header ul {
+    transition: width .25s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: calc(100vh - 75px);
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin: 75px 0 0;
+    background: rgba(0, 0, 0, .85)
+}
+
+.header ul,
+.header ul a {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.header ul a {
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 80%;
+    height: 100%;
+    max-height: 100px;
+    text-align: center;
+    position: relative;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+
+.header ul a li {
+    display: inline-block;
+    margin: auto
+}
+
+.header ul a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: auto;
+    background: #fff
+}
+
+.header ul a:last-child:after {
+    display: none
+}
+
+.header .burger-menu {
+    height: 20px;
+    width: 25px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    float: right
+}
+
+.header .burger-menu div {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 9px;
+    opacity: 1;
+    transition: opacity .25s ease, -webkit-transform .25s ease;
+    transition: opacity .25s ease, transform .25s ease;
+    transition: opacity .25s ease, transform .25s ease, -webkit-transform .25s ease;
+    transition-delay: .25s
+}
+
+.header .burger-menu:after,
+.header .burger-menu:before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px;
+    transition: -webkit-transform .25s ease;
+    transition: transform .25s ease;
+    transition: transform .25s ease, -webkit-transform .25s ease;
+    transition-delay: .25s
+}
+
+.header .burger-menu:after {
+    bottom: 0
+}
+
+.header.clicked ul {
+    width: 100%;
+    transition: width .25s ease
+}
+
+.header.clicked ul a {
+    -webkit-animation: a .25s ease;
+    animation: a .25s ease;
+    -webkit-animation-delay: .25s;
+    animation-delay: .25s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+.header.clicked ul a:after {
+    -webkit-animation: b .25s ease;
+    animation: b .25s ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s
+}
+
+.header.clicked .burger-menu div {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+    opacity: 0;
+    transition: opacity .25s ease, -webkit-transform .25s ease;
+    transition: opacity .25s ease, transform .25s ease;
+    transition: opacity .25s ease, transform .25s ease, -webkit-transform .25s ease
+}
+
+.header.clicked .burger-menu:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.header.clicked .burger-menu:after,
+.header.clicked .burger-menu:before {
+    transition: -webkit-transform .25s ease;
+    transition: transform .25s ease;
+    transition: transform .25s ease, -webkit-transform .25s ease
+}
+
+.header.clicked .burger-menu:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+@media all and (min-width:720px) {
+    .logoBurgerWrapper {
+        width: auto
+    }
+    .header ul {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        top: auto;
+        left: auto;
+        height: 100%;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        background: transparent
+    }
+    .header ul,
+    .header ul a {
+        position: relative;
+        width: auto;
+        -webkit-animation: none;
+        animation: none
+    }
+    .header ul a {
+        border: 0;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    .header ul a:after {
+        -webkit-animation: none;
+        animation: none
+    }
+    .header ul a:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        opacity: 0;
+        background: #fff;
+        transition: all .25s ease
+    }
+    .header ul a:hover:before {
+        width: 100%;
+        opacity: 1;
+        left: 0
+    }
+    .header .burger-menu {
+        display: none
+    }
+}

@@ -13,10 +13,10 @@ class ProjectList extends Component {
   }
 
   componentWillMount() {
-    let projects = this.props.projects.map((project) => { 
+    let projects = this.props.projects.list.map((project) => {
+      let manifest = require(`../../Projects/${project}/manifest.js`);
       let link = `/projects/${project}`;
       let cover = require(`../../Projects/${project}/cover.jpg`);
-      console.log(cover)
       return (
         <div className={styles.card}>
           <Link to={link}>
@@ -27,6 +27,7 @@ class ProjectList extends Component {
               <div className={styles.infoContainer}>
                 <div className={styles.info}>
                   <h2>{project}</h2>
+                  <p>{manifest.description[0]}</p>
                 </div>
               </div>
             </div>

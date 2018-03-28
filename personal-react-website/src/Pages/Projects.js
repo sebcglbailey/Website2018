@@ -11,7 +11,7 @@ class Projects extends Component {
     super(props);
 
     this.state = {
-      projectList: this.props.projectList
+      projects: projects
     }
   }
 
@@ -25,10 +25,10 @@ class Projects extends Component {
         <h1>Projects</h1>
         
         <Route exact path="/"
-          render={() => <ProjectList projects={this.state.projectList} />}
+          render={() => <ProjectList projects={this.state.projects} />}
         />
-        <Route exact path="/projects"
-          render={() => <ProjectList projects={this.state.projectList} />}
+        <Route path="/projects/:id"
+          render={({ match }) => <Project project={match.params.id} />}
         />
       </div>
     )

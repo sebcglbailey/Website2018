@@ -3,10 +3,18 @@ import Project from '../../Components/Project/Project';
 
 import styles from './LandseerSnowboards.css';
 
-const LandseerSnowboards = ({ match }) => {
-  return (
-    <Project styles={styles} path={match.url} />
-  )
+import manifest from './manifest';
+
+class LandseerSnowboards extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <h2>Landseer Snowboards</h2>
+    )
+  }
 }
 
 export default LandseerSnowboards;

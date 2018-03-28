@@ -3,10 +3,18 @@ import Project from '../../Components/Project/Project';
 
 import styles from './BumpAndGrind.css';
 
-const BumpAndGrind = ({ match }) => {
-  return (
-    <Project styles={styles} path={match.url} />
-  )
+import manifest from './manifest';
+
+class BumpAndGrind extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <h2>Bump & Grind</h2>
+    )
+  }
 }
 
 export default BumpAndGrind;

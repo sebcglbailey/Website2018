@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import Project from '../../Components/Project/Project';
 
 import styles from './BreakPoint.css';
 
-const BreakPoint = ({ match }) => {
-  return (
-    <Project styles={styles} path={match.url} />
-  )
+import manifest from './manifest';
+
+import cover from './cover.jpg';
+
+class BreakPoint extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <div>
+        <h2>Break Point</h2>
+      </div>
+    )
+  }
 }
 
 export default BreakPoint;

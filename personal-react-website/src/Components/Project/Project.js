@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 
+import projects from '../../Projects/projects';
+
 class Project extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.styles)
+  }
+
+  componentWillMount() {
+    this.project = projects.pages[this.props.project]
+    console.log(this.project);
   }
 
   render() {
-    let projectId = this.props.path.replace("/projects/", "");
     return (
-      <h2 className={this.props.styles.header}>Project name: {projectId}</h2>
+      <this.project />
     )
   }
   
