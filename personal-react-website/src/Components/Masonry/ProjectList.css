@@ -1,16 +1,19 @@
 .container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start; }
 
+.column {
+  flex: 1 1 30%;
+  margin: 0.5rem; }
+
 .card {
+  display: inline-block;
+  margin-bottom: 1rem;
   background: #fff;
   box-shadow: 0 0.5rem 1rem -0.2rem rgba(191, 191, 191, 0.85);
   fontSize: 0.9em;
-  flex: 1 1 30%;
   max-width: 600px;
-  margin: 0.5rem;
   position: relative;
   font-family: "Century Gothic", sans-serif;
   transition: all 0.35s ease; }
@@ -19,6 +22,8 @@
     text-decoration: none; }
   .card:hover {
     box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(191, 191, 191, 0.5); }
+  .card img {
+    width: 100%; }
 
 .cardContent {
   display: flex;

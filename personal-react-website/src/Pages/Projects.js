@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import ProjectList from '../Components/ProjectList/ProjectList';
+import ProjectList from '../Components/Masonry/ProjectList';
 import Project from '../Components/Project/Project';
 
 import projects from '../Projects/projects';
@@ -25,6 +25,9 @@ class Projects extends Component {
         <h1>Projects</h1>
         
         <Route exact path="/"
+          render={() => <ProjectList projects={this.state.projects} />}
+        />
+        <Route exact path="/projects"
           render={() => <ProjectList projects={this.state.projects} />}
         />
         <Route path="/projects/:id"
