@@ -1,0 +1,15 @@
+@import 'Styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.column {
+  width: 33.3333333%;
+  padding: 0 0.5rem;
+  // max-width: 600px;
+  min-width: 400px;
+}

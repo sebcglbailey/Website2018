@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import Masonry from '../Masonry/Masonry';
+
 import styles from './ProjectList.css';
 
 class ProjectList extends Component {
@@ -8,12 +10,14 @@ class ProjectList extends Component {
     super(props);
 
     this.state = {
-      projects: []
+      columns: 3,
+      minWidth: "400px",
+      margin: "1rem"
     }
   }
 
   componentWillMount() {
-    let projects = this.props.projects.list.map((project) => {
+    this.projects = this.props.projects.list.map((project) => {
       let manifest = require(`../../Projects/${project}/manifest.js`);
       let link = `/projects/${project}`;
       let cover = require(`../../Projects/${project}/cover.jpg`);
@@ -35,14 +39,16 @@ class ProjectList extends Component {
         </div>
       )
     })
-    this.setState({ projects: projects });
   }
 
   render() {
     return (
-      <div className={styles.container}>
-        {this.state.projects}
-      </div>
+      <Masonry
+        content={this.projects}
+        columns={this.state.columns}
+        minWidth={this.state.minWidth}
+        margin={this.state.margin}
+      />
     )
   }
   

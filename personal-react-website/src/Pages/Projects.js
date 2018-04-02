@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import ProjectList from '../Components/Masonry/ProjectList';
+import ProjectList from '../Components/ProjectList/ProjectList';
 import Project from '../Components/Project/Project';
 
 import projects from '../Projects/projects';
