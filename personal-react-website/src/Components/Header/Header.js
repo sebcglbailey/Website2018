@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 import styles from './Header.css';
 
@@ -23,19 +23,19 @@ const Header = (props) => {
           </div>
         </div>
         <ul>
-          <Link to="/">
+          <Link activeClassName={styles.active} to="/">
             <li>projects</li>
           </Link>
-          <Link to="/work">
+          <Link activeClassName={styles.active} to="/work">
             <li>work</li>
           </Link>
-          <Link to="/about">
+          <Link activeClassName={styles.active} to="/about">
             <li>about</li>
           </Link>
-          <Link to="/blog">
+          <Link activeClassName={styles.active} to="/blog">
             <li>blog</li>
           </Link>
-          <Link to="/contact">
+          <Link activeClassName={styles.active} to="/contact">
             <li>contact</li>
           </Link>
         </ul>
