@@ -2,7 +2,7 @@
   background: #fff;
   width: 100%;
   box-shadow: 0 0.5rem 1rem -0.2rem rgba(191, 191, 191, 0.85);
-  fontSize: 0.9em;
+  font-size: 0.9em;
   margin-bottom: 1rem;
   position: relative;
   font-family: "Century Gothic", sans-serif;
@@ -46,4 +46,5 @@
     letter-spacing: 2px;
     font-weight: 100; }
   .info p {
-    font-size: 1rem; }
+    font-size: 1rem;
+    word-wrap: break-word; }

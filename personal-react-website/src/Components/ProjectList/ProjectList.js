@@ -8,12 +8,6 @@ import styles from './ProjectList.css';
 class ProjectList extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      columns: 3,
-      minWidth: "400px",
-      margin: "1rem"
-    }
   }
 
   componentWillMount() {
@@ -44,11 +38,11 @@ class ProjectList extends Component {
   render() {
     return (
       <Masonry
-        content={this.projects}
-        columns={this.state.columns}
-        minWidth={this.state.minWidth}
-        margin={this.state.margin}
-      />
+        minWidth={400}
+        margin={16}
+      >
+        {this.projects}
+      </Masonry>
     )
   }
   

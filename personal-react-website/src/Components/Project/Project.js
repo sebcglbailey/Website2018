@@ -9,7 +9,6 @@ class Project extends Component {
 
   componentWillMount() {
     this.project = projects.pages[this.props.project]
-    console.log(this.project);
   }
 
   render() {
