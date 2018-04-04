@@ -7,10 +7,7 @@ class Masonry extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      columns: 3,
-      items: 2
-    }
+    this.state = {}
 
     if (typeof this.props.minWidth == "number") {
       this.state.minWidth = this.props.minWidth
@@ -35,6 +32,7 @@ class Masonry extends Component {
   */
   componentWillMount() {
     window.addEventListener("resize", this.windowResize)
+    this.windowResize()
     this.renderColumns()
   }
 
@@ -98,8 +96,8 @@ class Masonry extends Component {
   renderColumns() {
     this.columns = []
 
-    let columnNo = this.state.columns
-    let columnWidth = `${100/this.state.columns}%`
+    let {columns} = this.state
+    let columnWidth = `${100/columns}%`
     let columnPadding = `0 ${this.props.margin/2}px`
 
     let columnStyle = {

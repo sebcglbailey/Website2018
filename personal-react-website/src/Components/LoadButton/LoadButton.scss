@@ -1,0 +1,24 @@
+@import 'Styles/colors.scss';
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.loadMore {
+	padding: 25px;
+	width: calc(100% - 1rem);
+	font-family: "Century Gothic";
+	letter-spacing: 0.1rem;
+	font-size: 1.2rem;
+	max-width: 400px;
+	border: 3px solid;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	&:hover {
+		background: $black;
+		color: $white;
+		border-color: $black;
+	}
+}

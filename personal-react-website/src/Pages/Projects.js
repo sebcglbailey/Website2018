@@ -22,8 +22,6 @@ class Projects extends Component {
   render() {
     return (
       <div>
-        <h1>Projects</h1>
-        
         <Route exact path="/"
           render={() => <ProjectList projects={this.state.projects} />}
         />

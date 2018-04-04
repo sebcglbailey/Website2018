@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import CoverImage from '../../Components/CoverImage/CoverImage';
+
+
 import styles from './BreakPoint.css';
 
 import manifest from './manifest';
@@ -14,7 +17,7 @@ class BreakPoint extends Component {
   render() {
     return(
       <div>
-        <h2>Break Point</h2>
+        <CoverImage image={cover} />
       </div>
     )
   }

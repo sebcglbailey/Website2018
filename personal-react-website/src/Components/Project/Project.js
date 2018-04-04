@@ -13,7 +13,9 @@ class Project extends Component {
 
   render() {
     return (
-      <this.project />
+      <div>
+        <this.project />
+      </div>
     )
   }
   
