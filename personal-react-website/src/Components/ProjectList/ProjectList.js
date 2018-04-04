@@ -52,7 +52,6 @@ class ProjectList extends Component {
                 <div className={styles.info}>
                   <h2>{project}</h2>
                   <p>{manifest.description[0]}</p>
-                  <i className={styles.iconArrowNext}></i>
                 </div>
               </div>
             </div>
