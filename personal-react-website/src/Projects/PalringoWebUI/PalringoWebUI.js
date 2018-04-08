@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Project from '../../Components/Project/Project';
+
+import CoverImage from '../../Components/CoverImage/CoverImage';
+import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
 
 import styles from './PalringoWebUI.css';
 
 import manifest from './manifest';
+
+import cover from './cover.jpg';
 
 class PalringoWebUI extends Component {
   constructor(props) {
@@ -12,7 +16,12 @@ class PalringoWebUI extends Component {
 
   render() {
     return(
-      <h2>Palringo Web UI</h2>
+      <div>
+        <ProjectIntro
+          cover={cover}
+          manifest={manifest}
+        />
+      </div>
     )
   }
 }

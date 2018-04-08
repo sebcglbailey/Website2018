@@ -1,0 +1,70 @@
+@import 'Styles/colors.scss';
+
+
+.typeList {
+	display: flex;
+	justify-content: center;
+	[class*="type"],
+	[class^="type"] {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		font-size: 1.4rem;
+		padding: 1rem;
+		border: 0.2rem solid $black;
+		margin: 0 0.5rem;
+		min-width: 4.2rem;
+		height: 4.2rem;
+		cursor: pointer;
+		overflow: hidden;
+	}
+	.typeUX {
+		border-color: $ux;
+		color: $ux;
+		&:active {
+			background-color: lighten($ux, 25%)
+		}
+	}
+	.typeUI {
+		border-color: $ui;
+		color: $ui;
+		&:active {
+			background-color: lighten($ui, 25%)
+		}
+	}
+	.typePR {
+		border-color: $pr;
+		color: $pr;
+		&:active {
+			background-color: lighten($pr, 25%)
+		}
+	}
+	.typeWD {
+		border-color: $wd;
+		color: $wd;
+		&:active {
+			background-color: lighten($wd, 25%)
+		}
+	}
+	.typePH {
+		border-color: $ph;
+		color: $ph;
+		&:active {
+			background-color: lighten($ph, 25%)
+		}
+	}
+	.typeAR {
+		border-color: $ar;
+		color: $ar;
+		&:active {
+			background-color: lighten($ar, 25%)
+		}
+	}
+	.typeGD {
+		border-color: $gd;
+		color: $gd;
+		&:active {
+			background-color: lighten($gd, 25%)
+		}
+	}
+}

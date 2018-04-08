@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Project from '../../Components/Project/Project';
+
+import CoverImage from '../../Components/CoverImage/CoverImage';
+import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
 
 import styles from './China.css';
 
 import manifest from './manifest';
+
+import cover from './cover.jpg';
 
 class China extends Component {
   constructor(props) {
@@ -12,7 +16,12 @@ class China extends Component {
 
   render() {
     return(
-      <h2>China Photos</h2>
+      <div>
+        <ProjectIntro
+          cover={cover}
+          manifest={manifest}
+        />
+      </div>
     )
   }
 }

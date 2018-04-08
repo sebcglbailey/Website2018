@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Project from '../../Components/Project/Project';
+
+import CoverImage from '../../Components/CoverImage/CoverImage';
+import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
 
 import styles from './BumpAndGrind.css';
 
 import manifest from './manifest';
+
+import cover from './cover.jpg';
 
 class BumpAndGrind extends Component {
   constructor(props) {
@@ -12,7 +16,12 @@ class BumpAndGrind extends Component {
 
   render() {
     return(
-      <h2>Bump & Grind</h2>
+      <div>
+        <ProjectIntro
+          cover={cover}
+          manifest={manifest}
+        />
+      </div>
     )
   }
 }

@@ -23,19 +23,19 @@ const Header = (props) => {
           </div>
         </div>
         <ul>
-          <Link activeClassName={styles.active} to="/">
+          <Link to="/">
             <li>projects</li>
           </Link>
-          <Link activeClassName={styles.active} to="/work">
+          <Link to="/work">
             <li>work</li>
           </Link>
-          <Link activeClassName={styles.active} to="/about">
+          <Link to="/about">
             <li>about</li>
           </Link>
-          <Link activeClassName={styles.active} to="/blog">
+          <Link to="/blog">
             <li>blog</li>
           </Link>
-          <Link activeClassName={styles.active} to="/contact">
+          <Link to="/contact">
             <li>contact</li>
           </Link>
         </ul>

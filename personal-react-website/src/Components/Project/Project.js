@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import projects from '../../Projects/projects';
+import CoverImage from '../CoverImage/CoverImage';
+import ProjectIntro from '../ProjectIntro/ProjectIntro';
 
 class Project extends Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class Project extends Component {
   }
 
   componentWillMount() {
-    this.project = projects.pages[this.props.project]
+    this.project = require(`../../Projects/${this.props.project}/${this.props.project}.js`)
+    this.project = this.project.default
   }
 
   render() {

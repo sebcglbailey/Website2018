@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Project from '../../Components/Project/Project';
+
+import CoverImage from '../../Components/CoverImage/CoverImage';
+import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
 
 import styles from './LandseerSnowboards.css';
 
 import manifest from './manifest';
+
+import cover from './cover.jpg';
 
 class LandseerSnowboards extends Component {
   constructor(props) {
@@ -12,7 +16,12 @@ class LandseerSnowboards extends Component {
 
   render() {
     return(
-      <h2>Landseer Snowboards</h2>
+      <div>
+        <ProjectIntro
+          cover={cover}
+          manifest={manifest}
+        />
+      </div>
     )
   }
 }

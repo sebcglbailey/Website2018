@@ -1,7 +1,7 @@
 [data-icon]:before{
   content:attr(data-icon)
 }
-[class*=" icon"]:before,
+[class*="icon"]:before,
 [class^=icon]:before,
 [data-icon]:before{
   font-family: "Icon Set" !important;

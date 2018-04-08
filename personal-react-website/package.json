@@ -6,7 +6,7 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "webpack-dev-server --mode development --open",
+    "start-js": "node ./src/Projects/build.js && webpack-dev-server --mode development --open",
     "build-js": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js"
@@ -45,6 +45,7 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "babel-plugin-react-css-modules": "^3.3.3"
+    "babel-plugin-react-css-modules": "^3.3.3",
+    "react-transition-group": "^2.3.0"
   }
 }

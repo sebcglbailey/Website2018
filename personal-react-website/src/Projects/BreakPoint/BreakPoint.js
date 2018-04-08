@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import CoverImage from '../../Components/CoverImage/CoverImage';
-
+import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
 
 import styles from './BreakPoint.css';
 
@@ -17,7 +17,10 @@ class BreakPoint extends Component {
   render() {
     return(
       <div>
-        <CoverImage image={cover} />
+        <ProjectIntro
+          cover={cover}
+          manifest={manifest}
+        />
       </div>
     )
   }
