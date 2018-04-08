@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-let projectDir = './src/Projects/'
+let projectDir = './src/Projects/';
 
 const writeProjectObj = (project, images) => {
 	let obj = {}
@@ -11,7 +11,7 @@ const writeProjectObj = (project, images) => {
 	fs.writeFileSync(filePath, JSON.stringify(obj), 'utf-8')
 }
 
-const readProject = (project) => {
+const readProjectDir = (project) => {
 
 	let imgDir = `${projectDir}${project}/img/`;
 
@@ -28,9 +28,9 @@ let dir = fs.readdir(projectDir, (err, projects) => {
 		if (projects[i] === "js" || projects[i].includes(".")) {
 			continue
 		} else {
-			readProject(projects[i])
+			readProjectDir(projects[i])
+			setProjectPage(projects[i])
 		}
 	}
 
 });
-
