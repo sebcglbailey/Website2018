@@ -3,7 +3,7 @@ const fs = require('fs')
 let projectDir = './src/Projects/';
 
 const writeProjectObj = (project, images) => {
-	let obj = {}
+	let obj = require(`../${project}/manifest.js`);
 	obj.project = project
 	obj.images = images
 
@@ -29,7 +29,6 @@ let dir = fs.readdir(projectDir, (err, projects) => {
 			continue
 		} else {
 			readProjectDir(projects[i])
-			setProjectPage(projects[i])
 		}
 	}
 

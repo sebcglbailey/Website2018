@@ -11,6 +11,8 @@ class Project extends Component {
   componentWillMount() {
     this.project = require(`../../Projects/${this.props.project}/${this.props.project}.js`)
     this.project = this.project.default
+
+    this.manifest = require(`../../Projects/${this.props.project}/manifest.js`);
   }
 
   render() {
