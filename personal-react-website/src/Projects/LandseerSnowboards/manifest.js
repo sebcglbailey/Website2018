@@ -3,7 +3,8 @@ const manifest = {
   description: [
     'A collection of snowboard designs for the prospective company "Landseer Snowboards."'
   ],
-  types: ["gd"]
+  types: ["gd"],
+  related: ["XGames", "China"]
 }
 
 module.exports = manifest

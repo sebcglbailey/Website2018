@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Masonry from '../Masonry/Masonry';
 import LoadButton from '../LoadButton/LoadButton';
-
-import styles from './ProjectList.css';
+import ProjectCard from '../ProjectCard/ProjectCard';
 
 class ProjectList extends Component {
   constructor(props) {
@@ -42,21 +41,12 @@ class ProjectList extends Component {
       let link = `/projects/${project}`;
       let cover = require(`../../Projects/${project}/cover.jpg`);
       return (
-        <div className={styles.card}>
-          <Link to={link}>
-            <div className={styles.cardContent}>
-              <div className={styles.cover}>
-                <img src={cover} />
-              </div>
-              <div className={styles.infoContainer}>
-                <div className={styles.info}>
-                  <h2>{project}</h2>
-                  <p>{manifest.description[0]}</p>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
+        <ProjectCard
+          link={link}
+          cover={cover}
+          project={project}
+          manifest={manifest}
+        />
       )
     })
   }
@@ -74,9 +64,8 @@ class ProjectList extends Component {
         <h1>Projects</h1>
         <Masonry
           minWidth={400}
-          margin={16}
-        >
-          {this.projects}
+          margin={16}>
+            {this.projects}
         </Masonry>
         {loadMore}
       </div>
