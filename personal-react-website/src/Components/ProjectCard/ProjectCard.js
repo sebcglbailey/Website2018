@@ -26,10 +26,6 @@ class ProjectCard extends Component {
     }
   }
 
-  componentDidMount() {
-    this.desc.innerHTML = this.state.manifest.description[0]
-  }
-
 	render() {
 		return(
 			<div className={styles.card}>
@@ -41,7 +37,9 @@ class ProjectCard extends Component {
             <div className={styles.infoContainer}>
               <div className={styles.info}>
                 <h2>{this.state.manifest.title}</h2>
-                <p ref={(elem) => {this.desc = elem}}></p>
+                <p
+                  ref={(elem) => {this.desc = elem}}
+                  dangerouslySetInnerHTML={{__html: this.state.manifest.description[0]}}></p>
               </div>
             </div>
           </div>
