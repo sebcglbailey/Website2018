@@ -4,6 +4,10 @@
   text-align: center;
   padding-top: 1rem; }
 
+.description a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none; }
+
 .title {
   border: none;
   text-transform: none; }
