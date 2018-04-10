@@ -53,14 +53,13 @@ class Project extends Component {
           images={data.images}
           project={this.state.project}
         />
-        {/*<div className={styles.related}>
-          {relatedProjects}
-        </div>*/}
-        <Masonry
-          minWidth={400}
-          margin={16}>
-          {relatedProjects}
-        </Masonry>
+        <div className={styles.related}>
+          <Masonry
+            minWidth={400}
+            margin={16}>
+            {relatedProjects}
+          </Masonry>
+        </div>
       </div>
     )
   }
