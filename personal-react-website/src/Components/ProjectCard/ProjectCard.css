@@ -1,0 +1,84 @@
+[data-icon]:before {
+  content: attr(data-icon); }
+
+[class*="icon"]:before,
+[class^=icon]:before,
+[data-icon]:before {
+  font-family: "Icon Set" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.iconArrowNext:before {
+  content: "\3e"; }
+
+.iconArrowPrev:before {
+  content: "\3c"; }
+
+.iconClose:before {
+  content: "\58"; }
+
+.iconMenu:before {
+  content: "\4d"; }
+
+.iconLogoThick:before {
+  content: "\53"; }
+
+.iconLogo:before {
+  content: "\73"; }
+
+.card {
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0.5rem 1rem -0.2rem rgba(191, 191, 191, 0.85);
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+  position: relative;
+  font-family: "Century Gothic", sans-serif;
+  transition: all 0.35s ease; }
+  .card a {
+    color: black;
+    text-decoration: none; }
+  .card:hover {
+    box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(191, 191, 191, 0.5); }
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  width: 100%; }
+
+.cover {
+  width: 100%; }
+  .cover img {
+    width: 100%;
+    height: auto;
+    margin-bottom: -1rem; }
+
+.infoContainer {
+  margin: -2rem 1rem 1rem 1rem;
+  text-align: center;
+  border: 0.25rem solid rgba(0, 0, 0, 0.85);
+  background: rgba(255, 255, 255, 0.5);
+  flex: 1 1 1.2rem;
+  padding-top: 2rem; }
+
+.info {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem; }
+  .info * {
+    width: 100%; }
+  .info h2 {
+    letter-spacing: 2px;
+    font-weight: 100; }
+  .info p {
+    font-size: 1rem;
+    word-wrap: break-word; }
