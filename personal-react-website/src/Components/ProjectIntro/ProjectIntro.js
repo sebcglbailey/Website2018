@@ -24,11 +24,14 @@ class ProjectIntro extends Component {
   render() {
     let description = this.state.description.map((para) => {
       return (
-        <p className={styles.description}>{para}</p>
+        <p
+          className={styles.description}
+          dangerouslySetInnerHTML={{__html: para}}>
+        </p>
       )
     })
     return(
-      <div>
+      <div className={styles.flexContainer}>
         <CoverImage image={this.props.cover} />
         <div className={styles.container}>
           <ProjectTypes types={this.props.manifest.types} />
