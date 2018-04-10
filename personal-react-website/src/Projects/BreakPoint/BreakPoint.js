@@ -24,10 +24,7 @@ class BreakPoint extends Component {
           cover={cover}
           manifest={manifest}
         />
-        <ProjectImages
-          images={data.images}
-          project="BreakPoint"
-        />
+        <ProjectImages />
       </div>
     )
   }

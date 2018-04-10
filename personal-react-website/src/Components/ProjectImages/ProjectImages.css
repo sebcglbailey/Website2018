@@ -1,16 +1,15 @@
-.container {
-  background-color: rgba(0, 0, 0, 0.85);
-  margin: 4rem -1rem;
-  padding: 2rem 0; }
-
 .images {
+  margin: 0 -1rem;
   min-height: 10rem;
-  max-width: 50rem;
-  width: 95%;
-  margin: -4rem auto;
-  border-radius: 0.2rem;
-  overflow: hidden;
-  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2); }
+  background-color: rgba(0, 0, 0, 0.85); }
   .images img {
-    width: 100%;
-    display: block; }
+    width: 100%; }
+
+.container {
+  margin: -75px -1rem 0 -1rem;
+  display: flex;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden; }
+  .container img {
+    width: 100%; }
