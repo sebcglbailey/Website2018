@@ -53,7 +53,7 @@ class ProjectType extends Component {
       }
     } else if (this.state.expanded == false) {
       this.style = {
-        width: this.widths.expanded + 50,
+        width: this.widths.expanded + 20,
         transition: `width ${this.props.duration}ms ease`
       }
     }

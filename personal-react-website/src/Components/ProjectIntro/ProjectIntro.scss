@@ -1,6 +1,12 @@
+.flexContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
 .container {
 	max-width: 50rem;
-	margin: 0 auto;
+	margin: 0 -1rem;
 	text-align: center;
 	padding: 1rem 2rem;
 }
@@ -8,4 +14,10 @@
 .title {
 	border: none;
 	text-transform: none;
+}
+
+@media screen and (max-width: 640px) {
+	.container {
+		padding: 0.5rem;
+	}
 }

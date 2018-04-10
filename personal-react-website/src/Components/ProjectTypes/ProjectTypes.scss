@@ -4,6 +4,8 @@
 .typeList {
 	display: flex;
 	justify-content: center;
+	padding: 0;
+	flex-wrap: wrap;
 	[class*="type"],
 	[class^="type"] {
 		display: inline-block;
@@ -12,7 +14,7 @@
 		font-size: 1.4rem;
 		padding: 1rem;
 		border: 0.2rem solid $black;
-		margin: 0 0.5rem;
+		margin: 0.25rem 0.5rem;
 		min-width: 4.2rem;
 		height: 4.2rem;
 		cursor: pointer;
