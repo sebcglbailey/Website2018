@@ -1,18 +1,9 @@
-.flexContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; }
-
 .container {
   max-width: 50rem;
-  margin: 0 -1rem;
+  margin: 0 auto;
   text-align: center;
   padding-top: 1rem; }
 
 .title {
   border: none;
   text-transform: none; }
-
-@media screen and (max-width: 640px) {
-  .container {
-    padding: 0.5rem; } }

@@ -28,7 +28,7 @@ class ProjectIntro extends Component {
       )
     })
     return(
-      <div className={styles.flexContainer}>
+      <div>
         <CoverImage image={this.props.cover} />
         <div className={styles.container}>
           <ProjectTypes types={this.props.manifest.types} />

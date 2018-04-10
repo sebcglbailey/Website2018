@@ -13,7 +13,7 @@ class ProjectTypes extends Component {
 
     const types = this.props.types.map((type) => {
       return(
-        <ProjectType duration={0} type={type} />
+        <ProjectType duration={300} type={type} />
       )
     })
 
