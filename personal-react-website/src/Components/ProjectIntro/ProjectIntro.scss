@@ -1,3 +1,5 @@
+@import 'Styles/colors.scss';
+
 .flexContainer {
 	display: flex;
 	justify-content: center;
@@ -9,6 +11,9 @@
 	margin: 0 -1rem;
 	text-align: center;
 	padding: 1rem 2rem;
+	a {
+		color: lighten($black, 40%);
+	}
 }
 
 .title {
