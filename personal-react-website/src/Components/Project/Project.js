@@ -24,24 +24,30 @@ class Project extends Component {
   }
 
   render() {
+
     let project = require(`../../Projects/${this.state.project}/${this.state.project}.js`)
     project = project.default
 
     let data = require(`../../Projects/${this.state.project}/data.json`);
     let manifest = require(`../../Projects/${this.state.project}/manifest.js`);
     let cover = require(`../../Projects/${this.state.project}/cover.jpg`);
-    let relatedProjects = manifest.related.map((project) => {
+
+    let relatedProjects = manifest.related.map((project, index) => {
       let link = `/projects/${project}`;
       let cover = require(`../../Projects/${project}/cover.jpg`);
       let manifest = require(`../../Projects/${project}/manifest.js`);
       return(
         <ProjectCard
+          id={`card-${index}`}
+          key={index}
+          project={project}
           link={link}
           cover={cover}
           manifest={manifest}
         />
       )
     })
+
     return (
       <div>
         <ProjectIntro

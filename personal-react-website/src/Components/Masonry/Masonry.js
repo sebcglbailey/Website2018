@@ -137,6 +137,7 @@ class Masonry extends Component {
 
   render() {
     let columns = this.returnColumns(this.state.children)
+
     return(
       <div ref={(elem) => {this.container = elem}} className={styles.container}>
         {columns}

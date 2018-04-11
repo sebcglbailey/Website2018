@@ -47,6 +47,7 @@ class ProjectList extends Component {
         <ProjectCard
           id={`card-${index}`}
           key={index}
+          project={project}
           link={link}
           cover={cover}
           manifest={manifest}
