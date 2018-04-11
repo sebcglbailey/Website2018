@@ -10,6 +10,7 @@ class Masonry extends Component {
     this.state = {
       columns: window.outerWidth / this.props.minWidth,
       children: this.props.children,
+      originalChildren: this.props.children,
       rendered: false
     }
 
@@ -20,11 +21,11 @@ class Masonry extends Component {
   }
 
   componentWillReceiveProps(nextState) {
-    this.setState({ children: nextState.children, rendered: false })
+    this.setState({ children: nextState.children, originalChildren: nextState.children, rendered: false })
   }
 
   componentDidMount() {
-    this.reorderChildren(this.state.children)
+    this.reorderChildren()
   }
 
   componentWillMount() {
@@ -33,8 +34,11 @@ class Masonry extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.children.length !== this.state.children.length && !this.state.rendered) {
-      this.reorderChildren(this.state.children)
+    if (
+      (prevState.children.length !== this.state.children.length
+      && !this.state.rendered)
+      || prevState.columns !== this.state.columns) {
+        this.reorderChildren()
     }
   }
 
@@ -56,15 +60,15 @@ class Masonry extends Component {
 
     let orderedContent = [], reorderedContent = [];
 
-    for (let i = 0; i < this.state.children.length; i++) {
-      let columnNo = i%this.state.columns
-      let column = this.container.children[columnNo]
-      let contentNo = Math.floor(i / this.state.columns)
-      let content = column.children[contentNo]
+    for (let i = 0; i < this.state.originalChildren.length; i++) {
+
+      let reactItem = this.state.originalChildren[i]
+      let domItem = document.querySelector(`#${reactItem.props.id}`)
+
       orderedContent.push({
-        reactContent: this.state.children[i],
-        content: content,
-        height: content.offsetHeight
+        reactItem: reactItem,
+        content: domItem,
+        height: domItem.offsetHeight
       })
     }
 
@@ -83,7 +87,7 @@ class Masonry extends Component {
 
     reorderedContent = [].concat.apply([], reorderedContent)
     reorderedContent = reorderedContent.map((obj) => {
-      return obj.reactContent
+      return obj.reactItem
     })
 
     this.setState({ children: reorderedContent, rendered: true })
@@ -100,7 +104,9 @@ class Masonry extends Component {
       columns = this.state.children.length
     }
 
-    this.setState({ columns: columns})
+    if (columns !== this.state.columns) {
+      this.setState({ columns: columns })
+    }
   }
 
   returnColumns(children) {
@@ -110,7 +116,7 @@ class Masonry extends Component {
     }
 
     let columns = children.map((child, index) => {
-      let columnIndex = (index)%this.state.columns
+      let columnIndex = index%this.state.columns
       columnArray[columnIndex].push(child)
     })
 
@@ -119,9 +125,9 @@ class Masonry extends Component {
       padding: `0 ${this.props.margin/2}px`
     }
 
-    columnArray = columnArray.map((column) => {
+    columnArray = columnArray.map((column, index) => {
       return(
-        <div className={styles.column} style={columnStyle}>
+        <div key={index} style={columnStyle}>
           {column}
         </div>
       )

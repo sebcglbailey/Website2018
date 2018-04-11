@@ -20,4 +20,4 @@ for (let i = 0; i < list.length; i++) {
 
 }
 
-export default projects
+export default projects;

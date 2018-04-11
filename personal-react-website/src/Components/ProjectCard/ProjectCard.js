@@ -28,7 +28,7 @@ class ProjectCard extends Component {
 
 	render() {
 		return(
-			<div className={styles.card}>
+			<div id={this.props.id} className={styles.card}>
         <Link to={this.state.link}>
           <div className={styles.cardContent}>
             <div className={styles.cover}>

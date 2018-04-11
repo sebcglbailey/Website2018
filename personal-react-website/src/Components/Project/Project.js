@@ -37,7 +37,6 @@ class Project extends Component {
       return(
         <ProjectCard
           link={link}
-          project={project}
           cover={cover}
           manifest={manifest}
         />

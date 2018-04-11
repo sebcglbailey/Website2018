@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Masonry from '../Masonry/Masonry';
 import LoadButton from '../LoadButton/LoadButton';
+import ProjectCard from '../ProjectCard/ProjectCard';
 
 import styles from './ProjectList.css';
 
@@ -11,7 +12,8 @@ class ProjectList extends Component {
     super(props);
 
     this.state ={
-      visible: 6
+      visible: 6,
+      projects: this.props.projects
     }
 
     this.filterProjects = this.filterProjects.bind(this)
@@ -31,38 +33,29 @@ class ProjectList extends Component {
   }
 
   filterProjects(visible) {
-    this.projects = this.props.projects.list.filter((project, index) => {
+    this.projects = this.state.projects.list.filter((project, index) => {
       if (index < visible) {
         return project
       }
     })
 
-    this.projects = this.projects.map((project) => {
+    this.projects = this.projects.map((project, index) => {
       let manifest = require(`../../Projects/${project}/manifest.js`);
       let link = `/projects/${project}`;
       let cover = require(`../../Projects/${project}/cover.jpg`);
       return (
-        <div className={styles.card}>
-          <Link to={link}>
-            <div className={styles.cardContent}>
-              <div className={styles.cover}>
-                <img src={cover} />
-              </div>
-              <div className={styles.infoContainer}>
-                <div className={styles.info}>
-                  <h2>{project}</h2>
-                  <p>{manifest.description[0]}</p>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
+        <ProjectCard
+          id={`card-${index}`}
+          key={index}
+          link={link}
+          cover={cover}
+          manifest={manifest}
+        />
       )
     })
   }
 
   render() {
-    console.log(this.state.visible, this.props.projects.list.length)
     const loadMore = this.state.visible < this.props.projects.list.length ? (
         <LoadButton
           onClick={this.loadMore}
