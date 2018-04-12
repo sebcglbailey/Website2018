@@ -9,7 +9,8 @@
     "start-js": "node ./build-helpers/projects.js && webpack-dev-server --mode development --open",
     "build-js": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm-run-all build-css build-js"
+    "build": "npm-run-all build-css build-js",
+    "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive"
   },
   "repository": {
     "type": "git",
