@@ -20,9 +20,9 @@ class ProjectImages extends Component {
 	}
 
 	getImages() {
-		let images = this.state.images.map((imgName) => {
+		let images = this.state.images.map((imgName, index) => {
 			let imgSrc = require(`../../Projects/${this.props.project}/img/${imgName}`)
-			return <img src={imgSrc} />
+			return <img key={`image-${index+1}`} src={imgSrc} />
 		})
 		return images
 	}

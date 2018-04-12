@@ -23,9 +23,10 @@ class ProjectTypes extends Component {
 
   render() {
 
-    const types = this.state.types.map((type) => {
+    const types = this.state.types.map((type, index) => {
       return(
         <ProjectType
+          key={`type-${index+1}`}
           duration={0}
           type={type}
           className={getTypeClass(type, styles)}

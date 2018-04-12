@@ -14,7 +14,7 @@
     margin: 0.25rem 0.5rem;
     min-width: 4.2rem;
     width: auto;
-    height: 4.2rem;
+    min-height: 4.2rem;
     cursor: pointer;
     overflow: hidden; }
   .typeList .typeUX {

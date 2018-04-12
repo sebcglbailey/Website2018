@@ -9,33 +9,60 @@ class ProjectCard extends Component {
 
     this.state = {
       link: this.props.link,
-      cover: this.props.cover,
+      cover: this.props.cover ? this.props.cover : null,
       project: this.props.project,
-      manifest: this.props.manifest
+      manifest: this.props.manifest,
+      coverLoaded: false
     }
+
+    this.handleImageLoad = this.handleImageLoad.bind(this)
 	}
 
   componentWillReceiveProps(nextState) {
     if (nextState.project !== this.state.project) {
       this.setState({
         link: nextState.link,
-        cover: nextState.cover,
+        cover: nextState.cover ? nextState.cover : null,
         project: nextState.project,
         manifest: nextState.manifest
       })
     }
   }
 
+  handleImageLoad() {
+    this.setState({ coverLoaded: true })
+  }
+
 	render() {
+    /*
+      Setting the classes for handling image loading on the card
+    */
+    let infoClasses = {};
+    if (this.state.coverLoaded) {
+      infoClasses = {
+        container: `${styles.infoContainer} ${styles.loaded}`,
+        info: `${styles.info} ${styles.loaded}`
+      }
+    } else {
+      infoClasses = {
+        container: styles.infoContainer,
+        info: styles.info
+      }
+    }
+
 		return(
 			<div id={this.props.id} className={styles.card}>
         <Link to={this.state.link}>
           <div className={styles.cardContent}>
-            <div className={styles.cover}>
-              <img src={this.state.cover} />
-            </div>
-            <div className={styles.infoContainer}>
-              <div className={styles.info}>
+            {
+              this.state.cover ? (
+                <div className={styles.cover}>
+                  <img onLoad={this.handleImageLoad} src={this.state.cover} />
+                </div>
+              ) : null
+            }
+            <div className={infoClasses.container}>
+              <div className={infoClasses.info}>
                 <h2>{this.state.manifest.title}</h2>
                 <p
                   ref={(elem) => {this.desc = elem}}

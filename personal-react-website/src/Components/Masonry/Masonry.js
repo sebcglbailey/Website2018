@@ -21,7 +21,9 @@ class Masonry extends Component {
   }
 
   componentWillReceiveProps(nextState) {
-    this.setState({ children: nextState.children, originalChildren: nextState.children, rendered: false })
+    if (nextState.originalChildren !== this.state.originalChildren) {
+      this.setState({ children: nextState.children, originalChildren: nextState.children, rendered: false })
+    }
   }
 
   componentDidMount() {
@@ -53,17 +55,19 @@ class Masonry extends Component {
   }
 
   reorderChildren() {
+    // Set up column heights array for calculating current heights
     let columnHeights = []
     for (let i = 0; i < this.state.columns; i++) {
       columnHeights.push(0)
     }
-
+    // Set up ordered and reordered arrays
     let orderedContent = [], reorderedContent = [];
 
+    // For each child, save the react class, and also the rendered element in the DOM
     for (let i = 0; i < this.state.originalChildren.length; i++) {
 
       let reactItem = this.state.originalChildren[i]
-      let domItem = document.querySelector(`#${reactItem.props.id}`)
+      let domItem = document.querySelector(`#${reactItem.key}`)
 
       orderedContent.push({
         reactItem: reactItem,

@@ -43,10 +43,11 @@ class ProjectList extends Component {
       let manifest = require(`../../Projects/${project}/manifest.js`);
       let link = `/projects/${project}`;
       let cover = require(`../../Projects/${project}/cover.jpg`);
+      let key = `card-${index+1}`
       return (
         <ProjectCard
-          id={`card-${index}`}
-          key={index}
+          key={key}
+          id={key}
           project={project}
           link={link}
           cover={cover}

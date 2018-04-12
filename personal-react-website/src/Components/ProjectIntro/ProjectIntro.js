@@ -22,9 +22,10 @@ class ProjectIntro extends Component {
   }
 
   render() {
-    let description = this.state.description.map((para) => {
+    let description = this.state.description.map((para, index) => {
       return (
         <p
+          key={`description-para-${index+1}`}
           className={styles.description}
           dangerouslySetInnerHTML={{__html: para}}>
         </p>
