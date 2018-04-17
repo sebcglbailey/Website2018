@@ -13,20 +13,32 @@ class Projects extends Component {
     this.state = {
       projects: projects
     }
+
+    this.handleListLoad = this.handleListLoad.bind(this)
   }
 
   componentWillMount() {
     document.title = "Projects";
   }
 
+  handleListLoad() {
+    if (this.props.onLoad) {
+      this.props.onLoad()
+    }
+  }
+
   render() {
     return (
       <div>
         <Route exact path="/"
-          render={() => <ProjectList projects={this.state.projects} />}
+          render={() => <ProjectList
+            projects={this.state.projects}
+            onLoad={this.handleListLoad} />}
         />
         <Route exact path="/projects"
-          render={() => <ProjectList projects={this.state.projects} />}
+          render={() => <ProjectList
+            projects={this.state.projects}
+            onLoad={this.handleListLoad} />}
         />
         <Route path="/projects/:id"
           render={({ match }) => <Project project={match.params.id} />}

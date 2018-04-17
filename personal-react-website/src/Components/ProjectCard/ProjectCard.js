@@ -31,6 +31,10 @@ class ProjectCard extends Component {
 
   handleImageLoad() {
     this.setState({ coverLoaded: true })
+
+    if (this.props.onLoad) {
+      this.props.onLoad()
+    }
   }
 
 	render() {

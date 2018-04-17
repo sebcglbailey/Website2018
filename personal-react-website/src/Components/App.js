@@ -13,23 +13,46 @@ import About from '../Pages/About';
 import Blog from '../Pages/Blog';
 import Contact from '../Pages/Contact';
 
+import SplashLogo from './SplashLogo/SplashLogo';
+
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      projectsLoaded: false
+    }
+
+    this.handleProjectsLoaded = this.handleProjectsLoaded.bind(this)
+  }
+
+  handleProjectsLoaded() {
+    this.setState({ projectsLoaded: true })
+  }
+
   render() {
     return (
       <Router>
-        <ScrollToTop>
-          <div className="container">
-            <Header />
-            <div className={styles.view}>
-              <Route exact path="/" component={Projects} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/work" component={Work} />
-              <Route path="/about" component={About} />
-              <Route path="/blog" component={Blog} />
-              <Route path="/contact" component={Contact} />
+        <div>
+          <ScrollToTop>
+            <div className="container">
+              <Header />
+              <div className={styles.view}>
+                <Route exact path="/" render={() => <Projects
+                  onLoad={this.handleProjectsLoaded} />} />
+                <Route path="/projects" render={() => <Projects
+                  onLoad={this.handleProjectsLoaded} />} />
+                <Route path="/work" component={Work} />
+                <Route path="/about" component={About} />
+                <Route path="/blog" component={Blog} />
+                <Route path="/contact" component={Contact} />
+              </div>
             </div>
-          </div>
-        </ScrollToTop>
+          </ScrollToTop>
+          <SplashLogo
+            delay={500}
+            ready={this.state.projectsLoaded} />
+        </div>
       </Router>
     );
   }

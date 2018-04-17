@@ -11,13 +11,15 @@ class ProjectList extends Component {
   constructor(props) {
     super(props);
 
-    this.state ={
+    this.state = {
       visible: 6,
-      projects: this.props.projects
+      projects: this.props.projects,
+      loaded: 0
     }
 
     this.filterProjects = this.filterProjects.bind(this)
     this.loadMore = this.loadMore.bind(this)
+    this.handleImageLoad = this.handleImageLoad.bind(this)
   }
 
   componentWillMount() {
@@ -26,6 +28,15 @@ class ProjectList extends Component {
 
   componentWillUpdate(prevState, nextState) {
     this.filterProjects(nextState.visible)
+  }
+
+  handleImageLoad() {
+    if (
+      this.state.loaded == this.projects.length - 1
+      && this.props.onLoad) {
+      this.props.onLoad()
+    }
+    this.setState({ loaded: this.state.loaded + 1 })
   }
 
   loadMore() {
@@ -52,6 +63,7 @@ class ProjectList extends Component {
           link={link}
           cover={cover}
           manifest={manifest}
+          onLoad={this.handleImageLoad}
         />
       )
     })
