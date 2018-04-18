@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Masonry from '../Masonry/Masonry';
-import LoadButton from '../LoadButton/LoadButton';
-import ProjectCard from '../ProjectCard/ProjectCard';
+import Masonry from '../../Components/Masonry/Masonry';
+import LoadButton from '../../Components/LoadButton/LoadButton';
+import ProjectCard from '../../Components/ProjectCard/ProjectCard';
 
 import styles from './ProjectList.css';
 

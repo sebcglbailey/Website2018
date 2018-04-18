@@ -7,11 +7,14 @@ import './App.css';
 import styles from './App.css';
 
 import Header from './Header/Header';
-import Projects from '../Pages/Projects';
+import ProjectList from '../Pages/ProjectList/ProjectList';
+import Project from '../Pages/Project/Project';
 import Work from '../Pages/Work';
 import About from '../Pages/About';
 import Blog from '../Pages/Blog';
 import Contact from '../Pages/Contact';
+
+import projects from '../Projects/js/projects';
 
 import SplashLogo from './SplashLogo/SplashLogo';
 
@@ -23,10 +26,10 @@ class App extends Component {
       projectsLoaded: false
     }
 
-    this.handleProjectsLoaded = this.handleProjectsLoaded.bind(this)
+    this.handlePageLoad = this.handlePageLoad.bind(this)
   }
 
-  handleProjectsLoaded() {
+  handlePageLoad() {
     this.setState({ projectsLoaded: true })
   }
 
@@ -38,10 +41,21 @@ class App extends Component {
             <div className="container">
               <Header />
               <div className={styles.view}>
-                <Route exact path="/" render={() => <Projects
-                  onLoad={this.handleProjectsLoaded} />} />
-                <Route path="/projects" render={() => <Projects
-                  onLoad={this.handleProjectsLoaded} />} />
+                <Route exact path="/"
+                  render={() => <ProjectList
+                    projects={projects}
+                    onLoad={this.handlePageLoad} />}
+                />
+                <Route exact path="/projects"
+                  render={() => <ProjectList
+                    projects={projects}
+                    onLoad={this.handlePageLoad} />}
+                />
+                <Route path="/projects/:id"
+                  render={({ match }) => <Project
+                    project={match.params.id}
+                    onLoad={this.handlePageLoad} />}
+                />
                 <Route path="/work" component={Work} />
                 <Route path="/about" component={About} />
                 <Route path="/blog" component={Blog} />

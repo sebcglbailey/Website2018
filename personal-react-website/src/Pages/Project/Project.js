@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../CoverImage/CoverImage';
-import ProjectIntro from '../ProjectIntro/ProjectIntro';
-import ProjectImages from '../ProjectImages/ProjectImages';
-import ProjectCard from '../ProjectCard/ProjectCard';
-import Masonry from '../Masonry/Masonry';
+import CoverImage from '../../Components/CoverImage/CoverImage';
+import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
+import ProjectImages from '../../Components/ProjectImages/ProjectImages';
+import ProjectCard from '../../Components/ProjectCard/ProjectCard';
+import Masonry from '../../Components/Masonry/Masonry';
 
 import styles from './Project.css';
 
