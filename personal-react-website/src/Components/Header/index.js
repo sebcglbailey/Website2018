@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
-import styles from './Header.css';
+import styles from './styles.css';
 
 import logo from "../../logo-white.svg"
 import logoPNG from "../../logo-white.png"
@@ -24,10 +24,10 @@ const Header = (props) => {
         </div>
         <ul>
           <Link to="/">
-            <li>projects</li>
-          </Link>
-          <Link to="/work">
             <li>work</li>
+          </Link>
+          <Link to="/cv">
+            <li>cv</li>
           </Link>
           <Link to="/about">
             <li>about</li>

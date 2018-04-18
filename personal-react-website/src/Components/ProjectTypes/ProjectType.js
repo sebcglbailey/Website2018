@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './ProjectTypes.css';
+import styles from './styles.css';
 import {toggleType} from './functions';
 
 class ProjectType extends Component {

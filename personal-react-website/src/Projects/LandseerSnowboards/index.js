@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../../Components/CoverImage/CoverImage';
-import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
+import ProjectIntro from '../../Components/ProjectIntro/';
 
-import styles from './XGames.css';
+import styles from './styles.css';
 
 import manifest from './manifest';
 
 import cover from './cover.jpg';
 
-class XGames extends Component {
+class LandseerSnowboards extends Component {
   constructor(props) {
     super(props)
   }
@@ -26,4 +25,4 @@ class XGames extends Component {
   }
 }
 
-export default XGames;
+export default LandseerSnowboards;

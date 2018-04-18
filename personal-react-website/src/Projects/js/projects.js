@@ -15,7 +15,7 @@ let projects = {
 
 for (let i = 0; i < list.length; i++) {
 
-	let page = require(`../${list[i]}/${list[i]}.js`).default
+	let page = require(`../${list[i]}/index.js`).default
 	projects.pages[list[i]] = page
 
 }

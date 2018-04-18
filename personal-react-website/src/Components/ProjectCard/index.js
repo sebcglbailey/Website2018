@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import styles from './ProjectCard.css';
+import styles from './styles.css';
 
 class ProjectCard extends Component {
 	constructor(props) {

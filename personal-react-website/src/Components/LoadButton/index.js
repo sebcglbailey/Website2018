@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './LoadButton.css';
+import styles from './styles.css';
 
 class LoadButton extends Component {
   constructor(props) {

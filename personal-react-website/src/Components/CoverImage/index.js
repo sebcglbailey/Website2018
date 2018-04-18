@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './CoverImage.css';
+import styles from './styles.css';
 
 class CoverImage extends Component {
   constructor(props) {

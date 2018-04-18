@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../../Components/CoverImage/CoverImage';
-import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
+import ProjectIntro from '../../Components/ProjectIntro/';
 
-import styles from './PalringoWebUI.css';
+import styles from './styles.css';
 
 import manifest from './manifest';
 
 import cover from './cover.jpg';
 
-class PalringoWebUI extends Component {
+class Website2016 extends Component {
   constructor(props) {
     super(props)
   }
@@ -26,4 +25,4 @@ class PalringoWebUI extends Component {
   }
 }
 
-export default PalringoWebUI;
+export default Website2016;

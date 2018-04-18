@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Masonry from '../../Components/Masonry/Masonry';
-import LoadButton from '../../Components/LoadButton/LoadButton';
-import ProjectCard from '../../Components/ProjectCard/ProjectCard';
+import Masonry from '../../Components/Masonry/';
+import LoadButton from '../../Components/LoadButton/';
+import ProjectCard from '../../Components/ProjectCard/';
 
-import styles from './ProjectList.css';
+import styles from './styles.css';
 
 class ProjectList extends Component {
   constructor(props) {

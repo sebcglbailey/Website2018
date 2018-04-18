@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../CoverImage/CoverImage';
-import ProjectTypes from '../ProjectTypes/ProjectTypes';
+import CoverImage from '../CoverImage/';
+import ProjectTypes from '../ProjectTypes/';
 
-import styles from './ProjectIntro.css';
+import styles from './styles.css';
 
 class ProjectIntro extends Component {
   constructor(props) {

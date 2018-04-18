@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../../Components/CoverImage/CoverImage';
-import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
+import ProjectIntro from '../../Components/ProjectIntro/';
 
-import styles from './China.css';
+import styles from './styles.css';
 
 import manifest from './manifest';
 

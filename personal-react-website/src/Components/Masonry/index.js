@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import styles from './Masonry.css';
+import styles from './styles.css';
 
 class Masonry extends Component {
   constructor(props) {

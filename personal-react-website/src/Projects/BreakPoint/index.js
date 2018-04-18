@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../../Components/CoverImage/CoverImage';
-import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
-import ProjectImages from '../../Components/ProjectImages/ProjectImages';
+import ProjectIntro from '../../Components/ProjectIntro/';
+import ProjectImages from '../../Components/ProjectImages/';
 
-import styles from './BreakPoint.css';
+import styles from './styles.css';
 
 import manifest from './manifest';
 

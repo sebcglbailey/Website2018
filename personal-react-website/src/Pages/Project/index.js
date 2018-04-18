@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../../Components/CoverImage/CoverImage';
-import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
-import ProjectImages from '../../Components/ProjectImages/ProjectImages';
-import ProjectCard from '../../Components/ProjectCard/ProjectCard';
-import Masonry from '../../Components/Masonry/Masonry';
+import CoverImage from '../../Components/CoverImage/';
+import ProjectIntro from '../../Components/ProjectIntro/';
+import ProjectImages from '../../Components/ProjectImages/';
+import ProjectCard from '../../Components/ProjectCard/';
+import Masonry from '../../Components/Masonry/';
 
-import styles from './Project.css';
+import styles from './styles.css';
 
 class Project extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class Project extends Component {
 
   render() {
 
-    let project = require(`../../Projects/${this.state.project}/${this.state.project}.js`)
+    let project = require(`../../Projects/${this.state.project}/index.js`)
     project = project.default
 
     let data = require(`../../Projects/${this.state.project}/data.json`);

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
-import CoverImage from '../../Components/CoverImage/CoverImage';
-import ProjectIntro from '../../Components/ProjectIntro/ProjectIntro';
+import ProjectIntro from '../../Components/ProjectIntro/';
 
-import styles from './LandseerSnowboards.css';
+import styles from './styles.css';
 
 import manifest from './manifest';
 
 import cover from './cover.jpg';
 
-class LandseerSnowboards extends Component {
+class PalringoWebUI extends Component {
   constructor(props) {
     super(props)
   }
@@ -26,4 +25,4 @@ class LandseerSnowboards extends Component {
   }
 }
 
-export default LandseerSnowboards;
+export default PalringoWebUI;
