@@ -42,19 +42,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {
-            // Component to handle scrolling to top of page every time the route is changed
-          }
+
           <ScrollToTop>
             <div className="container">
-              {
-                // Header component with logo and menu
-              }
+
               <Header />
-              {
-                // Project List
-              }
+
               <div className={styles.view}>
+
                 <Route exact path="/"
                   render={() => <ProjectList
                     projects={projects}
@@ -65,38 +60,28 @@ class App extends Component {
                     projects={projects}
                     onLoad={this.handlePageLoad} />}
                 />
-                {
-                  // Specific project
-                }
+
                 <Route path="/projects/:id"
                   render={({ match }) => <Project
                     project={match.params.id}
                     onLoad={this.handlePageLoad} />}
                 />
-                {
-                  // CV
-                }
+
                 <Route path="/cv"
                   render={() => <CV
                     onLoad={this.handlePageLoad} />}
                 />
-                {
-                  // About me
-                }
+
                 <Route path="/about"
                   render={() => <About
                     onLoad={this.handlePageLoad} />}
                 />
-                {
-                  // Blog page
-                }
+
                 <Route path="/blog"
                   render={() => <Blog
                     onLoad={this.handlePageLoad} />}
                 />
-                {
-                  // Contact page
-                }
+
                 <Route path="/contact"
                   render={() => <Contact
                     onLoad={this.handlePageLoad} />}
