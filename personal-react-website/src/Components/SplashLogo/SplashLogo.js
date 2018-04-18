@@ -24,10 +24,20 @@ class SplashLogo extends Component {
   componentDidMount() {
     this.setupLogo()
     this.elem.addEventListener("click", this.handleInteraction)
+
+    setTimeout(() => {
+      this.setState({ ready: true })
+    }, this.props.delay*3)
   }
 
   componentWillReceiveProps(nextState) {
     if (nextState.ready) {
+      this.animateLogo()
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.ready) {
       this.animateLogo()
     }
   }
