@@ -7,7 +7,7 @@ class Work extends Component {
 
   render() {
     return (
-      <h1>Work</h1>
+      <h1>CV</h1>
     )
   }
   

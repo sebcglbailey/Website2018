@@ -31,6 +31,9 @@ class App extends Component {
     this.handlePageLoad = this.handlePageLoad.bind(this)
   }
 
+  /*
+    Function to handle the images loaded on the page.
+  */
   handlePageLoad() {
     this.setState({ projectsLoaded: true })
   }
@@ -39,9 +42,18 @@ class App extends Component {
     return (
       <Router>
         <div>
+          {
+            // Component to handle scrolling to top of page every time the route is changed
+          }
           <ScrollToTop>
             <div className="container">
+              {
+                // Header component with logo and menu
+              }
               <Header />
+              {
+                // Project List
+              }
               <div className={styles.view}>
                 <Route exact path="/"
                   render={() => <ProjectList
@@ -53,18 +65,49 @@ class App extends Component {
                     projects={projects}
                     onLoad={this.handlePageLoad} />}
                 />
+                {
+                  // Specific project
+                }
                 <Route path="/projects/:id"
                   render={({ match }) => <Project
                     project={match.params.id}
                     onLoad={this.handlePageLoad} />}
                 />
-                <Route path="/cv" component={CV} />
-                <Route path="/about" component={About} />
-                <Route path="/blog" component={Blog} />
-                <Route path="/contact" component={Contact} />
+                {
+                  // CV
+                }
+                <Route path="/cv"
+                  render={() => <CV
+                    onLoad={this.handlePageLoad} />}
+                />
+                {
+                  // About me
+                }
+                <Route path="/about"
+                  render={() => <About
+                    onLoad={this.handlePageLoad} />}
+                />
+                {
+                  // Blog page
+                }
+                <Route path="/blog"
+                  render={() => <Blog
+                    onLoad={this.handlePageLoad} />}
+                />
+                {
+                  // Contact page
+                }
+                <Route path="/contact"
+                  render={() => <Contact
+                    onLoad={this.handlePageLoad} />}
+                />
               </div>
             </div>
           </ScrollToTop>
+          {
+            // Splash page upon first entry into the site
+            // animates out on first scroll or click
+          }
           <SplashLogo
             delay={500}
             ready={this.state.projectsLoaded} />
