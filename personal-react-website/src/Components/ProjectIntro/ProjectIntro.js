@@ -10,6 +10,8 @@ class ProjectIntro extends Component {
     super(props)
 
     this.state = {}
+
+    this.handleCoverImageLoad = this.handleCoverImageLoad.bind(this)
   }
 
   componentWillMount() {
@@ -18,6 +20,12 @@ class ProjectIntro extends Component {
       this.setState({ description: [description] })
     } else {
       this.setState({ description: description })
+    }
+  }
+
+  handleCoverImageLoad() {
+    if (this.props.onLoad) {
+      this.props.onLoad()
     }
   }
 
@@ -33,7 +41,7 @@ class ProjectIntro extends Component {
     })
     return(
       <div className={styles.flexContainer}>
-        <CoverImage image={this.props.cover} />
+        <CoverImage onLoad={this.handleCoverImageLoad} image={this.props.cover} />
         <div className={styles.container}>
           <ProjectTypes types={this.props.manifest.types} />
           <h1 className={styles.title}>{this.props.manifest.title}</h1>

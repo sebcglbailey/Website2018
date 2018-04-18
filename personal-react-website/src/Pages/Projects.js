@@ -14,14 +14,14 @@ class Projects extends Component {
       projects: projects
     }
 
-    this.handleListLoad = this.handleListLoad.bind(this)
+    this.handlePageLoad = this.handlePageLoad.bind(this)
   }
 
   componentWillMount() {
     document.title = "Projects";
   }
 
-  handleListLoad() {
+  handlePageLoad() {
     if (this.props.onLoad) {
       this.props.onLoad()
     }
@@ -33,15 +33,17 @@ class Projects extends Component {
         <Route exact path="/"
           render={() => <ProjectList
             projects={this.state.projects}
-            onLoad={this.handleListLoad} />}
+            onLoad={this.handlePageLoad} />}
         />
         <Route exact path="/projects"
           render={() => <ProjectList
             projects={this.state.projects}
-            onLoad={this.handleListLoad} />}
+            onLoad={this.handlePageLoad} />}
         />
         <Route path="/projects/:id"
-          render={({ match }) => <Project project={match.params.id} />}
+          render={({ match }) => <Project
+            project={match.params.id}
+            onLoad={this.handlePageLoad} />}
         />
       </div>
     )

@@ -7,10 +7,12 @@ class ProjectImages extends Component {
 		super(props)
 
 		this.state = {
-			images: this.props.images
+			images: this.props.images,
+			loaded: 0
 		}
 
 		this.getImages = this.getImages.bind(this)
+		this.handleImageLoaded = this.handleImageLoaded.bind(this)
 	}
 
 	componentWillReceiveProps(nextState) {
@@ -19,10 +21,18 @@ class ProjectImages extends Component {
 		}
 	}
 
+	handleImageLoaded() {
+		if (this.props.onLoad && this.state.loaded == this.props.images.length - 1) {
+			this.props.onLoad()
+		} else {
+			this.setState({ loaded: this.state.loaded + 1 })
+		}
+	}
+
 	getImages() {
 		let images = this.state.images.map((imgName, index) => {
 			let imgSrc = require(`../../Projects/${this.props.project}/img/${imgName}`)
-			return <img key={`image-${index+1}`} src={imgSrc} />
+			return <img onLoad={this.handleImageLoaded} key={`image-${index+1}`} src={imgSrc} />
 		})
 		return images
 	}

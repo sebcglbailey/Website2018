@@ -13,13 +13,44 @@ class Project extends Component {
     super(props);
 
     this.state = {
-      project: this.props.project
+      project: this.props.project,
+      cardsLoaded: 0,
+      introLoaded: false,
+      imagesLoaded: false
     }
+
+    this.handleCardsLoaded = this.handleCardsLoaded.bind(this)
+    this.handleIntroLoaded = this.handleIntroLoaded.bind(this)
+    this.handleImagesLoaded = this.handleImagesLoaded.bind(this)
   }
 
   componentWillReceiveProps(nextState) {
     if (nextState.project !== this.state.project) {
       this.setState({ project: nextState.project })
+    }
+  }
+
+  handleCardsLoaded() {
+    if (this.props.onLoad && this.state.cardsLoaded >= 1 && this.state.introLoaded && this.state.imagesLoaded) {
+      this.props.onLoad()
+    } else {
+      this.setState({ cardsLoaded: this.state.cardsLoaded + 1 })
+    }
+  }
+
+  handleIntroLoaded() {
+    if (this.props.onLoad && this.state.cardsLoaded == 2 && this.imagesLoaded) {
+      this.props.onLoad()
+    } else {
+      this.setState({ introLoaded: true })
+    }
+  }
+
+  handleImagesLoaded() {
+    if (this.props.onLoad && this.state.cardsLoaded === 2 && this.state.introLoaded) {
+      this.props.onLoad()
+    } else {
+      this.setState({ imagesLoaded: true })
     }
   }
 
@@ -45,6 +76,7 @@ class Project extends Component {
           link={link}
           cover={cover}
           manifest={manifest}
+          onLoad={this.handleCardsLoaded}
         />
       )
     })
@@ -54,10 +86,12 @@ class Project extends Component {
         <ProjectIntro
           cover={cover}
           manifest={manifest}
+          onLoad={this.handleIntroLoaded}
         />
         <ProjectImages
           images={data.images}
           project={this.state.project}
+          onLoad={this.handleImagesLoaded}
         />
         <div className={styles.related}>
           <Masonry

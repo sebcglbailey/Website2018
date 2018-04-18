@@ -14,15 +14,16 @@ class SplashLogo extends Component {
 
     this.setupLogo = this.setupLogo.bind(this)
     this.animateLogo = this.animateLogo.bind(this)
-    this.handleScroll = this.handleScroll.bind(this)
+    this.handleInteraction = this.handleInteraction.bind(this)
   }
 
   componentWillMount() {
-    window.addEventListener("scroll", this.handleScroll)
+    window.addEventListener("scroll", this.handleInteraction)
   }
 
   componentDidMount() {
     this.setupLogo()
+    this.elem.addEventListener("click", this.handleInteraction)
   }
 
   componentWillReceiveProps(nextState) {
@@ -31,7 +32,7 @@ class SplashLogo extends Component {
     }
   }
 
-  handleScroll() {
+  handleInteraction() {
     if (this.state.containerClass == styles.container) {
       this.setState({
         containerClass: `${styles.container} ${styles.hide}`,
@@ -65,7 +66,10 @@ class SplashLogo extends Component {
 
   render() {
     return(
-      <div className={this.state.containerClass} style={this.state.containerStyle}>
+      <div
+      ref={(elem) => this.elem = elem}
+      className={this.state.containerClass}
+      style={this.state.containerStyle}>
         <svg
         className={styles.svg}
         version="1.1"
