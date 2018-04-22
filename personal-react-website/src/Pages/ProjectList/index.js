@@ -77,8 +77,7 @@ class ProjectList extends Component {
       ) : ""
 
     return (
-      <div>
-        <h1>Projects</h1>
+      <div className={styles.container}>
         <Masonry
           minWidth={400}
           margin={16}

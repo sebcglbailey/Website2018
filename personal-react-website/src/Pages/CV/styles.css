@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  padding: 1.5rem 0;
+  max-width: 50rem;
+  margin: 0 auto; }
+  .container > div {
+    margin-bottom: 4rem; }
+  .container > div:last-child {
+    margin: 0; }
+  .container h2 {
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+  .container h3 {
+    margin-bottom: 2rem; }
+
+a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }

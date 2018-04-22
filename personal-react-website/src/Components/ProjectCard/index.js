@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import Card, {Cover, Info} from '../Card/';
+
 import styles from './styles.css';
 
 class ProjectCard extends Component {
@@ -55,27 +57,20 @@ class ProjectCard extends Component {
     }
 
 		return(
-			<div id={this.props.id} className={styles.card}>
-        <Link to={this.state.link}>
-          <div className={styles.cardContent}>
-            {
-              this.state.cover ? (
-                <div className={styles.cover}>
-                  <img onLoad={this.handleImageLoad} src={this.state.cover} />
-                </div>
-              ) : null
-            }
-            <div className={infoClasses.container}>
-              <div className={infoClasses.info}>
-                <h2>{this.state.manifest.title}</h2>
-                <p
-                  ref={(elem) => {this.desc = elem}}
-                  dangerouslySetInnerHTML={{__html: this.state.manifest.description[0]}}></p>
-              </div>
-            </div>
-          </div>
-        </Link>
-      </div>
+      <Card link={this.state.link} id={this.props.id}>
+        <div className={styles.cardContent}>
+          {
+            this.state.cover ? (
+              <Cover image={this.state.cover} onLoad={this.handleImageLoad} />
+            ) : null
+          }
+          <Info hasCover={this.state.coverLoaded} header={this.state.manifest.title}>
+            <p
+                ref={(elem) => {this.desc = elem}}
+                dangerouslySetInnerHTML={{__html: this.state.manifest.description[0]}}></p>
+          </Info>
+        </div>
+      </Card>
 		)
 	}
 }

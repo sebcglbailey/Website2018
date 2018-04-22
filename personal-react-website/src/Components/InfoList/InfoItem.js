@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styles from './styles.css';
 import {toggleType} from './functions';
 
-class ProjectType extends Component {
+class InfoItem extends Component {
   constructor(props) {
     super(props)
 
@@ -44,4 +44,4 @@ class ProjectType extends Component {
   }
 }
 
-export default ProjectType
+export default InfoItem

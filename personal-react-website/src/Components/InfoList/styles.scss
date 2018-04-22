@@ -6,8 +6,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	padding: 0;
-	[class*="type"],
-	[class^="type"] {
+	.type {
 		display: inline-block;
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
@@ -20,54 +19,106 @@
 		min-height: 4.2rem;
 		cursor: pointer;
 		overflow: hidden;
+		&:active {
+			background-color: lighten($black, 25%);
+		}
 	}
-	.typeUX {
+	.ux {
 		border-color: $ux;
 		color: $ux;
 		&:active {
 			background-color: lighten($ux, 25%)
 		}
 	}
-	.typeUI {
+	.ui {
 		border-color: $ui;
 		color: $ui;
 		&:active {
 			background-color: lighten($ui, 25%)
 		}
 	}
-	.typePR {
+	.pr {
 		border-color: $pr;
 		color: $pr;
 		&:active {
 			background-color: lighten($pr, 25%)
 		}
 	}
-	.typeWD {
+	.wd {
 		border-color: $wd;
 		color: $wd;
 		&:active {
 			background-color: lighten($wd, 25%)
 		}
 	}
-	.typePH {
+	.ph {
 		border-color: $ph;
 		color: $ph;
 		&:active {
 			background-color: lighten($ph, 25%)
 		}
 	}
-	.typeAR {
+	.ar {
 		border-color: $ar;
 		color: $ar;
 		&:active {
 			background-color: lighten($ar, 25%)
 		}
 	}
-	.typeGD {
+	.gd {
 		border-color: $gd;
 		color: $gd;
 		&:active {
 			background-color: lighten($gd, 25%)
+		}
+	}
+	.ps {
+		border-color: $ps;
+		color: $ps;
+		&:active {
+			background-color: lighten($ps, 25%)
+		}
+	}
+	.ai {
+		border-color: $ai;
+		color: $ai;
+		&:active {
+			background-color: lighten($ai, 25%)
+		}
+	}
+	.id {
+		border-color: $id;
+		color: $id;
+		&:active {
+			background-color: lighten($id, 25%)
+		}
+	}
+	.ae {
+		border-color: $ae;
+		color: $ae;
+		&:active {
+			background-color: lighten($ae, 25%)
+		}
+	}
+	.xd {
+		border-color: $xd;
+		color: $xd;
+		&:active {
+			background-color: lighten($xd, 25%)
+		}
+	}
+	.sk {
+		border-color: $sk;
+		color: $sk;
+		&:active {
+			background-color: lighten($sk, 25%)
+		}
+	}
+	.fr {
+		border-color: $fr;
+		color: $fr;
+		&:active {
+			background-color: lighten($fr, 25%)
 		}
 	}
 }

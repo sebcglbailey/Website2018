@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import styles from './styles.css';
 
-import ProjectType from './ProjectType';
+import InfoItem from './InfoItem';
 
 import { getTypeClass } from './functions';
 
-class ProjectTypes extends Component {
+class InfoList extends Component {
   constructor(props) {
     super(props)
 
@@ -25,7 +25,7 @@ class ProjectTypes extends Component {
 
     const types = this.state.types.map((type, index) => {
       return(
-        <ProjectType
+        <InfoItem
           key={`type-${index+1}`}
           duration={0}
           type={type}
@@ -44,4 +44,4 @@ class ProjectTypes extends Component {
 
 }
 
-export default ProjectTypes;
+export default InfoList;

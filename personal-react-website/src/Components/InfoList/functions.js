@@ -48,31 +48,69 @@ const toggleType = (type) => {
 }
 
 const getTypeClass = (type, styles) => {
+  let def = `${styles.type}`;
   switch(type) {
     case "ux":
-      return styles.typeUX
-      break
+    case "User Experience":
+      return def + ` ${styles.ux}`
+      break;
     case "ui":
-      return styles.typeUI
+    case "User Interface":
+      return def + ` ${styles.ui}`
       break;
     case "ph":
-      return styles.typePH
+    case "Photography":
+      return def + ` ${styles.ph}`
       break;
     case "pr":
-      return styles.typePR
+    case "Prototyping":
+      return def + ` ${styles.pr}`
       break;
     case "wd":
-      return styles.typeWD
+    case "Web Development":
+      return def + ` ${styles.wd}`
       break;
     case "gd":
-      return styles.typeGD
+    case "Graphic Design":
+      return def + ` ${styles.gd}`
       break;
     case "ar":
-      return styles.typeAR
-      break
+    case "Architecture":
+      return def + ` ${styles.ar}`
+      break;
+    case "ps":
+    case "Photoshop":
+      return def + ` ${styles.ps}`
+      break;
+    case "ai":
+    case "Illustrator":
+      return def + ` ${styles.ai}`
+      break;
+    case "id":
+    case "InDesign":
+      return def + ` ${styles.id}`
+      break;
+    case "ae":
+    case "After Effects":
+      return def + ` ${styles.ae}`
+      break;
+    case "xd":
+    case "Adobe XD":
+      return def + ` ${styles.xd}`
+      break;
+    case "sk":
+    case "Sketch":
+      return def + ` ${styles.sk}`
+      break;
+    case "fr":
+    case "Framer":
+      return def + ` ${styles.fr}`
     default:
       return styles.type
   }
 }
 
-module.exports = {toggleType: toggleType, getTypeClass: getTypeClass}
+module.exports = {
+  toggleType: toggleType,
+  getTypeClass: getTypeClass
+}

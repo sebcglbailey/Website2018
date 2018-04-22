@@ -89,10 +89,6 @@ class App extends Component {
               </div>
             </div>
           </ScrollToTop>
-          {
-            // Splash page upon first entry into the site
-            // animates out on first scroll or click
-          }
           <SplashLogo
             delay={500}
             ready={this.state.projectsLoaded} />
