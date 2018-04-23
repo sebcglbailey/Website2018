@@ -3,6 +3,11 @@
   margin: 0 auto;
   text-align: center;
   padding-top: 1rem; }
+  .container a {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none; }
+  .container a:hover {
+    text-decoration: underline; }
 
 .description a {
   color: rgba(0, 0, 0, 0.5);
@@ -11,10 +16,3 @@
 .title {
   border: none;
   text-transform: none; }
-
-a {
-  color: rgba(0, 0, 0, 0.5);
-  text-decoration: none; }
-
-a:hover {
-  text-decoration: underline; }

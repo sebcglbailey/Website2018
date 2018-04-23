@@ -5,6 +5,13 @@
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 1rem;
+  a {
+    color: rgba($black, 0.5);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .description {
@@ -17,12 +24,4 @@
 .title {
 	border: none;
 	text-transform: none;
-}
-
-a {
-    color: rgba($black, 0.5);
-    text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
 }

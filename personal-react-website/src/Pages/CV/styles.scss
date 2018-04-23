@@ -20,11 +20,12 @@
 	}
 }
 
-
-a {
-    color: rgba($black, 0.5);
-    text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+.experienceCards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	> div {
+		width: calc(50% - 1rem);
+		margin: 0.5rem;
+	}
 }

@@ -28,6 +28,7 @@ class Masonry extends Component {
 
   componentDidMount() {
     this.reorderChildren()
+    this.windowResize()
   }
 
   componentWillMount() {
@@ -107,7 +108,6 @@ class Masonry extends Component {
     if (columns >= this.state.children.length) {
       columns = this.state.children.length
     }
-    console.log(containerWidth / this.props.minWidth)
     if (columns !== this.state.columns) {
       this.setState({ columns: columns })
     }

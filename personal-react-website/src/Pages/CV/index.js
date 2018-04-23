@@ -74,6 +74,13 @@ class Work extends Component {
           link: "http://www.imprima.com",
           role: "Head of Design, Graphic Designer",
           dates: "May 2013 - February 2015"
+        },
+        {
+          id: "fosters",
+          title: "Foster + Partners",
+          link: "http://www.fosterandpartners.com",
+          role: "Work experience, Architectural Assistant",
+          dates: "2008, 2009"
         }
       ]
     }
@@ -107,14 +114,21 @@ class Work extends Component {
         </Card>
       )
     })
-    console.log(cards)
 
     this.experience = (
       <div className={styles.experience}>
         <h2>Experience</h2>
-        <Masonry minWidth={400} margin={16}>
-          {cards}
-        </Masonry>
+        {
+          this.state.work.length%2 == 0 ? (
+            <Masonry minWidth={400} margin={16}>
+              {cards}
+            </Masonry>
+          ) : (
+            <div className={styles.experienceCards}>
+              {cards}
+            </div>
+          )
+        }
       </div>
     )
   }

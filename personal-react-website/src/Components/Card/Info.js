@@ -37,7 +37,7 @@ class Info extends Component {
       <div className={container}>
         <div className={info}>
           { this.props.header ? (
-              <h2>{this.props.header}</h2>
+              <h3>{this.props.header}</h3>
             ) : null
           }
           {this.props.children}

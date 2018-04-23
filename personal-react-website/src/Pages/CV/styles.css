@@ -13,9 +13,10 @@
   .container h3 {
     margin-bottom: 2rem; }
 
-a {
-  color: rgba(0, 0, 0, 0.5);
-  text-decoration: none; }
-
-a:hover {
-  text-decoration: underline; }
+.experienceCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .experienceCards > div {
+    width: calc(50% - 1rem);
+    margin: 0.5rem; }
