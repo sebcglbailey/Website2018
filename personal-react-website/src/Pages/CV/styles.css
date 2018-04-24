@@ -20,3 +20,8 @@
   .experienceCards > div {
     width: calc(50% - 1rem);
     margin: 0.5rem; }
+
+.infoSpan {
+  margin-top: 0.75rem; }
+  .infoSpan:first-of-type {
+    margin-top: 1rem; }

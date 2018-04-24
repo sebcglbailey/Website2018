@@ -66,14 +66,30 @@ class Work extends Component {
           title: "Palringo Ltd.",
           link: "http://www.palringo.com",
           role: "Graphic, Web & UX Designer",
-          dates: "March 2015 - August 2016"
+          dates: "March 2015 - August 2016",
+          info: [
+            "Design and coding of microsites",
+            "Design of majority of marketing campaign creatives",
+            "UX & UI for main chat product",
+            "Design, UX & UI for web-app version of main chat product",
+            "Working in teams and individually from concept to launched product",
+            "Prototypes of microsites and new features for app"
+          ]
         },
         {
           id: "imprima",
           title: "Imprima Ltd.",
           link: "http://www.imprima.com",
           role: "Head of Design, Graphic Designer",
-          dates: "May 2013 - February 2015"
+          dates: "May 2013 - February 2015",
+          info: [
+            "Annual report design",
+            "Proofreading and preparing documents for print",
+            "Brand development",
+            "Design and coding of email templates",
+            "UX & UI for new version of main storage product, including coding a prototype",
+            "Managing the work of another graphic designer"
+          ]
         },
         {
           id: "fosters",
@@ -110,6 +126,13 @@ class Work extends Component {
             <Info header={job.title}>
               <p>{job.role}</p>
               <p>{job.dates}</p>
+              {
+                job.info ? (
+                  job.info.map((info, index) => {
+                    return <span className={styles.infoSpan} key={index}>{info}</span>
+                  })
+                ): null
+              }
             </Info>
         </Card>
       )
@@ -158,11 +181,6 @@ class Work extends Component {
           <InfoList types={this.state.skills.development} />
         </div>
         <div className={styles.experience}>
-          {/*<h2>Experience</h2>
-          <p><a target='_blank' href='http://www.clearscore.com'>ClearScore Ltd.</a> – UX Designer – August 2016 - Present</p>
-          <p><a target='_blank' href='htpp://www.palringo.com'>Palringo Ltd.</a> – Graphic, Web & UX Designer – March 2015 - August 2016</p>
-          <p><a target='_blank' href='http://www.imprima.com'>Imprima Ltd.</a> – Head of Design, Graphic Designer – May 2013 - February 2015</p>
-          <p><a target='_blank' href='http://www.fosterandpartners.com'>Foster + Partners</a> – Work Experience, Architectural Assistant – 2008, 2009</p>*/}
           {this.experience}
         </div>
       </div>
