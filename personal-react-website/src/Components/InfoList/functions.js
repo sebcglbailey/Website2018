@@ -1,50 +1,34 @@
+const listTypes = [
+  ["ux", "User Experience"],
+  ["ui", "User Interface"],
+  ["ph", "Photography"],
+  ["pr", "Prototyping"],
+  ["wd", "Web Development"],
+  ["gd", "Graphic Design"],
+  ["ar", "Architecture"],
+  ["sk", "Sketch"],
+  ["fr", "Framer"],
+  ["ps", "Photoshop"],
+  ["ai", "Illustrator"],
+  ["id", "InDesign"],
+  ["ae", "After Effects"],
+  ["xd", "Adobe XD"]
+]
+
 const toggleType = (type) => {
-  switch(type) {
-    case "ux":
-      return "User Experience"
-      break
-    case "ui":
-      return "User Interface"
-      break;
-    case "ph":
-      return "Photography"
-      break;
-    case "pr":
-      return "Prototyping"
-      break;
-    case "wd":
-      return "Web Development"
-      break;
-    case "gd":
-      return "Graphic Design"
-      break;
-    case "ar":
-      return "Architecture"
-      break
-    case "User Experience":
-      return "ux"
-      break
-    case "User Interface":
-      return "ui"
-      break
-    case "Photography":
-      return "ph"
-      break
-    case "Prototyping":
-      return "pr"
-      break
-    case "Web Development":
-      return "wd"
-      break
-    case "Graphic Design":
-      return "gd"
-      break
-    case "Architecture":
-      return "ar"
-      break
-    default:
-      return type
+
+  let arr = listTypes.filter((types) => {
+    return (types[1] == type) || (types[0] == type)
+  })
+
+  if (arr[0]) {
+    let index = arr[0].indexOf(type)
+    let newIndex = (index+1)%2
+    return arr[0][newIndex]
+  } else {
+    return type
   }
+
 }
 
 const getTypeClass = (type, styles) => {

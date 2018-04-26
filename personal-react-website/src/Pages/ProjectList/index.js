@@ -14,7 +14,8 @@ class ProjectList extends Component {
     this.state = {
       visible: 6,
       projects: this.props.projects,
-      loaded: 0
+      loaded: 0,
+      masonryContentsLoaded: false
     }
 
     this.filterProjects = this.filterProjects.bind(this)
@@ -27,13 +28,17 @@ class ProjectList extends Component {
   }
 
   componentWillUpdate(prevState, nextState) {
-    this.filterProjects(nextState.visible)
+    if (this.state.visible !== nextState.visible) {
+      this.filterProjects(nextState.visible)
+      this.setState({ masonryContentsLoaded: false })
+    }
   }
 
   handleImageLoad() {
     if (
       this.state.loaded == this.projects.length - 1
       && this.props.onLoad) {
+      this.setState({ masonryContentsLoaded: true })
       this.props.onLoad()
     }
     this.setState({ loaded: this.state.loaded + 1 })
@@ -81,6 +86,7 @@ class ProjectList extends Component {
         <Masonry
           minWidth={400}
           margin={16}
+          contentsLoaded={this.state.masonryContentsLoaded}
         >
           {this.projects}
         </Masonry>

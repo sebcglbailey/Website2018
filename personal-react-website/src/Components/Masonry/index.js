@@ -11,12 +11,13 @@ class Masonry extends Component {
       columns: window.outerWidth / this.props.minWidth,
       children: this.props.children,
       originalChildren: this.props.children,
-      rendered: false
+      rendered: false,
+      contentsLoaded: false
     }
 
     this.windowResize = this.windowResize.bind(this)
     this.returnColumns = this.returnColumns.bind(this)
-    this.getSmallestIndexFromNoArr = this.getSmallestIndexFromNoArr.bind(this)
+    this.getSmallestIndexFromNumberArr = this.getSmallestIndexFromNumberArr.bind(this)
     this.reorderChildren = this.reorderChildren.bind(this)
   }
 
@@ -24,10 +25,12 @@ class Masonry extends Component {
     if (nextState.originalChildren !== this.state.originalChildren) {
       this.setState({ children: nextState.children, originalChildren: nextState.children, rendered: false })
     }
+    if (nextState.contentsLoaded == true) {
+      this.setState({ contentsLoaded: true })
+    }
   }
 
   componentDidMount() {
-    this.reorderChildren()
     this.windowResize()
   }
 
@@ -37,15 +40,22 @@ class Masonry extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (
-      (prevState.children.length !== this.state.children.length
-      && !this.state.rendered)
-      || prevState.columns !== this.state.columns) {
-        this.reorderChildren()
+    if (this.state.children == this.state.originalChildren
+      && this.state.contentsLoaded) {
+      this.reorderChildren()
     }
   }
 
-  getSmallestIndexFromNoArr(array) {
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (
+  //     (prevState.children.length !== this.state.children.length
+  //     && !this.state.rendered)
+  //     || prevState.columns !== this.state.columns) {
+  //       this.reorderChildren()
+  //   }
+  // }
+
+  getSmallestIndexFromNumberArr(array) {
     let smallestIndex = 0
     for (let i = 0; i < array.length; i++) {
       if (array[i] < array[smallestIndex]) {
@@ -80,7 +90,7 @@ class Masonry extends Component {
     for (let i = 0; i < orderedContent.length; i++) {
       let row = Math.floor(i/this.state.columns)
 
-      let smallestColumnIndex = this.getSmallestIndexFromNoArr(columnHeights)
+      let smallestColumnIndex = this.getSmallestIndexFromNumberArr(columnHeights)
       columnHeights[smallestColumnIndex] += orderedContent[i].height
 
       if (!reorderedContent[row]) {
@@ -114,6 +124,7 @@ class Masonry extends Component {
   }
 
   returnColumns(children) {
+
     let columnArray = []
     for (let i = 0; i < this.state.columns; i++) {
       columnArray.push([])
@@ -136,10 +147,12 @@ class Masonry extends Component {
         </div>
       )
     })
+
     return columnArray
   }
 
   render() {
+
     let columns = this.returnColumns(this.state.children)
 
     return(
