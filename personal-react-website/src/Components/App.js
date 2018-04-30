@@ -35,7 +35,7 @@ class App extends Component {
     Function to handle the images loaded on the page.
   */
   handlePageLoad() {
-    this.setState({ projectsLoaded: true })
+    // this.setState({ projectsLoaded: true })
   }
 
   render() {

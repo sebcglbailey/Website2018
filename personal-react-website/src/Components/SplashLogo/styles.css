@@ -4,8 +4,8 @@
   left: 0;
   background: rgba(0, 0, 0, 0.85);
   width: 100vw;
-  height: calc(100vh - 75px);
-  margin-top: 75px;
+  height: calc(100vh - 4rem);
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
   align-items: center; }

@@ -4,7 +4,15 @@ const work = [
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
     role: "UX/UI Designer, Prototyper & Project Lead",
-    dates: "August 2016 - Present"
+    dates: "August 2016 - Present",
+    info: [
+      "User flows for new features and product verticals",
+      "Experience design from concept to delivery",
+      "User Interface for new features",
+      "Prototyping evangalist - pushing the need for and developing prototypes",
+      "Designed and leading the Design System",
+      "Facilitating design sprints, and critiques"
+    ]
   },
   {
     id: "palringo",
@@ -13,12 +21,11 @@ const work = [
     role: "Graphic, Web & UX Designer",
     dates: "March 2015 - August 2016",
     info: [
-      "Design and coding of microsites",
-      "Design of majority of marketing campaign creatives",
-      "UX & UI for main chat product",
-      "Design, UX & UI for web-app version of main chat product",
+      "Designing and developing microsites for games",
+      "Creating marketing campaign creatives",
+      "Product design for web-app version of core chat offering",
       "Working in teams and individually from concept to launched product",
-      "Prototypes of microsites and new features for app"
+      "Prototypes built in HTML/CSS and native prototypes built in Framer"
     ]
   },
   {
@@ -31,18 +38,18 @@ const work = [
       "Annual report design",
       "Proofreading and preparing documents for print",
       "Brand development",
-      "Design and coding of email templates",
-      "UX & UI for new version of main storage product, including coding a prototype",
-      "Managing the work of another graphic designer"
+      "Design and development of email templates",
+      "UX/UI for v2.0 of main iRooms product, including a HTML prototype",
+      "Managing one other graphic designer"
     ]
   },
-  {
-    id: "fosters",
-    title: "Foster + Partners",
-    link: "http://www.fosterandpartners.com",
-    role: "Work experience, Architectural Assistant",
-    dates: "2008, 2009"
-  }
+  // {
+  //   id: "fosters",
+  //   title: "Foster + Partners",
+  //   link: "http://www.fosterandpartners.com",
+  //   role: "Work experience, Architectural Assistant",
+  //   dates: "2008, 2009"
+  // }
 ]
 
 export default work

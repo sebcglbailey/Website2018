@@ -1,43 +1,62 @@
 .view {
-  padding: 75px 1rem 1rem 1rem; }
+  padding: 4rem 1rem 1rem 1rem; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
 
 body {
   width: 100vw;
   background: #f6f6f6;
-  font-size: 14pt;
   font-weight: 700;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 14pt;
+  }
+}
 
 h1 {
   text-align: center;
   text-transform: uppercase;
   border-bottom: 2px solid rgba(0, 0, 0, 0.85);
   font-size: 1.8rem;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+}
 
 body,
 h1,
 h2,
 h3 {
   font-family: "Century Gothic", sans-serif;
-  font-weight: 100; }
+  font-weight: 100;
+}
 
 h1,
 h2,
 h3 {
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+}
 
 h2 {
-  font-size: 1.4em; }
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
 
 .container {
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 75px;
+  padding-top: 4rem;
   width: 100vw;
   display: -webkit-flex;
   display: -ms-flexbox;

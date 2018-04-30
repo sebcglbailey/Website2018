@@ -10,15 +10,17 @@
 		display: inline-block;
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
-		font-size: 1.4rem;
 		padding: 1rem;
-		border: 0.2rem solid $black;
+		border: 0.1rem solid $black;
 		margin: 0.25rem 0.5rem;
-		min-width: 4.2rem;
+		min-width: 3.6rem;
+		min-height: 3.6rem;
 		width: auto;
-		min-height: 4.2rem;
 		cursor: pointer;
 		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		&:active {
 			background-color: lighten($black, 25%);
 		}

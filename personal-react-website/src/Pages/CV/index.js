@@ -36,6 +36,7 @@ class Work extends Component {
   }
 
   renderExperience() {
+
     let cards = this.state.work.map((job, index) => {
       return(
         <Card key={job.id}

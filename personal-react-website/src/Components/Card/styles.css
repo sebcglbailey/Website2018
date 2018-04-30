@@ -84,9 +84,10 @@
   margin: 1rem;
   padding: 1rem;
   text-align: center;
-  border: 0.25rem solid rgba(0, 0, 0, 0.85);
+  border: 0.2rem solid rgba(0, 0, 0, 0.85);
   background: rgba(255, 255, 255, 0.5);
-  flex: 1 1 1.2rem; }
+  flex: 1 1 1.2rem;
+  flex-grow: 1; }
   .infoContainer.loaded {
     margin: -2rem 1rem 1rem 1rem;
     padding: 1rem 0 0 0; }
