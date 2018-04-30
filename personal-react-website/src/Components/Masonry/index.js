@@ -30,22 +30,18 @@ class Masonry extends Component {
     this.addContent()
   }
 
-  // componentWillUpdate(nextProps, nextState) {
-  //   if (nextProps.children !== this.props.children) {
-  //     this.setState({ originalContent: nextProps.children })
-  //   }
-  // }
-
   componentDidUpdate(prevProps, prevState) {
     this.addContent()
   }
 
+  windowResize() {
+    this.renderColumns()
+  }
+
   addContent() {
     if (this.state.content < this.props.children.length) {
-
       let smallestColumn = this.getSmallestColumn()
       this.renderColumns(this.props.children[this.state.content], smallestColumn)
-
     }
   }
 
@@ -82,6 +78,9 @@ class Masonry extends Component {
 
     let containerWidth = this.container ? this.container.offsetWidth : window.outerWidth > 450 ? window.outerWidth - 36 : window.outerWidth - 28;
     this.noOfColumns = Math.floor(containerWidth / this.props.minWidth)
+    if (this.noOfColumns == 0) {
+      this.noOfColumns = 1
+    }
     this.noOfColumns = this.props.children.length < this.noOfColumns ? this.props.children.length : this.noOfColumns;
 
     let columnStyle = {
