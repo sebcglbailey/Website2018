@@ -19,6 +19,7 @@ class Masonry extends Component {
     this.renderColumns = this.renderColumns.bind(this)
     this.getSmallestColumn = this.getSmallestColumn.bind(this)
     this.windowResize = this.windowResize.bind(this)
+    this.getColumnStyle = this.getColumnStyle.bind(this)
   }
 
   componentWillMount() {
@@ -46,13 +47,18 @@ class Masonry extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.children == this.props.children) {
       this.addContent()
-    } else {
+    } else if (prevProps.children.length == this.props.children.length) {
       this.renderColumns()
+    } else {
+      this.addContent()
     }
   }
 
   windowResize() {
-    this.renderColumns()
+    let {noOfColumns} = this.getColumnStyle()
+    if (this.noOfColumns !== noOfColumns) {
+      this.renderColumns()
+    }
   }
 
   addContent() {
@@ -91,19 +97,27 @@ class Masonry extends Component {
     // return content
   }
 
-  renderColumns(child, index) {
-
+  getColumnStyle() {
     let containerWidth = this.container ? this.container.offsetWidth : window.outerWidth > 450 ? window.outerWidth - 36 : window.outerWidth - 28;
-    this.noOfColumns = Math.floor(containerWidth / this.props.minWidth)
-    if (this.noOfColumns == 0) {
-      this.noOfColumns = 1
+    let noOfColumns = Math.floor(containerWidth / this.props.minWidth)
+    if (noOfColumns == 0) {
+      noOfColumns = 1
     }
-    this.noOfColumns = this.props.children.length < this.noOfColumns ? this.props.children.length : this.noOfColumns;
+    noOfColumns = this.props.children.length < noOfColumns ? this.props.children.length : noOfColumns;
 
     let columnStyle = {
+      noOfColumns: noOfColumns,
       width: `${100/this.noOfColumns}%`,
       padding: `0 ${this.props.margin/2}px`
     }
+
+    return columnStyle
+  }
+
+  renderColumns(child, index) {
+
+    let columnStyle = this.getColumnStyle()
+    this.noOfColumns = columnStyle.noOfColumns
 
     let columnContents;
 
