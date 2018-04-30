@@ -19,14 +19,67 @@ class Project extends Component {
       imagesLoaded: false
     }
 
+    // let project = require(`../../Projects/${this.state.project}/index.js`)
+    // project = project.default
+
     this.handleCardsLoaded = this.handleCardsLoaded.bind(this)
     this.handleIntroLoaded = this.handleIntroLoaded.bind(this)
     this.handleImagesLoaded = this.handleImagesLoaded.bind(this)
+    this.getProjectData = this.getProjectData.bind(this)
   }
 
-  componentWillReceiveProps(nextState) {
-    if (nextState.project !== this.state.project) {
-      this.setState({ project: nextState.project })
+  componentWillMount() {
+    let data = this.getProjectData()
+    this.setState({
+      data: data.data,
+      cover: data.cover,
+      manifest: data.manifest,
+      relatedProjects: data.relatedProjects
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.project !== this.state.project) {
+      let data = this.getProjectData(nextProps.project)
+      this.setState({
+        project: nextProps.project,
+        data: data.data,
+        cover: data.cover,
+        manifest: data.manifest,
+        relatedProjects: data.relatedProjects
+      })
+    }
+  }
+
+  getProjectData(project) {
+    let thisProject = project ? project : this.state.project
+
+    let data = require(`../../Projects/${thisProject}/data.json`);
+    let manifest = require(`../../Projects/${thisProject}/manifest.js`);
+    let cover = require(`../../Projects/${thisProject}/cover.jpg`);
+
+    let relatedProjects = manifest.related.map((project, index) => {
+      let link = `/projects/${project}`;
+      let cover = require(`../../Projects/${project}/cover.jpg`);
+      let manifest = require(`../../Projects/${project}/manifest.js`);
+      let key = `card-${index+1}`
+      return(
+        <ProjectCard
+          id={key}
+          key={key}
+          project={project}
+          link={link}
+          cover={cover}
+          manifest={manifest}
+        />
+      )
+    })
+
+    return {
+      data: data,
+      manifest: manifest,
+      cover: cover,
+      relatedProjects: relatedProjects
     }
   }
 
@@ -56,40 +109,15 @@ class Project extends Component {
 
   render() {
 
-    let project = require(`../../Projects/${this.state.project}/index.js`)
-    project = project.default
-
-    let data = require(`../../Projects/${this.state.project}/data.json`);
-    let manifest = require(`../../Projects/${this.state.project}/manifest.js`);
-    let cover = require(`../../Projects/${this.state.project}/cover.jpg`);
-
-    let relatedProjects = manifest.related.map((project, index) => {
-      let link = `/projects/${project}`;
-      let cover = require(`../../Projects/${project}/cover.jpg`);
-      let manifest = require(`../../Projects/${project}/manifest.js`);
-      let key = `card-${index+1}`
-      return(
-        <ProjectCard
-          id={key}
-          key={key}
-          project={project}
-          link={link}
-          cover={cover}
-          manifest={manifest}
-          onLoad={this.handleCardsLoaded}
-        />
-      )
-    })
-
     return (
       <div>
         <ProjectIntro
-          cover={cover}
-          manifest={manifest}
+          cover={this.state.cover}
+          manifest={this.state.manifest}
           onLoad={this.handleIntroLoaded}
         />
         <ProjectImages
-          images={data.images}
+          images={this.state.data.images}
           project={this.state.project}
           onLoad={this.handleImagesLoaded}
         />
@@ -97,7 +125,7 @@ class Project extends Component {
           <Masonry
             minWidth={400}
             margin={16}>
-            {relatedProjects}
+            {this.state.relatedProjects}
           </Masonry>
         </div>
       </div>

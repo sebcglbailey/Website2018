@@ -28,10 +28,27 @@ class Masonry extends Component {
 
   componentDidMount() {
     this.addContent()
+    this.windowResize()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loaded == true && this.props.loaded == false) {
+      this.renderColumns()
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (nextProps.children !== this.props.children) {
+      this.setState({ originalContent: nextProps.children, content: 0 })
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.addContent()
+    if (prevProps.children == this.props.children) {
+      this.addContent()
+    } else {
+      this.renderColumns()
+    }
   }
 
   windowResize() {

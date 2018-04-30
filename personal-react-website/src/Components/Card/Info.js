@@ -9,16 +9,28 @@ class Info extends Component {
     this.state = {
       hasCover: this.props.hasCover
     }
+
+    this.setClass = this.setClass.bind(this)
+
   }
 
-  componentWillReceiveProps(nextState) {
-    if (this.state.hasCover !== nextState.hasCover) {
-      this.setState({ hasCover: nextState.hasCover })
+  componentWillMount() {
+    this.setClass()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.hasCover !== nextProps.hasCover) {
+      this.setState({ hasCover: nextProps.hasCover })
     }
   }
 
-  render() {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.hasCover !== this.state.hasCover) {
+      this.setClass()
+    }
+  }
 
+  setClass() {
     let classes = {}
     if (this.state.hasCover) {
       classes = {
@@ -31,11 +43,17 @@ class Info extends Component {
         info: styles.info
       }
     }
-    let {container, info} = classes
+    this.setState({
+      containerClass: classes.container,
+      infoClass: classes.info
+    })
+  }
+
+  render() {
 
     return(
-      <div className={container}>
-        <div className={info}>
+      <div className={this.state.containerClass}>
+        <div className={this.state.infoClass}>
           { this.props.header ? (
               <h3>{this.props.header}</h3>
             ) : null

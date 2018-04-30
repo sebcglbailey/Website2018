@@ -40,21 +40,6 @@ class ProjectCard extends Component {
   }
 
 	render() {
-    /*
-      Setting the classes for handling image loading on the card
-    */
-    let infoClasses = {};
-    if (this.state.coverLoaded) {
-      infoClasses = {
-        container: `${styles.infoContainer} ${styles.loaded}`,
-        info: `${styles.info} ${styles.loaded}`
-      }
-    } else {
-      infoClasses = {
-        container: styles.infoContainer,
-        info: styles.info
-      }
-    }
 
 		return(
       <Card link={this.state.link} id={this.props.id}>

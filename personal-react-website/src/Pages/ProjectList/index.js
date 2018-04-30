@@ -36,13 +36,13 @@ class ProjectList extends Component {
   }
 
   handleImageLoad() {
+    this.loaded += 1
     if (this.loaded == this.projects.length - 1) {
       this.setState({ masonryContentsLoaded: true })
       if (this.props.onLoad) {
         this.props.onLoad()
       }
     }
-    this.loaded += 1
   }
 
   loadMore() {
@@ -90,6 +90,7 @@ class ProjectList extends Component {
         <Masonry
           minWidth={400}
           margin={16}
+          loaded={this.state.masonryContentsLoaded}
         >
           {this.projects}
         </Masonry>

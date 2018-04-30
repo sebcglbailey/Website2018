@@ -20,7 +20,6 @@ class Column extends Component {
   render() {
     return(
       <div style={this.props.style}>
-      column
         {this.state.children}
       </div>
     )

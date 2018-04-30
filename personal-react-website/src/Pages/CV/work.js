@@ -43,13 +43,13 @@ const work = [
       "Managing one other graphic designer"
     ]
   },
-  // {
-  //   id: "fosters",
-  //   title: "Foster + Partners",
-  //   link: "http://www.fosterandpartners.com",
-  //   role: "Work experience, Architectural Assistant",
-  //   dates: "2008, 2009"
-  // }
+  {
+    id: "fosters",
+    title: "Foster + Partners",
+    link: "http://www.fosterandpartners.com",
+    role: "Work experience, Architectural Assistant",
+    dates: "2008, 2009"
+  }
 ]
 
 export default work
