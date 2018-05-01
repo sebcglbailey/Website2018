@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import ScrollToTop from './ScrollToTop/ScrollToTop';
-
 import './App.css';
 import styles from './App.css';
 
-import Header from './Header/Header';
-import Projects from '../Pages/Projects';
-import Work from '../Pages/Work';
-import About from '../Pages/About';
-import Blog from '../Pages/Blog';
-import Contact from '../Pages/Contact';
+import ScrollToTop from './ScrollToTop/';
 
-import SplashLogo from './SplashLogo/SplashLogo';
+import Header from './Header/';
+import ProjectList from '../Pages/ProjectList/';
+import Project from '../Pages/Project/';
+import CV from '../Pages/CV/';
+import About from '../Pages/About/';
+import Blog from '../Pages/Blog/';
+import Contact from '../Pages/Contact/';
+
+// TODO: rename all pages and components jsx files to index.js
+
+import projects from '../Projects/js/projects';
+
+import SplashLogo from './SplashLogo/';
 
 class App extends Component {
   constructor(props) {
@@ -23,29 +28,64 @@ class App extends Component {
       projectsLoaded: false
     }
 
-    this.handleProjectsLoaded = this.handleProjectsLoaded.bind(this)
+    this.handlePageLoad = this.handlePageLoad.bind(this)
   }
 
-  handleProjectsLoaded() {
-    this.setState({ projectsLoaded: true })
+  /*
+    Function to handle the images loaded on the page.
+  */
+  handlePageLoad() {
+    // this.setState({ projectsLoaded: true })
   }
 
   render() {
     return (
       <Router>
         <div>
+
           <ScrollToTop>
             <div className="container">
+
               <Header />
+
               <div className={styles.view}>
-                <Route exact path="/" render={() => <Projects
-                  onLoad={this.handleProjectsLoaded} />} />
-                <Route path="/projects" render={() => <Projects
-                  onLoad={this.handleProjectsLoaded} />} />
-                <Route path="/work" component={Work} />
-                <Route path="/about" component={About} />
-                <Route path="/blog" component={Blog} />
-                <Route path="/contact" component={Contact} />
+
+                <Route exact path="/"
+                  render={() => <ProjectList
+                    projects={projects}
+                    onLoad={this.handlePageLoad} />}
+                />
+                <Route exact path="/projects"
+                  render={() => <ProjectList
+                    projects={projects}
+                    onLoad={this.handlePageLoad} />}
+                />
+
+                <Route path="/projects/:id"
+                  render={({ match }) => <Project
+                    project={match.params.id}
+                    onLoad={this.handlePageLoad} />}
+                />
+
+                <Route path="/cv"
+                  render={() => <CV
+                    onLoad={this.handlePageLoad} />}
+                />
+
+                <Route path="/about"
+                  render={() => <About
+                    onLoad={this.handlePageLoad} />}
+                />
+
+                <Route path="/blog"
+                  render={() => <Blog
+                    onLoad={this.handlePageLoad} />}
+                />
+
+                <Route path="/contact"
+                  render={() => <Contact
+                    onLoad={this.handlePageLoad} />}
+                />
               </div>
             </div>
           </ScrollToTop>

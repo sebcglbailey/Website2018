@@ -1,0 +1,28 @@
+.container {
+  text-align: center;
+  padding: 1.5rem 0;
+  max-width: 45rem;
+  margin: 0 auto; }
+  .container > div {
+    margin-bottom: 3rem; }
+  .container > div:last-child {
+    margin: 0; }
+  .container h2 {
+    text-transform: uppercase;
+    margin: 2.5rem 0; }
+  .container h3 {
+    margin: 2rem 0; }
+
+.experienceCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .experienceCards > div {
+    margin: 0.5rem;
+    flex: 1 1 20rem;
+    max-width: 50%; }
+
+.infoSpan {
+  margin-bottom: 0.75rem; }
+  .infoSpan:first-of-type {
+    margin-top: 1rem; }

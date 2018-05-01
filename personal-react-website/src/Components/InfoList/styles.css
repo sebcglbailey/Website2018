@@ -1,0 +1,92 @@
+.typeList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0; }
+  .typeList .type {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.85);
+    margin: 0.25rem 0.5rem;
+    min-width: 3.6rem;
+    min-height: 3.6rem;
+    width: auto;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .typeList .type:active {
+      background-color: rgba(64, 64, 64, 0.85); }
+  .typeList .ux {
+    border-color: #3EDB6A;
+    color: #3EDB6A; }
+    .typeList .ux:active {
+      background-color: #a9efbd; }
+  .typeList .ui {
+    border-color: #CF70E5;
+    color: #CF70E5; }
+    .typeList .ui:active {
+      background-color: #f3dcf9; }
+  .typeList .pr {
+    border-color: #24E2BE;
+    color: #24E2BE; }
+    .typeList .pr:active {
+      background-color: #95f1df; }
+  .typeList .wd {
+    border-color: #F8863C;
+    color: #F8863C; }
+    .typeList .wd:active {
+      background-color: #fcd2b7; }
+  .typeList .ph {
+    border-color: gray;
+    color: gray; }
+    .typeList .ph:active {
+      background-color: #bfbfbf; }
+  .typeList .ar {
+    border-color: #DE334E;
+    color: #DE334E; }
+    .typeList .ar:active {
+      background-color: #f0a1ad; }
+  .typeList .gd {
+    border-color: #5C89E3;
+    color: #5C89E3; }
+    .typeList .gd:active {
+      background-color: #c9d8f6; }
+  .typeList .ps {
+    border-color: #00ACC9;
+    color: #00ACC9; }
+    .typeList .ps:active {
+      background-color: #4ae5ff; }
+  .typeList .ai {
+    border-color: #F8863C;
+    color: #F8863C; }
+    .typeList .ai:active {
+      background-color: #fcd2b7; }
+  .typeList .id {
+    border-color: #FE80A8;
+    color: #FE80A8; }
+    .typeList .id:active {
+      background-color: white; }
+  .typeList .ae {
+    border-color: #B6AEEC;
+    color: #B6AEEC; }
+    .typeList .ae:active {
+      background-color: white; }
+  .typeList .xd {
+    border-color: #FF43C9;
+    color: #FF43C9; }
+    .typeList .xd:active {
+      background-color: #ffc3ee; }
+  .typeList .sk {
+    border-color: #f7c752;
+    color: #f7c752; }
+    .typeList .sk:active {
+      background-color: #fdeecc; }
+  .typeList .fr {
+    border-color: #00aaff;
+    color: #00aaff; }
+    .typeList .fr:active {
+      background-color: #80d5ff; }

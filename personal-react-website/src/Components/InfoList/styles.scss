@@ -1,0 +1,126 @@
+@import 'Styles/colors.scss';
+
+
+.typeList {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 0;
+	.type {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		padding: 1rem;
+		border: 0.1rem solid $black;
+		margin: 0.25rem 0.5rem;
+		min-width: 3.6rem;
+		min-height: 3.6rem;
+		width: auto;
+		cursor: pointer;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:active {
+			background-color: lighten($black, 25%);
+		}
+	}
+	.ux {
+		border-color: $ux;
+		color: $ux;
+		&:active {
+			background-color: lighten($ux, 25%)
+		}
+	}
+	.ui {
+		border-color: $ui;
+		color: $ui;
+		&:active {
+			background-color: lighten($ui, 25%)
+		}
+	}
+	.pr {
+		border-color: $pr;
+		color: $pr;
+		&:active {
+			background-color: lighten($pr, 25%)
+		}
+	}
+	.wd {
+		border-color: $wd;
+		color: $wd;
+		&:active {
+			background-color: lighten($wd, 25%)
+		}
+	}
+	.ph {
+		border-color: $ph;
+		color: $ph;
+		&:active {
+			background-color: lighten($ph, 25%)
+		}
+	}
+	.ar {
+		border-color: $ar;
+		color: $ar;
+		&:active {
+			background-color: lighten($ar, 25%)
+		}
+	}
+	.gd {
+		border-color: $gd;
+		color: $gd;
+		&:active {
+			background-color: lighten($gd, 25%)
+		}
+	}
+	.ps {
+		border-color: $ps;
+		color: $ps;
+		&:active {
+			background-color: lighten($ps, 25%)
+		}
+	}
+	.ai {
+		border-color: $ai;
+		color: $ai;
+		&:active {
+			background-color: lighten($ai, 25%)
+		}
+	}
+	.id {
+		border-color: $id;
+		color: $id;
+		&:active {
+			background-color: lighten($id, 25%)
+		}
+	}
+	.ae {
+		border-color: $ae;
+		color: $ae;
+		&:active {
+			background-color: lighten($ae, 25%)
+		}
+	}
+	.xd {
+		border-color: $xd;
+		color: $xd;
+		&:active {
+			background-color: lighten($xd, 25%)
+		}
+	}
+	.sk {
+		border-color: $sk;
+		color: $sk;
+		&:active {
+			background-color: lighten($sk, 25%)
+		}
+	}
+	.fr {
+		border-color: $fr;
+		color: $fr;
+		&:active {
+			background-color: lighten($fr, 25%)
+		}
+	}
+}
