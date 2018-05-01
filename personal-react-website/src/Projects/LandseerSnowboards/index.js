@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 
 import ProjectIntro from '../../Components/ProjectIntro/';
+import ProjectImages from '../../Components/ProjectImages';
 
 import styles from './styles.css';
-
-import manifest from './manifest';
-
-import cover from './cover.jpg';
 
 class LandseerSnowboards extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      manifest: require(`./manifest`),
+      data: require(`./data.json`)
+    }
   }
 
   render() {
     return(
-      <div>
-        <ProjectIntro
-          cover={cover}
-          manifest={manifest}
-        />
-      </div>
+      <ProjectImages
+        images={this.state.data.images}
+        project="LandseerSnowboards"
+      />
     )
   }
 }

@@ -19,9 +19,6 @@ class Project extends Component {
       imagesLoaded: false
     }
 
-    // let project = require(`../../Projects/${this.state.project}/index.js`)
-    // project = project.default
-
     this.handleCardsLoaded = this.handleCardsLoaded.bind(this)
     this.handleIntroLoaded = this.handleIntroLoaded.bind(this)
     this.handleImagesLoaded = this.handleImagesLoaded.bind(this)
@@ -29,24 +26,29 @@ class Project extends Component {
   }
 
   componentWillMount() {
+    let project = require(`../../Projects/${this.state.project}/index.js`)
     let data = this.getProjectData()
     this.setState({
       data: data.data,
       cover: data.cover,
       manifest: data.manifest,
-      relatedProjects: data.relatedProjects
+      relatedProjects: data.relatedProjects,
+      projectPage: project.default
     })
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.project !== this.state.project) {
+      let project = require(`../../Projects/${nextProps.project}/index.js`)
+
       let data = this.getProjectData(nextProps.project)
       this.setState({
         project: nextProps.project,
         data: data.data,
         cover: data.cover,
         manifest: data.manifest,
-        relatedProjects: data.relatedProjects
+        relatedProjects: data.relatedProjects,
+        projectPage: project.default
       })
     }
   }
@@ -108,7 +110,7 @@ class Project extends Component {
   }
 
   render() {
-
+    let ProjectPage = this.state.projectPage
     return (
       <div>
         <ProjectIntro
@@ -116,11 +118,7 @@ class Project extends Component {
           manifest={this.state.manifest}
           onLoad={this.handleIntroLoaded}
         />
-        <ProjectImages
-          images={this.state.data.images}
-          project={this.state.project}
-          onLoad={this.handleImagesLoaded}
-        />
+        <ProjectPage />
         <div className={styles.related}>
           <Masonry
             minWidth={400}

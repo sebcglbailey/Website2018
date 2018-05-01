@@ -7,9 +7,7 @@ import styles from './styles.css';
 
 import manifest from './manifest';
 
-import cover from './cover.jpg';
-
-const data = require('./data.json');
+import data from './data.json';
 
 class BreakPoint extends Component {
   constructor(props) {
@@ -18,13 +16,10 @@ class BreakPoint extends Component {
 
   render() {
     return(
-      <div>
-        <ProjectIntro
-          cover={cover}
-          manifest={manifest}
-        />
-        <ProjectImages />
-      </div>
+      <ProjectImages
+        images={data.images}
+        project="BreakPoint"
+      />
     )
   }
 }

@@ -15,9 +15,9 @@ class ProjectImages extends Component {
 		this.handleImageLoaded = this.handleImageLoaded.bind(this)
 	}
 
-	componentWillReceiveProps(nextState) {
-		if (nextState.images !== this.state.images) {
-			this.setState({ images: nextState.images })
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.images !== this.props.images) {
+			this.setState({ images: nextProps.images })
 		}
 	}
 
