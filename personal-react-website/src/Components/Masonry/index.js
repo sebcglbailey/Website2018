@@ -29,7 +29,7 @@ class Masonry extends Component {
 
   componentDidMount() {
     this.addContent()
-    this.windowResize()
+    this.renderColumns()
   }
 
   componentWillReceiveProps(nextProps) {
