@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import Card, {Cover, Info} from '../Card/';
+import Content from '../Content/';
 
 import styles from './styles.css';
 
@@ -50,9 +51,7 @@ class ProjectCard extends Component {
             ) : null
           }
           <Info hasCover={this.state.coverLoaded} header={this.state.manifest.title}>
-            <p
-                ref={(elem) => {this.desc = elem}}
-                dangerouslySetInnerHTML={{__html: this.state.manifest.description[0]}}></p>
+            <Content content={this.state.manifest.description[0]} />
           </Info>
         </div>
       </Card>

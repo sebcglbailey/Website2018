@@ -16,38 +16,7 @@ class Header extends Component{
     }
 
     this.navItems = []
-
-    // this.setActiveStyle = this.setActiveStyle.bind(this)
   }
-
-  // componentWillMount() {
-  //   window.addEventListener("resize", () => {
-  //     let rect = this.nav.getBoundingClientRect()
-  //     this.setState({navLocation: rect.x})
-  //   })
-  // }
-
-  // componentDidMount() {
-  //   for (let i = 0; i < this.nav.children.length; i++) {
-  //     let navItem = this.nav.children[i];
-  //     navItem.addEventListener("mouseover", () => {
-  //       this.setActiveStyle(navItem)
-  //     })
-  //   }
-
-  //   let rect = this.nav.getBoundingClientRect()
-  //   this.setState({navLocation: rect.x})
-  // }
-
-  // setActiveStyle(navItem) {
-  //   let rect = navItem.getBoundingClientRect()
-  //   this.setState({
-  //     activeLinkStyle: {
-  //       width: rect.width,
-  //       left: rect.x - this.state.navLocation
-  //     }
-  //   })
-  // }
 
   render() {
     return (
@@ -69,11 +38,11 @@ class Header extends Component{
             <NavLink exact activeClassName={styles.active} to="/">
               work
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/cv">
-              cv
+            <NavLink activeClassName={styles.active} to="/resume">
+              résumé
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/about">
-              about
+            <NavLink activeClassName={styles.active} to="/extras">
+              extras
             </NavLink>
             <NavLink activeClassName={styles.active} to="/blog">
               blog

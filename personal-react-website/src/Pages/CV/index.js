@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import InfoList from '../../Components/InfoList/';
 import Card, {Cover, Info} from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
+import Content from '../../Components/Content/';
 
 import styles from './styles.css';
 
 import fields from './fields';
 import skills from './skills';
 import work from './work';
+import intro from './intro';
 
 class Work extends Component {
   constructor(props) {
@@ -44,8 +46,7 @@ class Work extends Component {
           link={job.link}
           target="_blank">
             <Info header={job.title}>
-              <p>{job.role}</p>
-              <p>{job.dates}</p>
+              <Content content={[job.role, job.dates]} />
               {
                 job.info ? (
                   job.info.map((info, index) => {
@@ -82,10 +83,7 @@ class Work extends Component {
       <div className={styles.container}>
         <div className={styles.intro}>
           <h2>Introduction</h2>
-          <p>Clean lines, Structure, and a Solid Concept.<br/>
-          These are the fundamental rules that I base all of my designs upon.</p>
-          <p>I have always been passionate about art and design, and even from a young age I have been drawn to look at the world from an artistic point of view.</p>
-          <p>I believe that my work reflects my love of simplicity, whilst never ignoring the underlying concept and key principles.</p>
+          <Content content={intro} />
         </div>
         <div className={styles.fields}>
           <h2>Fields of design</h2>
