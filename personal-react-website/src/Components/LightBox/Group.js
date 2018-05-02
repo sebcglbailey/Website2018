@@ -12,10 +12,14 @@ class LightBoxGroup extends Component {
     }
 
     this.close = this.close.bind(this)
+    this.keyTap = this.keyTap.bind(this)
+    this.next = this.next.bind(this)
+    this.prev = this.prev.bind(this)
   }
 
   componentDidMount() {
     this.container.addEventListener("click", this.close)
+    window.addEventListener("keydown", this.keyTap)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -23,16 +27,57 @@ class LightBoxGroup extends Component {
       let content = nextProps.current.props.children
       this.setState({
         visible: true,
-        current: content
+        current: content,
+        currentLightbox: nextProps.current
       })
     }
   }
 
-  close(e) {
-    if (e.target !== this.container) {
+  close(event) {
+    if (event && event.target !== this.container) {
       return
     }
     this.setState({ visible: false, current: undefined })
+  }
+
+  keyTap(event) {
+    if (event.keyCode == 39) {
+      this.next()
+    } else if (event.keyCode == 37) {
+      this.prev()
+    } else if (event.keyCode == 27) {
+      this.close()
+    }
+  }
+
+  next() {
+    let index = this.state.currentLightbox.props.index
+
+    if (index < this.props.contents.length - 1) {
+      index += 1
+    } else {
+      index = 0
+    }
+    let next = this.props.contents[index].props.children
+    this.setState({
+      current: next,
+      currentLightbox: this.props.contents[index]
+    })
+  }
+
+  prev() {
+    let index = this.state.currentLightbox.props.index
+
+    if (index > 0) {
+      index -= 1
+    } else {
+      index = this.props.contents.length - 1
+    }
+    let prev = this.props.contents[index].props.children
+    this.setState({
+      current: prev,
+      currentLightbox: this.props.contents[index]
+    })
   }
 
   render() {

@@ -23,26 +23,36 @@ class China extends Component {
   }
 
   componentWillMount() {
-    let images = data.images.map((image, index) => {
+    let lightBoxContent = data.images.map((image, index) => {
       let src = require(`./img/${image}`)
+      return(
+        <LightBox
+          index={index}
+          onClick={this.handleLightBoxClick}
+        >
+          <img
+            src={src}
+            className={styles.photo}
+            onLoad={this.handleImageLoad}
+          />
+        </LightBox>
+      )
+    })
+    let images = lightBoxContent.map((lightbox, index) => {
       let id = `image-${index}`
       return(
         <Card key={id} id={id}>
-          <LightBox onClick={this.handleLightBoxClick}>
-            <img
-              src={src}
-              className={styles.photo}
-              onLoad={this.handleImageLoad}
-            />
-          </LightBox>
+          {lightbox}
         </Card>
       )
     })
-    this.setState({ images: images })
+    this.setState({ images: images, lightBoxContent: lightBoxContent })
   }
 
-  handleLightBoxClick(lightbox) {
-    this.setState({ currentLightBox: lightbox })
+  handleLightBoxClick(lightbox, index) {
+    this.setState({
+      currentLightBox: lightbox
+    })
   }
 
   handleImageLoad() {
@@ -55,7 +65,10 @@ class China extends Component {
   render() {
     return(
       <div>
-        <LightBoxGroup current={this.state.currentLightBox} contents={this.state.images} />
+        <LightBoxGroup
+          current={this.state.currentLightBox}
+          contents={this.state.lightBoxContent}
+        />
         <Masonry ref={(elem) => {this.masonry = elem}}>
           {this.state.images}
         </Masonry>

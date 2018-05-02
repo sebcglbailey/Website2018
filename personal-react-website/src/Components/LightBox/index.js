@@ -13,7 +13,7 @@ class LightBox extends Component {
 
   handleClick() {
     if (this.props.onClick) {
-      this.props.onClick(this)
+      this.props.onClick(this, this.props.index)
     }
   }
 

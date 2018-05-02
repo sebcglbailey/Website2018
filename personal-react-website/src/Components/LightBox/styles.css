@@ -22,7 +22,7 @@
 
 .lightbox {
   max-height: calc(95vh - 4rem);
-  max-width: 100%;
+  max-width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,6 @@
   box-sizing: content-box; }
   .lightbox img {
     max-height: calc(95vh - 4rem);
-    max-width: 100%;
+    max-width: 90vw;
     width: auto;
     height: auto; }
