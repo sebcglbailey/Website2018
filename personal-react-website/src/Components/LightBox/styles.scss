@@ -1,0 +1,43 @@
+@import 'Styles/colors.scss';
+
+.link {
+  cursor: pointer;
+  padding: 0;
+  > * {
+    display: block;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.lightbox {
+  max-height: calc(95vh - 4rem);
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.25rem solid $white;
+  box-sizing: content-box;
+  img {
+    max-height: calc(95vh - 4rem);
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+}

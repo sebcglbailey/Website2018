@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ProjectIntro from '../../Components/ProjectIntro/';
 import Masonry from '../../Components/Masonry/';
 import Card from '../../Components/Card/';
+import LightBox, { LightBoxGroup } from '../../Components/LightBox';
 
 import styles from './styles.css';
 
@@ -18,22 +19,30 @@ class China extends Component {
     this.loaded = 0
 
     this.handleImageLoad = this.handleImageLoad.bind(this)
+    this.handleLightBoxClick = this.handleLightBoxClick.bind(this)
   }
 
   componentWillMount() {
     let images = data.images.map((image, index) => {
       let src = require(`./img/${image}`)
+      let id = `image-${index}`
       return(
-        <Card key={`image-${index}`}>
-          <img
-            src={src}
-            className={styles.photo}
-            onLoad={this.handleImageLoad}
-          />
+        <Card key={id} id={id}>
+          <LightBox onClick={this.handleLightBoxClick}>
+            <img
+              src={src}
+              className={styles.photo}
+              onLoad={this.handleImageLoad}
+            />
+          </LightBox>
         </Card>
       )
     })
     this.setState({ images: images })
+  }
+
+  handleLightBoxClick(lightbox) {
+    this.setState({ currentLightBox: lightbox })
   }
 
   handleImageLoad() {
@@ -45,9 +54,12 @@ class China extends Component {
 
   render() {
     return(
-      <Masonry ref={(elem) => {this.masonry = elem}}>
-        {this.state.images}
-      </Masonry>
+      <div>
+        <LightBoxGroup current={this.state.currentLightBox} contents={this.state.images} />
+        <Masonry ref={(elem) => {this.masonry = elem}}>
+          {this.state.images}
+        </Masonry>
+      </div>
     )
   }
 }
