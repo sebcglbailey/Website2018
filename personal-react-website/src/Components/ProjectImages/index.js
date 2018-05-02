@@ -38,7 +38,7 @@ class ProjectImages extends Component {
 	}
 
 	render() {
-		let images = this.getImages()
+		let images = this.props.images ? this.getImages() : this.props.content ? this.props.content : null
 		return(
 			<div className={styles.container}>
 				<div className={styles.images}>

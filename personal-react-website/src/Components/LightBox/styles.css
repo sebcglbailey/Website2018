@@ -27,7 +27,8 @@
   align-items: center;
   justify-content: center;
   border: 0.25rem solid #fff;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  background: #000; }
   .lightbox img {
     max-height: calc(95vh - 4rem);
     max-width: 90vw;
