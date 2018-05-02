@@ -39,6 +39,7 @@ class ProjectList extends Component {
     this.loaded += 1
     if (this.loaded == this.projects.length - 1) {
       this.setState({ masonryContentsLoaded: true })
+      this.masonry.renderColumns()
       if (this.props.onLoad) {
         this.props.onLoad()
       }
@@ -88,6 +89,7 @@ class ProjectList extends Component {
     return (
       <div className={styles.container}>
         <Masonry
+          ref={(elem) => {this.masonry = elem}}
           minWidth={400}
           margin={16}
           loaded={this.state.masonryContentsLoaded}

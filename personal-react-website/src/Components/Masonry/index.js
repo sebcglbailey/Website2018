@@ -47,7 +47,7 @@ class Masonry extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.children == this.props.children) {
       this.addContent()
-    } else if (prevProps.children.length == this.props.children.length) {
+    } else if (prevProps.children.length == this.props.children.length && prevProps.children !== this.props.children) {
       this.renderColumns()
     } else {
       this.addContent()
@@ -80,7 +80,12 @@ class Masonry extends Component {
     return smallestIndex
   }
 
-  reorderContent(children) {
+  reorderContent() {
+    // this.state.columnContents.map((column) => {
+    //   column.map((child) => {
+    //     console.log(document.getElementById(child.key))
+    //   })
+    // })
     // children.map((child, i) => {
     //   let index = children.indexOf(child)%noOfColumns
     //   content[index].push(child)
