@@ -1,4 +1,12 @@
-const work = [
+import React from 'react';
+
+import Content from '../../Components/Content/';
+import Card, {Cover, Info} from '../../Components/Card/';
+import Masonry from '../../Components/Masonry/';
+
+import styles from './styles.css';
+
+const info = [
   {
     id: "clearscore",
     title: "ClearScore Ltd.",
@@ -52,4 +60,48 @@ const work = [
   }
 ]
 
-export default work
+const Work = () => {
+  let cards = info.map((job, index) => {
+    return(
+      <Card key={job.id}
+        id={job.id}
+        link={job.link}
+        target="_blank"
+      >
+        <Info header={job.title}>
+          <Content content={[job.role, job.dates]} />
+          {
+            job.info ? job.info.map((info, index) => {
+              return (
+                <span
+                  className={styles.infoSpan}
+                  key={index}
+                  dangerouslySetInnerHTML={{__html: info}}
+                >
+                </span>
+              )
+            }) : null
+          }
+        </Info>
+      </Card>
+    )
+  })
+  return(
+    <div className={styles.experience}>
+      <h2>Experience</h2>
+      {
+        info.length%2 == 0 ? (
+          <Masonry minWidth={400} margin={16}>
+            {cards}
+          </Masonry>
+        ) : (
+          <div className={styles.experienceCards}>
+            {cards}
+          </div>
+        )
+      }
+    </div>
+  )
+}
+
+export default Work

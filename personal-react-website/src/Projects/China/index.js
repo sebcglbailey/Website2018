@@ -64,7 +64,7 @@ class China extends Component {
 
   render() {
     return(
-      <div>
+      <div className={styles.container}>
         <LightBoxGroup
           current={this.state.currentLightBox}
           contents={this.state.lightBoxContent}

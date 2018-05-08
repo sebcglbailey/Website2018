@@ -12,7 +12,10 @@ import skills from './skills';
 import work from './work';
 import intro from './intro';
 
-class Work extends Component {
+import Education from './education';
+import Experience from './work';
+
+class Resume extends Component {
   constructor(props) {
     super(props)
 
@@ -23,11 +26,10 @@ class Work extends Component {
     }
 
     this.handlePageLoad = this.handlePageLoad.bind(this)
-    this.renderExperience = this.renderExperience.bind(this)
   }
 
   componentWillMount() {
-    document.title = "Work"
+    document.title = "Résumé"
     this.handlePageLoad()
   }
 
@@ -37,48 +39,7 @@ class Work extends Component {
     }
   }
 
-  renderExperience() {
-
-    let cards = this.state.work.map((job, index) => {
-      return(
-        <Card key={job.id}
-          id={job.id}
-          link={job.link}
-          target="_blank">
-            <Info header={job.title}>
-              <Content content={[job.role, job.dates]} />
-              {
-                job.info ? (
-                  job.info.map((info, index) => {
-                    return <span className={styles.infoSpan} key={index}>{info}</span>
-                  })
-                ): null
-              }
-            </Info>
-        </Card>
-      )
-    })
-
-    this.experience = (
-      <div className={styles.experience}>
-        <h2>Experience</h2>
-        {
-          this.state.work.length%2 == 0 ? (
-            <Masonry minWidth={400} margin={16}>
-              {cards}
-            </Masonry>
-          ) : (
-            <div className={styles.experienceCards}>
-              {cards}
-            </div>
-          )
-        }
-      </div>
-    )
-  }
-
   render() {
-    this.renderExperience()
     return (
       <div className={styles.container}>
         <div className={styles.intro}>
@@ -98,9 +59,8 @@ class Work extends Component {
           <h3>Development</h3>
           <InfoList types={this.state.skills.development} />
         </div>
-        <div className={styles.experience}>
-          {this.experience}
-        </div>
+        <Experience />
+        <Education />
       </div>
 
     )
@@ -108,4 +68,4 @@ class Work extends Component {
   
 }
 
-export default Work;
+export default Resume;
