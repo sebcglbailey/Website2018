@@ -83,8 +83,15 @@ class LightBoxGroup extends Component {
   render() {
     return (
       <div ref={(elem) => this.container = elem} className={this.state.visible ? styles.container : styles.hide}>
-        <div className={styles.lightbox}>
-          {this.state.current}
+        <div className={styles.interaction}>
+          <div className={styles.close}></div>
+          <div className={`${styles.arrow} ${styles.next}`}></div>
+          <div className={`${styles.arrow} ${styles.prev}`}></div>
+        </div>
+        <div className={styles.flexContainer}>
+          <div className={styles.lightbox}>
+            {this.state.current}
+          </div>
         </div>
       </div>
     )

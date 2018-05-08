@@ -15,10 +15,14 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.85);
+  padding-top: 4rem; }
+
+.flexContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem; }
+  height: 100%;
+  width: 100%; }
 
 .lightbox {
   max-height: calc(95vh - 4rem);
@@ -34,3 +38,33 @@
     max-width: 90vw;
     width: auto;
     height: auto; }
+
+.interaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 96vw;
+  position: absolute;
+  left: 2vw; }
+
+.close {
+  position: absolute; }
+
+.arrow {
+  width: 2.5vw;
+  height: 2.5vw;
+  position: relative; }
+  .arrow:before, .arrow:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #fff; }
+  .arrow:before {
+    transform: rotate(45deg) translateY(calc(-1.25vw + 2px)); }
+  .arrow:after {
+    transform: rotate(-45deg) translateY(calc(1.25vw - 2px)); }
+
+.prev {
+  transform: rotate(180deg); }
