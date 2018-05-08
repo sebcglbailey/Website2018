@@ -40,11 +40,22 @@
   border: 0.25rem solid $white;
   box-sizing: content-box;
   background: #000;
+  position: relative;
   img {
     max-height: calc(95vh - 4rem);
     max-width: 90vw;
     width: auto;
     height: auto;
+  }
+  &:hover .close {
+    &:after {
+      transform: rotate(-45deg);
+      opacity: 1;
+    }
+    &:before {
+      transform: rotate(45deg);
+      opacity: 1;
+    }
   }
 }
 
@@ -60,29 +71,60 @@
 
 .close {
   position: absolute;
-}
-
-.arrow {
-  width: 2.5vw;
-  height: 2.5vw;
-  position: relative;
+  top: 1vw;
+  right: 1vw;
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
   &:before, &:after {
     content: '';
     position: absolute;
-    height: 2px;
+    top: 50%;
+    height: 3px;
+    width: 100%;
+    background: $white;
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  &:before {
+    transform: rotate(-45deg);
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+}
+
+.arrow {
+  width: 2vw;
+  height: 2vw;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1.5px);
+    height: 3px;
     width: 100%;
     background: $white;
   }
   &:before {
-    transform: rotate(45deg) translateY(calc(-1.25vw + 2px));
+    transform-origin: 100% calc(50% + 2px);
+    transform: rotate(45deg);
   }
   &:after {
-    transform: rotate(-45deg) translateY(calc(1.25vw - 2px));
+    transform-origin: 100% calc(50% - 2px);
+    transform: rotate(-45deg);
   }
 }
 
-.next {
-
+.arrow:hover {
+  &.next {
+    transform: translateX(-0.5vw);
+  }
+  &.prev {
+    transform: rotate(180deg) translateX(-0.5vw)
+  }
 }
 
 .prev {
