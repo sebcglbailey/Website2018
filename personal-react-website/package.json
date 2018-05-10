@@ -10,6 +10,7 @@
     "build-js": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
+    "deploy-dev-new": "bash ./deploy-s3.sh",
     "deploy-dev": "npm run build && aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
     "n-proj": "node ./build-helpers/projects.js"
   },
