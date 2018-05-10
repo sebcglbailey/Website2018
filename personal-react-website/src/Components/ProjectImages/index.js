@@ -46,7 +46,6 @@ class ProjectImages extends Component {
 
 	getImages() {
 		let images = this.state.images.map((imgName, index) => {
-			let imgDir = `../../Projects/${this.props.project}/src`
 			
 			let images = [
 				{
