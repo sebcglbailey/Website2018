@@ -16,20 +16,17 @@ const readProjectDir = (project) => {
 	let imgDir = `${projectDir}${project}/img/`;
 
 	fs.readdir(imgDir, (err, list) => {
-		images = list
 		writeProjectObj(project, list)
 	})
 
 }
 
-let dir = fs.readdir(projectDir, (err, projects) => {
-
-	for (let i = 0; i < projects.length; i++) {
-		if (projects[i] === "js" || projects[i].includes(".")) {
+fs.readdir(projectDir, (err, folder) => {
+	for (let i = 0; i < folder.length; i++) {
+		if (folder[i] === "js" || folder[i].includes(".")) {
 			continue
 		} else {
-			readProjectDir(projects[i])
+			readProjectDir(folder[i])
 		}
 	}
-
 });

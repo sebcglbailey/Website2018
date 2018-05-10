@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import {sizes} from '../../Projects/js/imgSizes';
+
 import styles from './styles.css';
 
 class ProjectImages extends Component {
@@ -16,9 +18,22 @@ class ProjectImages extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.images !== this.props.images) {
-			this.setState({ images: nextProps.images })
+		if (nextProps.images && nextProps.images !== this.props.images) {
+			this.setState({
+				contentImages: this.getImages(),
+				images: nextProps.images
+			})
+		} else if (nextProps.content && nextProps.content !== this.props.content) {
+			this.setState({
+				contentImages: nextProps.content,
+				images: nextProps.images
+			})
 		}
+	}
+
+	componentWillMount() {
+		let images = this.props.images ? this.getImages() : this.props.content ? this.props.content : null
+		this.setState({ contentImages : images })
 	}
 
 	handleImageLoaded() {
@@ -31,18 +46,54 @@ class ProjectImages extends Component {
 
 	getImages() {
 		let images = this.state.images.map((imgName, index) => {
-			let imgSrc = require(`../../Projects/${this.props.project}/img/${imgName}`)
-			return <img onLoad={this.handleImageLoaded} key={`image-${index+1}`} src={imgSrc} />
+			let imgDir = `../../Projects/${this.props.project}/src`
+			
+			let images = [
+				{
+					image: require(`../../Projects/${this.props.project}/src/${imgName}/xl.${imgName.split(".")[1]}`),
+					size: sizes.xl
+				},
+				{
+					image: require(`../../Projects/${this.props.project}/src/${imgName}/lg.${imgName.split(".")[1]}`),
+					size: sizes.lg
+				},
+				{
+					image: require(`../../Projects/${this.props.project}/src/${imgName}/md.${imgName.split(".")[1]}`),
+					size: sizes.md
+				},
+				{
+					image: require(`../../Projects/${this.props.project}/src/${imgName}/sm.${imgName.split(".")[1]}`),
+					size: sizes.sm
+				},
+				{
+					image: require(`../../Projects/${this.props.project}/src/${imgName}/xs.${imgName.split(".")[1]}`),
+					size: sizes.xs
+				},
+			]
+
+			let srcSetArr = images.map((obj) => {
+				return `${obj.image} ${obj.size}w, `
+			})
+			let srcSet = srcSetArr.join()
+			let imgSrc = images[4].image
+
+			return (
+				<img
+					onLoad={this.handleImageLoaded}
+					key={`image-${index+1}`}
+					src={imgSrc}
+					srcSet={srcSet}
+				/>
+			)
 		})
 		return images
 	}
 
 	render() {
-		let images = this.props.images ? this.getImages() : this.props.content ? this.props.content : null
 		return(
 			<div className={styles.container}>
 				<div className={styles.images}>
-					{images}
+					{this.state.contentImages}
 				</div>
 			</div>
 		)
