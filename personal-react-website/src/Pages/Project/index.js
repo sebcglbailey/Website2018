@@ -53,11 +53,9 @@ class Project extends Component {
     let thisProject = project ? project : this.state.project
 
     let data = require(`../../Projects/${thisProject}/data.json`);
-    // let cover = require(`../../Projects/${thisProject}/cover.jpg`);
 
     let relatedProjects = data.related.map((project, index) => {
       let link = `/projects/${project}`;
-      // let cover = require(`../../Projects/${project}/cover.jpg`);
       let data = require(`../../Projects/${project}/data.json`);
       let key = `card-${index+1}`
       return(
