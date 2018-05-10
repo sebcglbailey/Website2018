@@ -30,8 +30,6 @@ class Project extends Component {
     let data = this.getProjectData()
     this.setState({
       data: data.data,
-      cover: data.cover,
-      manifest: data.manifest,
       relatedProjects: data.relatedProjects,
       projectPage: project.default
     })
@@ -45,8 +43,6 @@ class Project extends Component {
       this.setState({
         project: nextProps.project,
         data: data.data,
-        cover: data.cover,
-        manifest: data.manifest,
         relatedProjects: data.relatedProjects,
         projectPage: project.default
       })
@@ -57,13 +53,12 @@ class Project extends Component {
     let thisProject = project ? project : this.state.project
 
     let data = require(`../../Projects/${thisProject}/data.json`);
-    let manifest = require(`../../Projects/${thisProject}/manifest.js`);
-    let cover = require(`../../Projects/${thisProject}/cover.jpg`);
+    // let cover = require(`../../Projects/${thisProject}/cover.jpg`);
 
-    let relatedProjects = manifest.related.map((project, index) => {
+    let relatedProjects = data.related.map((project, index) => {
       let link = `/projects/${project}`;
-      let cover = require(`../../Projects/${project}/cover.jpg`);
-      let manifest = require(`../../Projects/${project}/manifest.js`);
+      // let cover = require(`../../Projects/${project}/cover.jpg`);
+      let data = require(`../../Projects/${project}/data.json`);
       let key = `card-${index+1}`
       return(
         <ProjectCard
@@ -71,16 +66,13 @@ class Project extends Component {
           key={key}
           project={project}
           link={link}
-          cover={cover}
-          manifest={manifest}
+          data={data}
         />
       )
     })
 
     return {
       data: data,
-      manifest: manifest,
-      cover: cover,
       relatedProjects: relatedProjects
     }
   }
@@ -114,8 +106,8 @@ class Project extends Component {
     return (
       <div>
         <ProjectIntro
-          cover={this.state.cover}
-          manifest={this.state.manifest}
+          project={this.state.project}
+          data={this.state.data}
           onLoad={this.handleIntroLoaded}
         />
         <ProjectPage />

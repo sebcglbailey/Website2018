@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 
+const {sizes} = require('../../helpers/imgSizes')
+
 import ProjectIntro from '../../Components/ProjectIntro/';
 import Masonry from '../../Components/Masonry/';
 import Card from '../../Components/Card/';
 import LightBox, { LightBoxGroup } from '../../Components/LightBox';
+import Image from '../../Components/Image/';
 
 import styles from './styles.css';
 
 import manifest from './manifest';
 import data from './data.json';
-
-import cover from './cover.jpg';
 
 class China extends Component {
   constructor(props) {
@@ -24,16 +25,20 @@ class China extends Component {
 
   componentWillMount() {
     let lightBoxContent = data.images.map((image, index) => {
-      let src = require(`./img/${image}`)
       return(
         <LightBox
           index={index}
           onClick={this.handleLightBoxClick}
         >
-          <img
-            src={src}
+          <Image
             className={styles.photo}
             onLoad={this.handleImageLoad}
+            name={image}
+            path={`Projects/China/src/${image}/`}
+            sizes={`
+              (min-width: 1233px) ${sizes.md}px,
+              (min-width: 833px) ${sizes.sm}px,
+              ${sizes.xs}px`}
           />
         </LightBox>
       )

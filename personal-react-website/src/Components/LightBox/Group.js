@@ -25,6 +25,10 @@ class LightBoxGroup extends Component {
     this.closeButton.addEventListener("click", this.close)
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.keyTap)
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.current !== this.state.current) {
       let content = nextProps.current.props.children

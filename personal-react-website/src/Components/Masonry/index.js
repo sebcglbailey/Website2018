@@ -56,7 +56,6 @@ class Masonry extends Component {
 
   windowResize() {
     let {noOfColumns} = this.getColumnStyle()
-    console.log(noOfColumns)
     if (this.noOfColumns !== noOfColumns) {
       this.renderColumns()
     }

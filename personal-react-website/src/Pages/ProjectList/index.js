@@ -61,9 +61,8 @@ class ProjectList extends Component {
     })
 
     this.projects = this.projects.map((project, index) => {
-      let manifest = require(`../../Projects/${project}/manifest.js`);
+      let data = require(`../../Projects/${project}/data.json`);
       let link = `/projects/${project}`;
-      let cover = require(`../../Projects/${project}/cover.jpg`);
       let key = `card-${index+1}`
       return (
         <ProjectCard
@@ -71,9 +70,8 @@ class ProjectList extends Component {
           id={key}
           project={project}
           link={link}
-          cover={cover}
-          manifest={manifest}
           onLoad={this.handleImageLoad}
+          data={data}
         />
       )
     })

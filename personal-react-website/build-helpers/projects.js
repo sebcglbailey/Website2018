@@ -1,7 +1,7 @@
 const fs = require('fs');
 const sharp = require('sharp');
 
-let {sizes} = require('../src/Projects/js/imgSizes');
+let {sizes} = require('../src/helpers/imgSizes');
 
 let projectsDir = 'src/Projects';
 
@@ -66,7 +66,10 @@ const createImage = (projectDir, imgName) => {
 const writeProjectObj = (project, images) => {
   let obj = require(`../src/Projects/${project}/manifest.js`);
   obj.project = project
-  obj.images = images
+
+  let coverIndex = images.indexOf('cover.jpg')
+  obj.images = images.slice(0, images.length-1)
+  
   let filePath = `${projectsDir}/${project}/data.json`
   fs.writeFileSync(filePath, JSON.stringify(obj), 'utf-8')
 }
@@ -88,7 +91,7 @@ const readProjectDir = (project) => {
       
       list.map((imgName) => {
         createImgFolder(project, imgName)
-        createImage(projectDir, imgName)
+        // createImage(projectDir, imgName)
       })
     })
   })

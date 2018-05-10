@@ -10,7 +10,7 @@ class ProjectIntro extends Component {
     super(props)
 
     this.state = {
-      manifest: this.props.manifest
+      data: this.props.data
     }
 
     this.handleCoverImageLoad = this.handleCoverImageLoad.bind(this)
@@ -18,18 +18,21 @@ class ProjectIntro extends Component {
 
   componentWillMount() {
     this.setState({
-      types: this.state.manifest && this.state.manifest.types ? this.state.manifest.types : null,
-      title: this.state.manifest && this.state.manifest.title ? this.state.manifest.title : null,
-      description: this.state.manifest && this.state.manifest.description ? this.state.manifest.description : null
+      types: this.state.data && this.state.data.types ? this.state.data.types : null,
+      title: this.state.data && this.state.data.title ? this.state.data.title : null,
+      description: this.state.data && this.state.data.description ? this.state.data.description : null,
+      project: this.state.data && this.state.data.project ? this.state.data.project : null
     })
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.manifest && this.props.manifest !== nextProps.manifest) {
+    if (nextProps.project !== this.props.project) {
       this.setState({
-        types: nextProps.manifest.types,
-        title: nextProps.manifest.title,
-        description: nextProps.manifest.description
+        types: nextProps.data.types,
+        title: nextProps.data.title,
+        description: nextProps.data.description,
+        project: nextProps.data.project,
+        data: nextProps.data
       })
     }
   }
@@ -54,10 +57,13 @@ class ProjectIntro extends Component {
 
     return(
       <div className={styles.flexContainer}>
-        <CoverImage onLoad={this.handleCoverImageLoad} image={this.props.cover} />
+        <CoverImage
+          onLoad={this.handleCoverImageLoad}
+          project={this.state.project}
+        />
         <div className={styles.container}>
-          <InfoList types={this.state.manifest.types} />
-          <h1 className={styles.title}>{this.state.manifest.title}</h1>
+          <InfoList types={this.state.types} />
+          <h1 className={styles.title}>{this.state.title}</h1>
           {description}
         </div>
       </div>

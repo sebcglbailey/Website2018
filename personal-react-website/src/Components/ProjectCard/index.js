@@ -12,9 +12,8 @@ class ProjectCard extends Component {
 
     this.state = {
       link: this.props.link,
-      cover: this.props.cover ? this.props.cover : null,
       project: this.props.project,
-      manifest: this.props.manifest,
+      data: this.props.data,
       coverLoaded: false
     }
 
@@ -25,9 +24,8 @@ class ProjectCard extends Component {
     if (nextState.project !== this.state.project) {
       this.setState({
         link: nextState.link,
-        cover: nextState.cover ? nextState.cover : null,
         project: nextState.project,
-        manifest: nextState.manifest
+        data: nextState.data
       })
     }
   }
@@ -45,13 +43,9 @@ class ProjectCard extends Component {
 		return(
       <Card link={this.state.link} id={this.props.id}>
         <div className={styles.cardContent}>
-          {
-            this.state.cover ? (
-              <Cover image={this.state.cover} onLoad={this.handleImageLoad} />
-            ) : null
-          }
-          <Info hasCover={this.state.coverLoaded} header={this.state.manifest.title}>
-            <Content content={this.state.manifest.description[0]} />
+          <Cover project={this.state.project} onLoad={this.handleImageLoad} />
+          <Info hasCover={this.state.coverLoaded} header={this.state.data.title}>
+            <Content content={this.state.data.description[0]} />
           </Info>
         </div>
       </Card>
