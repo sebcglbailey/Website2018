@@ -14,8 +14,6 @@ class Cover extends Component {
     }
 
     this.handleImageLoad = this.handleImageLoad.bind(this)
-
-    this.sizes = "(min-width: 2436px) 16vw, (min-width: 2036px) 20vw, (min-width: 1636px) 25vw, (min-width: 1236px) 33vw, (min-width: 836px) 50vw, 33vw"
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,7 +35,7 @@ class Cover extends Component {
           name="cover.jpg"
           path={`Projects/${this.state.project}/src/cover.jpg/`}
           onLoad={this.handleImageLoad}
-          sizes={this.sizes}
+          sizes={this.props.sizes}
         />
       </div>
     )

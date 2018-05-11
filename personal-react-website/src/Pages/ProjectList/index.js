@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import { masonrySizes } from '../../helpers/breakpoints';
+
 import Masonry from '../../Components/Masonry/';
 import LoadButton from '../../Components/LoadButton/';
 import ProjectCard from '../../Components/ProjectCard/';
@@ -72,6 +74,7 @@ class ProjectList extends Component {
           link={link}
           onLoad={this.handleImageLoad}
           data={data}
+          sizes={masonrySizes}
         />
       )
     })

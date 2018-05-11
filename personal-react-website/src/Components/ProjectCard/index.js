@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import { masonrySizes } from '../../helpers/breakpoints';
+
 import Card, {Cover, Info} from '../Card/';
 import Content from '../Content/';
 
@@ -43,7 +45,7 @@ class ProjectCard extends Component {
 		return(
       <Card link={this.state.link} id={this.props.id}>
         <div className={styles.cardContent}>
-          <Cover project={this.state.project} onLoad={this.handleImageLoad} />
+          <Cover sizes={this.props.sizes} project={this.state.project} onLoad={this.handleImageLoad} />
           <Info hasCover={this.state.coverLoaded} header={this.state.data.title}>
             <Content content={this.state.data.description[0]} />
           </Info>

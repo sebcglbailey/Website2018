@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const {sizes} = require('../../helpers/imgSizes')
+import { masonrySizes } from '../../helpers/breakpoints'
 
 import ProjectIntro from '../../Components/ProjectIntro/';
 import Masonry from '../../Components/Masonry/';
@@ -24,7 +24,7 @@ class China extends Component {
   }
 
   componentWillMount() {
-    let lightBoxContent = data.images.map((image, index) => {
+    let content = data.images.map((image, index) => {
       return(
         <LightBox
           index={index}
@@ -35,15 +35,22 @@ class China extends Component {
             onLoad={this.handleImageLoad}
             name={image}
             path={`Projects/China/src/${image}/`}
-            sizes={`
-              (min-width: 1233px) ${sizes.md}px,
-              (min-width: 833px) ${sizes.sm}px,
-              ${sizes.xs}px`}
+            sizes={masonrySizes}
           />
         </LightBox>
       )
     })
-    let images = lightBoxContent.map((lightbox, index) => {
+    let lightBoxContent = data.images.map((image, index) => {
+      return(
+        <Image
+          index={index}
+          className={styles.photo}
+          name={image}
+          path={`Projects/China/src/${image}/`}
+        />
+      )
+    })
+    let images = content.map((lightbox, index) => {
       let id = `image-${index}`
       return(
         <Card key={id} id={id}>
@@ -56,7 +63,7 @@ class China extends Component {
 
   handleLightBoxClick(lightbox, index) {
     this.setState({
-      currentLightBox: lightbox
+      currentLightBox: this.state.lightBoxContent[index]
     })
   }
 

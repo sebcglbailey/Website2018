@@ -31,11 +31,10 @@ class LightBoxGroup extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.current !== this.state.current) {
-      let content = nextProps.current.props.children
+      let content = nextProps.current
       this.setState({
         visible: true,
-        current: content,
-        currentLightbox: nextProps.current
+        current: nextProps.current
       })
     }
   }
@@ -62,32 +61,30 @@ class LightBoxGroup extends Component {
   }
 
   next() {
-    let index = this.state.currentLightbox.props.index
+    let index = this.state.current.props.index
 
     if (index < this.props.contents.length - 1) {
       index += 1
     } else {
       index = 0
     }
-    let next = this.props.contents[index].props.children
+    let next = this.props.contents[index]
     this.setState({
-      current: next,
-      currentLightbox: this.props.contents[index]
+      current: next
     })
   }
 
   prev() {
-    let index = this.state.currentLightbox.props.index
+    let index = this.state.current.props.index
 
     if (index > 0) {
       index -= 1
     } else {
       index = this.props.contents.length - 1
     }
-    let prev = this.props.contents[index].props.children
+    let prev = this.props.contents[index]
     this.setState({
-      current: prev,
-      currentLightbox: this.props.contents[index]
+      current: prev
     })
   }
 

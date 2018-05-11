@@ -10,8 +10,8 @@
     "build-js": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
-    "deploy-dev-new": "aws s3 sync dist/ s3://dev.sebastianbailey.co.uk",
-    "deploy-dev": "npm run build && aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
+    "deploy-dev-new": "aws s3 sync --dryrun dist/ s3://dev.sebastianbailey.co.uk",
+    "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
     "n-proj": "node ./build-helpers/projects.js"
   },
   "repository": {
