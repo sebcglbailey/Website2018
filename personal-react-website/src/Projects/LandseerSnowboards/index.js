@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { breakpoints, masonrySizes } from '../../helpers/breakpoints';
+
 import ProjectIntro from '../../Components/ProjectIntro/';
 import ProjectImages from '../../Components/ProjectImages/';
 import LightBox, { LightBoxGroup } from '../../Components/LightBox/';
@@ -37,7 +39,7 @@ class LandseerSnowboards extends Component {
   }
 
   getLightboxImages() {
-    let lightBoxContent = this.state.data.images.map((imgName, index) => {
+    let content = this.state.data.images.map((imgName, index) => {
       return(
         <LightBox
           key={`lightbox-${index}`}
@@ -47,11 +49,22 @@ class LandseerSnowboards extends Component {
           <Image
             name={imgName}
             path={`Projects/LandseerSnowboards/src/${imgName}/`}
+            sizes={masonrySizes}
           />
         </LightBox>
       )
     })
-    this.setState({ lightBoxContent: lightBoxContent})
+    let lightBoxContent = this.state.data.images.map((imgName, index) => {
+      return(
+        <Image
+          key={`image-${index}`}
+          index={index}
+          name={imgName}
+          path={`Projects/LandseerSnowboards/src/${imgName}/`}
+        />
+      )
+    })
+    this.setState({ lightBoxContent: lightBoxContent, content: content })
   }
 
   render() {
@@ -62,7 +75,7 @@ class LandseerSnowboards extends Component {
           contents={this.state.lightBoxContent}
         />
         <ProjectImages
-          content={this.state.lightBoxContent}
+          content={this.state.content}
           project="LandseerSnowboards"
         />
       </div>

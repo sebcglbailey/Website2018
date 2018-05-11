@@ -43,6 +43,7 @@ class China extends Component {
     let lightBoxContent = data.images.map((image, index) => {
       return(
         <Image
+          key={`image-${index}`}
           index={index}
           className={styles.photo}
           name={image}
@@ -51,7 +52,7 @@ class China extends Component {
       )
     })
     let images = content.map((lightbox, index) => {
-      let id = `image-${index}`
+      let id = `card-${index}`
       return(
         <Card key={id} id={id}>
           {lightbox}
