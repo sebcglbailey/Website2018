@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { breakpoints, masonrySizes } from '../../helpers/breakpoints';
+
 import CoverImage from '../../Components/CoverImage/';
 import ProjectIntro from '../../Components/ProjectIntro/';
 import ProjectImages from '../../Components/ProjectImages/';
@@ -65,6 +67,7 @@ class Project extends Component {
           project={project}
           link={link}
           data={data}
+          sizes={`(min-width: 50rem) 25rem, ${breakpoints.xs}px`}
         />
       )
     })
