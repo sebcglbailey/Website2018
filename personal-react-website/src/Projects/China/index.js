@@ -5,7 +5,7 @@ import { masonrySizes } from '../../helpers/breakpoints'
 import ProjectIntro from '../../Components/ProjectIntro/';
 import Masonry from '../../Components/Masonry/';
 import Card from '../../Components/Card/';
-import LightBox, { LightBoxGroup } from '../../Components/LightBox';
+import LightBox, { LightBoxGroup } from '../../Components/LightBox/';
 import Image from '../../Components/Image/';
 
 import styles from './styles.css';

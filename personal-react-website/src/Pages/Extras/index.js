@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Images from './Images/';
+
 import Card, {Info} from '../../Components/Card/';
 import Image from '../../Components/Image/';
 
@@ -28,9 +30,14 @@ class About extends Component {
 
     let imageNames = []
     images.map((type, index) => {
-      let length = Object.keys(type.images).length
-      let randomIn = Math.floor(Math.random() * length)
-      let randomImg = type.images[randomIn]
+      let length = type.images.length
+
+      let includesCover = type.images.filter((imgName) => {
+        return imgName.includes("cover")
+      })
+
+      let imgIndex = includesCover.length == 0 ? Math.floor(Math.random() * length) : type.images.indexOf(includesCover[0]);
+      let randomImg = type.images[imgIndex]
       imageNames.push(randomImg)
     })
 
@@ -91,6 +98,7 @@ class About extends Component {
       let cover;
       let card = (
         <Card landscape
+          link={`/extras/${type.type}`}
           key={`type-${type.type}`}
           id={`type-${type.type}`}
         >
@@ -100,9 +108,7 @@ class About extends Component {
           >
             {image}
           </div>
-          <Info landscape hasCover={this.state.coversLoaded}>
-            {type.title}
-          </Info>
+          <Info landscape hasCover={this.state.coversLoaded} header={type.title} />
         </Card>
       )
       cards.push(card)
@@ -133,3 +139,4 @@ class About extends Component {
 }
 
 export default About;
+exports.Images = Images

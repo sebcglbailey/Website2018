@@ -10,7 +10,7 @@ import Header from './Header/';
 import ProjectList from '../Pages/ProjectList/';
 import Project from '../Pages/Project/';
 import CV from '../Pages/CV/';
-import Extras from '../Pages/Extras/';
+import Extras, {Images} from '../Pages/Extras/';
 import Blog from '../Pages/Blog/';
 import Contact from '../Pages/Contact/';
 
@@ -72,9 +72,15 @@ class App extends Component {
                     onLoad={this.handlePageLoad} />}
                 />
 
-                <Route path="/extras"
+                <Route exact path="/extras"
                   render={() => <Extras
                     onLoad={this.handlePageLoad} />}
+                />
+
+                <Route path="/extras/:id"
+                  render={({ match }) => <Images
+                    onLoad={this.handlePageLoad}
+                    id={match.params.id} />}
                 />
 
                 <Route path="/blog"

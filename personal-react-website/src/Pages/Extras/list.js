@@ -1,6 +1,6 @@
 const images = [
   {
-    type: "LandseerSnowboards",
+    type: "landseer-snowboards",
     title: "Landseer Snowboards",
     images: [
       "01.jpg",
@@ -20,7 +20,7 @@ const images = [
     ]
   },
   {
-    type: "China",
+    type: "china",
     title: "China Photography",
     images: [
       "01.jpg",
