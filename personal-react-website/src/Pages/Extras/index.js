@@ -30,11 +30,7 @@ class About extends Component {
     images.map((type, index) => {
       let length = Object.keys(type.images).length
       let randomIn = Math.floor(Math.random() * length)
-      let randomImg = Object.keys(type.images).filter((key, i) => {
-        if (i == randomIn) {
-          return key
-        }
-      })[0]
+      let randomImg = type.images[randomIn]
       imageNames.push(randomImg)
     })
 

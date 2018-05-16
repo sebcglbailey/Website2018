@@ -2,3 +2,4 @@ node_modules/*
 dist/*
 src/Projects/*/data.json
 src/Projects/*/src
+src/Pages/Extras/src

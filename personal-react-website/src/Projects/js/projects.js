@@ -3,9 +3,7 @@ const list = [
 	"PalringoWebUI",
 	"XGames",
 	"Website2016",
-	"BumpAndGrind",
-	"LandseerSnowboards",
-	"China"
+	"BumpAndGrind"
 ]
 
 let projects = {
