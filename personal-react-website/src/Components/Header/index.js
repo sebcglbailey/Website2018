@@ -12,10 +12,22 @@ class Header extends Component{
 
     this.state = {
       location: window.location.pathname,
-      navLocation: 0
+      navLocation: 0,
+      menuOpen: false
     }
 
     this.navItems = []
+
+    this.handleBurgerClick = this.handleBurgerClick.bind(this)
+    this.handleMenuClick = this.handleMenuClick.bind(this)
+  }
+
+  handleBurgerClick() {
+    this.setState({ menuOpen: !this.state.menuOpen })
+  }
+
+  handleMenuClick() {
+    this.setState({ menuOpen: false })
   }
 
   render() {
@@ -30,11 +42,20 @@ class Header extends Component{
                 </picture>
               </Link>
             </div>
-            <div className="burger-menu">
-              <div></div>
+            <div
+              onClick={this.handleBurgerClick}
+              className={this.state.menuOpen ? (`${styles.burgerMenu} ${styles.active}`) : styles.burgerMenu}
+            >
+              <div className={styles.top}></div>
+              <div className={styles.middle}></div>
+              <div className={styles.bottom}></div>
             </div>
           </div>
-          <div ref={(elem) => this.nav = elem} className={styles.navigation}>
+          <div
+            ref={(elem) => this.nav = elem}
+            onClick={this.handleMenuClick}
+            className={this.state.menuOpen ? (`${styles.navigation} ${styles.active}`) : styles.navigation}
+          >
             <NavLink exact activeClassName={styles.active} to="/">
               work
             </NavLink>

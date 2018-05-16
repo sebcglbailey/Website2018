@@ -25,6 +25,16 @@ class Image extends Component {
     if (this.props.onLoad) {
       this.props.onLoad()
     }
+
+    if (this.props.cover) {
+      let imgWidth = this.image.offsetWidth
+      let imgHeight = this.image.offsetHeight
+      if (imgWidth < imgHeight) {
+        this.setState({ style: {width: "100%"} })
+      } else {
+        this.setState({ style: {height: "100%"} })
+      }
+    }
   }
 
   setSrcSet() {
@@ -65,11 +75,13 @@ class Image extends Component {
     let {srcSet, src} = this.setSrcSet()
     return (
       <img
+        ref={(elem) => this.image = elem}
         className={this.props.className}
         src={src}
         srcSet={srcSet}
         sizes={this.props.sizes}
         onLoad={this.handleImageLoad}
+        style={this.state.style}
       />
     )
   }

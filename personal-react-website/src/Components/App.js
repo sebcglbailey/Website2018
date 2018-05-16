@@ -44,7 +44,7 @@ class App extends Component {
         <div>
 
           <ScrollToTop>
-            <div className="container">
+            <div className={styles.container}>
 
               <Header />
 

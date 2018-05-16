@@ -12,7 +12,8 @@
     "build": "npm-run-all build-css build-js",
     "deploy-dev-new": "aws s3 sync --dryrun dist/ s3://dev.sebastianbailey.co.uk",
     "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
-    "n-proj": "node ./build-helpers/projects.js"
+    "n-proj": "node ./build-helpers/projects.js",
+    "n-extra": "node ./build-helpers/extra.js"
   },
   "repository": {
     "type": "git",

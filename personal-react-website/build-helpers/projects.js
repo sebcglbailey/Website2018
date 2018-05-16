@@ -4,6 +4,7 @@ const sharp = require('sharp');
 let {sizes} = require('../src/helpers/imgSizes');
 
 let projectsDir = 'src/Projects';
+let imagesDir = 'build-helpers/projectImages';
 
 // Create a src folder for images
 const makeSrcDir = (projectDir, src) => {
@@ -24,8 +25,8 @@ const createImgFolder = (project, imgName) => {
 }
 
 // Creating the sized images
-const createImage = (projectDir, imgName) => {
-  let imgSrc = `${projectDir}/img/${imgName}`;
+const createImage = (imgDir, projectDir, imgName) => {
+  let imgSrc = `${imgDir}/${imgName}`;
   let newImgPath = `${projectDir}/src/${imgName}`;
 
   const sizeObj = [
@@ -67,8 +68,11 @@ const writeProjectObj = (project, images) => {
   let obj = require(`../src/Projects/${project}/manifest.js`);
   obj.project = project
 
-  let coverIndex = images.indexOf('cover.jpg')
-  obj.images = images.slice(0, images.length-1)
+  if (images.includes('.DS_Store')) {
+    obj.images = images.slice(1, images.length-1)
+  } else {
+    obj.images = images.slice(0, images.length-1)
+  }
   
   let filePath = `${projectsDir}/${project}/data.json`
   fs.writeFileSync(filePath, JSON.stringify(obj), 'utf-8')
@@ -77,7 +81,7 @@ const writeProjectObj = (project, images) => {
 // Read the specified project directory
 const readProjectDir = (project) => {
   let projectDir = `${projectsDir}/${project}`;
-  let imgDir = `${projectsDir}/${project}/img/`;
+  let imgDir = `${imagesDir}/${project}`;
 
   fs.readdir(projectDir, (err, list) => {
     // Create a src folder if one does not exist
@@ -91,7 +95,7 @@ const readProjectDir = (project) => {
       
       list.map((imgName) => {
         createImgFolder(project, imgName)
-        // createImage(projectDir, imgName)
+        // createImage(imgDir, projectDir, imgName)
       })
     })
   })
@@ -99,9 +103,9 @@ const readProjectDir = (project) => {
 }
 
 // Run the script
-fs.readdir(projectsDir, (err, folder) => {
+fs.readdir(imagesDir, (err, folder) => {
   folder.map((project) => {
-    if (project === "js" || project.includes('.')) {
+    if (project.includes('.')) {
       return
     }
     readProjectDir(project)

@@ -25,3 +25,10 @@
 	max-height: 60vh;
 	margin: 0 auto;
 }
+
+@media all and (max-width: 640px) {
+	.container {
+		height: calc(100vh - 3.5rem);
+		margin-top: 3.5rem;
+	}
+}

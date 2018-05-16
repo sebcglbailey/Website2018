@@ -17,12 +17,12 @@ class Card extends Component {
         {
           this.props.link ? (
             <Link target={this.props.target} to={this.props.link}>
-              <div className={styles.cardContent}>
+              <div className={this.props.landscape ? `${styles.cardContent} ${styles.landscape}` : styles.cardContent}>
                 {this.props.children}
               </div>
             </Link>
           ) : (
-            <div className={styles.cardContent}>
+            <div className={this.props.landscape ? `${styles.cardContent} ${styles.landscape}` : styles.cardContent}>
               {this.props.children}
             </div>
           )

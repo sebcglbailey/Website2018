@@ -19,8 +19,7 @@
   justify-content: center; }
   .experienceCards > div {
     margin: 0.5rem;
-    flex: 1 1 20rem;
-    max-width: 50%; }
+    flex: 1 1 20rem; }
 
 .infoSpan {
   margin-bottom: 0.75rem; }

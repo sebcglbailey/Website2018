@@ -10,17 +10,56 @@
     background: $black;
     font-family: "Montserrat Alternates", sans-serif;
     color: #fff;
-    padding: 0 25px;
+    padding: 0 1.5rem;
     display: flex;
     align-items: center;
 }
 
-.logo,
-.logoBurgerWrapper {
+.logo {
   height: 3.5rem;
   width: 3.5rem;
   img {
     height: 100%;
+  }
+}
+
+.burgerMenu {
+  display: none;
+  height: 18px;
+  width: 24px;
+  margin-right: 0.5rem;
+  > div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: $white;
+    border-radius: 0.1rem;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    &.top {
+      transform-origin: 0 0;
+    }
+    &.middle {
+      top: 6px;
+    }
+    &.bottom {
+      top: 12px;
+      transform-origin: 0 100%;
+    }
+  }
+}
+
+.burgerMenu.active {
+  > div {
+    &.top {
+      transform: rotate(45deg);
+    }
+    &.bottom {
+      transform: rotate(-45deg);
+    }
+    &.middle {
+      opacity: 0;
+      transform: translateX(-24px);
+    }
   }
 }
 
@@ -54,5 +93,51 @@
   a:hover:after,
   a.active:after {
     transform: scaleX(1);
+  }
+}
+
+@media all and (max-width: 640px) {
+  .header {
+    display: block;
+  }
+  .navigation {
+    display: none;
+    height: 0;
+  }
+  .header {
+    padding: 0 0.5rem;
+    height: 3.5rem;
+  }
+  .logoBurgerWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    height: 3rem;
+    width: 3rem;
+  }
+  .burgerMenu {
+    display: block;
+  }
+  .navigation.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 3.5rem);
+    width: 100vw;
+    margin-top: 3.5rem;
+    background: $black;
+    a {
+      width: auto;
+      max-height: 4rem;
+      flex-shrink: 1;
+    }
   }
 }

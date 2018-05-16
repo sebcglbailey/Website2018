@@ -18,3 +18,7 @@
     background: rgba(0, 0, 0, 0.85);
     color: #fff;
     border-color: rgba(0, 0, 0, 0.85); }
+
+@media all and (max-width: 450px) {
+  .loadMore {
+    font-size: 1rem; } }

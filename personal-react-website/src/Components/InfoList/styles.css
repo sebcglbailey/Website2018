@@ -90,3 +90,8 @@
     color: #00aaff; }
     .typeList .fr:active {
       background-color: #80d5ff; }
+
+@media all and (max-width: 450px) {
+  .typeList .type {
+    flex-grow: 1;
+    font-size: 0.8rem; } }

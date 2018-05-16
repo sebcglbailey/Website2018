@@ -34,7 +34,7 @@ class LandseerSnowboards extends Component {
 
   handleLightBoxClick(lightbox, index) {
     this.setState({
-      currentLightBox: lightbox
+      currentLightBox: this.state.lightBoxContent[index]
     })
   }
 
