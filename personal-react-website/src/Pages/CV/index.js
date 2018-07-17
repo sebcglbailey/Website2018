@@ -5,6 +5,9 @@ import Card, {Cover, Info} from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
 import Content from '../../Components/Content/';
 
+import { H2 } from '../../Components/Headers/';
+import ContentContainer from '../../Components/ContentContainer/';
+
 import styles from './styles.css';
 
 import fields from './fields';
@@ -41,17 +44,17 @@ class Resume extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <ContentContainer>
         <div className={styles.intro}>
-          <h2>Introduction</h2>
+          <H2>Introduction</H2>
           <Content content={intro} />
         </div>
         <div className={styles.fields}>
-          <h2>Fields of design</h2>
+          <H2>Fields of design</H2>
           <InfoList types={this.state.fields} />
         </div>
         <div className={styles.skills}>
-          <h2>Skills & Experience</h2>
+          <H2>Skills & Experience</H2>
           <h3>Software</h3>
           <InfoList types={this.state.skills.software} />
           <h3>Process</h3>
@@ -61,7 +64,7 @@ class Resume extends Component {
         </div>
         <Experience />
         <Education />
-      </div>
+      </ContentContainer>
 
     )
   }

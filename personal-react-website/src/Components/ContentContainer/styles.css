@@ -1,0 +1,9 @@
+.container {
+  text-align: center;
+  padding: 1.5rem 0;
+  max-width: 45rem;
+  margin: 0 auto; }
+  .container > div {
+    margin-bottom: 3rem; }
+  .container > div:last-child {
+    margin: 0; }

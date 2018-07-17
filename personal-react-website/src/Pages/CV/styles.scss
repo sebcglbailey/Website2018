@@ -1,25 +1,5 @@
 @import 'Styles/colors.scss';
 
-.container {
-	text-align: center;
-	padding: 1.5rem 0;
-	max-width: 45rem;
-	margin: 0 auto;
-	> div {
-		margin-bottom: 3rem;
-	}
-	> div:last-child {
-		margin: 0;
-	}
-	h2 {
-		text-transform: uppercase;
-		margin: 2.5rem 0;
-	}
-	h3 {
-		margin: 2rem 0;
-	}
-}
-
 .experienceCards {
 	display: flex;
 	flex-wrap: wrap;
