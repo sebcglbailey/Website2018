@@ -5,7 +5,7 @@ const manifest = {
     "Attendees and fans of the competition can keep up to date with all the latest news, videos, results and timings of the the event from one central, easy application. Listen to tracks from featured artists, check out athlete profiles, and organise your calendar of events making sure you don\'t miss a thing!"
   ],
   types: ["ux", "ui", "pr"],
-  related: ["LandseerSnowboards", "Website2016"]
+  related: ["BumpAndGrind", "Website2016"]
 }
 
 module.exports = manifest
