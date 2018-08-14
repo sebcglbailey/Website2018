@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 import './App.css';
 import styles from './App.css';
@@ -50,11 +50,7 @@ class App extends Component {
 
               <div className={styles.view}>
 
-                <Route exact path="/"
-                  render={() => <ProjectList
-                    projects={projects}
-                    onLoad={this.handlePageLoad} />}
-                />
+                <Redirect exact from="/" to="/projects" />
                 <Route exact path="/projects"
                   render={() => <ProjectList
                     projects={projects}

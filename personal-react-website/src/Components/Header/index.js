@@ -56,7 +56,7 @@ class Header extends Component{
             onClick={this.handleMenuClick}
             className={this.state.menuOpen ? (`${styles.navigation} ${styles.active}`) : styles.navigation}
           >
-            <NavLink exact activeClassName={styles.active} to="/">
+            <NavLink activeClassName={styles.active} to="/projects">
               work
             </NavLink>
             <NavLink activeClassName={styles.active} to="/resume">
