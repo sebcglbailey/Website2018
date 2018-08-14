@@ -49,6 +49,8 @@ class Masonry extends Component {
       this.addContent()
     } else if (prevProps.children.length == this.props.children.length && prevProps.children !== this.props.children) {
       this.renderColumns()
+    } else if (prevProps.children !== this.props.children) {
+      this.renderColumns()
     } else {
       this.addContent()
     }

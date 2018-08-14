@@ -11,7 +11,7 @@ class LightBox extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
+  handleClick(event) {
     if (this.props.onClick) {
       this.props.onClick(this, this.props.index)
     }

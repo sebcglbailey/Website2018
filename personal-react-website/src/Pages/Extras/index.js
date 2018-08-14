@@ -10,7 +10,7 @@ import images from './list';
 import {masonrySizes} from '../../helpers/breakpoints';
 import styles from './styles.css';
 
-class About extends Component {
+class Extras extends Component {
   constructor(props) {
     super(props)
 
@@ -138,5 +138,5 @@ class About extends Component {
   
 }
 
-export default About;
+export default Extras;
 exports.Images = Images

@@ -3,3 +3,41 @@
   .container .image {
     width: 100%;
     height: auto; }
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0; }
+  .navList a {
+    text-decoration: none; }
+  .navList li {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.85);
+    color: rgba(0, 0, 0, 0.85);
+    margin: 0.25rem 0.5rem;
+    min-width: 3.6rem;
+    min-height: 3.6rem;
+    width: auto;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .navList li:active {
+      background-color: rgba(64, 64, 64, 0.85); }
+
+.arrowLeft {
+  margin-right: 1rem; }
+
+.arrowRight {
+  margin-left: 1rem; }
+
+@media all and (max-width: 450px) {
+  .navList li {
+    flex-grow: 1;
+    font-size: 0.8rem; } }

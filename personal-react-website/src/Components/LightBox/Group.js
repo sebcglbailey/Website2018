@@ -47,6 +47,10 @@ class LightBoxGroup extends Component {
           || event.target == this.closeButton)
       ) || !event) {
       this.setState({ visible: false, current: undefined })
+
+      if (this.props.onClose) {
+        this.props.onClose()
+      }
     }
   }
 
