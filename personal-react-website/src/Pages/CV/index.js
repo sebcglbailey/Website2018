@@ -17,6 +17,7 @@ import intro from './intro';
 
 import Education from './education';
 import Experience from './work';
+import Hobbies from './hobbies';
 
 class Resume extends Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class Resume extends Component {
         </div>
         <Experience />
         <Education />
+        <Hobbies />
       </ContentContainer>
 
     )

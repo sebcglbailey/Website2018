@@ -13,12 +13,22 @@ class InfoList extends Component {
     this.state = {
       types: this.props.types
     }
+
+    this.handleItemClick = this.handleItemClick.bind(this)
   }
 
   componentWillReceiveProps(nextState) {
     if (this.state.types !== nextState.types) {
       this.setState({ types: nextState.types })
     }
+  }
+
+  handleItemClick(ref) {
+
+    if (this.props.onClick) {
+      this.props.onClick(ref)
+    }
+
   }
 
   render() {
@@ -30,6 +40,7 @@ class InfoList extends Component {
           duration={0}
           type={type}
           className={getTypeClass(type, styles)}
+          onClick={this.handleItemClick}
         />
       )
     })

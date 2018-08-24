@@ -8,6 +8,15 @@
   }
 }
 
+.autoWidth {
+  flex-grow: none;
+  width: auto;
+}
+.fullWidth {
+  flex-grow: 1;
+  width: 100%;
+}
+
 .navList {
   display: flex;
   justify-content: space-between;

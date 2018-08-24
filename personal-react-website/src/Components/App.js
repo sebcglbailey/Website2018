@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 
 import './App.css';
 import styles from './App.css';
@@ -49,45 +49,49 @@ class App extends Component {
               <Header />
 
               <div className={styles.view}>
+                <Switch>
 
-                <Redirect exact from="/" to="/projects" />
-                <Route exact path="/projects"
-                  render={() => <ProjectList
-                    projects={projects}
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route exact path="/projects"
+                    render={() => <ProjectList
+                      projects={projects}
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/projects/:id"
-                  render={({ match }) => <Project
-                    project={match.params.id}
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/projects/:id"
+                    render={({ match }) => <Project
+                      project={match.params.id}
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/resume"
-                  render={() => <CV
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/resume"
+                    render={() => <CV
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route exact path="/extras"
-                  render={() => <Extras
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route exact path="/extras"
+                    render={() => <Extras
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/extras/:id"
-                  render={({ match }) => <Images
-                    onLoad={this.handlePageLoad}
-                    id={match.params.id} />}
-                />
+                  <Route path="/extras/:id"
+                    render={({ match }) => <Images
+                      onLoad={this.handlePageLoad}
+                      id={match.params.id} />}
+                  />
 
-                <Route path="/blog"
-                  render={() => <Blog
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/blog"
+                    render={() => <Blog
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/contact"
-                  render={() => <Contact
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/contact"
+                    render={() => <Contact
+                      onLoad={this.handlePageLoad} />}
+                  />
+
+                  <Redirect exact from="/" to="/projects" />
+
+                </Switch>
               </div>
             </div>
           </ScrollToTop>
