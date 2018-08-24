@@ -13,8 +13,9 @@ import styles from './styles.css';
 import fields from './fields';
 import skills from './skills';
 import work from './work';
-import intro from './intro';
+import intro from './introContent';
 
+import Intro from './intro';
 import Education from './education';
 import Experience from './work';
 import Hobbies from './hobbies';
@@ -47,8 +48,9 @@ class Resume extends Component {
     return (
       <ContentContainer>
         <div className={styles.intro}>
-          <H2>Introduction</H2>
-          <Content content={intro} />
+          {/*<H2>Introduction</H2>*/}
+          {/*<Content content={intro} />*/}
+          <Intro />
         </div>
         <div className={styles.fields}>
           <H2>Fields of design</H2>

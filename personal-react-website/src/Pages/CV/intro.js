@@ -1,7 +1,108 @@
-const intro = [
-  "Clean lines, Structure, and a Solid Concept.<br/>These are the fundamental rules that I base all of my designs upon.",
-  "I have always been passionate about art and design, and even from a young age I have been drawn to look at the world from an artistic point of view.",
-  "I believe that my work reflects my love of simplicity, whilst never ignoring the underlying concept and key principles."
+import React, { Component } from 'react';
+
+import styles from './styles.css';
+
+const list = [
+  "Design",
+  "Code",
+  "Prototype",
+  "Snowboard",
+  "Systemise",
+  "Lead",
+  "Build stuff",
 ]
 
-export default intro
+let speed = 35
+let interval = 1500
+
+class Intro extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      itemIndex: 0,
+      listItem: list[0]
+    }
+
+    this.changeListItem = this.changeListItem.bind(this)
+    this.animateListItemOut = this.animateListItemOut.bind(this)
+    this.animateListItemIn = this.animateListItemIn.bind(this)
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.changeListItem()
+    }, interval)
+  }
+
+  changeListItem() {
+
+    this.animateListItemOut(this.state.listItem, (done) => {
+
+      let index = this.state.itemIndex
+      if (index == list.length - 1) {
+        index = 0
+      } else {
+        index++
+      }
+
+      setTimeout(() => {
+        this.animateListItemIn(list[index], index, (done) => {
+
+          setTimeout(() => {
+            this.changeListItem()
+          }, interval)
+
+        })
+      }, speed*3)
+
+    })
+
+  }
+
+  animateListItemOut(listItem, callback) {
+
+    let stringLength = listItem.length
+
+    if (stringLength == 0) {
+      return callback(true)
+    } else {
+      let string = listItem.slice(0, stringLength - 1)
+      this.setState({listItem: string})
+      setTimeout(() => {
+        this.animateListItemOut(string, callback)
+      }, speed)
+    }
+
+  }
+
+  animateListItemIn(listItem, index, callback) {
+
+    let stringLength = list[index].length
+    let currentStringLength = this.state.listItem.length
+
+    if (currentStringLength == stringLength) {
+      return callback(true)
+    } else {
+      let string = list[index].slice(0, this.state.listItem.length+1)
+      this.setState({listItem: string, itemIndex: index})
+      setTimeout(() => {
+        this.animateListItemIn(string, index, callback)
+      }, 50)
+    }
+
+  }
+
+  render() {
+    return(
+      <div className={styles.introContainer}>
+        <div>
+          Hi, I'm Seb.<br />
+          I <span className={styles.introChanger}>{this.state.listItem}</span>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Intro

@@ -17,3 +17,28 @@
 		margin-top: 1rem;
 	}
 }
+
+.introContainer {
+	font-size: 5rem;
+	font-weight: 800;
+	text-align: left;
+	height: calc(100vh - 4rem);
+	display: flex;
+	align-items: center;
+	padding-left: 1rem;
+}
+
+.introChanger {
+	border-bottom: 0.6rem solid $black;
+}
+
+@media all and (max-width: 640px) {
+	.introContainer {
+		font-size: 3rem;
+		padding-left: 1rem;
+		height: 70vh;
+	}
+	.introChanger {
+		border-bottom: 0.3rem solid $black;
+	}
+}
