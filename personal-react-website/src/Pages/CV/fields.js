@@ -1,10 +1,10 @@
 const fields = [
   "User Experience",
   "User Interface",
+  "Design Systems",
   "Prototyping",
-  "Photography",
   "Web Development",
-  "Graphic Design"
+  "Graphic Design",
 ]
 
 export default fields

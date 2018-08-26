@@ -39,8 +39,9 @@ class InfoList extends Component {
           key={`type-${index+1}`}
           duration={0}
           type={type}
-          className={getTypeClass(type, styles)}
+          className={this.props.default ? getTypeClass(null, styles) : getTypeClass(type, styles)}
           onClick={this.handleItemClick}
+          default={this.props.default ? this.props.default : false}
         />
       )
     })

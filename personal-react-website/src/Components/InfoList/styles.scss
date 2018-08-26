@@ -39,6 +39,13 @@
 			background-color: lighten($ui, 25%)
 		}
 	}
+	.ds {
+		border-color: $ds;
+		color: $ds;
+		&:active {
+			background-color: lighten($ds, 25%)
+		}
+	}
 	.pr {
 		border-color: $pr;
 		color: $pr;
@@ -121,6 +128,27 @@
 		color: $fr;
 		&:active {
 			background-color: lighten($fr, 25%)
+		}
+	}
+	.ab {
+		border-color: $ab;
+		color: $ab;
+		&:active {
+			background-color: lighten($ab, 25%)
+		}
+	}
+	.ze {
+		border-color: $ze;
+		color: $ze;
+		&:active {
+			background-color: lighten($ze, 25%)
+		}
+	}
+	.pi {
+		border-color: $pi;
+		color: $pi;
+		&:active {
+			background-color: lighten($pi, 25%)
 		}
 	}
 }

@@ -48,12 +48,10 @@ class Resume extends Component {
     return (
       <ContentContainer>
         <div className={styles.intro}>
-          {/*<H2>Introduction</H2>*/}
-          {/*<Content content={intro} />*/}
           <Intro />
         </div>
         <div className={styles.fields}>
-          <H2>Fields of design</H2>
+          <H2>Fields of work</H2>
           <InfoList types={this.state.fields} />
         </div>
         <div className={styles.skills}>

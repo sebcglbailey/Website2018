@@ -5,15 +5,14 @@ import styles from './styles.css';
 const list = [
   "Design",
   "Code",
-  "Prototype",
   "Snowboard",
+  "Prototype",
   "Systemise",
   "Lead",
-  "Build stuff",
 ]
 
 let speed = 35
-let interval = 1500
+let interval = 2250
 
 class Intro extends Component {
   constructor(props) {
@@ -30,7 +29,7 @@ class Intro extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    setInterval(() => {
       this.changeListItem()
     }, interval)
   }
@@ -49,9 +48,9 @@ class Intro extends Component {
       setTimeout(() => {
         this.animateListItemIn(list[index], index, (done) => {
 
-          setTimeout(() => {
-            this.changeListItem()
-          }, interval)
+          // setTimeout(() => {
+          //   this.changeListItem()
+          // }, interval)
 
         })
       }, speed*3)
@@ -69,7 +68,7 @@ class Intro extends Component {
     } else {
       let string = listItem.slice(0, stringLength - 1)
       this.setState({listItem: string})
-      setTimeout(() => {
+      this.animateOut = setTimeout(() => {
         this.animateListItemOut(string, callback)
       }, speed)
     }
@@ -85,7 +84,7 @@ class Intro extends Component {
       return callback(true)
     } else {
       let string = list[index].slice(0, this.state.listItem.length+1)
-      this.setState({listItem: string, itemIndex: index})
+      this.animateIn = this.setState({listItem: string, itemIndex: index})
       setTimeout(() => {
         this.animateListItemIn(string, index, callback)
       }, 50)

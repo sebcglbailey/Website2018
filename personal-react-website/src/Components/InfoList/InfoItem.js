@@ -26,9 +26,11 @@ class InfoItem extends Component {
 
   handleClick(ref) {
 
-    this.setState({
-      type: toggleType(this.state.type)
-    });
+    if (!this.props.default) {
+      this.setState({
+        type: toggleType(this.state.type)
+      });
+    }
 
     if (this.props.onClick) {
       this.props.onClick(this.state.type)

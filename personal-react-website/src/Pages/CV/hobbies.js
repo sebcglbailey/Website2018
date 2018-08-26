@@ -122,6 +122,7 @@ class Hobbies extends Component {
           <InfoList
             onClick={this.handleListClick}
             types={this.state.list}
+            default
           />
         </div>
       </div>

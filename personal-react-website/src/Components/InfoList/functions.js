@@ -1,6 +1,7 @@
-const listTypes = [
+let listTypes = [
   ["ux", "User Experience"],
   ["ui", "User Interface"],
+  ["ds", "Design Systems"],
   ["ph", "Photography"],
   ["pr", "Prototyping"],
   ["wd", "Web Development"],
@@ -12,7 +13,10 @@ const listTypes = [
   ["ai", "Illustrator"],
   ["id", "InDesign"],
   ["ae", "After Effects"],
-  ["xd", "Adobe XD"]
+  ["xd", "Adobe XD"],
+  ["ab", "Abstract"],
+  ["ze", "Zeplin"],
+  ["pi", "Principle"],
 ]
 
 const toggleType = (type) => {
@@ -26,7 +30,12 @@ const toggleType = (type) => {
     let newIndex = (index+1)%2
     return arr[0][newIndex]
   } else {
-    return type
+    let shortArray = type.split(" ")
+    let short = shortArray.length > 1 ? shortArray.map((word) => {
+      return word[0]
+    }).join("") : shortArray[0]
+    listTypes.push([short, type])
+    return short
   }
 
 }
@@ -41,6 +50,10 @@ const getTypeClass = (type, styles) => {
     case "ui":
     case "User Interface":
       return def + ` ${styles.ui}`
+      break;
+    case "ds":
+    case "Design Systems":
+      return def + ` ${styles.ds}`
       break;
     case "ph":
     case "Photography":
@@ -89,6 +102,15 @@ const getTypeClass = (type, styles) => {
     case "fr":
     case "Framer":
       return def + ` ${styles.fr}`
+    case "ab":
+    case "Abstract":
+      return def + ` ${styles.ab}`
+    case "ze":
+    case "Zeplin":
+      return def + ` ${styles.ze}`
+    case "pi":
+    case "Principle":
+      return def + ` ${styles.pi}`
     default:
       return styles.type
   }

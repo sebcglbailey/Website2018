@@ -2,11 +2,14 @@ const skills = {
   software: [
     "Sketch",
     "Framer",
+    "Abstract",
+    "Zeplin",
     "Photoshop",
     "Illustrator",
     "InDesign",
     "After Effects",
-    "Adobe XD"
+    "Adobe XD",
+    "Principle",
   ],
   process: [
     "Concept Design",
@@ -15,7 +18,7 @@ const skills = {
     "User Testing",
     "Research & Development",
     "Design Sprints",
-    "Agile"
+    "Agile",
   ],
   development: [
     "HTML5",
@@ -29,7 +32,7 @@ const skills = {
     "AngularJS",
     "React",
     "Git",
-    "Wordpress"
+    "Wordpress",
   ]
 }
 
