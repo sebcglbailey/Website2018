@@ -57,6 +57,7 @@ class Instagram extends Component {
 
     this.renderImages = this.renderImages.bind(this)
     this.switchImage = this.switchImage.bind(this)
+    this.setRowHeight = this.setRowHeight.bind(this)
   }
 
   componentDidMount() {
@@ -67,6 +68,21 @@ class Instagram extends Component {
       .then((data) => {
         this.renderImages(data.data)
       })
+
+    window.addEventListener("resize", this.setRowHeight)
+  }
+
+  setRowHeight() {
+    let listWidth = this.list.offsetWidth
+    let columnWidth = listWidth * 0.16
+    let rowHeight = columnWidth
+
+    this.setState({
+      listStyle: {
+        gridTemplateRows: `repeat(5, ${rowHeight}px)`,
+        gridRowGap: `${listWidth*0.04}px`
+      }
+    })
   }
 
   renderImages(data) {
@@ -82,7 +98,11 @@ class Instagram extends Component {
 
     })
 
-    this.setState({ list: list })
+    this.setState({
+      list: list,
+    })
+
+    this.setRowHeight()
 
   }
 
@@ -98,7 +118,11 @@ class Instagram extends Component {
         <Link target="_blank" to="http://www.instagram.com/user?userid=3197786970">
           <h3>@seb.bailey</h3>
         </Link>
-        <ul className={styles.instaList}>
+        <ul
+          ref={(elem) => {this.list = elem}}
+          className={styles.instaList}
+          style={this.state.listStyle}
+        >
           {this.state.list}
         </ul>
         <div className={styles.instaCurrent}>
