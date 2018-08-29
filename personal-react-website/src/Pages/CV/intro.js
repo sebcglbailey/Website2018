@@ -20,7 +20,8 @@ class Intro extends Component {
 
     this.state = {
       itemIndex: 0,
-      listItem: list[0]
+      listItem: list[0],
+      mounted: false
     }
 
     this.changeListItem = this.changeListItem.bind(this)
@@ -29,65 +30,84 @@ class Intro extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+
+    this.setState({ mounted: true })
+
+    this.animate = setInterval(() => {
       this.changeListItem()
     }, interval)
+
+  }
+
+  componentWillUnmount() {
+
+    this.setState({ mounted: false })
+    clearInterval(this.animate)
+
   }
 
   changeListItem() {
 
-    this.animateListItemOut(this.state.listItem, (done) => {
+    if (this.state.mounted) {
 
-      let index = this.state.itemIndex
-      if (index == list.length - 1) {
-        index = 0
-      } else {
-        index++
-      }
+      this.animateListItemOut(this.state.listItem, (done) => {
 
-      setTimeout(() => {
-        this.animateListItemIn(list[index], index, (done) => {
+        let index = this.state.itemIndex
+        if (index == list.length - 1) {
+          index = 0
+        } else {
+          index++
+        }
 
-          // setTimeout(() => {
-          //   this.changeListItem()
-          // }, interval)
+        setTimeout(() => {
+          this.animateListItemIn(list[index], index)
+        }, speed*3)
 
-        })
-      }, speed*3)
+      })
 
-    })
+    }
 
   }
 
   animateListItemOut(listItem, callback) {
 
-    let stringLength = listItem.length
+    if (this.state.mounted) {
 
-    if (stringLength == 0) {
-      return callback(true)
-    } else {
-      let string = listItem.slice(0, stringLength - 1)
-      this.setState({listItem: string})
-      this.animateOut = setTimeout(() => {
-        this.animateListItemOut(string, callback)
-      }, speed)
+      let stringLength = listItem.length
+
+      if (stringLength == 0) {
+        return callback(true)
+      } else {
+        let string = listItem.slice(0, stringLength - 1)
+        if (this.state.mounted) {
+          this.setState({listItem: string})
+        }
+        this.animateOut = setTimeout(() => {
+          this.animateListItemOut(string, callback)
+        }, speed)
+      }
+
     }
 
   }
 
   animateListItemIn(listItem, index, callback) {
 
-    let stringLength = list[index].length
-    let currentStringLength = this.state.listItem.length
+    if (this.state.mounted) {
 
-    if (currentStringLength == stringLength) {
-      return callback(true)
-    } else {
-      let string = list[index].slice(0, this.state.listItem.length+1)
-      this.animateIn = this.setState({listItem: string, itemIndex: index})
-      setTimeout(() => {
-        this.animateListItemIn(string, index, callback)
-      }, 50)
+      let stringLength = list[index].length
+      let currentStringLength = this.state.listItem.length
+
+      if (currentStringLength !== stringLength) {
+        let string = list[index].slice(0, this.state.listItem.length+1)
+        if (this.state.mounted) {
+          this.setState({listItem: string, itemIndex: index})
+        }
+        setTimeout(() => {
+          this.animateListItemIn(string, index, callback)
+        }, 50)
+      } else return
+
     }
 
   }

@@ -96,7 +96,7 @@ class App extends Component {
             </div>
           </ScrollToTop>
           {/*<SplashLogo
-            delay={500}
+            delay={250}
             ready={this.state.projectsLoaded}
           />*/}
         </div>

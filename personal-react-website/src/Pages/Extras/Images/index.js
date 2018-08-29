@@ -26,7 +26,6 @@ class Images extends Component {
     this.handleImageLoad = this.handleImageLoad.bind(this)
     this.handleLightBoxClick = this.handleLightBoxClick.bind(this)
     this.handleCloseLightbox = this.handleCloseLightbox.bind(this)
-    this.setnavWidth = this.setNavWidth.bind(this)
 
   }
 
@@ -35,11 +34,6 @@ class Images extends Component {
     let {cards, lightBoxContent} = this.getImages(this.props)
     this.setState({title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent})
   }
-  
-  componentDidMount() {
-    window.addEventListener("resize", this.setNavWidth.bind(this))
-    this.setNavWidth()
-  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.id !== this.props.id) {
@@ -47,20 +41,6 @@ class Images extends Component {
       let {cards, lightBoxContent} = this.getImages(nextProps)
       this.setState({title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent})
     }
-  }
-
-  componentDidUpdate() {
-    this.setNavWidth()
-  }
-
-  setNavWidth() {
-
-    if (this.topNav && this.topNav.offsetHeight > 74 && !this.state.navBreakpoint) {
-      this.setState({navBreakpoint: window.outerWidth})
-    } else if (this.state.navBreakpoint && window.outerWidth > this.state.navBreakpoint) {
-      this.setState({navBreakpoint: null})
-    }
-
   }
 
   getOtherExtras(props) {
@@ -157,13 +137,6 @@ class Images extends Component {
 
   render() {
 
-    let navClass;
-    if (this.state.navBreakpoint && window.outerWidth == this.state.navBreakpoint) {
-      navClass = styles.fullWidth
-    } else {
-      navClass = styles.autoWidth
-    }
-
     let prevLink = `/extras/${this.state.prev.type}`
     let nextLink = `/extras/${this.state.next.type}`
 
@@ -171,16 +144,16 @@ class Images extends Component {
       <div className={styles.container}>
         <ul
           ref={(elem) => {this.topNav = elem}}
-          className={styles.navList}
+          className={`${styles.navList} ${styles.top}`}
         >
-          <Link className={navClass} to={prevLink}>
+          <Link to={prevLink}>
             <li>
               <SVG className={styles.arrowLeft} id="arrowLeft" width={24} height={24} />
               {this.state.prev.title}
             </li>
           </Link>
-          <li className={navClass}>{this.state.title}</li>
-          <Link className={navClass} to={nextLink}>
+          <li className={styles.navTitle}>{this.state.title}</li>
+          <Link to={nextLink}>
             <li>
               {this.state.next.title}
               <SVG className={styles.arrowRight} id="arrowRight" width={24} height={24} />
@@ -200,15 +173,18 @@ class Images extends Component {
         >
           {this.state.cards}
         </Masonry>
-        <ul className={styles.navList}>
-          <Link className={navClass} to={prevLink}>
-            <li>
+        <ul
+          ref={(elem) => {this.bottomNav = elem}}
+          className={`${styles.navList} ${styles.bottom}`}
+        >
+          <Link to={prevLink}>
+            <li className={styles.prev}>
               <SVG className={styles.arrowLeft} id="arrowLeft" width={24} height={24} />
               {this.state.prev.title}
             </li>
           </Link>
-          <Link className={navClass} to={nextLink}>
-            <li>
+          <Link to={nextLink}>
+            <li className={styles.next}>
               {this.state.next.title}
               <SVG className={styles.arrowRight} id="arrowRight" width={24} height={24} />
             </li>

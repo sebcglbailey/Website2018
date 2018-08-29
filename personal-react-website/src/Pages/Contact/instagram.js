@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+
+import Card from '../../Components/Card/';
 
 import styles from './styles.css';
 
@@ -9,24 +12,14 @@ class InstaPic extends Component {
 
     this.state = {
       data: this.props.data,
-      class: styles.instaListItem,
-      imageUrl: this.props.data.images.low_resolution.url
-    }
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick() {
-
-    if (this.state.class == styles.instaListItem) {
-      this.setState({
-        class: `${styles.instaListItem} ${styles.current}`,
-        imageUrl: this.state.data.images.standard_resolution.url
-      })
-    } else {
-      this.setState({
-        class: styles.instaListItem
-      })
+      imageUrl: (
+        this.props.index == 0
+        || this.props.index == 1
+        || this.props.index == 6
+        || this.props.index == 12
+        || this.props.index == 17
+      ) ? this.props.data.images.standard_resolution.url 
+        : this.props.data.images.low_resolution.url,
     }
 
   }
@@ -37,13 +30,18 @@ class InstaPic extends Component {
 
     return(
       <li
-        className={this.state.class}
-        onClick={this.handleClick}
+        ref={(elem) => {this.item = elem}}
+        className={styles.instaListItem}
       >
-        <img
-          src={this.state.imageUrl}
-          alt={image.caption.text}
-        />
+        <Link
+          to={image.link}
+          target="_blank"
+        >
+          <img
+            src={this.state.imageUrl}
+            alt={image.caption.text}
+          />
+        </Link>
       </li>
     )
   }
@@ -56,7 +54,6 @@ class Instagram extends Component {
     this.state = {}
 
     this.renderImages = this.renderImages.bind(this)
-    this.switchImage = this.switchImage.bind(this)
     this.setRowHeight = this.setRowHeight.bind(this)
   }
 
@@ -66,49 +63,62 @@ class Instagram extends Component {
         return response.json()
       })
       .then((data) => {
-        this.renderImages(data.data)
+        this.setState({data: data.data})
+        this.setRowHeight(data.data)
       })
 
     window.addEventListener("resize", this.setRowHeight)
   }
 
-  setRowHeight() {
+  setRowHeight(data) {
+
+    let imgData = data && data.map ? data : this.state.data ? this.state.data : null
+    this.renderImages(imgData)
+
+    let ratio = 0.2, amount = 5, noOfRows = 10;
+
+    if (window.outerWidth <= 400) {
+      ratio = 0.333333333
+      amount = 3
+      noOfRows = 12
+    }
+
     let listWidth = this.list.offsetWidth
-    let columnWidth = listWidth * 0.16
+    let columnWidth = listWidth * ratio
     let rowHeight = columnWidth
 
     this.setState({
       listStyle: {
-        gridTemplateRows: `repeat(5, ${rowHeight}px)`,
-        gridRowGap: `${listWidth*0.04}px`
+        gridTemplateRows: `repeat(${noOfRows}, ${rowHeight}px)`,
       }
     })
   }
 
   renderImages(data) {
+    let max;
+    if (window.outerWidth <= 400) {
+      max = 19
+    } else {
+      max = 20
+    }
 
-    let list = data.map((image) => {
+    let list = data.map((image, index) => {
 
-      return(
-        <InstaPic
-          key={image.id}
-          data={image}
-        />
-      )
+      if (index < max) {
+        return(
+          <InstaPic
+            key={image.id}
+            data={image}
+            index={index}
+          />
+        )
+      } else return
 
     })
 
     this.setState({
       list: list,
     })
-
-    this.setRowHeight()
-
-  }
-
-  switchImage(data) {
-
-    console.log(data)
 
   }
 

@@ -65,9 +65,9 @@ class Header extends Component{
             <NavLink activeClassName={styles.active} to="/extras">
               extras
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/blog">
+            {/*<NavLink activeClassName={styles.active} to="/blog">
               blog
-            </NavLink>
+            </NavLink>*/}
             <NavLink activeClassName={styles.active} to="/contact">
               contact
             </NavLink>
