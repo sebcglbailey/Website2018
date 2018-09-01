@@ -10,7 +10,7 @@ import styles from './styles.css';
 
 class Contact extends Component {
   componentWillMount() {
-    document.title = "Contact"
+    document.title = "Sebastian Bailey | Contact"
   }
 
   render() {

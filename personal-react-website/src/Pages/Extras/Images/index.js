@@ -31,6 +31,7 @@ class Images extends Component {
 
   componentWillMount() {
     let {title, next, prev} = this.getOtherExtras(this.props)
+    document.title = `Sebatian Bailey | ${title}`
     let {cards, lightBoxContent} = this.getImages(this.props)
     this.setState({title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent})
   }
@@ -38,6 +39,7 @@ class Images extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.id !== this.props.id) {
       let {title, next, prev} = this.getOtherExtras(nextProps)
+      document.title = `Sebatian Bailey | ${title}`
       let {cards, lightBoxContent} = this.getImages(nextProps)
       this.setState({title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent})
     }

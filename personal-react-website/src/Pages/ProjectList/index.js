@@ -27,6 +27,7 @@ class ProjectList extends Component {
   }
 
   componentWillMount() {
+    document.title = "Sebastian Bailey | Work"
     this.filterProjects(this.state.visible)
   }
 

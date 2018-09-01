@@ -54,6 +54,11 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     contentBase: "./dist",
     port: 7322,
