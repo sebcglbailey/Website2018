@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+import {sizes} from '../../helpers/imgSizes';
+
+import Image from '../Image/';
+
 import styles from './styles.css';
 
 class ProjectImages extends Component {
@@ -15,10 +19,23 @@ class ProjectImages extends Component {
 		this.handleImageLoaded = this.handleImageLoaded.bind(this)
 	}
 
-	componentWillReceiveProps(nextState) {
-		if (nextState.images !== this.state.images) {
-			this.setState({ images: nextState.images })
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.images && nextProps.images !== this.props.images) {
+			this.setState({
+				contentImages: this.getImages(),
+				images: nextProps.images
+			})
+		} else if (nextProps.content && nextProps.content !== this.props.content) {
+			this.setState({
+				contentImages: nextProps.content,
+				images: nextProps.images
+			})
 		}
+	}
+
+	componentWillMount() {
+		let images = this.props.images ? this.getImages() : this.props.content ? this.props.content : null
+		this.setState({ contentImages : images })
 	}
 
 	handleImageLoaded() {
@@ -31,18 +48,24 @@ class ProjectImages extends Component {
 
 	getImages() {
 		let images = this.state.images.map((imgName, index) => {
-			let imgSrc = require(`../../Projects/${this.props.project}/img/${imgName}`)
-			return <img onLoad={this.handleImageLoaded} key={`image-${index+1}`} src={imgSrc} />
+			return (
+				<Image
+					onLoad={this.handleImageLoaded}
+					key={`image-${index+1}`}
+					name={imgName}
+					path={`Projects/${this.props.project}/src/${imgName}/`}
+					sizes="(min-width: 50rem) 50rem, 98vw"
+				/>
+			)
 		})
 		return images
 	}
 
 	render() {
-		let images = this.getImages()
 		return(
 			<div className={styles.container}>
 				<div className={styles.images}>
-					{images}
+					{this.state.contentImages}
 				</div>
 			</div>
 		)

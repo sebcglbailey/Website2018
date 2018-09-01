@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Image from '../Image/';
+
 import styles from './styles.css';
 
 class CoverImage extends Component {
@@ -18,7 +20,11 @@ class CoverImage extends Component {
   render() {
     return(
       <div className={styles.container}>
-        <img onLoad={this.handleImageLoad} src={this.props.image} />
+        <Image
+          name="cover.jpg"
+          path={`Projects/${this.props.project}/src/cover.jpg/`}
+          onLoad={this.handleImageLoad}
+        />
       </div>
     )
   }

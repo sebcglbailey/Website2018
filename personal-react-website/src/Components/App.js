@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 
 import './App.css';
 import styles from './App.css';
@@ -10,7 +10,7 @@ import Header from './Header/';
 import ProjectList from '../Pages/ProjectList/';
 import Project from '../Pages/Project/';
 import CV from '../Pages/CV/';
-import About from '../Pages/About/';
+import Extras, {Images} from '../Pages/Extras/';
 import Blog from '../Pages/Blog/';
 import Contact from '../Pages/Contact/';
 
@@ -44,54 +44,61 @@ class App extends Component {
         <div>
 
           <ScrollToTop>
-            <div className="container">
+            <div className={styles.container}>
 
               <Header />
 
               <div className={styles.view}>
+                <Switch>
 
-                <Route exact path="/"
-                  render={() => <ProjectList
-                    projects={projects}
-                    onLoad={this.handlePageLoad} />}
-                />
-                <Route exact path="/projects"
-                  render={() => <ProjectList
-                    projects={projects}
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route exact path="/projects"
+                    render={() => <ProjectList
+                      projects={projects}
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/projects/:id"
-                  render={({ match }) => <Project
-                    project={match.params.id}
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/projects/:id"
+                    render={({ match }) => <Project
+                      project={match.params.id}
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/cv"
-                  render={() => <CV
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/resume"
+                    render={() => <CV
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/about"
-                  render={() => <About
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route exact path="/extras"
+                    render={() => <Extras
+                      onLoad={this.handlePageLoad} />}
+                  />
 
-                <Route path="/blog"
-                  render={() => <Blog
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/extras/:id"
+                    render={({ match }) => <Images
+                      onLoad={this.handlePageLoad}
+                      id={match.params.id} />}
+                  />
 
-                <Route path="/contact"
-                  render={() => <Contact
-                    onLoad={this.handlePageLoad} />}
-                />
+                  <Route path="/blog"
+                    render={() => <Blog
+                      onLoad={this.handlePageLoad} />}
+                  />
+
+                  <Route path="/contact"
+                    render={() => <Contact
+                      onLoad={this.handlePageLoad} />}
+                  />
+
+                  <Redirect exact from="/" to="/projects" />
+
+                </Switch>
               </div>
             </div>
           </ScrollToTop>
-          <SplashLogo
-            delay={500}
-            ready={this.state.projectsLoaded} />
+          {/*<SplashLogo
+            delay={250}
+            ready={this.state.projectsLoaded}
+          />*/}
         </div>
       </Router>
     );

@@ -35,9 +35,10 @@
 .card {
   background: #fff;
   width: 100%;
+  max-width: 35rem;
+  margin: 0 auto 1rem auto;
   box-shadow: 0 0.5rem 1rem -0.2rem rgba(191, 191, 191, 0.85);
   font-size: 0.9em;
-  margin-bottom: 1rem;
   position: relative;
   font-family: "Century Gothic", sans-serif;
   transition: all 0.35s ease; }
@@ -73,6 +74,9 @@
   align-items: stretch;
   height: 100%;
   width: 100%; }
+  .cardContent.landscape {
+    flex-direction: row;
+    font-size: 1.25rem; }
 
 .cover {
   width: 100%; }
@@ -91,6 +95,9 @@
   .infoContainer.loaded {
     margin: -2rem 1rem 1rem 1rem;
     padding: 1rem 0 0 0; }
+    .infoContainer.loaded.landscape {
+      margin: 1rem 1rem 1rem -2rem;
+      padding: 0 0 0 1rem; }
 
 .info {
   width: 100%;
@@ -102,6 +109,8 @@
   flex-direction: column; }
   .info.loaded {
     padding: 1rem 2rem; }
+    .info.loaded.landscape {
+      padding: 2rem 1rem; }
   .info * {
     width: fit-content; }
   .info p {

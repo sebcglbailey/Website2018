@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { breakpoints, masonrySizes } from '../../helpers/breakpoints';
+
 import CoverImage from '../../Components/CoverImage/';
 import ProjectIntro from '../../Components/ProjectIntro/';
 import ProjectImages from '../../Components/ProjectImages/';
@@ -19,9 +21,6 @@ class Project extends Component {
       imagesLoaded: false
     }
 
-    // let project = require(`../../Projects/${this.state.project}/index.js`)
-    // project = project.default
-
     this.handleCardsLoaded = this.handleCardsLoaded.bind(this)
     this.handleIntroLoaded = this.handleIntroLoaded.bind(this)
     this.handleImagesLoaded = this.handleImagesLoaded.bind(this)
@@ -29,24 +28,25 @@ class Project extends Component {
   }
 
   componentWillMount() {
+    let project = require(`../../Projects/${this.state.project}/index.js`)
     let data = this.getProjectData()
     this.setState({
       data: data.data,
-      cover: data.cover,
-      manifest: data.manifest,
-      relatedProjects: data.relatedProjects
+      relatedProjects: data.relatedProjects,
+      projectPage: project.default
     })
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.project !== this.state.project) {
+      let project = require(`../../Projects/${nextProps.project}/index.js`)
+
       let data = this.getProjectData(nextProps.project)
       this.setState({
         project: nextProps.project,
         data: data.data,
-        cover: data.cover,
-        manifest: data.manifest,
-        relatedProjects: data.relatedProjects
+        relatedProjects: data.relatedProjects,
+        projectPage: project.default
       })
     }
   }
@@ -55,13 +55,10 @@ class Project extends Component {
     let thisProject = project ? project : this.state.project
 
     let data = require(`../../Projects/${thisProject}/data.json`);
-    let manifest = require(`../../Projects/${thisProject}/manifest.js`);
-    let cover = require(`../../Projects/${thisProject}/cover.jpg`);
 
-    let relatedProjects = manifest.related.map((project, index) => {
+    let relatedProjects = data.related.map((project, index) => {
       let link = `/projects/${project}`;
-      let cover = require(`../../Projects/${project}/cover.jpg`);
-      let manifest = require(`../../Projects/${project}/manifest.js`);
+      let data = require(`../../Projects/${project}/data.json`);
       let key = `card-${index+1}`
       return(
         <ProjectCard
@@ -69,16 +66,14 @@ class Project extends Component {
           key={key}
           project={project}
           link={link}
-          cover={cover}
-          manifest={manifest}
+          data={data}
+          sizes={`(min-width: 50rem) 25rem, ${breakpoints.xs}px`}
         />
       )
     })
 
     return {
       data: data,
-      manifest: manifest,
-      cover: cover,
       relatedProjects: relatedProjects
     }
   }
@@ -108,19 +103,15 @@ class Project extends Component {
   }
 
   render() {
-
+    let ProjectPage = this.state.projectPage
     return (
       <div>
         <ProjectIntro
-          cover={this.state.cover}
-          manifest={this.state.manifest}
+          project={this.state.project}
+          data={this.state.data}
           onLoad={this.handleIntroLoaded}
         />
-        <ProjectImages
-          images={this.state.data.images}
-          project={this.state.project}
-          onLoad={this.handleImagesLoaded}
-        />
+        <ProjectPage />
         <div className={styles.related}>
           <Masonry
             minWidth={400}

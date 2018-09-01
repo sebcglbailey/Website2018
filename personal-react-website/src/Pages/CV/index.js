@@ -3,14 +3,24 @@ import React, { Component } from 'react';
 import InfoList from '../../Components/InfoList/';
 import Card, {Cover, Info} from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
+import Content from '../../Components/Content/';
+
+import { H2 } from '../../Components/Headers/';
+import ContentContainer from '../../Components/ContentContainer/';
 
 import styles from './styles.css';
 
 import fields from './fields';
 import skills from './skills';
 import work from './work';
+import intro from './introContent';
 
-class Work extends Component {
+import Intro from './intro';
+import Education from './education';
+import Experience from './work';
+import Hobbies from './hobbies';
+
+class Resume extends Component {
   constructor(props) {
     super(props)
 
@@ -21,11 +31,10 @@ class Work extends Component {
     }
 
     this.handlePageLoad = this.handlePageLoad.bind(this)
-    this.renderExperience = this.renderExperience.bind(this)
   }
 
   componentWillMount() {
-    document.title = "Work"
+    document.title = "Résumé"
     this.handlePageLoad()
   }
 
@@ -35,64 +44,18 @@ class Work extends Component {
     }
   }
 
-  renderExperience() {
-
-    let cards = this.state.work.map((job, index) => {
-      return(
-        <Card key={job.id}
-          id={job.id}
-          link={job.link}
-          target="_blank">
-            <Info header={job.title}>
-              <p>{job.role}</p>
-              <p>{job.dates}</p>
-              {
-                job.info ? (
-                  job.info.map((info, index) => {
-                    return <span className={styles.infoSpan} key={index}>{info}</span>
-                  })
-                ): null
-              }
-            </Info>
-        </Card>
-      )
-    })
-
-    this.experience = (
-      <div className={styles.experience}>
-        <h2>Experience</h2>
-        {
-          this.state.work.length%2 == 0 ? (
-            <Masonry minWidth={400} margin={16}>
-              {cards}
-            </Masonry>
-          ) : (
-            <div className={styles.experienceCards}>
-              {cards}
-            </div>
-          )
-        }
-      </div>
-    )
-  }
-
   render() {
-    this.renderExperience()
     return (
-      <div className={styles.container}>
+      <ContentContainer>
         <div className={styles.intro}>
-          <h2>Introduction</h2>
-          <p>Clean lines, Structure, and a Solid Concept.<br/>
-          These are the fundamental rules that I base all of my designs upon.</p>
-          <p>I have always been passionate about art and design, and even from a young age I have been drawn to look at the world from an artistic point of view.</p>
-          <p>I believe that my work reflects my love of simplicity, whilst never ignoring the underlying concept and key principles.</p>
+          <Intro />
         </div>
         <div className={styles.fields}>
-          <h2>Fields of design</h2>
+          <H2>Fields of work</H2>
           <InfoList types={this.state.fields} />
         </div>
         <div className={styles.skills}>
-          <h2>Skills & Experience</h2>
+          <H2>Skills & Experience</H2>
           <h3>Software</h3>
           <InfoList types={this.state.skills.software} />
           <h3>Process</h3>
@@ -100,14 +63,14 @@ class Work extends Component {
           <h3>Development</h3>
           <InfoList types={this.state.skills.development} />
         </div>
-        <div className={styles.experience}>
-          {this.experience}
-        </div>
-      </div>
+        <Experience />
+        <Education />
+        <Hobbies />
+      </ContentContainer>
 
     )
   }
   
 }
 
-export default Work;
+export default Resume;

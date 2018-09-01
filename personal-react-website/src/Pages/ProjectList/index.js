@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import { masonrySizes } from '../../helpers/breakpoints';
+
 import Masonry from '../../Components/Masonry/';
 import LoadButton from '../../Components/LoadButton/';
 import ProjectCard from '../../Components/ProjectCard/';
@@ -39,6 +41,7 @@ class ProjectList extends Component {
     this.loaded += 1
     if (this.loaded == this.projects.length - 1) {
       this.setState({ masonryContentsLoaded: true })
+      this.masonry.renderColumns()
       if (this.props.onLoad) {
         this.props.onLoad()
       }
@@ -60,9 +63,8 @@ class ProjectList extends Component {
     })
 
     this.projects = this.projects.map((project, index) => {
-      let manifest = require(`../../Projects/${project}/manifest.js`);
+      let data = require(`../../Projects/${project}/data.json`);
       let link = `/projects/${project}`;
-      let cover = require(`../../Projects/${project}/cover.jpg`);
       let key = `card-${index+1}`
       return (
         <ProjectCard
@@ -70,9 +72,9 @@ class ProjectList extends Component {
           id={key}
           project={project}
           link={link}
-          cover={cover}
-          manifest={manifest}
           onLoad={this.handleImageLoad}
+          data={data}
+          sizes={masonrySizes}
         />
       )
     })
@@ -88,6 +90,7 @@ class ProjectList extends Component {
     return (
       <div className={styles.container}>
         <Masonry
+          ref={(elem) => {this.masonry = elem}}
           minWidth={400}
           margin={16}
           loaded={this.state.masonryContentsLoaded}

@@ -12,42 +12,23 @@ class Header extends Component{
 
     this.state = {
       location: window.location.pathname,
-      navLocation: 0
+      navLocation: 0,
+      menuOpen: false
     }
 
     this.navItems = []
 
-    // this.setActiveStyle = this.setActiveStyle.bind(this)
+    this.handleBurgerClick = this.handleBurgerClick.bind(this)
+    this.handleMenuClick = this.handleMenuClick.bind(this)
   }
 
-  // componentWillMount() {
-  //   window.addEventListener("resize", () => {
-  //     let rect = this.nav.getBoundingClientRect()
-  //     this.setState({navLocation: rect.x})
-  //   })
-  // }
+  handleBurgerClick() {
+    this.setState({ menuOpen: !this.state.menuOpen })
+  }
 
-  // componentDidMount() {
-  //   for (let i = 0; i < this.nav.children.length; i++) {
-  //     let navItem = this.nav.children[i];
-  //     navItem.addEventListener("mouseover", () => {
-  //       this.setActiveStyle(navItem)
-  //     })
-  //   }
-
-  //   let rect = this.nav.getBoundingClientRect()
-  //   this.setState({navLocation: rect.x})
-  // }
-
-  // setActiveStyle(navItem) {
-  //   let rect = navItem.getBoundingClientRect()
-  //   this.setState({
-  //     activeLinkStyle: {
-  //       width: rect.width,
-  //       left: rect.x - this.state.navLocation
-  //     }
-  //   })
-  // }
+  handleMenuClick() {
+    this.setState({ menuOpen: false })
+  }
 
   render() {
     return (
@@ -61,23 +42,32 @@ class Header extends Component{
                 </picture>
               </Link>
             </div>
-            <div className="burger-menu">
-              <div></div>
+            <div
+              onClick={this.handleBurgerClick}
+              className={this.state.menuOpen ? (`${styles.burgerMenu} ${styles.active}`) : styles.burgerMenu}
+            >
+              <div className={styles.top}></div>
+              <div className={styles.middle}></div>
+              <div className={styles.bottom}></div>
             </div>
           </div>
-          <div ref={(elem) => this.nav = elem} className={styles.navigation}>
-            <NavLink exact activeClassName={styles.active} to="/">
+          <div
+            ref={(elem) => this.nav = elem}
+            onClick={this.handleMenuClick}
+            className={this.state.menuOpen ? (`${styles.navigation} ${styles.active}`) : styles.navigation}
+          >
+            <NavLink activeClassName={styles.active} to="/projects">
               work
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/cv">
-              cv
+            <NavLink activeClassName={styles.active} to="/resume">
+              résumé
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/about">
-              about
+            <NavLink activeClassName={styles.active} to="/extras">
+              extras
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/blog">
+            {/*<NavLink activeClassName={styles.active} to="/blog">
               blog
-            </NavLink>
+            </NavLink>*/}
             <NavLink activeClassName={styles.active} to="/contact">
               contact
             </NavLink>

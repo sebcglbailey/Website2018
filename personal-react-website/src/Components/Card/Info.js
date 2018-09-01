@@ -32,10 +32,20 @@ class Info extends Component {
 
   setClass() {
     let classes = {}
-    if (this.state.hasCover) {
+    if (this.state.hasCover && this.props.landscape) {
+      classes = {
+        container: `${styles.infoContainer} ${styles.landscape} ${styles.loaded}`,
+        info: `${styles.info} ${styles.landscape} ${styles.loaded}`
+      }
+    } else if (this.state.hasCover) {
       classes = {
         container: `${styles.infoContainer} ${styles.loaded}`,
         info: `${styles.info} ${styles.loaded}`
+      }
+    } else if (this.state.landscape) {
+      classes = {
+        container: `${styles.infoContainer} ${styles.landscape}`,
+        info: `${styles.info} ${styles.landscape}`
       }
     } else {
       classes = {

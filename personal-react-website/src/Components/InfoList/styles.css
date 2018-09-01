@@ -30,6 +30,11 @@
     color: #CF70E5; }
     .typeList .ui:active {
       background-color: #f3dcf9; }
+  .typeList .ds {
+    border-color: #f456cd;
+    color: #f456cd; }
+    .typeList .ds:active {
+      background-color: #fccef0; }
   .typeList .pr {
     border-color: #24E2BE;
     color: #24E2BE; }
@@ -90,3 +95,23 @@
     color: #00aaff; }
     .typeList .fr:active {
       background-color: #80d5ff; }
+  .typeList .ab {
+    border-color: #2E2F30;
+    color: #2E2F30; }
+    .typeList .ab:active {
+      background-color: #6c6f71; }
+  .typeList .ze {
+    border-color: #FFBE22;
+    color: #FFBE22; }
+    .typeList .ze:active {
+      background-color: #ffe4a2; }
+  .typeList .pi {
+    border-color: #AF51D0;
+    color: #AF51D0; }
+    .typeList .pi:active {
+      background-color: #ddb5eb; }
+
+@media all and (max-width: 450px) {
+  .typeList .type {
+    flex-grow: 1;
+    font-size: 0.8rem; } }
