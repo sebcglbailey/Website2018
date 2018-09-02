@@ -1,6 +1,6 @@
 @import 'Styles/colors.scss';
 
-.container {
+.list {
   max-width: 50rem;
   margin: 2rem auto;
   padding: 1rem;
@@ -32,9 +32,17 @@
   padding: 0;
 }
 
+.date {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  font-weight: 600;
+  margin: 2rem 0 0 0;
+}
+
 .cardTitle {
   font-size: 3rem;
   font-weight: 600;
+  margin-top: 1rem;
 }
 
 .cardDesc {
