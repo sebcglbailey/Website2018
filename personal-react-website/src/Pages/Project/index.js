@@ -30,6 +30,7 @@ class Project extends Component {
   componentWillMount() {
     let project = require(`../../Projects/${this.state.project}/index.js`)
     let data = this.getProjectData()
+    document.title = `Sebastian Bailey | ${data.data.title}`
     this.setState({
       data: data.data,
       relatedProjects: data.relatedProjects,
@@ -42,6 +43,9 @@ class Project extends Component {
       let project = require(`../../Projects/${nextProps.project}/index.js`)
 
       let data = this.getProjectData(nextProps.project)
+
+      document.title = `Sebastian Bailey | ${data.data.title}`
+
       this.setState({
         project: nextProps.project,
         data: data.data,
@@ -105,7 +109,7 @@ class Project extends Component {
   render() {
     let ProjectPage = this.state.projectPage
     return (
-      <div>
+      <div className={styles.container}>
         <ProjectIntro
           project={this.state.project}
           data={this.state.data}

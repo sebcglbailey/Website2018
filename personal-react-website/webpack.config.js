@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-
 module.exports = {
   entry: ["./src/index.js"],
   output: {
@@ -45,6 +44,13 @@ module.exports = {
           limit: 10000,
           name: 'static/media/[path][name].[ext]',
         },
+      },
+      {
+        test: /\.md$/,
+        loader: [
+          'babel-loader',
+          '@hugmanrique/react-markdown-loader'
+        ]
       }
     ]
   },
@@ -54,6 +60,11 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     contentBase: "./dist",
     port: 7322,

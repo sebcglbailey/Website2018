@@ -34,7 +34,7 @@ class Resume extends Component {
   }
 
   componentWillMount() {
-    document.title = "Résumé"
+    document.title = "Sebastian Bailey | Résumé"
     this.handlePageLoad()
   }
 

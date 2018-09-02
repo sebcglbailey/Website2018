@@ -95,10 +95,10 @@ class App extends Component {
               </div>
             </div>
           </ScrollToTop>
-          {/*<SplashLogo
+          <SplashLogo
             delay={250}
             ready={this.state.projectsLoaded}
-          />*/}
+          />
         </div>
       </Router>
     );

@@ -26,7 +26,7 @@ class Extras extends Component {
   }
 
   componentWillMount() {
-    document.title = "Extras"
+    document.title = "Sebastian Bailey | Extras"
 
     let imageNames = []
     images.map((type, index) => {

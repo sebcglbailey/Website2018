@@ -75,7 +75,7 @@ class Instagram extends Component {
     let imgData = data && data.map ? data : this.state.data ? this.state.data : null
     this.renderImages(imgData)
 
-    let ratio = 0.2, amount = 5, noOfRows = 10;
+    let ratio = 0.2, amount = 5, noOfRows = 9;
 
     if (window.outerWidth <= 400) {
       ratio = 0.333333333

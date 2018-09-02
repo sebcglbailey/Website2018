@@ -6,14 +6,18 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "npm run n-proj && webpack-dev-server --mode development --open",
-    "build-js": "webpack --mode production",
+    "start-js": "webpack-dev-server --mode development --open",
+    "build-js": "npm run n-proj && npm run n-extra && npm run n-blog && webpack --mode production",
+    "build-app": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
     "deploy-dev-new": "aws s3 sync --dryrun dist/ s3://dev.sebastianbailey.co.uk",
     "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
+    "deploy-all": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2",
+    "deploy-app": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2 --exclude 'static/*'",
     "n-proj": "node ./build-helpers/projects.js",
-    "n-extra": "node ./build-helpers/extra.js"
+    "n-extra": "node ./build-helpers/extra.js",
+    "n-blog": "node ./build-helpers/blog.js"
   },
   "repository": {
     "type": "git",
@@ -42,15 +46,15 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
+    "sharp": "^0.20.2",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1",
-    "sharp": "^0.20.2"
+    "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "babel-plugin-react-css-modules": "^3.3.3",
-    "react-transition-group": "^2.3.0"
+    "@hugmanrique/react-markdown-loader": "^0.0.2",
+    "babel-plugin-react-css-modules": "^3.3.3"
   }
 }
