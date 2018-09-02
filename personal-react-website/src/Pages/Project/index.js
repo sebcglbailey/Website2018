@@ -109,7 +109,7 @@ class Project extends Component {
   render() {
     let ProjectPage = this.state.projectPage
     return (
-      <div>
+      <div className={styles.container}>
         <ProjectIntro
           project={this.state.project}
           data={this.state.data}

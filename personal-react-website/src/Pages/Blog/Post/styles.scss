@@ -1,0 +1,101 @@
+@import 'Styles/colors.scss';
+
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    border: 0;
+    text-align: left;
+    text-transform: none;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+
+  p, li {
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: rgba($black, 0.6);
+    font-weight: 600;
+    &:hover {
+      color: $black;
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.2rem 0.4rem rgba($black, 0.25)
+  }
+
+  code {
+    background: $black;
+    color: $orange;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+  }
+
+  pre {
+    background: $black;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    code {
+      background: none;
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    th, td {
+      padding: 0 0.4rem;
+    }
+    tbody tr:nth-child(odd) {
+      background: rgba($black, 0.05)
+    }
+  }
+
+  blockquote {
+    border-left: 2px solid $black;
+    padding: 0 2rem;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+
+  hr {
+    border: 0.05rem solid rgba($black, 0.2)
+  }
+}

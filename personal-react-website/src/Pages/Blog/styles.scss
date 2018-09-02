@@ -1,0 +1,52 @@
+@import 'Styles/colors.scss';
+
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.postLink {
+  color: $black;
+  text-decoration: none;
+  &:hover {
+    .link {
+      text-decoration: underline;
+    }
+  }
+}
+
+.postCard {
+  border-bottom: 1px solid $black;
+  padding-bottom: 4rem;
+  .link {
+    color: $black;
+    font-weight: 800;
+    float: right;
+    text-decoration: none;
+  }
+}
+
+.postLink:last-child .postCard {
+  border: 0;
+  padding: 0;
+}
+
+.cardTitle {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.cardDesc {
+  width: 100%;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+@media all and (max-width: 640px) {
+
+  .cardDesc {
+    font-size: 1.2rem;
+  }
+
+}

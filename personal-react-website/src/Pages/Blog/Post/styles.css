@@ -1,0 +1,67 @@
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 1rem; }
+  .container h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    border: 0;
+    text-align: left;
+    text-transform: none; }
+  .container h2 {
+    font-size: 2rem;
+    font-weight: 600; }
+  .container h3 {
+    font-size: 1.5rem;
+    font-weight: 600; }
+  .container h4 {
+    font-size: 1.2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem; }
+  .container h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem; }
+  .container h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem; }
+  .container p, .container li {
+    font-size: 1.2rem; }
+  .container a {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600; }
+    .container a:hover {
+      color: rgba(0, 0, 0, 0.85); }
+  .container img {
+    width: 100%;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25); }
+  .container code {
+    background: rgba(0, 0, 0, 0.85);
+    color: #F8863C;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem; }
+  .container pre {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 0.2rem;
+    padding: 0.4rem; }
+    .container pre code {
+      background: none; }
+  .container table {
+    width: 100%;
+    text-align: left; }
+    .container table th, .container table td {
+      padding: 0 0.4rem; }
+    .container table tbody tr:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.05); }
+  .container blockquote {
+    border-left: 2px solid rgba(0, 0, 0, 0.85);
+    padding: 0 2rem;
+    margin: 1rem 0;
+    font-style: italic; }
+  .container hr {
+    border: 0.05rem solid rgba(0, 0, 0, 0.2); }

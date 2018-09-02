@@ -1,0 +1,36 @@
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 1rem; }
+
+.postLink {
+  color: rgba(0, 0, 0, 0.85);
+  text-decoration: none; }
+  .postLink:hover .link {
+    text-decoration: underline; }
+
+.postCard {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.85);
+  padding-bottom: 4rem; }
+  .postCard .link {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 800;
+    float: right;
+    text-decoration: none; }
+
+.postLink:last-child .postCard {
+  border: 0;
+  padding: 0; }
+
+.cardTitle {
+  font-size: 3rem;
+  font-weight: 600; }
+
+.cardDesc {
+  width: 100%;
+  font-size: 1.5rem;
+  padding-bottom: 1rem; }
+
+@media all and (max-width: 640px) {
+  .cardDesc {
+    font-size: 1.2rem; } }
