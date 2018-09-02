@@ -8,6 +8,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "webpack-dev-server --mode development --open",
     "build-js": "npm run n-proj && npm run n-extra && npm run n-blog && webpack --mode production",
+    "build-app": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
     "deploy-dev-new": "aws s3 sync --dryrun dist/ s3://dev.sebastianbailey.co.uk",
