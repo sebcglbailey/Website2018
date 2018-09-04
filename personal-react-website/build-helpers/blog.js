@@ -31,6 +31,16 @@ const writeFile = (post) => {
 
   postObj.posts.push(post)
 
+  postObj.posts.sort((a, b) => {
+    if (a.date < b.date) {
+      return -1
+    }
+    if (a.date > b.date) {
+      return 1
+    }
+    return 0
+  })
+
   fs.writeFileSync('src/Blog/manifest.json', JSON.stringify(postObj), 'utf-8')
 
 }
