@@ -33,7 +33,8 @@ class Extras extends Component {
       let length = type.images.length
 
       let includesCover = type.images.filter((imgName) => {
-        return imgName.includes("cover")
+        // return imgName.includes("cover")
+        return imgName.includes("xxyyzz")
       })
 
       let imgIndex = includesCover.length == 0 ? Math.floor(Math.random() * length) : type.images.indexOf(includesCover[0]);

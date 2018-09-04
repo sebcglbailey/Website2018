@@ -63,7 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: calc(100vh - 4rem);
   width: 96vw;
   position: absolute;
   left: 2vw;
@@ -131,3 +131,28 @@
   transform: rotate(180deg);
 }
 
+@media all and (max-width: 940px) {
+  .lightbox {
+    max-width: 86vw;
+    img {
+      max-width: 86vw;
+    }
+  }
+  .arrow {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .lightbox {
+    max-width: 80vw;
+    img {
+      max-width: 80vw;
+    }
+  }
+  .arrow {
+    width: 4vw;
+    height: 4vw;
+  }
+}
