@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import List from './List/';
+import Tags from './Tags/';
 
 import styles from './styles.css';
 
@@ -18,7 +19,10 @@ class Blog extends Component {
 
   render() {
     return (
-      <List styles={styles} />
+      <div>
+        <Tags postList={postList} />
+        <List styles={styles} />
+      </div>
     )
   }
   

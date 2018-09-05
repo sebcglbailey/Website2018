@@ -1,0 +1,22 @@
+.container {
+  margin-top: 4rem; }
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4rem;
+  border: 1px solid rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  cursor: pointer; }
+  .tag svg {
+    display: none; }
+  .tag.selected {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff; }
+    .tag.selected svg {
+      display: inline-block;
+      margin-left: 0.5rem;
+      transform: translateY(0.15rem); }
