@@ -2,12 +2,16 @@
 
 .container {
   margin-top: 4rem;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .tag {
   display: inline-block;
   padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
   border-radius: 4rem;
   border: 1px solid $black;
   color: $black;

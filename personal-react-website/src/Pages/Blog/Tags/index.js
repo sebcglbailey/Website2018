@@ -13,6 +13,7 @@ class Tags extends Component {
     }
 
     this.setTags = this.setTags.bind(this)
+    this.handleTagClick = this.handleTagClick.bind(this)
   }
 
   componentWillMount() {
@@ -42,11 +43,22 @@ class Tags extends Component {
         <Tag
           key={`tag-${word}`}
           id={word}
+          onClick={this.handleTagClick}
         />
       )
     })
 
     this.setState({ tags: tags })
+
+  }
+
+  handleTagClick(keyword, selected) {
+
+    if (this.props.filterResults) {
+
+      this.props.filterResults(keyword, selected)
+
+    }
 
   }
 

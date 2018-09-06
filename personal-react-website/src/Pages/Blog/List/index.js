@@ -26,16 +26,41 @@ class List extends Component {
 
       this.getPosts(nextProps)
 
+    } else if (nextProps.filters && nextProps.filters.length > 0) {
+
+      this.getPosts(nextProps)
+
+    } else if (nextProps.filters.length == 0) {
+
+      this.getPosts(nextProps)
+
     }
 
   }
 
   getPosts(props) {
 
-    let list = postList.posts.map((post, index) => {
+    let list = postList.posts;
 
-      let postFile = require(`../../../Blog/posts/${post.postName}`)
-      let frontMatter = postFile.frontMatter
+    if (props.filters && props.filters.length > 0) {
+      list = list.filter((post) => {
+
+        if (post.keywords === null) { return }
+
+        let includes = false
+
+        props.filters.forEach((word) => {
+          if (post.keywords.includes(word)) {
+            includes = true
+          }
+        })
+
+        return includes
+
+      })
+    }
+
+    list = list.map((post, index) => {
 
       let postName = post.postName.split(".md")[0]
 
@@ -48,13 +73,13 @@ class List extends Component {
           >
             <div className={props.styles.postCard}>
               <h6 className={props.styles.date}>
-                {frontMatter.date}
+                {post.date}
               </h6>
               <h2 className={props.styles.cardTitle}>
-                {frontMatter.title}
+                {post.title}
               </h2>
               <p className={props.styles.cardDesc}>
-                {frontMatter.description}
+                {post.description}
               </p>
               <p className={props.styles.link}>
                 Read more

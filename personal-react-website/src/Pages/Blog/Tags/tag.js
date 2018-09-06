@@ -20,6 +20,10 @@ class Tag extends Component {
 
     this.setState({ selected: !this.state.selected })
 
+    if (this.props.onClick) {
+      this.props.onClick(this.state.id, !this.state.selected)
+    }
+
   }
 
   render() {
