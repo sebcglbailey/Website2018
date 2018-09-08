@@ -59,9 +59,11 @@ class Intro extends Component {
           index++
         }
 
-        setTimeout(() => {
-          this.animateListItemIn(list[index], index)
-        }, speed*3)
+        if (this.state.mounted) {
+          setTimeout(() => {
+            this.animateListItemIn(list[index], index)
+          }, speed*3)
+        }
 
       })
 
@@ -81,10 +83,10 @@ class Intro extends Component {
         let string = listItem.slice(0, stringLength - 1)
         if (this.state.mounted) {
           this.setState({listItem: string})
+          this.animateOut = setTimeout(() => {
+            this.animateListItemOut(string, callback)
+          }, speed)
         }
-        this.animateOut = setTimeout(() => {
-          this.animateListItemOut(string, callback)
-        }, speed)
       }
 
     }
@@ -102,10 +104,11 @@ class Intro extends Component {
         let string = list[index].slice(0, this.state.listItem.length+1)
         if (this.state.mounted) {
           this.setState({listItem: string, itemIndex: index})
+          setTimeout(() => {
+            this.animateListItemIn(string, index, callback)
+          }, 50)
         }
-        setTimeout(() => {
-          this.animateListItemIn(string, index, callback)
-        }, 50)
+        
       } else return
 
     }

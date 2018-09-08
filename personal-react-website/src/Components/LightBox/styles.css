@@ -110,7 +110,7 @@
     max-width: 86vw; }
     .lightbox img {
       max-width: 86vw; }
-  .arrow {
+  .arrow, .close {
     width: 3vw;
     height: 3vw; } }
 
@@ -119,6 +119,6 @@
     max-width: 80vw; }
     .lightbox img {
       max-width: 80vw; }
-  .arrow {
+  .arrow, .close {
     width: 4vw;
     height: 4vw; } }

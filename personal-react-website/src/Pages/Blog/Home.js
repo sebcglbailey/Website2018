@@ -45,7 +45,7 @@ class Blog extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.homeContainer}>
         <Tags
           postList={postList}
           filterResults={this.handleFilter}

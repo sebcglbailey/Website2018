@@ -64,7 +64,9 @@ class List extends Component {
 
       let postName = post.postName.split(".md")[0]
 
-      if (postName !== props.current && index < 4) {
+      let max = props.current ? 4 : 8
+
+      if (postName !== props.current && index < max) {
         return (
           <Link
             key={postName}

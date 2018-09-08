@@ -1,3 +1,7 @@
+.homeContainer {
+  max-width: 50rem;
+  margin: 0 auto; }
+
 .list {
   max-width: 50rem;
   margin: 0 auto;
