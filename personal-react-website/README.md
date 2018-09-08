@@ -1,2 +1,3 @@
-# create-react-simple
-Personal minimum setup for a react app
+# Personal Website 2018
+
+The repo for my portfolio website built in ReactJS, released in September 2018.

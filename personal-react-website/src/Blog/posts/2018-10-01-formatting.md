@@ -3,6 +3,7 @@ date: "2018-10-01"
 title: "Testing Markdown"
 description: "This is a test post to show the formatting of using Markdown as a post blog post format"
 author: "Sebastian Bailey"
+fileName: "2018-10-01-formatting.md"
 ---
 
 
