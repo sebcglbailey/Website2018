@@ -62,6 +62,8 @@ class List extends Component {
 
     list = list.map((post, index) => {
 
+      if (!post.postName) { return }
+
       let postName = post.postName.split(".md")[0]
 
       let max = props.current ? 4 : 8

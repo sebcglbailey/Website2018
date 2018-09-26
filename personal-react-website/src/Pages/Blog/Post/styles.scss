@@ -151,7 +151,12 @@
   img {
     max-width: 100%;
     border-radius: 0.25rem;
-    box-shadow: 0 0.2rem 0.4rem rgba($black, 0.25)
+    box-shadow: 0 0.2rem 0.4rem rgba($black, 0.25);
+  }
+
+  img[src*=".png"] {
+    box-shadow: none;
+    filter: drop-shadow(0 0.2rem 0.4rem rgba($black, 0.25));
   }
 
   code {
@@ -203,6 +208,15 @@
     display: block;
     margin-left: -40px;
   }
+
+  img + em {
+    font-size: 0.8rem;
+    font-style: normal;
+    position: relative;
+    left: 0.5rem;
+    max-width: 34rem;
+  }
+
 }
 
 @media all and (max-width: 640px) {

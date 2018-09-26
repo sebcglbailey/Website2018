@@ -110,6 +110,9 @@
     max-width: 100%;
     border-radius: 0.25rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25); }
+  .post img[src*=".png"] {
+    box-shadow: none;
+    filter: drop-shadow(0 0.2rem 0.4rem rgba(0, 0, 0, 0.25)); }
   .post code {
     color: #DE334E;
     padding: 0.1rem 0.2rem;
@@ -143,6 +146,12 @@
   .post li[class="task-list-item"] {
     display: block;
     margin-left: -40px; }
+  .post img + em {
+    font-size: 0.8rem;
+    font-style: normal;
+    position: relative;
+    left: 0.5rem;
+    max-width: 34rem; }
 
 @media all and (max-width: 640px) {
   .post h1 {
