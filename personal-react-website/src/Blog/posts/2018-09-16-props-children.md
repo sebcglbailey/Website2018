@@ -34,7 +34,7 @@ You've gone and learnt some React basics, you've got to grips with some of the o
 
 ### Let's start with an example...
 
-![Simple Masonry layout example with cards](/static/media/src/Blog/src/images/2018-10-16-props-children/masonry.png)
+![Simple Masonry layout example with cards](/static/media/src/Blog/src/images/2018-09-16-props-children/masonry.png)
 *Simple Masonry layout with some basic cards*
 
 As many people will recognise the example above as a Masonry layout, doing lots and lots of these in the same canvas might become a bit tedious.
@@ -63,7 +63,7 @@ class Masonry extends React.Component<Props> {
 
 When you include `{this.props.children}` in your class, Framer X will give you a handy little connector on your code component, where you drag it to another frame on the canvas. Your component will then render whatever is within that frame, in your component.
 
-![A code component linked to a frame on the canvas, which is rendered inside it](/static/media/src/Blog/src/images/2018-10-16-props-children/children-canvas.png)
+![A code component linked to a frame on the canvas, which is rendered inside it](/static/media/src/Blog/src/images/2018-09-16-props-children/children-canvas.png)
 *A view of the connector between your code component and a frame on the canvas*
 
 ### That's not useful!
@@ -82,10 +82,10 @@ Add this before you render the component to find out what's going on beneath the
 
 You'll see something like this in your console:
 
-![A console log of the children](/static/media/src/Blog/src/images/2018-10-16-props-children/log_1.png)
+![A console log of the children](/static/media/src/Blog/src/images/2018-09-16-props-children/log_1.png)
 *This is the only object in the array of children – the frame your code component is linked to via the connector*
 
-![A console log of the children, expanded, to see the array of all the actual chidlren](/static/media/src/Blog/src/images/2018-10-16-props-children/log_2.png)
+![A console log of the children, expanded, to see the array of all the actual chidlren](/static/media/src/Blog/src/images/2018-09-16-props-children/log_2.png)
 *Drill down, and you'll see a much bigger array of children*
 
 ### Now we're getting somewhere...
@@ -117,17 +117,17 @@ This way, we can render complete copies of our children (*hint: this is where we
 Hopefully, with all the maths worked out correctly, we'll end up with something looking like this:
 
 
-![Simple Masonry layout example with text cards](/static/media/src/Blog/src/images/2018-10-16-props-children/masonry.png)
+![Simple Masonry layout example with text cards](/static/media/src/Blog/src/images/2018-09-16-props-children/masonry.png)
 *Simple Masonry layout with some basic cards*
 
 Or this...
 
-![Simple Masonry layout example with image cards](/static/media/src/Blog/src/images/2018-10-16-props-children/masonry-images.png)
+![Simple Masonry layout example with image cards](/static/media/src/Blog/src/images/2018-09-16-props-children/masonry-images.png)
 *Simple Masonry layout with some image cards*
 
 Or even this!
 
-![Complex Masonry layout example with text and image cards](/static/media/src/Blog/src/images/2018-10-16-props-children/masonry-mixed.png)
+![Complex Masonry layout example with text and image cards](/static/media/src/Blog/src/images/2018-09-16-props-children/masonry-mixed.png)
 *More complex Masonry layout with some text and image cards*
 
 ---

@@ -22,12 +22,22 @@ class Blog extends Component {
   render() {
     return (
       <div>
-        <Route exact path="/blog" component={Home} />
-        <Route path="/blog/:id"
-          render={({ match }) => <Post
-            postName={match.params.id} />
-          }
-        />
+        <Switch>
+          <Route path="/blog/:id"
+            render={({ match }) => {
+                let post = postList.posts.filter((post) => {
+                  return post.postName.replace(".md", "") === match.params.id
+                })
+                if (post.length > 0) {
+                  return <Post postName={match.params.id} />
+                } else {
+                  return <Redirect from="/blog/:id" to="/blog" />
+                }
+              }
+            }
+          />
+          <Route exact path="/blog" component={Home} />
+        </Switch>
       </div>
     )
   }

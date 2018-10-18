@@ -15,6 +15,7 @@
     "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
     "deploy-all": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2",
     "deploy-app": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2 --exclude 'static/*'",
+    "deploy-blog": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2 --exclude 'static/*' --include 'static/media/src/Blog/*'",
     "n-proj": "node ./build-helpers/projects.js",
     "n-extra": "node ./build-helpers/extra.js",
     "n-blog": "node ./build-helpers/blog.js"

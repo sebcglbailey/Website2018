@@ -7,17 +7,26 @@ fileName: "2018-09-26-loupe-intro.md"
 keywords:
     - framer
     - thoughts
+    - prototyping
 ---
 
-First of all, I want to thank the guys and gals at Framer for putting on a fantastic few days over in Amsterdam. They did an absolutley fantastic job at organising the conference, and the talks they put on were second to none. 
+First of all, I want to thank the guys and gals at Framer for putting on a fantastic few days over in Amsterdam. They did an absolutely fantastic job at organising the conference, and the talks they put on were second to none. 
 
 It was great to put some faces to names of so many people that are a huge part of the community, and to really geek out about all things Framer.
 
 ## The format
 
-You'd be forgiven for thinking that being a Framer conference, the talks would all be about using the tool, and Framer X, the new product they launched the day before. Much to the agreement of everyone I have spoken to though, it was well seperated from the tool, and all of the speakers were focused on a much broader topic of design and prototyping in general.
+You'd be forgiven for thinking that being a Framer conference, the talks would all be about using the tool, and Framer X, the new product they launched the day before. Much to the agreement of everyone I have spoken to though, it was well separated from the tool, and all of the speakers were focused on a much broader topic of design and prototyping in general.
 
 It was refreshing to be able to gain some inspiration from the speakers, as well as spend the breaks and surrounding days talking and geeking out about Framer with the community.
+
+## My thoughts
+
+* [Loupe Conference (Part II): Danny White on the dangers of design today](2018-10-01-loupe-danny-white)
+* [Loupe Conference (Part III): Claudio Guglieri on human centered design](2018-10-11-loupe-claudio-guglieri)
+* [Loupe Conference (Part IV): May-Li Khoe & Linda Dong on Prototyping](2018-10-18-loupe-prototyping)
+
+I'll be updating this post with links to the relevant articles, but in the mean time, check out a super quick overview of the talks below...
 
 ## The speakers
 
@@ -26,6 +35,8 @@ It was refreshing to be able to gain some inspiration from the speakers, as well
 Danny spoke about the perils of design today.
 
 The digital world as we know it, and our role in it as digital designers, could be compared to the power and vision post-war modernist architects had.
+
+[Read it here](2018-10-01-loupe-danny-white)
 
 ### Mina Markham
 
@@ -39,6 +50,8 @@ Claudio started off his talk with a fantastic video on reading speeds, culminati
 
 He went on to talk in depth about designing for humans, and their physical needs.
 
+[Read it here](2018-10-11-loupe-claudio-guglieri)
+
 ### Julia Khusinova
 
 I was particularly intrigued by Julia's talk, as some of the issues she covered are very much at the forefront of my mind, as we continue to build our design team at ClearScore.
@@ -51,9 +64,13 @@ The highlight of the day for a lot of people I'm sure, May-Li showed us how we c
 
 Full of energy, she managed to get everyone up out of their seats for 5 minutes, doing a Hula dance.
 
+[Read more here](2018-10-18-loupe-prototyping)
+
 ### Linda Dong
 
-Another ex-Apple designer, Linda spoke about...
+Another ex-Apple designer, Linda spoke about the importance of sharing your prototypes early. It doesn't matter if they aren't beautiful, the quicker you gain feedback, the quicker you can iterate.
+
+[Read more here](2018-10-18-loupe-prototyping)
 
 ### Holly Habstritt Gaal
 
