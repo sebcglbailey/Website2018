@@ -42,6 +42,10 @@
   font-size: 1.5rem;
   padding-bottom: 1rem; }
 
+.load {
+  width: 100%;
+  margin-top: 2rem; }
+
 @media all and (max-width: 640px) {
   .cardDesc {
     font-size: 1.2rem; } }

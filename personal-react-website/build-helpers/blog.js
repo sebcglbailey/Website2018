@@ -13,6 +13,8 @@ const addPostInfo = (error, content) => {
 
   let frontMatter = yamlFront.loadFront(content)
 
+  if (frontMatter.draft && frontMatter.draft == "true") { return }
+
   let post ={}
 
   post.date = frontMatter.date ? frontMatter.date : null

@@ -25,8 +25,7 @@ It was refreshing to be able to gain some inspiration from the speakers, as well
 * [Loupe Conference (Part II): Danny White on the dangers of design today](2018-10-01-loupe-danny-white)
 * [Loupe Conference (Part III): Claudio Guglieri on human centered design](2018-10-11-loupe-claudio-guglieri)
 * [Loupe Conference (Part IV): May-Li Khoe & Linda Dong on Prototyping](2018-10-18-loupe-prototyping)
-
-I'll be updating this post with links to the relevant articles, but in the mean time, check out a super quick overview of the talks below...
+* [Loupe Conference (Part V): Mina Markham on her learnings from building Design Systems](2018-11-02-loupe-systems)
 
 ## The speakers
 
@@ -43,6 +42,8 @@ The digital world as we know it, and our role in it as digital designers, could 
 Mina's presentation was all about her experience building design systems for the Hilary Clinton presidency campaign, and Slack.
 
 She expanded on her mistakes and successes in both roles, and spoke about some of the limitations design systems can have.
+
+[Read more here](2018-11-02-loupe-systems)
 
 ### Claudio Guglieri
 

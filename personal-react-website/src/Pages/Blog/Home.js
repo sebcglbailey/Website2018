@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import LoadButton from '../../Components/LoadButton/';
+
 import List from './List/';
 import Tags from './Tags/';
 
@@ -13,14 +15,24 @@ class Blog extends Component {
     super(props)
 
     this.state = {
-      filters: []
+      filters: [],
+      max: 8
     }
 
     this.handleFilter = this.handleFilter.bind(this)
+    this.handleLoadMore = this.handleLoadMore.bind(this)
   }
 
   componentWillMount() {
     document.title = "Sebastian Bailey | Blog"
+  }
+
+  handleLoadMore() {
+    let max = this.state.max
+
+    max += 8
+
+    this.setState({max: max})
   }
 
   handleFilter(keyword, selected) {
@@ -44,6 +56,14 @@ class Blog extends Component {
   }
 
   render() {
+
+    let loadMoreButton = postList && postList.posts && this.state.max < postList.posts.length ? 
+      (
+        <div className={styles.load}>
+          <LoadButton onClick={this.handleLoadMore} />
+        </div>
+      ) : null
+
     return (
       <div className={styles.homeContainer}>
         <Tags
@@ -53,7 +73,9 @@ class Blog extends Component {
         <List
           styles={styles}
           filters={this.state.filters}
+          max={this.state.max}
         />
+        {loadMoreButton}
       </div>
     )
   }

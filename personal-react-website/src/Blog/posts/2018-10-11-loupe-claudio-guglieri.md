@@ -27,7 +27,7 @@ Our users are all human, and therefore we need to be designing with human limita
 
 ## The rest
 
-We all love designing beautiful mock ups and innovative interfaces to solve problems in new and intersting ways. But how often do we actually think about why we are making some of those decisions?
+We all love designing beautiful mock ups and innovative interfaces to solve problems in new and interesting ways. But how often do we actually think about why we are making some of those decisions?
 
 Do we always think about how people hold their phones, and thus the reach of their thumbs and fingers?
 

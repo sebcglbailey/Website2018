@@ -195,7 +195,8 @@
   }
 
   hr {
-    border: 0.05rem solid rgba($black, 0.2)
+    border: 0.5px solid rgba($black, 0.5);
+    margin: 2rem 0;
   }
 
   input[type="checkbox"] {
@@ -215,6 +216,10 @@
     position: relative;
     left: 0.5rem;
     max-width: 34rem;
+  }
+
+  li {
+    margin-top: 0.8rem;
   }
 
 }

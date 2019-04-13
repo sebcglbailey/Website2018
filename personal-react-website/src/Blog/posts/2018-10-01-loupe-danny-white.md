@@ -23,7 +23,7 @@ The most notable architect of the time, and biggest advocat of the 'mega-cities'
 
 The architects of the time were given a lot of power to design and build projects just like the Bijlmer. Unfortunately, there was little to no consideration into what it meant for the people who would actually be living in these new cities, or for the people already living in the spaces they would be taking over.
 
-Although in theory, it should have worked, the architects didn't spend time with the inhabitants, in order to really sove the problems that they had.
+Although in theory, it should have worked, the architects didn't spend time with the inhabitants, in order to really solve the problems that they had.
 
 The cities were tearing down large percentages of already colonised land, to make way for these new cities. Crime rates were too high. And the these cities were in large, left to their own devices, and saw a great deal of decay.
 
