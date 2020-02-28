@@ -45,7 +45,7 @@
 }
 
 .cardTitle {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-top: 1rem;
 }
@@ -54,6 +54,11 @@
   width: 100%;
   font-size: 1.5rem;
   padding-bottom: 1rem;
+}
+
+.load {
+  width: 100%;
+  margin-top: 2rem;
 }
 
 @media all and (max-width: 640px) {

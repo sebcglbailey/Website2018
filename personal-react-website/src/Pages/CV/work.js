@@ -11,15 +11,18 @@ const info = [
     id: "clearscore",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
-    role: "UX/UI Designer, Prototyper & Project Lead",
+    role: "Product Designer, Design Systems Lead",
     dates: "August 2016 - Present",
     info: [
-      "User flows for new features and product verticals",
+      "User flows for new features and verticals",
       "Experience design from concept to delivery",
-      "User Interface for new features",
+      "User Interface design and motion design",
       "Prototyping evangalist - pushing the need for and developing prototypes",
-      "Designed and leading the Design System",
-      "Facilitating design sprints, and critiques"
+      "Building and leading the Design System",
+      "Facilitating design sprints, and critiques",
+      "Managing and mentoring designers",
+      "Managing a front-end engineering team",
+      "Project management (Scrum & Kanban)",
     ]
   },
   {

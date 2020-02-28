@@ -38,7 +38,8 @@ class Tags extends Component {
 
     })
 
-    let tags = keywords.map((word) => {
+    let tags = keywords.map((word, index) => {
+      if (index >= 15) { return }
       return (
         <Tag
           key={`tag-${word}`}
