@@ -27,6 +27,7 @@ class InstaPic extends Component {
   render() {
 
     let image = this.state.data
+    console.log(image)
 
     return(
       <li
@@ -39,7 +40,7 @@ class InstaPic extends Component {
         >
           <img
             src={this.state.imageUrl}
-            alt={image.caption.text}
+            alt={image.caption ? image.caption.text : null}
           />
         </Link>
       </li>
