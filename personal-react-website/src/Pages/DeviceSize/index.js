@@ -1,44 +1,66 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 
 import styles from './styles.css';
 
-class DeviceSize extends Component {
-    constructor(props) {
-        super(props)
+const DeviceSize = () => {
 
-        this.state = {
-            width: window.innerWidth,
-            height: window.innerHeight
+    const size = useCurrentSize();
+    console.log(size)
+
+    return (
+        <div className={styles.container}>
+            <h2>Window size:</h2>
+            <p>{size.innerWidth} x {size.innerHeight}</p>
+            <h2>Screen size:</h2>
+            <p>{size.fullWidth} x {size.fullHeight}</p>
+        </div>
+
+    )
+}
+
+// Hook
+const getFullWidth = () => window.outerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+const getFullHeight = () => window.outerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+const getInnerWidth = () => window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+const getInnerHeight = () => window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+
+function useCurrentSize() {
+    // save current window width in the state object
+    let [fullWidth, setFullWidth] = useState(getFullWidth());
+    let [fullHeight, setFullHeight] = useState(getFullHeight());
+    let [innerWidth, setInnerWidth] = useState(getInnerWidth());
+    let [innerHeight, setInnerHeight] = useState(getInnerHeight());
+
+    // in this case useEffect will execute only once because
+    // it does not have any dependencies.
+    useEffect(() => {
+        const resizeListener = () => {
+            // change size from the state object
+            setFullWidth(getFullWidth())
+            setFullHeight(getFullHeight())
+            setInnerWidth(getInnerWidth())
+            setInnerHeight(getInnerHeight())
+        };
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
+
+        // clean up function
+        return () => {
+            // remove resize listener
+            window.removeEventListener('resize', resizeListener);
         }
+    }, [])
 
-        this.windowResize = this.windowResize.bind(this)
-    }
-
-    componentWillMount() {
-        window.addEventListener("resize", this.windowResize)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.windowResize)
-    }
-
-    windowResize() {
-        this.setState({
-            width: window.innerWidth,
-            height: window.innerHeight
-        })
-    }
-
-    render() {
-        return (
-            <div className={styles.container}>
-                <h2>Device size:</h2>
-                <p>{this.state.width} x {this.state.height}</p>
-            </div>
-
-        )
-    }
+    return { innerWidth, innerHeight, fullWidth, fullHeight };
 }
 
 export default DeviceSize;
