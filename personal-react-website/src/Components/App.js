@@ -10,9 +10,10 @@ import Header from './Header/';
 import ProjectList from '../Pages/ProjectList/';
 import Project from '../Pages/Project/';
 import CV from '../Pages/CV/';
-import Extras, {Images} from '../Pages/Extras/';
+import Extras, { Images } from '../Pages/Extras/';
 import Blog from '../Pages/Blog/';
 import Contact from '../Pages/Contact/';
+import DeviceSize from '../Pages/DeviceSize';
 
 // TODO: rename all pages and components jsx files to index.js
 
@@ -87,6 +88,10 @@ class App extends Component {
                   <Route path="/contact"
                     render={() => <Contact
                       onLoad={this.handlePageLoad} />}
+                  />
+
+                  <Route path="/device-size"
+                    render={() => <DeviceSize />}
                   />
 
                   <Redirect exact from="/" to="/projects" />
