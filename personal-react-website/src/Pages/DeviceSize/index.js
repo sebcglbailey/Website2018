@@ -20,10 +20,10 @@ const DeviceSize = () => {
 }
 
 // Hook
-const getFullWidth = () => window.outerWidth
+const getFullWidth = () => screen.width
     || document.documentElement.clientWidth
     || document.body.clientWidth;
-const getFullHeight = () => window.outerHeight
+const getFullHeight = () => screen.height
     || document.documentElement.clientHeight
     || document.body.clientHeight;
 const getInnerWidth = () => window.innerWidth
