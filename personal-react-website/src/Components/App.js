@@ -96,6 +96,12 @@ class App extends Component {
 
                   <Redirect exact from="/" to="/projects" />
 
+                  <Route
+                    render={() => <ProjectList
+                      projects={projects}
+                      onLoad={this.handlePageLoad} />}
+                  />
+
                 </Switch>
               </div>
             </div>
