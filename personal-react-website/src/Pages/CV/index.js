@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import InfoList from '../../Components/InfoList/';
-import Card, {Cover, Info} from '../../Components/Card/';
+import Card, { Cover, Info } from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
 import Content from '../../Components/Content/';
 
@@ -50,16 +50,17 @@ class Resume extends Component {
         <div className={styles.intro}>
           <Intro />
         </div>
-        <div className={styles.fields}>
+        <H2>My experience...</H2>
+        {/* <div className={styles.fields}>
           <H2>Fields of work</H2>
           <InfoList types={this.state.fields} />
-        </div>
+        </div> */}
         <div className={styles.skills}>
-          <H2>Skills & Experience</H2>
+          {/* <H2>Skills & Experience</H2> */}
           <h3>Software</h3>
           <InfoList types={this.state.skills.software} />
-          <h3>Process</h3>
-          <InfoList types={this.state.skills.process} />
+          {/* <h3>Process</h3>
+          <InfoList types={this.state.skills.process} /> */}
           <h3>Development</h3>
           <InfoList types={this.state.skills.development} />
         </div>
@@ -70,7 +71,7 @@ class Resume extends Component {
 
     )
   }
-  
+
 }
 
 export default Resume;

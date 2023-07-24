@@ -52,11 +52,11 @@ class App extends Component {
               <div className={styles.view}>
                 <Switch>
 
-                  <Route exact path="/projects"
+                  {/* <Route exact path="/projects"
                     render={() => <ProjectList
                       projects={projects}
                       onLoad={this.handlePageLoad} />}
-                  />
+                  /> */}
 
                   <Route path="/projects/:id"
                     render={({ match }) => <Project
@@ -80,10 +80,10 @@ class App extends Component {
                       id={match.params.id} />}
                   />
 
-                  <Route path="/blog"
+                  {/* <Route path="/blog"
                     render={() => <Blog
                       onLoad={this.handlePageLoad} />}
-                  />
+                  /> */}
 
                   <Route path="/contact"
                     render={() => <Contact
@@ -94,7 +94,7 @@ class App extends Component {
                     render={() => <DeviceSize />}
                   />
 
-                  <Redirect exact from="/" to="/projects" />
+                  <Redirect exact from="/" to="/resume" />
 
                   <Route
                     render={() => <ProjectList

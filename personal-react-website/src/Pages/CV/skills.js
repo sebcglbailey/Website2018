@@ -1,5 +1,6 @@
 const skills = {
   software: [
+    "Figma",
     "Sketch",
     "Framer",
     "Abstract",
@@ -9,7 +10,6 @@ const skills = {
     "InDesign",
     "After Effects",
     "Adobe XD",
-    "Principle",
   ],
   process: [
     "Concept Design",
@@ -23,16 +23,14 @@ const skills = {
   development: [
     "HTML5",
     "CSS3",
+    "Storybook",
     "Sass",
     "Javascript",
     "ES6",
+    "Node",
     "Coffeescript",
-    "jQuery",
-    "PHP",
-    "AngularJS",
     "React",
     "Git",
-    "Wordpress",
   ]
 }
 

@@ -6,6 +6,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	padding: 0;
+
 	.type {
 		display: inline-block;
 		text-transform: uppercase;
@@ -16,139 +17,204 @@
 		min-width: 3.6rem;
 		min-height: 3.6rem;
 		width: auto;
-		cursor: pointer;
+		// cursor: pointer;
 		overflow: hidden;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		&:active {
-			background-color: lighten($black, 25%);
+
+		&:hover {
+			background-color: lighten($black, 80%);
 		}
 	}
+
 	.ux {
 		border-color: $ux;
 		color: $ux;
-		&:active {
-			background-color: lighten($ux, 25%)
+
+		&:hover {
+			background-color: lighten($ux, 30%);
+			color: darken($ux, 10%);
 		}
 	}
+
 	.ui {
 		border-color: $ui;
 		color: $ui;
-		&:active {
-			background-color: lighten($ui, 25%)
+
+		&:hover {
+			background-color: lighten($ui, 30%);
+			color: darken($ui, 10%);
 		}
 	}
+
 	.ds {
 		border-color: $ds;
 		color: $ds;
-		&:active {
-			background-color: lighten($ds, 25%)
+
+		&:hover {
+			background-color: lighten($ds, 30%);
+			color: darken($ds, 10%);
 		}
 	}
+
 	.pr {
 		border-color: $pr;
 		color: $pr;
-		&:active {
-			background-color: lighten($pr, 25%)
+
+		&:hover {
+			background-color: lighten($pr, 30%);
+			color: darken($pr, 10%);
 		}
 	}
+
 	.wd {
 		border-color: $wd;
 		color: $wd;
-		&:active {
-			background-color: lighten($wd, 25%)
+
+		&:hover {
+			background-color: lighten($wd, 30%);
+			color: darken($wd, 10%);
 		}
 	}
+
 	.ph {
 		border-color: $ph;
 		color: $ph;
-		&:active {
-			background-color: lighten($ph, 25%)
+
+		&:hover {
+			background-color: lighten($ph, 30%);
+			color: darken($ph, 10%);
 		}
 	}
+
 	.ar {
 		border-color: $ar;
 		color: $ar;
-		&:active {
-			background-color: lighten($ar, 25%)
+
+		&:hover {
+			background-color: lighten($ar, 30%);
+			color: darken($ar, 10%);
 		}
 	}
+
 	.gd {
 		border-color: $gd;
 		color: $gd;
-		&:active {
-			background-color: lighten($gd, 25%)
+
+		&:hover {
+			background-color: lighten($gd, 30%);
+			color: darken($gd, 10%);
 		}
 	}
+
+	.fi {
+		border-color: $fi;
+		color: $fi;
+
+		&:hover {
+			background-color: lighten($fi, 30%);
+			color: darken($fi, 10%);
+		}
+	}
+
 	.ps {
 		border-color: $ps;
 		color: $ps;
-		&:active {
-			background-color: lighten($ps, 25%)
+
+		&:hover {
+			background-color: lighten($ps, 30%);
+			color: darken($ps, 10%);
 		}
 	}
+
 	.ai {
 		border-color: $ai;
 		color: $ai;
-		&:active {
-			background-color: lighten($ai, 25%)
+
+		&:hover {
+			background-color: lighten($ai, 30%);
+			color: darken($ai, 10%);
 		}
 	}
+
 	.id {
 		border-color: $id;
 		color: $id;
-		&:active {
-			background-color: lighten($id, 25%)
+
+		&:hover {
+			background-color: lighten($id, 20%);
+			color: darken($id, 10%);
 		}
 	}
+
 	.ae {
 		border-color: $ae;
 		color: $ae;
-		&:active {
-			background-color: lighten($ae, 25%)
+
+		&:hover {
+			background-color: lighten($ae, 10%);
+			color: darken($ae, 10%);
 		}
 	}
+
 	.xd {
 		border-color: $xd;
 		color: $xd;
-		&:active {
-			background-color: lighten($xd, 25%)
+
+		&:hover {
+			background-color: lighten($xd, 30%);
+			color: darken($xd, 10%);
 		}
 	}
+
 	.sk {
 		border-color: $sk;
 		color: $sk;
-		&:active {
-			background-color: lighten($sk, 25%)
+
+		&:hover {
+			background-color: lighten($sk, 30%);
+			color: darken($sk, 10%);
 		}
 	}
+
 	.fr {
 		border-color: $fr;
 		color: $fr;
-		&:active {
-			background-color: lighten($fr, 25%)
+
+		&:hover {
+			background-color: lighten($fr, 30%);
+			color: darken($fr, 10%);
 		}
 	}
+
 	.ab {
 		border-color: $ab;
 		color: $ab;
-		&:active {
-			background-color: lighten($ab, 25%)
+
+		&:hover {
+			background-color: lighten($ab, 60%);
+			color: darken($ab, 10%);
 		}
 	}
+
 	.ze {
 		border-color: $ze;
 		color: $ze;
-		&:active {
-			background-color: lighten($ze, 25%)
+
+		&:hover {
+			background-color: lighten($ze, 30%);
+			color: darken($ze, 10%);
 		}
 	}
+
 	.pi {
 		border-color: $pi;
 		color: $pi;
-		&:active {
-			background-color: lighten($pi, 25%)
+
+		&:hover {
+			background-color: lighten($pi, 30%);
+			color: darken($pi, 10%);
 		}
 	}
 }
