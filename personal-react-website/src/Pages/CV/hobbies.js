@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
 import Content from '../../Components/Content/';
-import Card, {Cover, Info} from '../../Components/Card/';
+import Card, { Cover, Info } from '../../Components/Card/';
 import InfoList from '../../Components/InfoList/';
 
 import styles from './styles.css';
 
 const hobbies = [
-
+  {
+    key: "painting",
+    title: "Painting",
+    description: "Finding painting later on in life has helped me to keep my creative juices flowing when the day-to-day job keeps me otherwise occupied. It allows me really delve into those inner feelings and help showcase how I see the world."
+  },
   {
     key: "snowboarding",
     title: "Snowboarding",
@@ -20,12 +24,12 @@ const hobbies = [
     description: "I use photography in a lot of my work, and try to base a lot of my designs off of the photos that I take myself, rather than use boring stock photographs! Whenever I go somewhere new, I will try to take my SLR with me, but I always have my phone handy to take some shots for Instagram if I don't!",
     imageSrc: ""
   },
-  {
-    key: "skiing",
-    title: "Skiing",
-    description: "Skiing isn't as good as snowboarding (here's where the skiiers go 'boo-hiss'), but it's still one of my favourite past-times. I've been skiing since I can remember (with a big gap in the middle to learn to snowboard) so it's easy to understand why I love winter and snow so much.",
-    imageSrc: ""
-  },
+  // {
+  //   key: "skiing",
+  //   title: "Skiing",
+  //   description: "Skiing isn't as good as snowboarding (here's where the skiiers go 'boo-hiss'), but it's still one of my favourite past-times. I've been skiing since I can remember (with a big gap in the middle to learn to snowboard) so it's easy to understand why I love winter and snow so much.",
+  //   imageSrc: ""
+  // },
   {
     key: "travelling",
     title: "Travelling",
@@ -44,12 +48,12 @@ const hobbies = [
     description: "Life can't exist without music. It's as simple as that. I literally can't go a day without listening to something. You will rarely see me without a pair of headphones or just nodding along to a tune I have in my head.",
     imageSrc: ""
   },
-  {
-    key: "djing",
-    title: "DJing",
-    description: "With my love for music comes the djing. I'm not really into the whole gig thing – it's more just for personal pleasure. I try to mess around on the decks every now and then (electronic), but I would really love to get into vinyl djing to really get back to the roots.",
-    imageSrc: ""
-  },
+  // {
+  //   key: "djing",
+  //   title: "DJing",
+  //   description: "With my love for music comes the djing. I'm not really into the whole gig thing – it's more just for personal pleasure. I try to mess around on the decks every now and then (electronic), but I would really love to get into vinyl djing to really get back to the roots.",
+  //   imageSrc: ""
+  // },
   {
     key: "cooking",
     title: "Cooking",
@@ -104,7 +108,7 @@ class Hobbies extends Component {
       )
     })
 
-    this.setState({cards: cards, list: list})
+    this.setState({ cards: cards, list: list })
 
   }
 
@@ -115,7 +119,7 @@ class Hobbies extends Component {
   }
 
   render() {
-    return(
+    return (
       <div className={styles.hobbies}>
         <h2>Hobbies & Interests</h2>
         <div className={styles.hobbyCards}>

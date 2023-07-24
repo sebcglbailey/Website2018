@@ -17,6 +17,7 @@ let listTypes = [
   ["ab", "Abstract"],
   ["ze", "Zeplin"],
   ["pi", "Principle"],
+  ["fi", "Figma"],
 ]
 
 const toggleType = (type) => {
@@ -27,7 +28,7 @@ const toggleType = (type) => {
 
   if (arr[0]) {
     let index = arr[0].indexOf(type)
-    let newIndex = (index+1)%2
+    let newIndex = (index + 1) % 2
     return arr[0][newIndex]
   } else {
     let shortArray = type.split(" ")
@@ -42,7 +43,7 @@ const toggleType = (type) => {
 
 const getTypeClass = (type, styles) => {
   let def = `${styles.type}`;
-  switch(type) {
+  switch (type) {
     case "ux":
     case "User Experience":
       return def + ` ${styles.ux}`
@@ -74,6 +75,10 @@ const getTypeClass = (type, styles) => {
     case "ar":
     case "Architecture":
       return def + ` ${styles.ar}`
+      break;
+    case "fi":
+    case "Figma":
+      return def + ` ${styles.fi}`
       break;
     case "ps":
     case "Photoshop":

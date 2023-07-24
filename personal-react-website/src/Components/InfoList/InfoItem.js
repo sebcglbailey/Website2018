@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import styles from './styles.css';
-import {toggleType} from './functions';
+import { toggleType } from './functions';
 
 class InfoItem extends Component {
   constructor(props) {
@@ -39,11 +39,11 @@ class InfoItem extends Component {
   }
 
   render() {
-    return(
+    return (
       <li
-      style={this.style}
-      onClick={this.handleClick}
-      className={`${this.state.className}`}>
+        style={this.style}
+        // onClick={this.handleClick}
+        className={`${this.state.className}`}>
         {this.state.type}
       </li>
     )

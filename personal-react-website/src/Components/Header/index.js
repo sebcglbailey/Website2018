@@ -6,7 +6,7 @@ import styles from './styles.css';
 import logo from "../../logo-white.svg"
 import logoPNG from "../../logo-white.png"
 
-class Header extends Component{
+class Header extends Component {
   constructor(props) {
     super(props)
 
@@ -32,47 +32,53 @@ class Header extends Component{
 
   render() {
     return (
-        <div className={styles.header}>
-          <div className={styles.logoBurgerWrapper}>
-            <div className={styles.logo}>
-              <Link to='/'>
-                <picture>
-                  <source srcSet={logo} />
-                  <img src={logoPNG} alt='Sebastian Bailey Logo' />
-                </picture>
-              </Link>
-            </div>
-            <div
-              onClick={this.handleBurgerClick}
-              className={this.state.menuOpen ? (`${styles.burgerMenu} ${styles.active}`) : styles.burgerMenu}
-            >
-              <div className={styles.top}></div>
-              <div className={styles.middle}></div>
-              <div className={styles.bottom}></div>
-            </div>
+      <div className={styles.header}>
+        <div className={styles.logoBurgerWrapper}>
+          <div className={styles.logo}>
+            <Link to='/'>
+              <picture>
+                <source srcSet={logo} />
+                <img src={logoPNG} alt='Sebastian Bailey Logo' />
+              </picture>
+            </Link>
           </div>
           <div
-            ref={(elem) => this.nav = elem}
-            onClick={this.handleMenuClick}
-            className={this.state.menuOpen ? (`${styles.navigation} ${styles.active}`) : styles.navigation}
+            onClick={this.handleBurgerClick}
+            className={this.state.menuOpen ? (`${styles.burgerMenu} ${styles.active}`) : styles.burgerMenu}
           >
-            <NavLink activeClassName={styles.active} to="/projects">
-              work
-            </NavLink>
-            <NavLink activeClassName={styles.active} to="/resume">
-              résumé
-            </NavLink>
-            <NavLink activeClassName={styles.active} to="/extras">
-              extras
-            </NavLink>
-            <NavLink activeClassName={styles.active} to="/blog">
-              blog
-            </NavLink>
-            <NavLink activeClassName={styles.active} to="/contact">
-              contact
-            </NavLink>
+            <div className={styles.top}></div>
+            <div className={styles.middle}></div>
+            <div className={styles.bottom}></div>
           </div>
         </div>
+        <div
+          ref={(elem) => this.nav = elem}
+          onClick={this.handleMenuClick}
+          className={this.state.menuOpen ? (`${styles.navigation} ${styles.active}`) : styles.navigation}
+        >
+          {/* <NavLink activeClassName={styles.active} to="/projects">
+              work
+            </NavLink> */}
+          {/* <NavLink activeClassName={styles.active} to="/resume">
+            résumé
+          </NavLink> */}
+          {/* <NavLink activeClassName={styles.active} to="/extras">
+              extras
+            </NavLink> */}
+          {/* <NavLink activeClassName={styles.active} to="/blog">
+              blog
+            </NavLink> */}
+          {/* <NavLink activeClassName={styles.active} to="/contact">
+            contact
+          </NavLink> */}
+          <a
+            className={styles.emailMe}
+            href="mailto:sebcglbailey@gmail.com?subject=I%20Want%20Your%20Work&body=Let%27s%20talk%20about%20Seb%2C%20Bailey.%20Let%27s%20talk%20about%20you%20and%20me."
+          >
+            contact
+          </a>
+        </div>
+      </div>
     )
   }
 }

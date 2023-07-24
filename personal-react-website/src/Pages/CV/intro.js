@@ -4,11 +4,13 @@ import styles from './styles.css';
 
 const list = [
   "Design",
-  "Code",
-  "Snowboard",
-  "Prototype",
-  "Systemise",
   "Lead",
+  "Code",
+  "Paint",
+  "Manage",
+  "Systemise",
+  "Snowboard",
+  "Prototype"
 ]
 
 let speed = 35
@@ -62,7 +64,7 @@ class Intro extends Component {
         if (this.state.mounted) {
           setTimeout(() => {
             this.animateListItemIn(list[index], index)
-          }, speed*3)
+          }, speed * 3)
         }
 
       })
@@ -82,7 +84,7 @@ class Intro extends Component {
       } else {
         let string = listItem.slice(0, stringLength - 1)
         if (this.state.mounted) {
-          this.setState({listItem: string})
+          this.setState({ listItem: string })
           this.animateOut = setTimeout(() => {
             this.animateListItemOut(string, callback)
           }, speed)
@@ -101,14 +103,14 @@ class Intro extends Component {
       let currentStringLength = this.state.listItem.length
 
       if (currentStringLength !== stringLength) {
-        let string = list[index].slice(0, this.state.listItem.length+1)
+        let string = list[index].slice(0, this.state.listItem.length + 1)
         if (this.state.mounted) {
-          this.setState({listItem: string, itemIndex: index})
+          this.setState({ listItem: string, itemIndex: index })
           setTimeout(() => {
             this.animateListItemIn(string, index, callback)
           }, 50)
         }
-        
+
       } else return
 
     }
@@ -116,7 +118,7 @@ class Intro extends Component {
   }
 
   render() {
-    return(
+    return (
       <div className={styles.introContainer}>
         <div>
           Hi, I'm Seb.<br />

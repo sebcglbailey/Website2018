@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Content from '../../Components/Content/';
-import Card, {Cover, Info} from '../../Components/Card/';
+import Card, { Cover, Info } from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
 
 import styles from './styles.css';
@@ -11,12 +11,29 @@ const info = [
     id: "clearscore",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
-    role: "Product Designer, Design Systems Lead",
-    dates: "August 2016 - Present",
+    role: "Design Systems Lead & Lead Product Designer",
+    dates: "April 2020 - Present",
+    info: [
+      "Owning and building the ClearScore Group Design System",
+      "Designing, documenting and maintaining multiple design libraries with over 200 components",
+      "Expanding the International design team",
+      "International design vision and strategy",
+      "Management of multiple designers, progressing them through their careers",
+      "Establish new features and technology within the Marketplace of the core ClearScore app",
+      "Global design vision for the core ClearScore product"
+    ]
+  },
+  {
+    id: "clearscore",
+    title: "ClearScore Ltd.",
+    link: "http://www.clearscore.com",
+    role: "Product Designer, Design Systems Manager",
+    dates: "August 2016 - April 2020",
     info: [
       "User flows for new features and verticals",
       "Experience design from concept to delivery",
       "User Interface design and motion design",
+      "R&D in design and engineering",
       "Prototyping evangalist - pushing the need for and developing prototypes",
       "Building and leading the Design System",
       "Facilitating design sprints, and critiques",
@@ -65,7 +82,7 @@ const info = [
 
 const Work = () => {
   let cards = info.map((job, index) => {
-    return(
+    return (
       <Card key={job.id}
         id={job.id}
         link={job.link}
@@ -79,7 +96,7 @@ const Work = () => {
                 <span
                   className={styles.infoSpan}
                   key={index}
-                  dangerouslySetInnerHTML={{__html: info}}
+                  dangerouslySetInnerHTML={{ __html: info }}
                 >
                 </span>
               )
@@ -89,11 +106,11 @@ const Work = () => {
       </Card>
     )
   })
-  return(
+  return (
     <div className={styles.experience}>
-      <h2>Experience</h2>
+      <h3>Work</h3>
       {
-        info.length%2 == 0 ? (
+        info.length % 2 == 0 ? (
           <Masonry minWidth={400} margin={16}>
             {cards}
           </Masonry>
