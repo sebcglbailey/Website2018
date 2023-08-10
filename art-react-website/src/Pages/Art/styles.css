@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  padding: 4rem 2rem;
+  padding-top: 1rem; }
+  .container h2 {
+    margin-top: 4rem; }
+  .container h4 {
+    font-weight: 100; }
+
+.contactButton {
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 1.2rem;
+  margin: 1rem auto; }
+  @media all and (max-width: 512px) {
+    .contactButton {
+      width: 100%; } }
+  .contactButton:hover {
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer; }
+
+.carousel {
+  width: 100vw;
+  margin-left: -2rem;
+  padding: 0.125rem 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex; }
+  .carousel::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    height: 0px;
+    background: transparent; }
+  .carousel .content {
+    display: flex;
+    flex-direction: row; }
+    .carousel .content .image {
+      width: auto;
+      margin-right: 4rem; }
+      .carousel .content .image:last-child {
+        margin-right: 0; }
+      .carousel .content .image img {
+        height: 16rem; }

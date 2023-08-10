@@ -1,0 +1,140 @@
+.typeList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0; }
+  .typeList .type {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.85);
+    margin: 0.25rem 0.5rem;
+    min-width: 3.6rem;
+    min-height: 3.6rem;
+    width: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .typeList .type:hover {
+      background-color: rgba(204, 204, 204, 0.85); }
+  .typeList .ux {
+    border-color: #3EDB6A;
+    color: #3EDB6A; }
+    .typeList .ux:hover {
+      background-color: #bff3ce;
+      color: #24c250; }
+  .typeList .ui {
+    border-color: #CF70E5;
+    color: #CF70E5; }
+    .typeList .ui:hover {
+      background-color: #faf1fd;
+      color: #c145dd; }
+  .typeList .ds {
+    border-color: #f456cd;
+    color: #f456cd; }
+    .typeList .ds:hover {
+      background-color: #fde6f8;
+      color: #f126bf; }
+  .typeList .pr {
+    border-color: #24E2BE;
+    color: #24E2BE; }
+    .typeList .pr:hover {
+      background-color: #abf4e6;
+      color: #19ba9c; }
+  .typeList .wd {
+    border-color: #F8863C;
+    color: #F8863C; }
+    .typeList .wd:hover {
+      background-color: #fde2d0;
+      color: #f6670b; }
+  .typeList .ph {
+    border-color: gray;
+    color: gray; }
+    .typeList .ph:hover {
+      background-color: #cccccc;
+      color: #666666; }
+  .typeList .ar {
+    border-color: #DE334E;
+    color: #DE334E; }
+    .typeList .ar:hover {
+      background-color: #f3b7c0;
+      color: #bf1f38; }
+  .typeList .gd {
+    border-color: #5C89E3;
+    color: #5C89E3; }
+    .typeList .gd:hover {
+      background-color: #dfe8f9;
+      color: #3069dc; }
+  .typeList .fi {
+    border-color: #5551ff;
+    color: #5551ff; }
+    .typeList .fi:hover {
+      background-color: #eaeaff;
+      color: #231eff; }
+  .typeList .ps {
+    border-color: #00ACC9;
+    color: #00ACC9; }
+    .typeList .ps:hover {
+      background-color: #63e8ff;
+      color: #008096; }
+  .typeList .ai {
+    border-color: #F8863C;
+    color: #F8863C; }
+    .typeList .ai:hover {
+      background-color: #fde2d0;
+      color: #f6670b; }
+  .typeList .id {
+    border-color: #FE80A8;
+    color: #FE80A8; }
+    .typeList .id:hover {
+      background-color: #ffe5ed;
+      color: #fe4d85; }
+  .typeList .ae {
+    border-color: #B6AEEC;
+    color: #B6AEEC; }
+    .typeList .ae:hover {
+      background-color: #dbd7f6;
+      color: #9185e2; }
+  .typeList .xd {
+    border-color: #FF43C9;
+    color: #FF43C9; }
+    .typeList .xd:hover {
+      background-color: #ffdcf5;
+      color: #ff10ba; }
+  .typeList .sk {
+    border-color: #f7c752;
+    color: #f7c752; }
+    .typeList .sk:hover {
+      background-color: #fef6e4;
+      color: #f5b721; }
+  .typeList .fr {
+    border-color: #00aaff;
+    color: #00aaff; }
+    .typeList .fr:hover {
+      background-color: #99ddff;
+      color: #0088cc; }
+  .typeList .ab {
+    border-color: #2E2F30;
+    color: #2E2F30; }
+    .typeList .ab:hover {
+      background-color: #c7c8c9;
+      color: #151616; }
+  .typeList .ze {
+    border-color: #FFBE22;
+    color: #FFBE22; }
+    .typeList .ze:hover {
+      background-color: #ffebbb;
+      color: #eea800; }
+  .typeList .pi {
+    border-color: #AF51D0;
+    color: #AF51D0; }
+    .typeList .pi:hover {
+      background-color: #e6c9f1;
+      color: #9833bb; }
+
+@media all and (max-width: 450px) {
+  .typeList .type {
+    flex-grow: 1;
+    font-size: 0.8rem; } }
