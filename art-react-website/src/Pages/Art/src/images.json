@@ -2,49 +2,58 @@
     "forSale": [
         {
             "name": "CONNEXA II",
-            "filePath": "connexa_ii.jpg",
+            "imgSmall": "connexa_ii_sm.jpg",
+            "imgLarge": "connexa_ii.jpg",
             "size": "30x50cm"
         },
         {
             "name": "INFECTUS I",
-            "filePath": "infectus_i.jpg",
+            "imgSmall": "infectus_i_sm.jpg",
+            "imgLarge": "infectus_i.jpg",
             "size": "12x15\""
         },
         {
             "name": "INFECTUS II",
-            "filePath": "infectus_ii.jpg",
+            "imgSmall": "infectus_ii_sm.jpg",
+            "imgLarge": "infectus_ii.jpg",
             "size": "40cm diam."
         },
         {
             "name": "ASTRA II",
-            "filePath": "astra_ii.jpg",
+            "imgSmall": "astra_ii_sm.jpg",
+            "imgLarge": "astra_ii.jpg",
             "size": "15x12\""
         }
     ],
     "sold": [
         {
             "name": "CONNEXA I",
-            "filePath": "connexa_i.jpg",
+            "imgSmall": "connexa_i_sm.jpg",
+            "imgLarge": "connexa_i.jpg",
             "size": "100x100cm"
         },
         {
             "name": "SARASA",
-            "filePath": "sarasa.jpg",
+            "imgSmall": "sarasa_sm.jpg",
+            "imgLarge": "sarasa.jpg",
             "size": "60x60cm"
         },
         {
             "name": "AEQUOR",
-            "filePath": "aequor.jpg",
+            "imgSmall": "aequor_sm.jpg",
+            "imgLarge": "aequor.jpg",
             "size": "30x30cm"
         },
         {
             "name": "ASTRA I",
-            "filePath": "astra_i.jpg",
+            "imgSmall": "astra_i_sm.jpg",
+            "imgLarge": "astra_i.jpg",
             "size": "15x12\""
         },
         {
             "name": "Double Take",
-            "filePath": "double_take.jpg",
+            "imgSmall": "double_take_sm.jpg",
+            "imgLarge": "double_take.jpg",
             "size": "30x30cm"
         }
     ]

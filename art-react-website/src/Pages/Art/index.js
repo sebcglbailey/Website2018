@@ -28,7 +28,7 @@ class Contact extends Component {
 
     renderImages(arr) {
         var images = arr.map((imageObj) => {
-            var image = require(`./src/images/${imageObj.filePath}`)
+            var image = require(`./src/images/${imageObj.imgSmall}`)
             return (
                 <div
                     key={`image-${imageObj.name.split(' ').join().toLowerCase()}`}
