@@ -10,7 +10,7 @@
     "build-js": "npm run n-proj && npm run n-extra && npm run n-blog && webpack --mode production",
     "build-app": "webpack --mode production",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm-run-all build-css build-js",
+    "create": "npm-run-all build-css build-js",
     "deploy-dev-new": "aws s3 sync --dryrun dist/ s3://dev.sebastianbailey.co.uk",
     "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
     "deploy-all": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2",
