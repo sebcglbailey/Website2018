@@ -1,0 +1,229 @@
+@import 'Styles/colors.scss';
+
+
+.typeList {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 0;
+
+	.type {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		padding: 1rem;
+		border: 0.1rem solid $black;
+		margin: 0.25rem 0.5rem;
+		min-width: 3.6rem;
+		min-height: 3.6rem;
+		width: auto;
+		// cursor: pointer;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			background-color: lighten($black, 80%);
+		}
+	}
+
+	.ux {
+		border-color: $ux;
+		color: $ux;
+
+		&:hover {
+			background-color: lighten($ux, 30%);
+			color: darken($ux, 10%);
+		}
+	}
+
+	.ui {
+		border-color: $ui;
+		color: $ui;
+
+		&:hover {
+			background-color: lighten($ui, 30%);
+			color: darken($ui, 10%);
+		}
+	}
+
+	.ds {
+		border-color: $ds;
+		color: $ds;
+
+		&:hover {
+			background-color: lighten($ds, 30%);
+			color: darken($ds, 10%);
+		}
+	}
+
+	.pr {
+		border-color: $pr;
+		color: $pr;
+
+		&:hover {
+			background-color: lighten($pr, 30%);
+			color: darken($pr, 10%);
+		}
+	}
+
+	.wd {
+		border-color: $wd;
+		color: $wd;
+
+		&:hover {
+			background-color: lighten($wd, 30%);
+			color: darken($wd, 10%);
+		}
+	}
+
+	.ph {
+		border-color: $ph;
+		color: $ph;
+
+		&:hover {
+			background-color: lighten($ph, 30%);
+			color: darken($ph, 10%);
+		}
+	}
+
+	.ar {
+		border-color: $ar;
+		color: $ar;
+
+		&:hover {
+			background-color: lighten($ar, 30%);
+			color: darken($ar, 10%);
+		}
+	}
+
+	.gd {
+		border-color: $gd;
+		color: $gd;
+
+		&:hover {
+			background-color: lighten($gd, 30%);
+			color: darken($gd, 10%);
+		}
+	}
+
+	.fi {
+		border-color: $fi;
+		color: $fi;
+
+		&:hover {
+			background-color: lighten($fi, 30%);
+			color: darken($fi, 10%);
+		}
+	}
+
+	.ps {
+		border-color: $ps;
+		color: $ps;
+
+		&:hover {
+			background-color: lighten($ps, 30%);
+			color: darken($ps, 10%);
+		}
+	}
+
+	.ai {
+		border-color: $ai;
+		color: $ai;
+
+		&:hover {
+			background-color: lighten($ai, 30%);
+			color: darken($ai, 10%);
+		}
+	}
+
+	.id {
+		border-color: $id;
+		color: $id;
+
+		&:hover {
+			background-color: lighten($id, 20%);
+			color: darken($id, 10%);
+		}
+	}
+
+	.ae {
+		border-color: $ae;
+		color: $ae;
+
+		&:hover {
+			background-color: lighten($ae, 10%);
+			color: darken($ae, 10%);
+		}
+	}
+
+	.xd {
+		border-color: $xd;
+		color: $xd;
+
+		&:hover {
+			background-color: lighten($xd, 30%);
+			color: darken($xd, 10%);
+		}
+	}
+
+	.sk {
+		border-color: $sk;
+		color: $sk;
+
+		&:hover {
+			background-color: lighten($sk, 30%);
+			color: darken($sk, 10%);
+		}
+	}
+
+	.fr {
+		border-color: $fr;
+		color: $fr;
+
+		&:hover {
+			background-color: lighten($fr, 30%);
+			color: darken($fr, 10%);
+		}
+	}
+
+	.ab {
+		border-color: $ab;
+		color: $ab;
+
+		&:hover {
+			background-color: lighten($ab, 60%);
+			color: darken($ab, 10%);
+		}
+	}
+
+	.ze {
+		border-color: $ze;
+		color: $ze;
+
+		&:hover {
+			background-color: lighten($ze, 30%);
+			color: darken($ze, 10%);
+		}
+	}
+
+	.pi {
+		border-color: $pi;
+		color: $pi;
+
+		&:hover {
+			background-color: lighten($pi, 30%);
+			color: darken($pi, 10%);
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.typeList {
+		.type {
+			flex-grow: 1;
+			font-size: 0.8rem;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url(../fonts/MontserratAlternates-Regular.ttf); 
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url(../fonts/century-gothic.ttf);
+}
+
+@font-face{
+  font-family: "Icon Set";
+  src:url(../fonts/icon-set.eot);
+  src:url(../fonts/icon-set.eot?#iefix) format("embedded-opentype"),
+      url(../fonts/icon-set.woff) format("woff"),
+      url(../fonts/icon-set.ttf) format("truetype"),
+      url(../fonts/icon-set.svg#icon-set) format("svg");
+  font-weight:400;font-style:normal
+}

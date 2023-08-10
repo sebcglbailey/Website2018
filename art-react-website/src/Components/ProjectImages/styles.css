@@ -1,0 +1,18 @@
+.images {
+  margin: -4rem auto;
+  min-height: 10rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  max-width: 50rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2); }
+  .images img {
+    width: 100%;
+    display: block; }
+
+.container {
+  margin: 4rem -1rem;
+  padding: 2rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.85); }
+
+@media all and (max-width: 640px) {
+  .container {
+    margin: 4rem -0.25rem; } }

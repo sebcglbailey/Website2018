@@ -1,0 +1,68 @@
+@import 'Styles/colors.scss';
+
+.container {
+    width: 100%;
+    padding: 4rem 2rem;
+    padding-top: 1rem;
+
+    h2 {
+        margin-top: 4rem;
+    }
+
+    h4 {
+        font-weight: 100;
+    }
+}
+
+.contactButton {
+    padding: 1rem 2rem;
+    border: 1px solid $white;
+    color: $white;
+    background: transparent;
+    font-size: 1.2rem;
+    margin: 1rem auto;
+
+    @media all and (max-width: 512px) {
+        width: 100%;
+    }
+
+    &:hover {
+        background: $black;
+        cursor: pointer;
+    }
+}
+
+.carousel {
+    width: 100vw;
+    margin-left: -2rem;
+    padding: 0.125rem 2rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0px;
+        height: 0px;
+        background: transparent;
+    }
+
+    .content {
+        // width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .image {
+            width: auto;
+            margin-right: 4rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            img {
+                height: 16rem;
+            }
+        }
+    }
+}
