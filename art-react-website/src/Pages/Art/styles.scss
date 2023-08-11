@@ -3,14 +3,24 @@
 .container {
     width: 100%;
     padding: 6rem 2rem;
-    // padding-top: 1rem;
 
     h2 {
         margin-top: 4rem;
+        border-bottom: 1px solid $white;
+        padding-bottom: 0.5rem;
+        @media all and (max-width: 512px) {
+            border-width: 2px;
+        }
     }
 
     h4 {
         font-weight: 100;
+        font-size: 1rem;
+    }
+
+    p {
+        font-weight: 800;
+        letter-spacing: 0.1rem;
     }
 }
 
@@ -22,12 +32,14 @@
     background: transparent;
     font-size: 1.2rem;
     text-decoration: none;
-    font-weight: 100;
+    // font-weight: 100;
     margin-top: 1rem;
     text-align: center;
 
     @media all and (max-width: 512px) {
         width: 100%;
+        border-width: 2px;
+        font-weight: 400;
     }
 
     &:hover {

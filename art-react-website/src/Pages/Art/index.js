@@ -27,6 +27,9 @@ class Contact extends Component {
     renderImages(arr) {
         var images = arr.map((imageObj) => {
             var image = require(`./src/images/${imageObj.imgSmall}`)
+
+            var price = imageObj.price ? (<p>{imageObj.price}</p>) : null
+
             return (
                 <div
                     key={`image-${imageObj.name.split(' ').join().toLowerCase()}`}
@@ -34,7 +37,8 @@ class Contact extends Component {
                     <img
                         src={image}
                     />
-                    <h4>{imageObj.name}{imageObj.size ? "  •  " : ""}{imageObj.size ? imageObj.size : ""}</h4>
+                    <h4>{imageObj.name}{imageObj.size ? ",  " : ""}{imageObj.size ? imageObj.size : ""}</h4>
+                    {price ? price : null}
                 </div>
             )
         })
@@ -45,7 +49,7 @@ class Contact extends Component {
         return (
             <div className='container'>
                 <H1>Seb Bailey Art</H1>
-                <H2>For Sale</H2>
+                <H2>For sale</H2>
                 <div className='carousel'>
                     <div className='content'>
                         {this.forSale}
@@ -57,7 +61,7 @@ class Contact extends Component {
                 >
                     Get in touch
                 </a>
-                <H2>Unavailable</H2>
+                <H2>Currently unavailable</H2>
                 <div className='carousel'>
                     <div className='content'>
                         {this.sold}

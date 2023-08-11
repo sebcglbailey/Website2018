@@ -1,6 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url(fonts/MontserratAlternates-Regular.ttf); 
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url(fonts/century-gothic.ttf);
+}
+
+@font-face{
+  font-family: "Icon Set";
+  src:url(fonts/icon-set.eot);
+  src:url(fonts/icon-set.eot?#iefix) format("embedded-opentype"),
+      url(fonts/icon-set.woff) format("woff"),
+      url(fonts/icon-set.ttf) format("truetype"),
+      url(fonts/icon-set.svg#icon-set) format("svg");
+  font-weight:400;font-style:normal
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Century Gothic", sans-serif;
+  font-family: "Spectral", sans-serif;
   font-size: 16px;
 }
