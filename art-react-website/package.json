@@ -5,19 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start-js": "webpack-dev-server --mode development --open",
-    "build-js": "npm run n-proj && npm run n-extra && npm run n-blog && webpack --mode production",
-    "build-app": "webpack --mode production",
-    "start": "npm-run-all -p start-js",
-    "build": "npm-run-all build-css build-js",
-    "deploy-dev-new": "aws s3 sync --dryrun dist/ s3://dev.sebastianbailey.co.uk",
-    "deploy-dev": "aws s3 cp dist/ s3://dev.sebastianbailey.co.uk --recursive",
-    "deploy-all": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2",
-    "deploy-app": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2 --exclude 'static/*'",
-    "deploy-blog": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2 --exclude 'static/*' --include 'static/media/src/Blog/*'",
-    "deploy-post": "aws s3 sync dist/ s3://sebastianbailey.co.uk --region eu-west-2 --exclude 'static/*'",
-    "n-proj": "node ./build-helpers/projects.js",
-    "n-extra": "node ./build-helpers/extra.js",
-    "n-blog": "node ./build-helpers/blog.js"
+    "build": "webpack --mode production",
+    "start": "npm-run-all -p start-js"
   },
   "repository": {
     "type": "git",
