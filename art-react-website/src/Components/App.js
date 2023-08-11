@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 
-import './App.css';
-import styles from './App.css';
+import './App.scss';
 
 import ScrollToTop from './ScrollToTop/';
 
@@ -35,11 +34,11 @@ class App extends Component {
         <div>
 
           <ScrollToTop>
-            <div className={styles.container}>
+            <div className='container'>
 
               <Header />
 
-              <div className={styles.view}>
+              <div className='view'>
                 <Switch>
 
                   <Route path="/"
