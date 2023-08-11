@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 import logo from "../../logo-white.svg"
 import logoPNG from "../../logo-white.png"
@@ -32,9 +32,9 @@ class Header extends Component {
 
   render() {
     return (
-      <div className={styles.header}>
-        <div className={styles.logoBurgerWrapper}>
-          <div className={styles.logo}>
+      <div className='header'>
+        <div className='logoBurgerWrapper'>
+          <div className='logo'>
             <Link to='/'>
               <picture>
                 <source srcSet={logo} />
@@ -44,33 +44,18 @@ class Header extends Component {
           </div>
           <div
             onClick={this.handleBurgerClick}
-            className={this.state.menuOpen ? (`${styles.burgerMenu} ${styles.active}`) : styles.burgerMenu}
+            className={this.state.menuOpen ? ('burgerMenu active') : 'burgerMenu'}
           >
-            <div className={styles.top}></div>
-            <div className={styles.middle}></div>
-            <div className={styles.bottom}></div>
+            <div className='top'></div>
+            <div className='middle'></div>
+            <div className='bottom'></div>
           </div>
         </div>
         <div
           ref={(elem) => this.nav = elem}
           onClick={this.handleMenuClick}
-          className={this.state.menuOpen ? (`${styles.navigation} ${styles.active}`) : styles.navigation}
+          className={this.state.menuOpen ? ('navigation active') : 'navigation'}
         >
-          {/* <NavLink activeClassName={styles.active} to="/projects">
-              work
-            </NavLink> */}
-          {/* <NavLink activeClassName={styles.active} to="/resume">
-            résumé
-          </NavLink> */}
-          {/* <NavLink activeClassName={styles.active} to="/extras">
-              extras
-            </NavLink> */}
-          {/* <NavLink activeClassName={styles.active} to="/blog">
-              blog
-            </NavLink> */}
-          {/* <NavLink activeClassName={styles.active} to="/contact">
-            contact
-          </NavLink> */}
           <a
             className={styles.emailMe}
             href="mailto:sebcglbailey@gmail.com?subject=Artwork&20Enquiry&body=I&27d&20love&20to&20talk&20about&20purchasing&20some&20of&20your&20artwork."
