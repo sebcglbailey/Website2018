@@ -4,25 +4,29 @@
             "name": "CONNEXA II",
             "imgSmall": "connexa_ii_sm.jpg",
             "imgLarge": "connexa_ii.jpg",
-            "size": "30x50cm"
+            "size": "40x60cm",
+            "price": "£395"
         },
         {
             "name": "INFECTUS I",
             "imgSmall": "infectus_i_sm.jpg",
             "imgLarge": "infectus_i.jpg",
-            "size": "12x15\""
+            "size": "30x40cm",
+            "price": "£195"
         },
         {
             "name": "INFECTUS II",
-            "imgSmall": "infectus_ii_sm.jpg",
-            "imgLarge": "infectus_ii.jpg",
-            "size": "40cm diam."
+            "imgSmall": "infectus_ii_sm.png",
+            "imgLarge": "infectus_ii.png",
+            "size": "60cm diam.",
+            "price": "£425"
         },
         {
             "name": "ASTRA II",
             "imgSmall": "astra_ii_sm.jpg",
             "imgLarge": "astra_ii.jpg",
-            "size": "15x12\""
+            "size": "40x30cm",
+            "price": "£195"
         }
     ],
     "sold": [
@@ -36,25 +40,25 @@
             "name": "SARASA",
             "imgSmall": "sarasa_sm.jpg",
             "imgLarge": "sarasa.jpg",
-            "size": "60x60cm"
+            "size": "24x24in."
         },
         {
             "name": "AEQUOR",
             "imgSmall": "aequor_sm.jpg",
             "imgLarge": "aequor.jpg",
-            "size": "30x30cm"
+            "size": "12x12in."
         },
         {
             "name": "ASTRA I",
             "imgSmall": "astra_i_sm.jpg",
             "imgLarge": "astra_i.jpg",
-            "size": "15x12\""
+            "size": "40x30cm"
         },
         {
             "name": "Double Take",
             "imgSmall": "double_take_sm.jpg",
             "imgLarge": "double_take.jpg",
-            "size": "30x30cm"
+            "size": "12x12in"
         }
     ]
 }
