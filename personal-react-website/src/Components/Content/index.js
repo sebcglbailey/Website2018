@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import styles from './styles.css';
-
 class Content extends Component {
   constructor(props) {
     super(props)
@@ -18,17 +16,17 @@ class Content extends Component {
   }
 
   render() {
-    let content = typeof(this.state.content) == "object" ? this.state.content.map((paragraph, index) => {
+    let content = typeof (this.state.content) == "object" ? this.state.content.map((paragraph, index) => {
       return (
         <p
           key={`paragraph-${index}`}
-          dangerouslySetInnerHTML={{__html: paragraph}}>
+          dangerouslySetInnerHTML={{ __html: paragraph }}>
         </p>
       )
-    }) : typeof(this.state.content) == "string" ? (
-      <p dangerouslySetInnerHTML={{__html: this.state.content}}></p>
+    }) : typeof (this.state.content) == "string" ? (
+      <p dangerouslySetInnerHTML={{ __html: this.state.content }}></p>
     ) : null
-    return(content)
+    return (content)
   }
 }
 

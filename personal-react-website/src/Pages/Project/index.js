@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 
 import { breakpoints, masonrySizes } from '../../helpers/breakpoints';
 
-import CoverImage from '../../Components/CoverImage/';
 import ProjectIntro from '../../Components/ProjectIntro/';
-import ProjectImages from '../../Components/ProjectImages/';
 import ProjectCard from '../../Components/ProjectCard/';
 import Masonry from '../../Components/Masonry/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class Project extends Component {
   constructor(props) {
@@ -63,8 +61,8 @@ class Project extends Component {
     let relatedProjects = data.related.map((project, index) => {
       let link = `/projects/${project}`;
       let data = require(`../../Projects/${project}/data.json`);
-      let key = `card-${index+1}`
-      return(
+      let key = `card-${index + 1}`
+      return (
         <ProjectCard
           id={key}
           key={key}
@@ -109,14 +107,14 @@ class Project extends Component {
   render() {
     let ProjectPage = this.state.projectPage
     return (
-      <div className={styles.container}>
+      <div className='projectContainer'>
         <ProjectIntro
           project={this.state.project}
           data={this.state.data}
           onLoad={this.handleIntroLoaded}
         />
         <ProjectPage />
-        <div className={styles.related}>
+        <div className='related'>
           <Masonry
             minWidth={400}
             margin={16}>
@@ -126,7 +124,7 @@ class Project extends Component {
       </div>
     )
   }
-  
+
 }
 
 export default Project;

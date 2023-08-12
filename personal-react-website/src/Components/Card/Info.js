@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class Info extends Component {
   constructor(props) {
@@ -34,23 +34,23 @@ class Info extends Component {
     let classes = {}
     if (this.state.hasCover && this.props.landscape) {
       classes = {
-        container: `${styles.infoContainer} ${styles.landscape} ${styles.loaded}`,
-        info: `${styles.info} ${styles.landscape} ${styles.loaded}`
+        container: `infoContainer landscape loaded`,
+        info: `info landscape loaded`
       }
     } else if (this.state.hasCover) {
       classes = {
-        container: `${styles.infoContainer} ${styles.loaded}`,
-        info: `${styles.info} ${styles.loaded}`
+        container: `infoContainer loaded`,
+        info: `info loaded`
       }
     } else if (this.state.landscape) {
       classes = {
-        container: `${styles.infoContainer} ${styles.landscape}`,
-        info: `${styles.info} ${styles.landscape}`
+        container: `infoContainer landscape`,
+        info: `info landscape`
       }
     } else {
       classes = {
-        container: styles.infoContainer,
-        info: styles.info
+        container: 'infoContainer',
+        info: 'info'
       }
     }
     this.setState({
@@ -61,12 +61,12 @@ class Info extends Component {
 
   render() {
 
-    return(
+    return (
       <div className={this.state.containerClass}>
         <div className={this.state.infoClass}>
-          { this.props.header ? (
-              <h3>{this.props.header}</h3>
-            ) : null
+          {this.props.header ? (
+            <h3>{this.props.header}</h3>
+          ) : null
           }
           {this.props.children}
         </div>

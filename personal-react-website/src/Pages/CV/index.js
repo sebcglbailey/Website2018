@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
 import InfoList from '../../Components/InfoList/';
-import Card, { Cover, Info } from '../../Components/Card/';
-import Masonry from '../../Components/Masonry/';
-import Content from '../../Components/Content/';
 
 import { H2 } from '../../Components/Headers/';
 import ContentContainer from '../../Components/ContentContainer/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 import fields from './fields';
 import skills from './skills';
@@ -47,15 +44,15 @@ class Resume extends Component {
   render() {
     return (
       <ContentContainer>
-        <div className={styles.intro}>
+        <div className='intro'>
           <Intro />
         </div>
         <H2>My experience...</H2>
-        {/* <div className={styles.fields}>
+        {/* <div className='fields'>
           <H2>Fields of work</H2>
           <InfoList types={this.state.fields} />
         </div> */}
-        <div className={styles.skills}>
+        <div className='skills'>
           {/* <H2>Skills & Experience</H2> */}
           <h3>Software</h3>
           <InfoList types={this.state.skills.software} />

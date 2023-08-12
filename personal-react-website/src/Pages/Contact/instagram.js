@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-import Card from '../../Components/Card/';
-
-import styles from './styles.css';
+import './styles.scss';
 
 class InstaPic extends Component {
   constructor(props) {
@@ -18,7 +16,7 @@ class InstaPic extends Component {
         || this.props.index == 6
         || this.props.index == 12
         || this.props.index == 17
-      ) ? this.props.data.images.standard_resolution.url 
+      ) ? this.props.data.images.standard_resolution.url
         : this.props.data.images.low_resolution.url,
     }
 
@@ -29,10 +27,10 @@ class InstaPic extends Component {
     let image = this.state.data
     console.log(image)
 
-    return(
+    return (
       <li
-        ref={(elem) => {this.item = elem}}
-        className={styles.instaListItem}
+        ref={(elem) => { this.item = elem }}
+        className='instaListItem'
       >
         <Link
           to={image.link}
@@ -64,7 +62,7 @@ class Instagram extends Component {
         return response.json()
       })
       .then((data) => {
-        this.setState({data: data.data})
+        this.setState({ data: data.data })
         this.setRowHeight(data.data)
       })
 
@@ -106,7 +104,7 @@ class Instagram extends Component {
     let list = data.map((image, index) => {
 
       if (index < max) {
-        return(
+        return (
           <InstaPic
             key={image.id}
             data={image}
@@ -124,19 +122,19 @@ class Instagram extends Component {
   }
 
   render() {
-    return(
-      <div className={styles.instaContainer}>
+    return (
+      <div className='instaContainer'>
         <Link target="_blank" to="http://www.instagram.com/user?userid=3197786970">
           <h3>@seb.bailey</h3>
         </Link>
         <ul
-          ref={(elem) => {this.list = elem}}
-          className={styles.instaList}
+          ref={(elem) => { this.list = elem }}
+          className='instaList'
           style={this.state.listStyle}
         >
           {this.state.list}
         </ul>
-        <div className={styles.instaCurrent}>
+        <div className='instaCurrent'>
           {this.state.current}
         </div>
       </div>

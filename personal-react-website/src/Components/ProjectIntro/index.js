@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import CoverImage from '../CoverImage/';
 import InfoList from '../InfoList/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class ProjectIntro extends Component {
   constructor(props) {
@@ -45,25 +45,25 @@ class ProjectIntro extends Component {
 
   render() {
 
-    let description = typeof(this.state.description) == "object" ? this.state.description.map((para, index) => {
+    let description = typeof (this.state.description) == "object" ? this.state.description.map((para, index) => {
       return (
         <p
-          key={`description-para-${index+1}`}
-          className={styles.description}
-          dangerouslySetInnerHTML={{__html: para}}>
+          key={`description-para-${index + 1}`}
+          className='introDescription'
+          dangerouslySetInnerHTML={{ __html: para }}>
         </p>
       )
-    }) : typeof(this.state.description) == "string" ? this.state.description : null
+    }) : typeof (this.state.description) == "string" ? this.state.description : null
 
-    return(
-      <div className={styles.flexContainer}>
+    return (
+      <div>
         <CoverImage
           onLoad={this.handleCoverImageLoad}
           project={this.state.project}
         />
-        <div className={styles.container}>
+        <div className='projectIntroContainer'>
           <InfoList types={this.state.types} />
-          <h1 className={styles.title}>{this.state.title}</h1>
+          <h1 className='title'>{this.state.title}</h1>
           {description}
         </div>
       </div>

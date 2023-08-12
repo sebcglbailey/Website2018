@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import ProjectIntro from '../../Components/ProjectIntro/';
 import ProjectImages from '../../Components/ProjectImages';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class XGames extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class XGames extends Component {
   }
 
   render() {
-    return(
+    return (
       <ProjectImages
         images={this.state.data.images}
         project="XGames"

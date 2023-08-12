@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Image from '../Image/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class CoverImage extends Component {
   constructor(props) {
@@ -18,8 +18,8 @@ class CoverImage extends Component {
   }
 
   render() {
-    return(
-      <div className={styles.container}>
+    return (
+      <div className='coverImageContainer'>
         <Image
           name="cover.jpg"
           path={`Projects/${this.props.project}/src/cover.jpg/`}

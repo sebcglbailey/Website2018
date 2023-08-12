@@ -1,5 +1,5 @@
-@import 'Styles/colors.scss';
-@import 'Styles/fonts.scss';
+@import '../../Styles/colors.scss';
+@import '../../Styles/fonts.scss';
 
 .card {
   background: $white;
@@ -11,11 +11,13 @@
   position: relative;
   font-family: "Century Gothic", sans-serif;
   transition: all 0.35s ease;
+
   h3 {
     position: relative;
     letter-spacing: 2px;
     font-weight: 100;
   }
+
   h3:after {
     position: absolute;
     bottom: -0.5rem;
@@ -29,12 +31,15 @@
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;
     transform-origin: 1 50%;
   }
+
   a {
     color: black;
     text-decoration: none;
   }
+
   &:hover {
     box-shadow: 0 0.5rem 0.5rem -0.5rem rgba($cardShadow, 0.5);
+
     h3:after {
       transform: scale(1);
       opacity: 1;
@@ -49,6 +54,7 @@
   align-items: stretch;
   height: 100%;
   width: 100%;
+
   &.landscape {
     flex-direction: row;
     font-size: 1.25rem;
@@ -57,6 +63,7 @@
 
 .cover {
   width: 100%;
+
   img {
     width: 100%;
     height: auto;
@@ -71,9 +78,11 @@
   background: $transparentWhite;
   flex: 1 1 1.2rem;
   flex-grow: 1;
+
   &.loaded {
     margin: -2rem 1rem 1rem 1rem;
     padding: 1rem 0 0 0;
+
     &.landscape {
       margin: 1rem 1rem 1rem -2rem;
       padding: 0 0 0 1rem;
@@ -89,15 +98,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   &.loaded {
     padding: 1rem 2rem;
+
     &.landscape {
       padding: 1rem 1rem;
     }
   }
+
   * {
     width: fit-content;
   }
+
   p {
     font-size: 1rem;
     word-wrap: break-word;

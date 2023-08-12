@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class LightBoxGroup extends Component {
   constructor(props) {
@@ -41,11 +41,11 @@ class LightBoxGroup extends Component {
 
   close(event) {
     if ((event &&
-        (event.target == this.container
-          || event.target == this.flexContainer
-          || event.target == this.interactionContainer
-          || event.target == this.closeButton)
-      ) || !event) {
+      (event.target == this.container
+        || event.target == this.flexContainer
+        || event.target == this.interactionContainer
+        || event.target == this.closeButton)
+    ) || !event) {
       this.setState({ visible: false, current: undefined })
 
       if (this.props.onClose) {
@@ -94,25 +94,25 @@ class LightBoxGroup extends Component {
 
   render() {
     return (
-      <div ref={(elem) => this.container = elem} className={this.state.visible ? styles.container : styles.hide}>
-        <div ref={(elem) => this.interactionContainer = elem} className={styles.interaction}>
+      <div ref={(elem) => this.container = elem} className={this.state.visible ? 'lightboxContainer' : 'hide'}>
+        <div ref={(elem) => this.interactionContainer = elem} className='interaction'>
           <div
             ref={(elem) => this.prevButton = elem}
-            className={`${styles.arrow} ${styles.prev}`}
+            className='arrow prev'
           >
           </div>
           <div
             ref={(elem) => this.nextButton = elem}
-            className={`${styles.arrow} ${styles.next}`}
+            className='arrow next'
           >
           </div>
         </div>
-        <div ref={(elem) => this.flexContainer = elem} className={styles.flexContainer}>
-          <div className={styles.lightbox}>
+        <div ref={(elem) => this.flexContainer = elem} className='flexContainer'>
+          <div className='lightbox'>
             {this.state.current}
             <div
               ref={(elem) => this.closeButton = elem}
-              className={styles.close}
+              className='close'
             >
             </div>
           </div>

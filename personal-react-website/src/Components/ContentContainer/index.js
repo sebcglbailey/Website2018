@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const Container = (props) => {
-  return(
-    <div className={styles.container}>{props.children}</div>
+  return (
+    <div className='contentContainer'>{props.children}</div>
   )
 }
 

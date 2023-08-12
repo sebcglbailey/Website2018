@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Content from '../../Components/Content/';
-import Card, {Cover, Info} from '../../Components/Card/';
+import Card, { Cover, Info } from '../../Components/Card/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const info = [
   {
@@ -34,7 +34,7 @@ const info = [
 
 const Education = () => {
   let cards = info.map((school, index) => {
-    return(
+    return (
       <Card key={school.id}
         id={school.id}
         link={school.link}
@@ -46,9 +46,9 @@ const Education = () => {
             school.info.map((info, index) => {
               return (
                 <span
-                  className={styles.infoSpan}
+                  className='infoSpan'
                   key={index}
-                  dangerouslySetInnerHTML={{__html: info}}
+                  dangerouslySetInnerHTML={{ __html: info }}
                 >
                 </span>
               )
@@ -58,10 +58,10 @@ const Education = () => {
       </Card>
     )
   })
-  return(
-    <div className={styles.experience}>
+  return (
+    <div className='experience'>
       <h2>Education</h2>
-      <div className={styles.experienceCards}>
+      <div className='experienceCards'>
         {cards}
       </div>
     </div>

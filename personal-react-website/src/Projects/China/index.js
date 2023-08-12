@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 
 import { masonrySizes } from '../../helpers/breakpoints'
 
-import ProjectIntro from '../../Components/ProjectIntro/';
 import Masonry from '../../Components/Masonry/';
 import Card from '../../Components/Card/';
 import LightBox, { LightBoxGroup } from '../../Components/LightBox/';
 import Image from '../../Components/Image/';
 
-import styles from './styles.css';
-
-import manifest from './manifest';
 import data from './data.json';
 
 class China extends Component {
@@ -25,13 +21,13 @@ class China extends Component {
 
   componentWillMount() {
     let content = data.images.map((image, index) => {
-      return(
+      return (
         <LightBox
           index={index}
           onClick={this.handleLightBoxClick}
         >
           <Image
-            className={styles.photo}
+            className='photo'
             onLoad={this.handleImageLoad}
             name={image}
             path={`Projects/China/src/${image}/`}
@@ -41,11 +37,11 @@ class China extends Component {
       )
     })
     let lightBoxContent = data.images.map((image, index) => {
-      return(
+      return (
         <Image
           key={`image-${index}`}
           index={index}
-          className={styles.photo}
+          className='photo'
           name={image}
           path={`Projects/China/src/${image}/`}
         />
@@ -53,7 +49,7 @@ class China extends Component {
     })
     let images = content.map((lightbox, index) => {
       let id = `card-${index}`
-      return(
+      return (
         <Card key={id} id={id}>
           {lightbox}
         </Card>
@@ -76,13 +72,13 @@ class China extends Component {
   }
 
   render() {
-    return(
-      <div className={styles.container}>
+    return (
+      <div className='container'>
         <LightBoxGroup
           current={this.state.currentLightBox}
           contents={this.state.lightBoxContent}
         />
-        <Masonry ref={(elem) => {this.masonry = elem}}>
+        <Masonry ref={(elem) => { this.masonry = elem }}>
           {this.state.images}
         </Masonry>
       </div>

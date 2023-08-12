@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const list = [
   "Design",
@@ -119,10 +119,10 @@ class Intro extends Component {
 
   render() {
     return (
-      <div className={styles.introContainer}>
+      <div className='introContainer'>
         <div>
           Hi, I'm Seb.<br />
-          I <span className={styles.introChanger}>{this.state.listItem}</span>
+          I <span className='introChanger'>{this.state.listItem}</span>
         </div>
       </div>
     )

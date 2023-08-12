@@ -4,42 +4,78 @@ import Content from '../../Components/Content/';
 import Card, { Cover, Info } from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const info = [
   {
-    id: "clearscore",
+    id: "clearscore-ds",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
     role: "Design Systems Lead & Lead Product Designer",
-    dates: "April 2020 - Present",
+    dates: "Jan 2023 - Present",
     info: [
-      "Owning and building the ClearScore Group Design System",
-      "Designing, documenting and maintaining multiple design libraries with over 200 components",
-      "Expanding the International design team",
-      "International design vision and strategy",
-      "Management of multiple designers, progressing them through their careers",
-      "Establish new features and technology within the Marketplace of the core ClearScore app",
-      "Global design vision for the core ClearScore product"
+      "Currently re-establishing a design system across the ClearScore Group",
+      "Working closely with a collaborative team of engineers across multiple platforms",
+      "I own and contribute all assets and documentation within design",
+      "Shaping the vision and strategy of the design system across all disciplines",
+      "Consistently working with and leading designers across the whole ClearScore team to help shape and iterate on the existing libraries with over 150 components",
+      "Closely coaching designers to consider and work with their engineering counterparts to build consistent components and design patterns",
     ]
   },
   {
-    id: "clearscore",
+    id: "clearscore-int",
+    title: "ClearScore Ltd.",
+    link: "http://www.clearscore.com",
+    role: "International Lead Product Designer",
+    dates: "Jul 2022 - Jan 2023",
+    info: [
+      "In just 6 months, I established a global design team across 3 countries and continents outside of the core UK business",
+      "Leading on international product changes",
+      "Setting up a strategy for global expansion",
+      "Leading on sourcing and technical interviews for junior to senior designers",
+      "Established ways of working and principles for the core UK design team to follow in order to support the smaller international teams",
+    ]
+  },
+  {
+    id: "clearscore-uk",
+    title: "ClearScore Ltd.",
+    link: "http://www.clearscore.com",
+    role: "Lead Product Designer – UK",
+    dates: "Apr 2020 - Jul 2022",
+    info: [
+      "Worked within the Marketplace team helping users to save money and apply with confidence to credit products",
+      "Helped to establish new features and technology within the product",
+      "Leading, managing and coaching other product designers to up-skill and progress through their careers",
+      "Established a more global design vision for the company and the core product, paving the way for an increasingly personal experience across the main ClearScore product",
+    ]
+  },
+  {
+    id: "clearscore-ds-man",
+    title: "ClearScore Ltd.",
+    link: "http://www.clearscore.com",
+    role: "Design Manager – Design Systems",
+    dates: "Jul 2018 - April 2020",
+    info: [
+      "Led and managed a multi-disciplinary squad to build the first iteration of the ClearScore Design System",
+      "Designed and built component libraries for the global team to use",
+      "Introducing some new technologies to the core product",
+      "Designing and curating an icon set and asset libraries",
+      "Helped to launch into new markets 3x faster",
+    ]
+  },
+  {
+    id: "clearscore-pd",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
     role: "Product Designer, Design Systems Manager",
-    dates: "August 2016 - April 2020",
+    dates: "August 2016 - Jul 2018",
     info: [
-      "User flows for new features and verticals",
-      "Experience design from concept to delivery",
-      "User Interface design and motion design",
-      "R&D in design and engineering",
-      "Prototyping evangalist - pushing the need for and developing prototypes",
-      "Building and leading the Design System",
-      "Facilitating design sprints, and critiques",
-      "Managing and mentoring designers",
-      "Managing a front-end engineering team",
-      "Project management (Scrum & Kanban)",
+      "Sole Product Designer in ClearScore R&D Lab",
+      "Responsible for working on new features and projects",
+      "Core product enhancements and innovations",
+      "Open Banking integration",
+      "Voice interaction design through an Alexa Skill",
+      "Interactive prototypes and prototype libraries",
     ]
   },
   {
@@ -68,7 +104,7 @@ const info = [
       "Brand development",
       "Design and development of email templates",
       "UX/UI for v2.0 of main iRooms product, including a HTML prototype",
-      "Managing one other graphic designer"
+      "Managing one other graphic designer",
     ]
   },
   {
@@ -94,7 +130,7 @@ const Work = () => {
             job.info ? job.info.map((info, index) => {
               return (
                 <span
-                  className={styles.infoSpan}
+                  className='infoSpan'
                   key={index}
                   dangerouslySetInnerHTML={{ __html: info }}
                 >
@@ -107,7 +143,7 @@ const Work = () => {
     )
   })
   return (
-    <div className={styles.experience}>
+    <div className='experience'>
       <h3>Work</h3>
       {
         info.length % 2 == 0 ? (
@@ -115,7 +151,7 @@ const Work = () => {
             {cards}
           </Masonry>
         ) : (
-          <div className={styles.experienceCards}>
+          <div className='experienceCards'>
             {cards}
           </div>
         )

@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
 
-import { masonrySizes } from '../../helpers/breakpoints';
-
-import Card, {Cover, Info} from '../Card/';
+import Card, { Cover, Info } from '../Card/';
 import Content from '../Content/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class ProjectCard extends Component {
-	constructor(props) {
-		super(props)
+  constructor(props) {
+    super(props)
 
     this.state = {
       link: this.props.link,
@@ -20,7 +17,7 @@ class ProjectCard extends Component {
     }
 
     this.handleImageLoad = this.handleImageLoad.bind(this)
-	}
+  }
 
   componentWillReceiveProps(nextState) {
     if (nextState.project !== this.state.project) {
@@ -40,19 +37,19 @@ class ProjectCard extends Component {
     }
   }
 
-	render() {
+  render() {
 
-		return(
+    return (
       <Card link={this.state.link} id={this.props.id}>
-        <div className={styles.cardContent}>
+        <div className='cardContent'>
           <Cover sizes={this.props.sizes} project={this.state.project} onLoad={this.handleImageLoad} />
           <Info hasCover={this.state.coverLoaded} header={this.state.data.title}>
             <Content content={this.state.data.description[0]} />
           </Info>
         </div>
       </Card>
-		)
-	}
+    )
+  }
 }
 
 export default ProjectCard
