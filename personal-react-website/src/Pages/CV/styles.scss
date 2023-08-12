@@ -22,7 +22,7 @@
 
 .introContainer {
 	font-size: 5rem;
-	font-weight: 800;
+	font-weight: 800 !important;
 	height: calc(85vh - 8rem);
 	min-height: 25rem;
 	display: flex;
