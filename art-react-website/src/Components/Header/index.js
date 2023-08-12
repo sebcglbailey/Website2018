@@ -58,7 +58,7 @@ class Header extends Component {
         >
           <a
             className={styles.emailMe}
-            href="mailto:sebcglbailey@gmail.com?subject=Artwork&20Enquiry&body=I&27d&20love&20to&20talk&20about&20purchasing&20some&20of&20your&20artwork."
+            href="mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20some%20of%20your%20artwork."
           >
             contact
           </a>
