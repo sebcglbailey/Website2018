@@ -7,7 +7,7 @@ import Masonry from '../../Components/Masonry/';
 import LoadButton from '../../Components/LoadButton/';
 import ProjectCard from '../../Components/ProjectCard/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class ProjectList extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class ProjectList extends Component {
     this.projects = this.projects.map((project, index) => {
       let data = require(`../../Projects/${project}/data.json`);
       let link = `/projects/${project}`;
-      let key = `card-${index+1}`
+      let key = `card-${index + 1}`
       return (
         <ProjectCard
           key={key}
@@ -82,13 +82,13 @@ class ProjectList extends Component {
 
   render() {
     const loadMore = this.state.visible < this.props.projects.list.length ? (
-        <LoadButton
-          onClick={this.loadMore}
-        />
-      ) : ""
+      <LoadButton
+        onClick={this.loadMore}
+      />
+    ) : ""
 
     return (
-      <div className={styles.container}>
+      <div className='listContainer'>
         <Masonry
           ref={(elem) => this.masonry = elem}
           minWidth={400}
@@ -100,7 +100,7 @@ class ProjectList extends Component {
       </div>
     )
   }
-  
+
 }
 
 export default ProjectList;

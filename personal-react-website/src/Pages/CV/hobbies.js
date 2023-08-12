@@ -4,7 +4,7 @@ import Content from '../../Components/Content/';
 import Card, { Cover, Info } from '../../Components/Card/';
 import InfoList from '../../Components/InfoList/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const hobbies = [
   {
@@ -120,9 +120,9 @@ class Hobbies extends Component {
 
   render() {
     return (
-      <div className={styles.hobbies}>
+      <div className='hobbies'>
         <h2>Hobbies & Interests</h2>
-        <div className={styles.hobbyCards}>
+        <div className='hobbyCards'>
           <InfoList
             onClick={this.handleListClick}
             types={this.state.list}

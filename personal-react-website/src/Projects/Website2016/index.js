@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-import ProjectIntro from '../../Components/ProjectIntro/';
 import ProjectImages from '../../Components/ProjectImages';
 
-import styles from './styles.css';
+import './styles.scss';
 
-import manifest from './manifest';
 import data from './data.json';
 
 class Website2016 extends Component {
@@ -14,7 +12,7 @@ class Website2016 extends Component {
   }
 
   render() {
-    return(
+    return (
       <ProjectImages
         images={data.images}
         project="Website2016"

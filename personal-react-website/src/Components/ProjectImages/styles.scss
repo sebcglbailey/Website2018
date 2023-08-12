@@ -1,4 +1,4 @@
-@import 'Styles/colors.scss';
+@import '../../Styles/colors.scss';
 
 .images {
 	margin: -4rem auto;
@@ -6,20 +6,21 @@
 	background-color: $black;
 	max-width: 50rem;
 	box-shadow: 0 0.2rem 0.5rem rgba($black, 0.2);
+
 	img {
 		width: 100%;
 		display: block;
 	}
 }
 
-.container {
+.imagesContainer {
 	margin: 4rem -1rem;
 	padding: 2rem 0.5rem;
 	background-color: $black;
 }
 
 @media all and (max-width: 640px) {
-	.container {
+	.imagesContainer {
 		margin: 4rem -0.25rem;
 	}
 }

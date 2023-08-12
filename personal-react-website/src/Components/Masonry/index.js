@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Column from './Column';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class Masonry extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class Masonry extends Component {
   }
 
   windowResize() {
-    let {noOfColumns} = this.getColumnStyle()
+    let { noOfColumns } = this.getColumnStyle()
     if (this.noOfColumns !== noOfColumns) {
       this.renderColumns()
     }
@@ -114,8 +114,8 @@ class Masonry extends Component {
 
     let columnStyle = {
       noOfColumns: noOfColumns,
-      width: `${100/this.noOfColumns}%`,
-      padding: `0 ${this.props.margin/2}px`
+      width: `${100 / this.noOfColumns}%`,
+      padding: `0 ${this.props.margin / 2}px`
     }
 
     return columnStyle
@@ -150,9 +150,9 @@ class Masonry extends Component {
         <Column
           key={`column-${i}`}
           style={columnStyle}>
-            {thisColumnContents.map((child, index) => {
-              return child
-            })}
+          {thisColumnContents.map((child, index) => {
+            return child
+          })}
         </Column>
       )
       columns.push(reactColumn)
@@ -166,10 +166,10 @@ class Masonry extends Component {
   }
 
   render() {
-    return(
-      <div ref={(elem) => {this.container = elem}}
-        className={styles.container}>
-          {this.state.columns}
+    return (
+      <div ref={(elem) => { this.container = elem }}
+        className='masonryContainer'>
+        {this.state.columns}
       </div>
     )
   }

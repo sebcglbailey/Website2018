@@ -1,7 +1,8 @@
-@import 'Styles/colors.scss';
+@import '../../../Styles/colors.scss';
 
-.container {
+.extraImageContainer {
   padding-top: 1.5rem;
+
   .image {
     width: 100%;
     height: auto;
@@ -12,6 +13,7 @@
   flex-grow: none;
   width: auto;
 }
+
 .fullWidth {
   flex-grow: 1;
   width: 100%;
@@ -51,9 +53,11 @@
 .navList {
   display: grid;
   padding: 0;
+
   a {
     text-decoration: none;
   }
+
   li {
     display: inline-block;
     text-align: center;
@@ -71,6 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     &:active {
       background-color: lighten($black, 25%);
     }
@@ -106,6 +111,7 @@
 
 .top {
   grid-template: repeat(3, auto) / auto;
+
   .navTitle {
     grid-row: 3;
   }
@@ -118,11 +124,13 @@
 @media all and (min-width: 512px) {
   .top {
     grid-template: repeat(2, auto) / repeat(2, auto);
+
     .navTitle {
       grid-row: 2;
       grid-column: 1 / span 2;
     }
   }
+
   .bottom {
     grid-template: auto / repeat(2, auto);
     justify-content: space-between;
@@ -132,6 +140,7 @@
 @media all and (min-width: 920px) {
   .top {
     grid-template: auto / auto 1fr auto;
+
     .navTitle {
       grid-row: 1;
       grid-column: 2;
@@ -142,6 +151,7 @@
 .arrowLeft {
   margin-right: 1rem;
 }
+
 .arrowRight {
   margin-left: 1rem;
 }

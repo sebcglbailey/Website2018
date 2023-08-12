@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 
-import './App.css';
-import styles from './App.css';
+import './App.scss';
 
 import ScrollToTop from './ScrollToTop/';
 
@@ -11,7 +10,6 @@ import ProjectList from '../Pages/ProjectList/';
 import Project from '../Pages/Project/';
 import CV from '../Pages/CV/';
 import Extras, { Images } from '../Pages/Extras/';
-import Blog from '../Pages/Blog/';
 import Contact from '../Pages/Contact/';
 import DeviceSize from '../Pages/DeviceSize';
 
@@ -45,11 +43,11 @@ class App extends Component {
         <div>
 
           <ScrollToTop>
-            <div className={styles.container}>
+            <div className='container'>
 
               <Header />
 
-              <div className={styles.view}>
+              <div className='view'>
                 <Switch>
 
                   {/* <Route exact path="/projects"
@@ -79,11 +77,6 @@ class App extends Component {
                       onLoad={this.handlePageLoad}
                       id={match.params.id} />}
                   />
-
-                  {/* <Route path="/blog"
-                    render={() => <Blog
-                      onLoad={this.handlePageLoad} />}
-                  /> */}
 
                   <Route path="/contact"
                     render={() => <Contact

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import LightBoxGroup from './Group';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class LightBox extends Component {
   constructor(props) {
@@ -19,8 +19,8 @@ class LightBox extends Component {
 
   render() {
     let children = this.props.children
-    return(
-      <div onClick={this.handleClick} className={styles.link}>
+    return (
+      <div onClick={this.handleClick} className='link'>
         {children}
       </div>
     )

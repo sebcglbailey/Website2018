@@ -4,11 +4,11 @@ import Content from '../../Components/Content/';
 import Card, { Cover, Info } from '../../Components/Card/';
 import Masonry from '../../Components/Masonry/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const info = [
   {
-    id: "clearscore",
+    id: "clearscore-recent",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
     role: "Design Systems Lead & Lead Product Designer",
@@ -94,7 +94,7 @@ const Work = () => {
             job.info ? job.info.map((info, index) => {
               return (
                 <span
-                  className={styles.infoSpan}
+                  className='infoSpan'
                   key={index}
                   dangerouslySetInnerHTML={{ __html: info }}
                 >
@@ -107,7 +107,7 @@ const Work = () => {
     )
   })
   return (
-    <div className={styles.experience}>
+    <div className='experience'>
       <h3>Work</h3>
       {
         info.length % 2 == 0 ? (
@@ -115,7 +115,7 @@ const Work = () => {
             {cards}
           </Masonry>
         ) : (
-          <div className={styles.experienceCards}>
+          <div className='experienceCards'>
             {cards}
           </div>
         )

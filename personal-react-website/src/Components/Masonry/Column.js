@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import styles from './styles.css';
-
 class Column extends Component {
   constructor(props) {
     super(props)
@@ -18,7 +16,7 @@ class Column extends Component {
   }
 
   render() {
-    return(
+    return (
       <div style={this.props.style}>
         {this.state.children}
       </div>

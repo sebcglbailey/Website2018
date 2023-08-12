@@ -1,9 +1,10 @@
-.container {
+.extraContainer {
   padding-top: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  > div {
+
+  >div {
     width: 40%;
     max-width: 40rem;
     flex: 1 1 450px;
@@ -11,7 +12,7 @@
   }
 }
 
-.cover {
+.extraCover {
   width: 40%;
   min-height: 100%;
   display: flex;
@@ -19,4 +20,3 @@
   justify-content: center;
   overflow: hidden;
 }
-

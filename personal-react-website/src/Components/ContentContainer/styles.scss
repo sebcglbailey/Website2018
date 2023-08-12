@@ -1,12 +1,14 @@
-.container {
+.contentContainer {
   text-align: center;
   padding: 1.5rem 0;
   max-width: 45rem;
   margin: 0 auto;
-  > div {
+
+  >div {
     margin-bottom: 3rem;
   }
-  > div:last-child {
+
+  >div:last-child {
     margin: 0;
   }
 }

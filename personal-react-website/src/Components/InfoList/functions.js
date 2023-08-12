@@ -41,83 +41,83 @@ const toggleType = (type) => {
 
 }
 
-const getTypeClass = (type, styles) => {
-  let def = `${styles.type}`;
+const getTypeClass = (type) => {
+  let def = `type`;
   switch (type) {
     case "ux":
     case "User Experience":
-      return def + ` ${styles.ux}`
+      return def + ` ux`
       break;
     case "ui":
     case "User Interface":
-      return def + ` ${styles.ui}`
+      return def + ` ui`
       break;
     case "ds":
     case "Design Systems":
-      return def + ` ${styles.ds}`
+      return def + ` ds`
       break;
     case "ph":
     case "Photography":
-      return def + ` ${styles.ph}`
+      return def + ` ph`
       break;
     case "pr":
     case "Prototyping":
-      return def + ` ${styles.pr}`
+      return def + ` pr`
       break;
     case "wd":
     case "Web Development":
-      return def + ` ${styles.wd}`
+      return def + ` wd`
       break;
     case "gd":
     case "Graphic Design":
-      return def + ` ${styles.gd}`
+      return def + ` gd`
       break;
     case "ar":
     case "Architecture":
-      return def + ` ${styles.ar}`
+      return def + ` ar`
       break;
     case "fi":
     case "Figma":
-      return def + ` ${styles.fi}`
+      return def + ` fi`
       break;
     case "ps":
     case "Photoshop":
-      return def + ` ${styles.ps}`
+      return def + ` ps`
       break;
     case "ai":
     case "Illustrator":
-      return def + ` ${styles.ai}`
+      return def + ` ai`
       break;
     case "id":
     case "InDesign":
-      return def + ` ${styles.id}`
+      return def + ` id`
       break;
     case "ae":
     case "After Effects":
-      return def + ` ${styles.ae}`
+      return def + ` ae`
       break;
     case "xd":
     case "Adobe XD":
-      return def + ` ${styles.xd}`
+      return def + ` xd`
       break;
     case "sk":
     case "Sketch":
-      return def + ` ${styles.sk}`
+      return def + ` sk`
       break;
     case "fr":
     case "Framer":
-      return def + ` ${styles.fr}`
+      return def + ` fr`
     case "ab":
     case "Abstract":
-      return def + ` ${styles.ab}`
+      return def + ` ab`
     case "ze":
     case "Zeplin":
-      return def + ` ${styles.ze}`
+      return def + ` ze`
     case "pi":
     case "Principle":
-      return def + ` ${styles.pi}`
+      return def + ` pi`
     default:
-      return styles.type
+      return 'type'
   }
 }
 

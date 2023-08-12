@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Image from '../Image/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class Cover extends Component {
   constructor(props) {
@@ -29,8 +29,8 @@ class Cover extends Component {
   }
 
   render() {
-    return(
-      <div ref={(elem) => this.cover = elem} className={styles.cover}>
+    return (
+      <div ref={(elem) => this.cover = elem} className='cover'>
         <Image
           name="cover.jpg"
           path={`Projects/${this.state.project}/src/cover.jpg/`}

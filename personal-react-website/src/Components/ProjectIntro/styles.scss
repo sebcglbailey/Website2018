@@ -1,20 +1,22 @@
-@import 'Styles/colors.scss';
+@import '../../Styles/colors.scss';
 
-.container {
+.projectIntroContainer {
 	max-width: 50rem;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 1rem;
-  a {
-    color: rgba($black, 0.5);
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+
+	a {
+		color: rgba($black, 0.5);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 }
 
-.description {
+.introDescription {
 	a {
 		color: rgba($black, 0.5);
 		text-decoration: none;

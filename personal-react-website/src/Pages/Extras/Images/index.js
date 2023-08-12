@@ -10,8 +10,8 @@ import SVG from '../../../Components/SVG/';
 
 import list from '../list';
 
-import {masonrySizes} from '../../../helpers/breakpoints';
-import styles from './styles.css';
+import { masonrySizes } from '../../../helpers/breakpoints';
+import './styles.scss';
 
 class Images extends Component {
   constructor(props) {
@@ -30,18 +30,18 @@ class Images extends Component {
   }
 
   componentWillMount() {
-    let {title, next, prev} = this.getOtherExtras(this.props)
+    let { title, next, prev } = this.getOtherExtras(this.props)
     document.title = `Sebatian Bailey | ${title}`
-    let {cards, lightBoxContent} = this.getImages(this.props)
-    this.setState({title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent})
+    let { cards, lightBoxContent } = this.getImages(this.props)
+    this.setState({ title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent })
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.id !== this.props.id) {
-      let {title, next, prev} = this.getOtherExtras(nextProps)
+      let { title, next, prev } = this.getOtherExtras(nextProps)
       document.title = `Sebatian Bailey | ${title}`
-      let {cards, lightBoxContent} = this.getImages(nextProps)
-      this.setState({title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent})
+      let { cards, lightBoxContent } = this.getImages(nextProps)
+      this.setState({ title: title, next: next, prev: prev, cards: cards, lightBoxContent: lightBoxContent })
     }
   }
 
@@ -57,8 +57,8 @@ class Images extends Component {
     let title = thisItem ? thisItem.title : null
     let prev = list[thisIndex - 1] ? list[thisIndex - 1] : list[list.length - 1]
     let next = list[thisIndex + 1] ? list[thisIndex + 1] : list[0]
-    
-    return({title: title, next: next, prev: prev})
+
+    return ({ title: title, next: next, prev: prev })
 
   }
 
@@ -70,7 +70,7 @@ class Images extends Component {
 
     let content = extra ? extra.images.map((imgName, index) => {
       let imagePath = `Pages/Extras/src/${props.id}/${imgName}/`
-      return(
+      return (
         <LightBox
           key={`lightbox-${index}-${props.id}`}
           index={index}
@@ -81,7 +81,7 @@ class Images extends Component {
             path={imagePath}
             sizes={masonrySizes}
             onLoad={this.handleImageLoad}
-            className={styles.image}
+            className='image'
           />
         </LightBox>
       )
@@ -89,7 +89,7 @@ class Images extends Component {
 
     let lightBoxContent = extra ? extra.images.map((imgName, index) => {
       let imagePath = `Pages/Extras/src/${props.id}/${imgName}/`
-      return(
+      return (
         <Image
           key={`image-${index}-${props.id}`}
           index={index}
@@ -100,7 +100,7 @@ class Images extends Component {
     }) : null
 
     let cards = content ? content.map((lightbox, index) => {
-      return(
+      return (
         <Card
           key={`card-${index}-${props.id}`}
           id={`card-${index}`}
@@ -110,7 +110,7 @@ class Images extends Component {
       )
     }) : null
 
-    return({cards: cards, lightBoxContent: lightBoxContent})
+    return ({ cards: cards, lightBoxContent: lightBoxContent })
 
   }
 
@@ -142,23 +142,23 @@ class Images extends Component {
     let prevLink = `/extras/${this.state.prev.type}`
     let nextLink = `/extras/${this.state.next.type}`
 
-    return(
-      <div className={styles.container}>
+    return (
+      <div className='extraImageContainer'>
         <ul
-          ref={(elem) => {this.topNav = elem}}
-          className={`${styles.navList} ${styles.top}`}
+          ref={(elem) => { this.topNav = elem }}
+          className={`navList top`}
         >
           <Link to={prevLink}>
             <li>
-              <SVG className={styles.arrowLeft} id="arrowLeft" width={24} height={24} />
+              <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
               {this.state.prev.title}
             </li>
           </Link>
-          <li className={styles.navTitle}>{this.state.title}</li>
+          <li className='navTitle'>{this.state.title}</li>
           <Link to={nextLink}>
             <li>
               {this.state.next.title}
-              <SVG className={styles.arrowRight} id="arrowRight" width={24} height={24} />
+              <SVG className='arrowRight' id="arrowRight" width={24} height={24} />
             </li>
           </Link>
         </ul>
@@ -176,19 +176,19 @@ class Images extends Component {
           {this.state.cards}
         </Masonry>
         <ul
-          ref={(elem) => {this.bottomNav = elem}}
-          className={`${styles.navList} ${styles.bottom}`}
+          ref={(elem) => { this.bottomNav = elem }}
+          className={`navList bottom`}
         >
           <Link to={prevLink}>
-            <li className={styles.prev}>
-              <SVG className={styles.arrowLeft} id="arrowLeft" width={24} height={24} />
+            <li className='prev'>
+              <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
               {this.state.prev.title}
             </li>
           </Link>
           <Link to={nextLink}>
-            <li className={styles.next}>
+            <li className='next'>
               {this.state.next.title}
-              <SVG className={styles.arrowRight} id="arrowRight" width={24} height={24} />
+              <SVG className='arrowRight' id="arrowRight" width={24} height={24} />
             </li>
           </Link>
         </ul>

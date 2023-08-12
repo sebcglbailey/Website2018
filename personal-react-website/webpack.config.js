@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: ["./src/index.js"],
@@ -8,6 +9,13 @@ module.exports = {
     filename: "[name].js",
     publicPath: "/"
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin()
+  ],
   module: {
     rules: [
       {
@@ -18,15 +26,18 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        include: path.resolve(__dirname, './src'),
+        test: /\.css?$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
-          }
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" }
         ]
       },
       {
@@ -47,19 +58,25 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: [
-          'babel-loader',
-          '@hugmanrique/react-markdown-loader'
+        use: [
+          { loader: 'babel-loader' },
+          { loader: '@hugmanrique/react-markdown-loader' }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
         ]
       }
     ]
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    })
-  ],
   optimization: {
     splitChunks: {
       chunks: 'all'

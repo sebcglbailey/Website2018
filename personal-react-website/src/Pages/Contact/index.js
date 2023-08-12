@@ -6,7 +6,7 @@ import { H2 } from '../../Components/Headers/';
 
 import Instagram from './instagram';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class Contact extends Component {
   componentWillMount() {
@@ -17,19 +17,19 @@ class Contact extends Component {
     return (
       <ContentContainer>
         <a
-          className={styles.emailMe}
+          className='emailMe'
           href="mailto:sebcglbailey@gmail.com?subject=I%20Want%20Your%20Work&body=Let%27s%20talk%20about%20Seb%2C%20Bailey.%20Let%27s%20talk%20about%20you%20and%20me."
         >
           Mail Me
         </a>
-        <div className={styles.insta}>
+        <div className='insta'>
           <H2>Instagram</H2>
           <Instagram />
         </div>
       </ContentContainer>
     )
   }
-  
+
 }
 
 export default Contact;

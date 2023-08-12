@@ -1,9 +1,10 @@
-@import 'Styles/colors.scss';
+@import '../../Styles/colors.scss';
 
 .link {
   cursor: pointer;
   padding: 0;
-  > * {
+
+  >* {
     display: block;
   }
 }
@@ -12,7 +13,7 @@
   display: none;
 }
 
-.container {
+.lightboxContainer {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -41,17 +42,20 @@
   box-sizing: content-box;
   background: #000;
   position: relative;
+
   img {
     max-height: calc(95vh - 4rem);
     max-width: 90vw;
     width: auto;
     height: auto;
   }
+
   &:hover .close {
     &:after {
       transform: rotate(-45deg);
       opacity: 1;
     }
+
     &:before {
       transform: rotate(45deg);
       opacity: 1;
@@ -76,7 +80,9 @@
   width: 2vw;
   height: 2vw;
   cursor: pointer;
-  &:before, &:after {
+
+  &:before,
+  &:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -86,9 +92,11 @@
     opacity: 0;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
+
   &:before {
     transform: rotate(-45deg);
   }
+
   &:after {
     transform: rotate(45deg);
   }
@@ -100,7 +108,9 @@
   position: relative;
   cursor: pointer;
   transition: transform 0.15s ease;
-  &:before, &:after {
+
+  &:before,
+  &:after {
     content: '';
     position: absolute;
     top: calc(50% - 1.5px);
@@ -108,10 +118,12 @@
     width: 100%;
     background: $white;
   }
+
   &:before {
     transform-origin: 100% calc(50% + 2px);
     transform: rotate(45deg);
   }
+
   &:after {
     transform-origin: 100% calc(50% - 2px);
     transform: rotate(-45deg);
@@ -122,6 +134,7 @@
   &.next {
     transform: translateX(-0.5vw);
   }
+
   &.prev {
     transform: rotate(180deg) translateX(-0.5vw)
   }
@@ -134,11 +147,14 @@
 @media all and (max-width: 940px) {
   .lightbox {
     max-width: 86vw;
+
     img {
       max-width: 86vw;
     }
   }
-  .arrow, .close {
+
+  .arrow,
+  .close {
     width: 3vw;
     height: 3vw;
   }
@@ -147,11 +163,14 @@
 @media all and (max-width: 640px) {
   .lightbox {
     max-width: 80vw;
+
     img {
       max-width: 80vw;
     }
   }
-  .arrow, .close {
+
+  .arrow,
+  .close {
     width: 4vw;
     height: 4vw;
   }

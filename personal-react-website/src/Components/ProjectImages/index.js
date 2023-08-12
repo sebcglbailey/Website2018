@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
-
-import {sizes} from '../../helpers/imgSizes';
+import React, { Component } from 'react';
 
 import Image from '../Image/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class ProjectImages extends Component {
 	constructor(props) {
@@ -35,7 +33,7 @@ class ProjectImages extends Component {
 
 	componentWillMount() {
 		let images = this.props.images ? this.getImages() : this.props.content ? this.props.content : null
-		this.setState({ contentImages : images })
+		this.setState({ contentImages: images })
 	}
 
 	handleImageLoaded() {
@@ -51,7 +49,7 @@ class ProjectImages extends Component {
 			return (
 				<Image
 					onLoad={this.handleImageLoaded}
-					key={`image-${index+1}`}
+					key={`image-${index + 1}`}
 					name={imgName}
 					path={`Projects/${this.props.project}/src/${imgName}/`}
 					sizes="(min-width: 50rem) 50rem, 98vw"
@@ -62,9 +60,9 @@ class ProjectImages extends Component {
 	}
 
 	render() {
-		return(
-			<div className={styles.container}>
-				<div className={styles.images}>
+		return (
+			<div className='imagesContainer'>
+				<div className='images'>
 					{this.state.contentImages}
 				</div>
 			</div>

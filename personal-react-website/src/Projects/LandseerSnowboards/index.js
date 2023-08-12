@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 
 import { breakpoints, masonrySizes } from '../../helpers/breakpoints';
 
-import ProjectIntro from '../../Components/ProjectIntro/';
 import ProjectImages from '../../Components/ProjectImages/';
 import LightBox, { LightBoxGroup } from '../../Components/LightBox/';
 import Image from '../../Components/Image/';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class LandseerSnowboards extends Component {
   constructor(props) {
@@ -40,7 +39,7 @@ class LandseerSnowboards extends Component {
 
   getLightboxImages() {
     let content = this.state.data.images.map((imgName, index) => {
-      return(
+      return (
         <LightBox
           key={`lightbox-${index}`}
           index={index}
@@ -55,7 +54,7 @@ class LandseerSnowboards extends Component {
       )
     })
     let lightBoxContent = this.state.data.images.map((imgName, index) => {
-      return(
+      return (
         <Image
           key={`image-${index}`}
           index={index}
@@ -68,7 +67,7 @@ class LandseerSnowboards extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <LightBoxGroup
           current={this.state.currentLightBox}

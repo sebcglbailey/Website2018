@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 
-import styles from './styles.css';
+import './styles.scss';
 
 const DeviceSize = () => {
 
@@ -9,7 +9,7 @@ const DeviceSize = () => {
     console.log(size)
 
     return (
-        <div className={styles.container}>
+        <div className='deviceContainer'>
             <h2>Window size:</h2>
             <p>{size.innerWidth} x {size.innerHeight}</p>
             <h2>Screen size:</h2>

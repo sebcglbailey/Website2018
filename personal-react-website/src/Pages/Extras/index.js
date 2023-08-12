@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 
 import Images from './Images/';
 
-import Card, {Info} from '../../Components/Card/';
+import Card, { Info } from '../../Components/Card/';
 import Image from '../../Components/Image/';
 
 import images from './list';
 
-import {masonrySizes} from '../../helpers/breakpoints';
-import styles from './styles.css';
+import './styles.scss';
 
 class Extras extends Component {
   constructor(props) {
@@ -105,7 +104,7 @@ class Extras extends Component {
         >
           <div
             ref={(elem) => this.covers.push(elem)}
-            className={styles.cover}
+            className='extraCover'
           >
             {image}
           </div>
@@ -131,12 +130,12 @@ class Extras extends Component {
   render() {
     let cards = this.renderCards()
     return (
-      <div className={styles.container}>
+      <div className='extraContainer'>
         {cards}
       </div>
     )
   }
-  
+
 }
 
 export default Extras;

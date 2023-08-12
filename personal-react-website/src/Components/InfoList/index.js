@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './styles.css';
+import './styles.scss';
 
 import InfoItem from './InfoItem';
 
@@ -34,20 +34,20 @@ class InfoList extends Component {
   render() {
 
     const types = this.state.types.map((type, index) => {
-      return(
+      return (
         <InfoItem
-          key={`type-${index+1}`}
+          key={`type-${index + 1}`}
           duration={0}
           type={type}
-          className={this.props.default ? getTypeClass(null, styles) : getTypeClass(type, styles)}
+          className={this.props.default ? getTypeClass(null) : getTypeClass(type)}
           onClick={this.handleItemClick}
           default={this.props.default ? this.props.default : false}
         />
       )
     })
 
-    return(
-      <ul className={styles.typeList}>
+    return (
+      <ul className='typeList'>
         {types}
       </ul>
     )

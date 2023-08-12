@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './styles.css';
+import './styles.scss';
 
 class SplashLogo extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class SplashLogo extends Component {
 
     this.state = {
       ready: this.props.ready,
-      containerClass: styles.container,
+      containerClass: 'logoContainer',
       containerStyle: {}
     }
 
@@ -27,7 +27,7 @@ class SplashLogo extends Component {
 
     setTimeout(() => {
       this.setState({ ready: true })
-    }, this.props.delay*3)
+    }, this.props.delay * 3)
   }
 
   componentWillReceiveProps(nextState) {
@@ -43,9 +43,9 @@ class SplashLogo extends Component {
   }
 
   handleInteraction() {
-    if (this.state.containerClass == styles.container) {
+    if (this.state.containerClass == 'logoContainer') {
       this.setState({
-        containerClass: `${styles.container} ${styles.hide}`,
+        containerClass: `logoContainer hide`,
         containerStyle: { transition: `opacity ${this.props.delay}ms ease-in-out` }
       })
       setTimeout(() => {
@@ -75,27 +75,27 @@ class SplashLogo extends Component {
   }
 
   render() {
-    return(
+    return (
       <div
-      ref={(elem) => this.elem = elem}
-      className={this.state.containerClass}
-      style={this.state.containerStyle}>
+        ref={(elem) => this.elem = elem}
+        className={this.state.containerClass}
+        style={this.state.containerStyle}>
         <svg
-        className={styles.svg}
-        version="1.1"
-        id="splash-logo"
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px" y="0px"
-        viewBox="0 0 1021.74 1021.74"
-        enableBackground="new 0 0 1021.74 1021.74">
+          className='svg'
+          version="1.1"
+          id="splash-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px" y="0px"
+          viewBox="0 0 1021.74 1021.74"
+          enableBackground="new 0 0 1021.74 1021.74">
           <path
-          ref={(path) => this.path = path}
-          className={styles.path}
-          fill="none"
-          stroke="#fff"
-          strokeWidth="40"
-          strokeLinecap="round"
-          d="M109.947,962.986
+            ref={(path) => this.path = path}
+            className='path'
+            fill="none"
+            stroke="#fff"
+            strokeWidth="40"
+            strokeLinecap="round"
+            d="M109.947,962.986
           c65.521-9.742,127.066-45.34,168.06-103.885C357.203,746,331.005,616.065,216.613,510.92S83.5,275.84,162.695,162.738
           c17.231-24.608,38.095-45.16,61.358-61.445c88.491-61.963,203.175-58.613,286.824-0.051
           c23.263,16.285,44.127,36.837,61.358,61.445c79.194,113.102,51.694,252.286-53.918,348.182

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import styles from './styles.css';
 import { toggleType } from './functions';
 
 class InfoItem extends Component {
