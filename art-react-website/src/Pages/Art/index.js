@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { H1, H2 } from '../../Components/Headers/';
+import Button from '../../Components/Button';
 
-import images from './src/images.json';
+import images from './src/images';
 
 import './styles.scss';
 
-class Contact extends Component {
+class Art extends Component {
     constructor(props) {
         super(props);
 
@@ -20,34 +21,51 @@ class Contact extends Component {
 
     componentWillMount() {
         document.title = "Seb Bailey Art"
-        this.forSale = this.renderImages(images.forSale)
-        this.sold = this.renderImages(images.sold)
+        this.renderImages()
     }
 
-    renderImages(arr) {
-        var images = arr.map((imageObj) => {
-            var image = require(`./src/images/${imageObj.imgSmall}`)
+    renderImages() {
+        this.forSale = []
+        this.unavailable = []
 
-            var price = imageObj.price ? (<p>{imageObj.price}</p>) : null
+        for (let id in images) {
 
-            return (
-                <div
-                    key={`image-${imageObj.name.split(' ').join().toLowerCase()}`}
-                    className='image'>
-                    <img
-                        src={image}
-                    />
-                    <h4>{imageObj.name}{imageObj.size ? ",  " : ""}{imageObj.size ? imageObj.size : ""}</h4>
-                    {price ? price : null}
-                </div>
+            var piece = images[id]
+
+            var image = require(`./src/images/${piece.imgSmall}`)
+
+            var price = piece.price ? (<p>{piece.price}</p>) : null
+
+            var imageNode = (
+                <Link to={`./${id}`} className='imageLink'>
+                    <div
+                        key={`image-${piece.name.split(' ').join().toLowerCase()}`}
+                        className='image'>
+                        <img
+                            src={image}
+                        />
+                        <h4>{piece.name}{piece.size ? ",  " : ""}{piece.size ? piece.size : ""}</h4>
+                        {price ? price : null}
+                    </div>
+                </Link>
             )
-        })
-        return images
+
+            switch (piece.status) {
+                case "FOR_SALE":
+                    this.forSale.push(imageNode);
+                    break;
+                case "UNAVAILABLE":
+                    this.unavailable.push(imageNode);
+                    break;
+                default:
+                    continue;
+            }
+        }
     }
 
     render() {
         return (
-            <div className='container'>
+            <div className='artContainer'>
                 <H1>Seb Bailey Art</H1>
                 <H2>For sale</H2>
                 <div className='carousel'>
@@ -55,16 +73,15 @@ class Contact extends Component {
                         {this.forSale}
                     </div>
                 </div>
-                <a
-                    className='contact'
+                <Button
                     href="mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20some%20of%20your%20artwork."
                 >
                     Get in touch
-                </a>
+                </Button>
                 <H2>Currently unavailable</H2>
                 <div className='carousel'>
                     <div className='content'>
-                        {this.sold}
+                        {this.unavailable}
                     </div>
                 </div>
             </div>
@@ -73,4 +90,4 @@ class Contact extends Component {
 
 }
 
-export default Contact;
+export default Art;
