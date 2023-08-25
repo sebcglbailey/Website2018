@@ -1,0 +1,71 @@
+@import '../../Styles/colors.scss';
+
+.detailContainer {
+    width: 100%;
+    padding: 2rem;
+    max-width: 60rem;
+    margin: 0 auto;
+
+    .back {
+      margin-bottom: 2rem;
+
+      svg {
+        fill: $white;
+        margin-right: 1rem;
+      }
+
+    }
+
+    .pieceContainer {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      grid-gap: 2rem;
+      
+      @media all and (max-width: 512px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h2, h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      margin-top: 0.5rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    .extraDetails {
+      font-weight: 100;
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid $white;
+
+      @media all and (max-width: 512px) {
+        font-size: 1rem;
+      }
+    }
+
+    image, img {
+      width: 100%;
+    }
+
+    .details-body {
+      margin-top: 2rem;
+
+      @media all and (max-width: 512px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .details-p {
+      font-weight: 100;
+      margin-top: 1.5rem;
+      line-height: 150%;
+    }
+}

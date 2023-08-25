@@ -7,6 +7,7 @@ import ScrollToTop from './ScrollToTop/';
 
 import Header from './Header/';
 import Art from '../Pages/Art/';
+import Detail from '../Pages/Detail/';
 
 // TODO: rename all pages and components jsx files to index.js
 
@@ -41,12 +42,19 @@ class App extends Component {
               <div className='view'>
                 <Switch>
 
+                  <Route path="/:id"
+                    render={({ match }) => <Detail
+                      piece={match.params.id} />}
+                  />
+
                   <Route path="/"
                     render={() => <Art
                       onLoad={this.handlePageLoad} />}
                   />
 
                   <Redirect from="/" to="/" />
+
+                  <Route render={() => <Redirect to="/" />} />
 
                 </Switch>
               </div>

@@ -1,6 +1,6 @@
 @import '../../Styles/colors.scss';
 
-.container {
+.artContainer {
     width: 100%;
     padding: 6rem 2rem;
 
@@ -24,30 +24,6 @@
     }
 }
 
-.contact {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border: 1px solid $white;
-    color: $white;
-    background: transparent;
-    font-size: 1.2rem;
-    text-decoration: none;
-    // font-weight: 100;
-    margin-top: 1rem;
-    text-align: center;
-
-    @media all and (max-width: 512px) {
-        width: 100%;
-        border-width: 2px;
-        font-weight: 400;
-    }
-
-    &:hover {
-        background: $black;
-        cursor: pointer;
-    }
-}
-
 .carousel {
     width: 100vw;
     margin-left: -2rem;
@@ -68,9 +44,12 @@
         display: flex;
         flex-direction: row;
 
-        .image {
+        .imageLink {
             width: auto;
             margin-right: 4rem;
+            display: inline-block;
+            color: $white;
+            text-decoration: none;
 
             &:last-child {
                 margin-right: 0;
