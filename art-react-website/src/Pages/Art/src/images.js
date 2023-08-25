@@ -1,6 +1,15 @@
 import status from './status';
 
 const pieces = {
+    perdita: {
+        status: status.COMMISSION,
+        name: "Perdita",
+        imgSmall: "perdita_sm.jpg",
+        imgLarge: "perdita.jpg",
+        size: "100x100cm",
+        medium: "Acrylic & mixed media on canvas",
+        year: "2023",
+    },
     connexa_ii: {
         status: status.FOR_SALE,
         name: "CONNEXA II",
@@ -10,9 +19,9 @@ const pieces = {
         price: "£395",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
-        // details: [
-        //     "Inspired by the playfulness of nature, CONNEXA II evokes a relationship and a dance between two beings that can never quite touch. A reminder of the randomness, sparkle, yet roughness that comes with everything in nature, the hues, tones and texture of this piece aim to bring a sense of excitment and intrigue that can only be appreciated in person.",
-        // ],
+        details: [
+            "Inspired by the playfulness of nature, CONNEXA II evokes a relationship and a dance between two beings that can never quite touch. A reminder of the randomness, sparkle, yet roughness that comes with everything in nature, the hues, tones and texture of this piece aim to bring a sense of excitment and intrigue that can only be appreciated in person.",
+        ],
     },
     infectus_i: {
         status: status.FOR_SALE,
@@ -23,6 +32,10 @@ const pieces = {
         price: "£195",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
+        details: [
+            "The circle is the most pure form in nature, and one that appears again and again. There's a reason why so many successful products revolve around a circle (iPod, Nest, Braun radio). But what happens when you break that circle? When the complete becomes incomplete?",
+            "This piece aims to answer that question and more with the exploration of what it means to be deliberately incomplete, through colour, texture, and of course the shape. This intimate, yet striking artwork provokes a true sense of confusion and peace at the same time."
+        ]
     },
     infectus_ii: {
         status: status.FOR_SALE,
@@ -33,6 +46,10 @@ const pieces = {
         price: "£350",
         medium: "Acrylic, spray paint & mixed media on canvas",
         year: "2023",
+        details: [
+            "The circle is the most pure form in nature, and one that appears again and again. There's a reason why so many successful products revolve around a circle (iPod, Nest, Braun radio). But what happens when you break that circle? When the complete becomes incomplete?",
+            "A continuation of INFECTUS I, the second piece of the series flips the narrative inside out, but raising the same questions and thoughts as it's predecessor. While the circle itself may be complete, there's a clear and deliberate divide which symbolises the many divides we see in human and global nature today."
+        ]
     },
     astra_ii: {
         status: status.FOR_SALE,
@@ -43,6 +60,9 @@ const pieces = {
         price: "£195",
         medium: "Acrylic, spray paint & mixed media on canvas",
         year: "2023",
+        details: [
+            "Living in London, I don't get to see the stars or much of the night sky very often, so when I do it's always a sight to behold. The second of these dark, colourful pieces, ASTRA II is simply an exploration of how texture and medium can interact in simple ways to create a beautiful and magical landscape."
+        ]
     },
     connexa_i: {
         status: status.UNAVAILABLE,

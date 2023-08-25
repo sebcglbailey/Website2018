@@ -27,6 +27,7 @@ class Art extends Component {
     renderImages() {
         this.forSale = []
         this.unavailable = []
+        this.commissions = []
 
         for (let id in images) {
 
@@ -37,9 +38,12 @@ class Art extends Component {
             var price = piece.price ? (<p>{piece.price}</p>) : null
 
             var imageNode = (
-                <Link to={`./${id}`} className='imageLink'>
+                <Link
+                    to={`./${id}`}
+                    className='imageLink'
+                    key={`image-${piece.name.split(' ').join().toLowerCase()}`}
+                >
                     <div
-                        key={`image-${piece.name.split(' ').join().toLowerCase()}`}
                         className='image'>
                         <img
                             src={image}
@@ -56,6 +60,9 @@ class Art extends Component {
                     break;
                 case "UNAVAILABLE":
                     this.unavailable.push(imageNode);
+                    break;
+                case "COMMISSION":
+                    this.commissions.push(imageNode);
                     break;
                 default:
                     continue;
@@ -82,6 +89,12 @@ class Art extends Component {
                 <div className='carousel'>
                     <div className='content'>
                         {this.unavailable}
+                    </div>
+                </div>
+                <H2>Commissions</H2>
+                <div className='carousel'>
+                    <div className='content'>
+                        {this.commissions}
                     </div>
                 </div>
             </div>
