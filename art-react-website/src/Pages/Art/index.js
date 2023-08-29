@@ -33,7 +33,7 @@ class Art extends Component {
 
             var piece = images[id]
 
-            var image = require(`./src/images/${piece.imgSmall}`)
+            var image = require(`./src/images/${piece.imgSmall[0]}`)
 
             var price = piece.price ? (<p>{piece.price}</p>) : null
 
@@ -75,7 +75,7 @@ class Art extends Component {
             <div className='artContainer'>
                 <H1>Seb Bailey Art</H1>
                 <H2>For sale</H2>
-                <div className='carousel'>
+                <div className='artDisplay'>
                     <div className='content'>
                         {this.forSale}
                     </div>
@@ -86,13 +86,13 @@ class Art extends Component {
                     Get in touch
                 </Button>
                 <H2>Currently unavailable</H2>
-                <div className='carousel'>
+                <div className='artDisplay'>
                     <div className='content'>
                         {this.unavailable}
                     </div>
                 </div>
                 <H2>Commissions</H2>
-                <div className='carousel'>
+                <div className='artDisplay'>
                     <div className='content'>
                         {this.commissions}
                     </div>

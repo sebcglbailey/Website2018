@@ -4,6 +4,8 @@ import { Link, Redirect, Switch } from 'react-router-dom';
 import { H1, H2 } from '../../Components/Headers/';
 import Button from '../../Components/Button';
 import SVG from '../../Components/SVG/';
+import Selector from '../../Components/Selector/';
+import SelectorImage from '../../Components/Selector/components/image';
 
 import images from '../Art/src/images';
 import status from '../Art/src/status';
@@ -15,10 +17,12 @@ class Detail extends Component {
         super(props);
 
         this.state = {
-            id: this.props.piece
+            id: this.props.piece,
+            activeImage: 0,
         }
 
         this.getPieceData = this.getPieceData.bind(this)
+        this.setActiveImage = this.setActiveImage.bind(this)
     }
 
     componentWillMount() {
@@ -48,22 +52,48 @@ class Detail extends Component {
             year: piece.year,
             frame: piece.frame,
             details: details,
-            image: require(`../Art/src/images/${images[this.state.id].imgLarge}`),
+            image: require(`../Art/src/images/${images[this.state.id].imgLarge[0]}`),
             contact: `mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20${piece.name}.`
         })
     }
 
+    setActiveImage(index) {
+        this.setState({
+            activeImage: index,
+            image: require(`../Art/src/images/${images[this.state.id].imgLarge[index]}`)
+        })
+    }
+
     render() {
+        let selectorImages = images[this.state.id].imgSmall.map((imgName, index) => {
+            let img = require(`../../Pages/Art/src/images/${imgName}`)
+            return (
+              <SelectorImage
+                key={imgName}
+                src={img}
+                className='selectorImage'
+                index={index}
+                onClick={() => {
+                  this.setActiveImage(index)
+                }}
+                active={this.state.activeImage === index}
+              />
+            )
+          })
+
         return (
             <div className='detailContainer'>
-                <Link to='../'>
-                    <Button className="back">
-                        <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
-                        Back to all artwork
-                    </Button>
-                </Link>
+                <Button href='../' className="back">
+                    <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
+                    Back to all artwork
+                </Button>
+                <Selector className='selectorContainer'>
+                    {selectorImages}
+                </Selector>
                 <div className='pieceContainer'>
-                    <img className='image' src={this.state.image} />
+                    <div className="image">
+                        <img src={this.state.image} />
+                    </div>
                     <div className='details'>
                         <H2>"{this.state.name}"{this.state.size ? ",  " : ""}{this.state.size ? this.state.size : ""}{this.state.year ? ` ${this.state.year}` : ""}</H2>
                         {this.state.price ? (

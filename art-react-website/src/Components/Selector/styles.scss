@@ -1,0 +1,23 @@
+@import '../../Styles/colors.scss';
+
+.selectorContainer {
+  display: flex;
+  width: auto;
+  margin-bottom: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .selectorImage {
+    width: auto;
+    height: 6rem;
+    margin-right: 1rem;
+    opacity: 48%;
+    margin-bottom: 1rem;
+
+    &.active {
+      opacity: 100%;
+      outline: 1px solid $white;
+      outline-offset: 4px;
+    }
+  }
+}
