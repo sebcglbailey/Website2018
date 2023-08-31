@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 import styles from './styles.scss';
 
-import logo from "../../logo-white.svg"
-import logoPNG from "../../logo-white.png"
+import logo from "../../logo-white-art.svg";
+import logoPNG from "../../logo-white-art.png";
 
 class Header extends Component {
   constructor(props) {

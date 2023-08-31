@@ -62,7 +62,8 @@ const pieces = {
         year: "2023",
         details: [
             "Living in London, I don't get to see the stars or much of the night sky very often, so when I do it's always a sight to behold. The second of these dark, colourful pieces, ASTRA II is simply an exploration of how texture and medium can interact in simple ways to create a beautiful and magical landscape."
-        ]
+        ],
+        pair: 'astra_i',
     },
     connexa_i: {
         status: status.UNAVAILABLE,
@@ -100,6 +101,7 @@ const pieces = {
         size: "40x30cm",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
+        pair: 'astra_ii',
     },
     double_take: {
         status: status.UNAVAILABLE,

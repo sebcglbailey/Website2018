@@ -52,6 +52,7 @@ class Detail extends Component {
             year: piece.year,
             frame: piece.frame,
             details: details,
+            pair: piece.pair,
             image: require(`../Art/src/images/${images[this.state.id].imgLarge[0]}`),
             contact: `mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20${piece.name}.`
         })
@@ -115,6 +116,9 @@ class Detail extends Component {
                                 ) : null}
                                 {this.state.frame ? (
                                     <p>{this.state.frame}</p>
+                                ) : null}
+                                {this.state.pair && images[this.state.pair] && images[this.state.pair].name ? (
+                                    <p>Pairs with: <a href={`../${this.state.pair}`}>{images[this.state.pair].name}</a></p>
                                 ) : null}
                             </div>
                         ) : null}

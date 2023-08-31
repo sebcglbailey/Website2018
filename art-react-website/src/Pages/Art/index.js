@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { H1, H2 } from '../../Components/Headers/';
 import Button from '../../Components/Button';
+import Hero from '../../Components/Hero';
 
 import images from './src/images';
 
@@ -73,7 +74,7 @@ class Art extends Component {
     render() {
         return (
             <div className='artContainer'>
-                <H1>Seb Bailey Art</H1>
+                <Hero background={images.sarasa} />
                 <H2>For sale</H2>
                 <div className='artDisplay'>
                     <div className='content'>
