@@ -1,0 +1,43 @@
+@import '../../Styles/colors.scss';
+
+.heroContainer {
+  width: 100vw;
+  margin-left: -2rem;
+  margin-top: -10rem;
+  height: 32rem;
+  background-size: cover;
+  background-position: center, center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  padding-top: 4rem;
+
+  @media all and (max-width: 512px) {
+    height: 16rem;
+    padding-top: 3rem;
+  }
+
+  h1 {
+    text-shadow: 0 0.175rem 0.25rem $black;
+    font-size: 4rem;
+    position: relative;
+    margin: 0;
+    @media all and (max-width: 512px) {
+      font-size: 2.5rem;
+      top: 1rem;
+    }
+  }
+
+  .logo {
+    height: 6rem;
+    width: auto;
+    filter: drop-shadow(0 0.175rem 0.25rem $black);
+    position: relative;
+    @media all and (max-width: 512px) {
+      top: 1rem;
+    }
+  }
+}
