@@ -68,8 +68,8 @@ const pieces = {
     connexa_i: {
         status: status.UNAVAILABLE,
         name: "CONNEXA I",
-        imgSmall: ["connexa_i_sm.jpg"],
-        imgLarge: ["connexa_i.jpg"],
+        imgSmall: ["connexa_i_sm.jpg", "connexa_i_mock.png", "connexa_i_full_sm.jpg", "connexa_i_detail_1_sm.jpg", "connexa_i_detail_2_sm.jpg", "connexa_i_detail_3_sm.jpg", "connexa_i_detail_4_sm.jpg", "connexa_i_detail_5_sm.jpg"],
+        imgLarge: ["connexa_i.jpg", "connexa_i_mock.png", "connexa_i_full.jpg", "connexa_i_detail_1.jpg", "connexa_i_detail_2.jpg", "connexa_i_detail_3.jpg", "connexa_i_detail_4.jpg", "connexa_i_detail_5.jpg"],
         size: "100x100cm",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
@@ -106,8 +106,8 @@ const pieces = {
     double_take: {
         status: status.UNAVAILABLE,
         name: "Double Take",
-        imgSmall: ["double_take_sm.jpg"],
-        imgLarge: ["double_take.jpg"],
+        imgSmall: ["double_take_sm.jpg", "double_take_mock.png"],
+        imgLarge: ["double_take.jpg", "double_take_mock.png"],
         size: "12x12in",
         medium: "Acrylic on canvas",
         year: "2023",
