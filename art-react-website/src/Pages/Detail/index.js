@@ -53,7 +53,7 @@ class Detail extends Component {
             frame: piece.frame,
             details: details,
             pair: piece.pair,
-            image: require(`../Art/src/images/${images[this.state.id].imgLarge[0]}`),
+            image: require(`../Art/src/images/${this.state.id}/${images[this.state.id].imgLarge[0]}`),
             contact: `mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20${piece.name}.`
         })
     }
@@ -61,26 +61,26 @@ class Detail extends Component {
     setActiveImage(index) {
         this.setState({
             activeImage: index,
-            image: require(`../Art/src/images/${images[this.state.id].imgLarge[index]}`)
+            image: require(`../Art/src/images/${this.state.id}/${images[this.state.id].imgLarge[index]}`)
         })
     }
 
     render() {
         let selectorImages = images[this.state.id].imgSmall.map((imgName, index) => {
-            let img = require(`../../Pages/Art/src/images/${imgName}`)
+            let img = require(`../../Pages/Art/src/images/${this.state.id}/${imgName}`)
             return (
-              <SelectorImage
-                key={imgName}
-                src={img}
-                className='selectorImage'
-                index={index}
-                onClick={() => {
-                  this.setActiveImage(index)
-                }}
-                active={this.state.activeImage === index}
-              />
+                <SelectorImage
+                    key={imgName}
+                    src={img}
+                    className='selectorImage'
+                    index={index}
+                    onClick={() => {
+                    this.setActiveImage(index)
+                    }}
+                    active={this.state.activeImage === index}
+                />
             )
-          })
+        })
 
         return (
             <div className='detailContainer'>
@@ -88,9 +88,13 @@ class Detail extends Component {
                     <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
                     Back to all artwork
                 </Button>
-                <Selector className='selectorContainer'>
-                    {selectorImages}
-                </Selector>
+                {images[this.state.id].imgSmall.length > 1 ?
+                    (
+                        <Selector className='selectorContainer'>
+                            {selectorImages}
+                        </Selector>
+                    ) : null
+                }
                 <div className='pieceContainer'>
                     <div className="image">
                         <img src={this.state.image} />

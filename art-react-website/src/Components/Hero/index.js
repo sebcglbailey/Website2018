@@ -5,6 +5,8 @@ import {H1} from '../Headers';
 import logo from "../../logo-white-art.svg";
 import logoPNG from "../../logo-white-art.png";
 
+import images from "../../Pages/Art/src/images";
+
 import './styles.scss';
 
 class Hero extends Component {
@@ -19,7 +21,7 @@ class Hero extends Component {
     }
 
     getBackground(image) {
-      let img = require(`../../Pages/Art/src/images/${image.imgLarge[0]}`);
+      let img = require(`../../Pages/Art/src/images/${image}/${images[image].imgLarge[0]}`);
 
       this.setState({
         backgroundImage: img,

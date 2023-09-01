@@ -34,7 +34,7 @@ class Art extends Component {
 
             var piece = images[id]
 
-            var image = require(`./src/images/${piece.imgSmall[0]}`)
+            var image = require(`./src/images/${id}/${piece.imgSmall[0]}`)
 
             var price = piece.price ? (<p>{piece.price}</p>) : null
 
@@ -74,7 +74,7 @@ class Art extends Component {
     render() {
         return (
             <div className='artContainer'>
-                <Hero background={images.sarasa} />
+                <Hero background={'sarasa'} />
                 <H2>For sale</H2>
                 <div className='artDisplay'>
                     <div className='content'>
