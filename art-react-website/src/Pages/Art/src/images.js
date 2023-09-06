@@ -1,6 +1,20 @@
 import status from './status';
 
 const pieces = {
+    contra: {
+        status: status.FOR_SALE,
+        name: "CONTRA",
+        imgSmall: ["contra_main_sm.jpg", "contra_sm.jpg", "contra_mock_sm.png", "contra_full_sm.jpg", "contra_detail_1_sm.jpg", "contra_detail_2_sm.jpg", "contra_detail_3_sm.jpg"],
+        imgLarge: ["contra_main.jpg", "contra.jpg", "contra_mock.png", "contra_full.jpg", "contra_detail_1.jpg", "contra_detail_2.jpg", "contra_detail_3.jpg"],
+        size: "55x22in.",
+        price: "£900",
+        medium: "Acryic & mixed media on recycled canvas",
+        year: "2023",
+        frame: "15mm black redwood floating frame – Size with frame: 57x24in.",
+        details: [
+            "Step into a world of playfulness, excitement and joy with a touch of contradiction with CONTRA. This piece very much led itslef, with a simple base splitting the canvas in two, with layer upon layer taking on it's own life and letting the paint and the mediums lead the shape and composition.",
+        ]
+    },
     perdita: {
         status: status.COMMISSION,
         name: "Perdita",
@@ -9,6 +23,7 @@ const pieces = {
         size: "100x100cm",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
+        frame: "8mm two-tone redwood floating frame"
     },
     connexa_ii: {
         status: status.FOR_SALE,
@@ -73,7 +88,7 @@ const pieces = {
         size: "100x100cm",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
-        frame: "Black softwood frame",
+        frame: "8mm black redwood frame",
     },
     sarasa: {
         status: status.UNAVAILABLE,
