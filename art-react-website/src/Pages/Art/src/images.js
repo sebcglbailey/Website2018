@@ -1,6 +1,28 @@
 import status from './status';
 
 const pieces = {
+    sarasa_ii: {
+        status: status.FOR_SALE,
+        name: "SARASA II",
+        imgSmall: ["sarasa_ii_sm.jpg", "sarasa_ii_mock_sm.png", "sarasa_ii_full_sm.jpg"],
+        imgLarge: ["sarasa_ii.jpg", "sarasa_ii_mock.png", "sarasa_ii_full.jpg"],
+        size: "70x70cm",
+        price: "£700",
+        medium: "Acrylic on canvas",
+        year: "2023",
+        frame: "Unframed – black deep edge canvas",
+    },
+    sarasa_v: {
+        status: status.FOR_SALE,
+        name: "SARASA V",
+        imgSmall: ["sarasa_v_sm.jpg", "sarasa_v_mock_sm.png", "sarasa_v_full_sm.jpg",],
+        imgLarge: ["sarasa_v.jpg", "sarasa_v_mock.png",  "sarasa_v_full.jpg"],
+        size: "20x20cm",
+        price: "£95",
+        medium: "Acrylic on canvas",
+        year: "2023",
+        frame: "Currently unframed",
+    },
     contra: {
         status: status.FOR_SALE,
         name: "CONTRA",
@@ -13,7 +35,8 @@ const pieces = {
         frame: "15mm black redwood floating frame – Size with frame: 57x24in.",
         details: [
             "Step into a world of playfulness, excitement and joy with a touch of contradiction with CONTRA. This piece very much led itslef, with a simple base splitting the canvas in two, with layer upon layer taking on it's own life and letting the paint and the mediums lead the shape and composition.",
-        ]
+            "Framed by hand by the artist."
+        ],
     },
     perdita: {
         status: status.COMMISSION,
@@ -23,7 +46,7 @@ const pieces = {
         size: "100x100cm",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
-        frame: "8mm two-tone redwood floating frame"
+        frame: "8mm two-tone redwood floating frame",
     },
     connexa_ii: {
         status: status.FOR_SALE,
@@ -50,7 +73,7 @@ const pieces = {
         details: [
             "The circle is the most pure form in nature, and one that appears again and again. There's a reason why so many successful products revolve around a circle (iPod, Nest, Braun radio). But what happens when you break that circle? When the complete becomes incomplete?",
             "This piece aims to answer that question and more with the exploration of what it means to be deliberately incomplete, through colour, texture, and of course the shape. This intimate, yet striking artwork provokes a true sense of confusion and peace at the same time."
-        ]
+        ],
     },
     infectus_ii: {
         status: status.FOR_SALE,
@@ -64,7 +87,7 @@ const pieces = {
         details: [
             "The circle is the most pure form in nature, and one that appears again and again. There's a reason why so many successful products revolve around a circle (iPod, Nest, Braun radio). But what happens when you break that circle? When the complete becomes incomplete?",
             "A continuation of INFECTUS I, the second piece of the series flips the narrative inside out, but raising the same questions and thoughts as it's predecessor. While the circle itself may be complete, there's a clear and deliberate divide which symbolises the many divides we see in human and global nature today."
-        ]
+        ],
     },
     astra_ii: {
         status: status.FOR_SALE,
@@ -76,9 +99,11 @@ const pieces = {
         medium: "Acrylic, spray paint & mixed media on canvas",
         year: "2023",
         details: [
-            "Living in London, I don't get to see the stars or much of the night sky very often, so when I do it's always a sight to behold. The second of these dark, colourful pieces, ASTRA II is simply an exploration of how texture and medium can interact in simple ways to create a beautiful and magical landscape."
+            "Living in London, I don't get to see the stars or much of the night sky very often, so when I do it's always a sight to behold. The second of these dark, colourful pieces, ASTRA II is simply an exploration of how texture and medium can interact in simple ways to create a beautiful and magical landscape.",
+            "Framed by hand by the artist."
         ],
         pair: 'astra_i',
+        frame: "8mm black redwood floating frame",
     },
     connexa_i: {
         status: status.UNAVAILABLE,
@@ -117,6 +142,7 @@ const pieces = {
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
         pair: 'astra_ii',
+        frame: "8mm black redwood floating frame",
     },
     double_take: {
         status: status.UNAVAILABLE,
