@@ -6,11 +6,16 @@ const pieces = {
         name: "SARASA II",
         imgSmall: ["sarasa_ii_sm.jpg", "sarasa_ii_mock_sm.png", "sarasa_ii_full_sm.jpg"],
         imgLarge: ["sarasa_ii.jpg", "sarasa_ii_mock.png", "sarasa_ii_full.jpg"],
-        size: "70x70cm",
-        price: "£700",
+        size: "30x30in.",
+        price: "£750",
         medium: "Acrylic on canvas",
         year: "2023",
         frame: "Unframed – black deep edge canvas",
+        details: [
+            "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+        ],
+        pair: ["sarasa_v", "sarasa"],
     },
     sarasa_v: {
         status: status.FOR_SALE,
@@ -22,6 +27,11 @@ const pieces = {
         medium: "Acrylic on canvas",
         year: "2023",
         frame: "Currently unframed",
+        details: [
+            "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+        ],
+        pair: ["sarasa_ii", "sarasa"],
     },
     contra: {
         status: status.FOR_SALE,
@@ -102,7 +112,7 @@ const pieces = {
             "Living in London, I don't get to see the stars or much of the night sky very often, so when I do it's always a sight to behold. The second of these dark, colourful pieces, ASTRA II is simply an exploration of how texture and medium can interact in simple ways to create a beautiful and magical landscape.",
             "Framed by hand by the artist."
         ],
-        pair: 'astra_i',
+        pair: ['astra_i'],
         frame: "8mm black redwood floating frame",
     },
     connexa_i: {
@@ -123,6 +133,11 @@ const pieces = {
         size: "24x24in.",
         medium: "Acrylic on canvas",
         year: "2023",
+        pair: ["sarasa_ii", "sarasa_v"],
+        details: [
+            "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+        ],
     },
     aequor: {
         status: status.UNAVAILABLE,
@@ -141,7 +156,7 @@ const pieces = {
         size: "40x30cm",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
-        pair: 'astra_ii',
+        pair: ['astra_ii'],
         frame: "8mm black redwood floating frame",
     },
     double_take: {

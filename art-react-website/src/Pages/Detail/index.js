@@ -121,8 +121,10 @@ class Detail extends Component {
                                 {this.state.frame ? (
                                     <p>{this.state.frame}</p>
                                 ) : null}
-                                {this.state.pair && images[this.state.pair] && images[this.state.pair].name ? (
-                                    <p>Pairs with: <a href={`../${this.state.pair}`}>{images[this.state.pair].name}</a></p>
+                                {this.state.pair ? (
+                                    <p>Pairs with:<br/> {this.state.pair.map(pair => (
+                                        <a href={`../${pair}`}>{images[pair].name}</a>
+                                    ))}</p>
                                 ) : null}
                             </div>
                         ) : null}
