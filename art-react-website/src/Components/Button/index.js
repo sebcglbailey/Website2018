@@ -28,6 +28,7 @@ class Button extends Component {
           <a
               className={`contact ${this.state.className} ${this.props.className ? this.props.className : ""}`}
               href={this.props.href}
+              target={this.props.target}
           >
               {this.props.children}
           </a>

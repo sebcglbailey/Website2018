@@ -107,6 +107,7 @@ class Detail extends Component {
                                 <Button
                                     size='SMALL'
                                     href={this.state.contact}
+                                    target='_blank'
                                 >
                                     Enquire about this piece
                                 </Button>
