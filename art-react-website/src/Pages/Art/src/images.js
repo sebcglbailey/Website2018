@@ -1,6 +1,22 @@
 import status from './status';
 
 const pieces = {
+    sarasa_iv: {
+        status: status.FOR_SALE,
+        name: "SARASA IV",
+        imgSmall: ["sarasa_iv_sm.png", "sarasa_iv_mock_sm.png"],
+        imgLarge: ["sarasa_iv.png", "sarasa_iv_mock.png"],
+        size: "20x20cm",
+        price: "£60",
+        medium: "Acrylic on canvas",
+        year: "2023",
+        frame: "Currently unframed",
+        details: [
+            "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+        ],
+        pair: ["sarasa_v", "sarasa_ii", "sarasa"],
+    },
     sarasa_ii: {
         status: status.FOR_SALE,
         name: "SARASA II",
@@ -15,7 +31,7 @@ const pieces = {
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
             "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
         ],
-        pair: ["sarasa_v", "sarasa"],
+        pair: ["sarasa_v", "sarasa_iv", "sarasa"],
     },
     sarasa_v: {
         status: status.FOR_SALE,
@@ -31,7 +47,7 @@ const pieces = {
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
             "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
         ],
-        pair: ["sarasa_ii", "sarasa"],
+        pair: ["sarasa_ii", "sarasa_iv", "sarasa"],
     },
     contra: {
         status: status.FOR_SALE,
