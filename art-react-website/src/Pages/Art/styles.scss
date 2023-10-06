@@ -2,7 +2,7 @@
 
 .artContainer {
     width: 100%;
-    padding: 2rem;
+    padding: 0 2rem;
 
     @media all and (min-width: 1132px) and (pointer: fine) {
         width: 1024px;
@@ -33,13 +33,13 @@
 .artDisplay {
     width: 100vw;
     margin-left: -2rem;
-    padding: 0.125rem 2rem;
+    padding: 0 2rem;
     overflow-x: scroll;
     display: flex;
 
     @media all and (min-width: 1132px) and (pointer: fine) {
         width: 100%;
-        padding: 0.125rem 0;
+        padding: 0;
         margin-left: 0;
         overflow: visible;
     }
@@ -164,5 +164,17 @@
                 }
             }
         }
+    }
+}
+
+.instagram {
+    font-family: "Montserrat Alternates";
+    font-size: 1rem !important;
+    padding: 1rem !important;
+    svg {
+        fill: $white;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
     }
 }
