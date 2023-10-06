@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import { H1, H2 } from '../../Components/Headers/';
@@ -44,14 +44,16 @@ class Art extends Component {
                     className='imageLink'
                     key={`image-${piece.name.split(' ').join().toLowerCase()}`}
                 >
-                    <div
-                        className='image'>
-                        <img
+                    <div className='image'>
+                        <img className='background'
                             src={image}
                         />
-                        <h4>{piece.name}{piece.size ? ",  " : ""}{piece.size ? piece.size : ""}</h4>
-                        {price ? price : null}
+                        <img className='foreground'
+                            src={image}
+                        />
                     </div>
+                    <h4>{piece.name}{piece.size ? ",  " : ""}{piece.size ? piece.size : ""}</h4>
+                        {price ? price : null}
                 </Link>
             )
 
@@ -73,32 +75,34 @@ class Art extends Component {
 
     render() {
         return (
-            <div className='artContainer'>
+            <Fragment>
                 <Hero background={'sarasa'} />
-                <H2>For sale</H2>
-                <div className='artDisplay'>
-                    <div className='content'>
-                        {this.forSale}
+                <div className='artContainer'>
+                    <H2>For sale</H2>
+                    <div className='artDisplay'>
+                        <div className='content'>
+                            {this.forSale}
+                        </div>
+                    </div>
+                    <Button
+                        href="mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20some%20of%20your%20artwork."
+                    >
+                        Get in touch
+                    </Button>
+                    <H2>Currently unavailable</H2>
+                    <div className='artDisplay'>
+                        <div className='content'>
+                            {this.unavailable}
+                        </div>
+                    </div>
+                    <H2>Commissions</H2>
+                    <div className='artDisplay'>
+                        <div className='content'>
+                            {this.commissions}
+                        </div>
                     </div>
                 </div>
-                <Button
-                    href="mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20some%20of%20your%20artwork."
-                >
-                    Get in touch
-                </Button>
-                <H2>Currently unavailable</H2>
-                <div className='artDisplay'>
-                    <div className='content'>
-                        {this.unavailable}
-                    </div>
-                </div>
-                <H2>Commissions</H2>
-                <div className='artDisplay'>
-                    <div className='content'>
-                        {this.commissions}
-                    </div>
-                </div>
-            </div>
+            </Fragment>
         )
     }
 
