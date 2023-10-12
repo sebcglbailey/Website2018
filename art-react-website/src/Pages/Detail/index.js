@@ -101,7 +101,7 @@ class Detail extends Component {
                     </div>
                     <div className='details'>
                         <H2>"{this.state.name}"{this.state.size ? ",  " : ""}{this.state.size ? this.state.size : ""}{this.state.year ? ` ${this.state.year}` : ""}</H2>
-                        {this.state.price ? (
+                        {this.state.price && this.state.status == "FOR_SALE" ? (
                             <Fragment>
                                 <h3>{this.state.price}</h3>
                                 <Button

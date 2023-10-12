@@ -70,6 +70,7 @@ const pieces = {
         imgSmall: ["perdita_sm.jpg", "perdita_mock_sm.jpg", "perdita_detail_1_sm.jpg", "perdita_detail_2_sm.jpg", "perdita_detail_3_sm.jpg"],
         imgLarge: ["perdita.jpg", "perdita_mock.jpg", "perdita_detail_1.jpg", "perdita_detail_2.jpg", "perdita_detail_3.jpg"],
         size: "100x100cm",
+        price: "£1320",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         frame: "8mm two-tone redwood floating frame",
@@ -141,6 +142,7 @@ const pieces = {
         imgSmall: ["connexa_i_sm.jpg", "connexa_i_mock.png", "connexa_i_full_sm.jpg", "connexa_i_detail_1_sm.jpg", "connexa_i_detail_2_sm.jpg", "connexa_i_detail_3_sm.jpg", "connexa_i_detail_4_sm.jpg", "connexa_i_detail_5_sm.jpg"],
         imgLarge: ["connexa_i.jpg", "connexa_i_mock.png", "connexa_i_full.jpg", "connexa_i_detail_1.jpg", "connexa_i_detail_2.jpg", "connexa_i_detail_3.jpg", "connexa_i_detail_4.jpg", "connexa_i_detail_5.jpg"],
         size: "100x100cm",
+        price: "£1200",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         frame: "8mm black redwood frame",
@@ -154,6 +156,7 @@ const pieces = {
         imgSmall: ["sarasa_sm.jpg", "sarasa_mock.jpg"],
         imgLarge: ["sarasa.jpg", "sarasa_mock.jpg"],
         size: "24x24in.",
+        price: "£450",
         medium: "Acrylic on canvas",
         year: "2023",
         pair: ["sarasa_ii", "sarasa_v"],
@@ -168,6 +171,7 @@ const pieces = {
         imgSmall: ["aequor_sm.jpg", "aequor_mock.png"],
         imgLarge: ["aequor.jpg", "aequor_mock.png"],
         size: "12x12in.",
+        price: "£110",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
     },
@@ -177,6 +181,7 @@ const pieces = {
         imgSmall: ["astra_i_sm.jpg", "astra_mock.jpg"],
         imgLarge: ["astra_i.jpg", "astra_mock.jpg"],
         size: "40x30cm",
+        price: "£140",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
         pair: ['astra_ii'],
@@ -193,6 +198,7 @@ const pieces = {
         size: "12x12in",
         medium: "Acrylic on canvas",
         year: "2023",
+        price: "£110",
     }
 }
 
