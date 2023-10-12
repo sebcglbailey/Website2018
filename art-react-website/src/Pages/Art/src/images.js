@@ -7,13 +7,13 @@ const pieces = {
         imgSmall: ["sarasa_iv_sm.png", "sarasa_iv_mock_sm.png"],
         imgLarge: ["sarasa_iv.png", "sarasa_iv_mock.png"],
         size: "20x20cm",
-        price: "£60",
+        price: "£50",
         medium: "Acrylic on canvas",
         year: "2023",
         frame: "Currently unframed",
         details: [
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
-            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water.",
         ],
         pair: ["sarasa_v", "sarasa_ii", "sarasa"],
     },
@@ -23,13 +23,13 @@ const pieces = {
         imgSmall: ["sarasa_ii_sm.jpg", "sarasa_ii_mock_sm.png", "sarasa_ii_full_sm.jpg"],
         imgLarge: ["sarasa_ii.jpg", "sarasa_ii_mock.png", "sarasa_ii_full.jpg"],
         size: "30x30in.",
-        price: "£750",
+        price: "£700",
         medium: "Acrylic on canvas",
         year: "2023",
         frame: "Unframed – black deep edge canvas",
         details: [
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
-            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water.",
         ],
         pair: ["sarasa_v", "sarasa_iv", "sarasa"],
     },
@@ -39,13 +39,13 @@ const pieces = {
         imgSmall: ["sarasa_v_sm.jpg", "sarasa_v_mock_sm.png", "sarasa_v_full_sm.jpg",],
         imgLarge: ["sarasa_v.jpg", "sarasa_v_mock.png",  "sarasa_v_full.jpg"],
         size: "30x30cm",
-        price: "£150",
+        price: "£110",
         medium: "Acrylic on canvas",
         year: "2023",
         frame: "Currently unframed",
         details: [
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
-            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water.",
         ],
         pair: ["sarasa_ii", "sarasa_iv", "sarasa"],
     },
@@ -55,13 +55,13 @@ const pieces = {
         imgSmall: ["contra_main_sm.jpg", "contra_sm.jpg", "contra_mock_sm.png", "contra_full_sm.jpg", "contra_detail_1_sm.jpg", "contra_detail_2_sm.jpg", "contra_detail_3_sm.jpg"],
         imgLarge: ["contra_main.jpg", "contra.jpg", "contra_mock.png", "contra_full.jpg", "contra_detail_1.jpg", "contra_detail_2.jpg", "contra_detail_3.jpg"],
         size: "55x22in.",
-        price: "£900",
+        price: "£750",
         medium: "Acryic & mixed media on recycled canvas",
         year: "2023",
         frame: "15mm black redwood floating frame – Size with frame: 57x24in.",
         details: [
             "Step into a world of playfulness, excitement and joy with a touch of contradiction with CONTRA. This piece very much led itslef, with a simple base splitting the canvas in two, with layer upon layer taking on it's own life and letting the paint and the mediums lead the shape and composition.",
-            "Framed by hand by the artist."
+            "Framed by hand by the artist.",
         ],
     },
     perdita: {
@@ -73,6 +73,10 @@ const pieces = {
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         frame: "8mm two-tone redwood floating frame",
+        details: [
+            "Inspired by the calm rolling waves of camber sands, this commision was the artist's first.",
+            "Framed by hand by the artist.",
+        ]
     },
     connexa_ii: {
         status: status.FOR_SALE,
@@ -80,7 +84,7 @@ const pieces = {
         imgSmall: ["connexa_ii_sm.jpg"],
         imgLarge: ["connexa_ii.jpg"],
         size: "40x60cm",
-        price: "£395",
+        price: "£290",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         details: [
@@ -93,12 +97,12 @@ const pieces = {
         imgSmall: ["infectus_i_sm.jpg"],
         imgLarge: ["infectus_i.jpg"],
         size: "30x40cm",
-        price: "£195",
+        price: "£140",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         details: [
             "The circle is the most pure form in nature, and one that appears again and again. There's a reason why so many successful products revolve around a circle (iPod, Nest, Braun radio). But what happens when you break that circle? When the complete becomes incomplete?",
-            "This piece aims to answer that question and more with the exploration of what it means to be deliberately incomplete, through colour, texture, and of course the shape. This intimate, yet striking artwork provokes a true sense of confusion and peace at the same time."
+            "This piece aims to answer that question and more with the exploration of what it means to be deliberately incomplete, through colour, texture, and of course the shape. This intimate, yet striking artwork provokes a true sense of confusion and peace at the same time.",
         ],
     },
     infectus_ii: {
@@ -107,12 +111,12 @@ const pieces = {
         imgSmall: ["infectus_ii_sm.png", "infectus_ii_mock.jpg"],
         imgLarge: ["infectus_ii.png", "infectus_ii_mock.jpg"],
         size: "50cm diam.",
-        price: "£350",
+        price: "£300",
         medium: "Acrylic, spray paint & mixed media on canvas",
         year: "2023",
         details: [
             "The circle is the most pure form in nature, and one that appears again and again. There's a reason why so many successful products revolve around a circle (iPod, Nest, Braun radio). But what happens when you break that circle? When the complete becomes incomplete?",
-            "A continuation of INFECTUS I, the second piece of the series flips the narrative inside out, but raising the same questions and thoughts as it's predecessor. While the circle itself may be complete, there's a clear and deliberate divide which symbolises the many divides we see in human and global nature today."
+            "A continuation of INFECTUS I, the second piece of the series flips the narrative inside out, but raising the same questions and thoughts as it's predecessor. While the circle itself may be complete, there's a clear and deliberate divide which symbolises the many divides we see in human and global nature today.",
         ],
     },
     astra_ii: {
@@ -121,12 +125,12 @@ const pieces = {
         imgSmall: ["astra_ii_sm.jpg", "astra_mock.jpg"],
         imgLarge: ["astra_ii.jpg", "astra_mock.jpg"],
         size: "40x30cm",
-        price: "£195",
+        price: "£140",
         medium: "Acrylic, spray paint & mixed media on canvas",
         year: "2023",
         details: [
             "Living in London, I don't get to see the stars or much of the night sky very often, so when I do it's always a sight to behold. The second of these dark, colourful pieces, ASTRA II is simply an exploration of how texture and medium can interact in simple ways to create a beautiful and magical landscape.",
-            "Framed by hand by the artist."
+            "Framed by hand by the artist.",
         ],
         pair: ['astra_i'],
         frame: "8mm black redwood floating frame",
@@ -140,6 +144,9 @@ const pieces = {
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         frame: "8mm black redwood frame",
+        details: [
+            "Framed by hand by the artist.",
+        ]
     },
     sarasa: {
         status: status.UNAVAILABLE,
@@ -152,7 +159,7 @@ const pieces = {
         pair: ["sarasa_ii", "sarasa_v"],
         details: [
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
-            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water."
+            "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water.",
         ],
     },
     aequor: {
@@ -174,6 +181,9 @@ const pieces = {
         year: "2023",
         pair: ['astra_ii'],
         frame: "8mm black redwood floating frame",
+        details: [
+            "Framed by hand by the artist.",
+        ]
     },
     double_take: {
         status: status.UNAVAILABLE,
