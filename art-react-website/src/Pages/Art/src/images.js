@@ -1,6 +1,22 @@
 import status from './status';
 
 const pieces = {
+    procursus: {
+        status: status.FOR_SALE,
+        name: "PROCURSUS",
+        imgSmall: ["procursus_sm.png", "procursus_mock_sm.png", "procursus_detail_1_sm.jpg", "procursus_detail_2_sm.jpg", "procursus_detail_3_sm.jpg"],
+        imgLarge: ["procursus.png", "procursus_mock.png", "procursus_detail_1.jpg", "procursus_detail_2.jpg", "procursus_detail_3.jpg"],
+        size: "60x60cm (20x60cm x3)",
+        price: "£480",
+        medium: "Acrylic & mixed media on canvas",
+        year: "2023",
+        frame: "Currently unframed with fluorescent red edges",
+        details: [
+            "Inspired by the sky, stars and galaxies, this triptych takes you on a journey and deliberately juxtaposes the chaotic foreground and present, with the peaceful and serene background of the larger picture.",
+            "Serving as a metaphor for the world and universe we live in, the chaotic present, and the neverending tranquility of space that the chaos lives within, PROCURSUS will serve as a talking point and center piece of any home.",
+            "PROCURSUS will be supplied framed in a black floating redwood frame.",
+        ],
+    },
     sarasa_iv: {
         status: status.FOR_SALE,
         name: "SARASA IV",
@@ -52,9 +68,9 @@ const pieces = {
     contra: {
         status: status.FOR_SALE,
         name: "CONTRA",
-        imgSmall: ["contra_main_sm.jpg", "contra_sm.jpg", "contra_mock_sm.png", "contra_full_sm.jpg", "contra_detail_1_sm.jpg", "contra_detail_2_sm.jpg", "contra_detail_3_sm.jpg"],
-        imgLarge: ["contra_main.jpg", "contra.jpg", "contra_mock.png", "contra_full.jpg", "contra_detail_1.jpg", "contra_detail_2.jpg", "contra_detail_3.jpg"],
         size: "140x56cm",
+        imgSmall: ["contra_sm.jpg", "contra_mock_sm.png", "contra_full_sm.jpg", "contra_detail_1_sm.jpg", "contra_detail_2_sm.jpg", "contra_detail_3_sm.jpg"],
+        imgLarge: ["contra.jpg", "contra_mock.png", "contra_full.jpg", "contra_detail_1.jpg", "contra_detail_2.jpg", "contra_detail_3.jpg"],
         price: "£750",
         medium: "Acryic & mixed media on recycled canvas",
         year: "2023",
