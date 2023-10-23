@@ -8,7 +8,6 @@ import Selector from '../../Components/Selector/';
 import SelectorImage from '../../Components/Selector/components/image';
 
 import images from '../Art/src/images';
-import status from '../Art/src/status';
 
 import './styles.scss';
 
@@ -124,7 +123,7 @@ class Detail extends Component {
                                 ) : null}
                                 {this.state.pair ? (
                                     <p>Pairs with:<br/> {this.state.pair.map(pair => (
-                                        <a href={`../${pair}`}>{images[pair].name}</a>
+                                        <a href={`../product/${pair}`}>{images[pair].name}</a>
                                     ))}</p>
                                 ) : null}
                             </div>

@@ -21,7 +21,7 @@
       grid-template-columns: 1fr 1.5fr;
       grid-gap: 2rem;
       
-      @media all and (max-width: 512px) {
+      @media all and (max-width: 640px) {
         grid-template-columns: 1fr;
       }
     }
@@ -46,7 +46,7 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid $white;
 
-      @media all and (max-width: 512px) {
+      @media all and (max-width: 640px) {
         font-size: 1rem;
       }
 
@@ -69,7 +69,7 @@
     .details-body {
       margin-top: 2rem;
 
-      @media all and (max-width: 512px) {
+      @media all and (max-width: 640px) {
         font-size: 1.2rem;
       }
     }

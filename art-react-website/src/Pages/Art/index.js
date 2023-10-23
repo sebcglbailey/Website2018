@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import { H1, H2 } from '../../Components/Headers/';
+import { H2 } from '../../Components/Headers';
 import Button from '../../Components/Button';
 import Hero from '../../Components/Hero';
-
-import instagram from './src/instagram.svg';
+import Menu from '../../Components/Menu/';
 
 import images from './src/images';
 
@@ -48,7 +47,7 @@ class Art extends Component {
 
             var imageNode = (
                 <Link
-                    to={`./${id}`}
+                    to={`./product/${id}`}
                     className='imageLink'
                     key={`image-${piece.name.split(' ').join().toLowerCase()}`}
                 >
@@ -86,6 +85,7 @@ class Art extends Component {
             <Fragment>
                 <Hero background={'sarasa'} />
                 <div className='artContainer'>
+                    <Menu />
                     <H2>For sale</H2>
                     <div className='artDisplay'>
                         <div className='content'>

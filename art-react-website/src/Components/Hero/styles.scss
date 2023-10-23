@@ -2,8 +2,8 @@
 
 .heroContainer {
   width: 100vw;
-  margin-top: -10rem;
-  height: 32rem;
+  margin-top: -4rem;
+  height: 80vh;
   background-size: cover;
   background-position: center, center;
   display: flex;
@@ -12,7 +12,10 @@
   align-items: center;
   text-align: center;
   padding: 2rem;
-  padding-top: 8rem;
+
+  @media all and (max-width: 640px) {
+    margin-top: -3rem;
+  }
 
   @media all and (max-width: 512px) {
     height: 24rem;
@@ -20,7 +23,7 @@
   }
 
   h1 {
-    text-shadow: 0 0.175rem 0.25rem $black;
+    text-shadow: 0 0.175rem 0.5rem $black;
     font-size: 4rem;
     position: relative;
     margin: 0;
@@ -33,7 +36,7 @@
   .logo {
     height: 6rem;
     width: auto;
-    filter: drop-shadow(0 0.175rem 0.25rem $black);
+    filter: drop-shadow(0 0.175rem 0.15rem $black);
     position: relative;
     @media all and (max-width: 512px) {
       top: 1rem;

@@ -1,0 +1,23 @@
+@import '../../Styles/colors.scss';
+
+.menuContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .menuItem {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: $white;
+    text-decoration: none;
+    font-family: "Montserrat Alternates", sans-serif;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+    &:hover, &:active, &:focus {
+      border-bottom: 1px solid $white;
+    }
+  }
+}

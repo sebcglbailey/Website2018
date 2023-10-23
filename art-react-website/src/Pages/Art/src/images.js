@@ -188,7 +188,7 @@ const pieces = {
         price: "£450",
         medium: "Acrylic on canvas",
         year: "2023",
-        pair: ["sarasa_ii", "sarasa_v"],
+        pair: ["sarasa_ii", "sarasa_iv", "sarasa_v"],
         details: [
             "Playing on the edges of expressionism, the SARASA series finds a peaceful and tranquil calm within the chaos of the Koi Karp portrayed.",
             "The series aims to provoke a sense of excitement through it's flow and composition, yet using a simplified palette brings a sense of tranquility found often within the movement of water.",
