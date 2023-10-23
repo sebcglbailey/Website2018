@@ -109,7 +109,7 @@ class Detail extends Component {
                                     href={this.state.contact}
                                     target='_blank'
                                 >
-                                    Enquire about this piece
+                                    Enquire about this artwork
                                 </Button>
                             </Fragment>
                             ) : null

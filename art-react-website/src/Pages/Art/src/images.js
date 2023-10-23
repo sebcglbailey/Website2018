@@ -1,6 +1,20 @@
 import status from './status';
 
 const pieces = {
+    imperfection: {
+        status: status.FOR_SALE,
+        name: "Imperfection",
+        imgSmall: ["imperfection_sm.png", "imperfection_mock_sm.png"],
+        imgLarge: ["imperfection.png", "imperfection_mock.png"],
+        size: "40x30cm",
+        price: "£120",
+        medium: "Acrylic on canvas",
+        year: "2023",
+        details: [
+            "Every artist, whether that be a painter, musician or digital creator, feels frustration towards their work at some point. This piece symbolises this for me; the inability to get that 'perfect' mark, or the constant imposter syndrome that is chasing me through every piece.",
+            "I chose to embrace that, and find the beauty within the imperfection that this piece holds."
+        ]
+    },
     procursus: {
         status: status.FOR_SALE,
         name: "PROCURSUS",
