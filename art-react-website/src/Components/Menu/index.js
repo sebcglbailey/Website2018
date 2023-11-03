@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -10,15 +11,20 @@ class Menu extends Component {
     render() {
         return (
           <div className="menuContainer">
-            <a className="menuItem" href="/">
-              Home
-            </a>
-            <a className="menuItem" href="/art">
-              Artwork
-            </a>
-            <a className="menuItem" href="/bio">
+            <NavLink
+              to="/"
+              exact
+              activeClassName="active"
+              className="menuItem"  
+            >
+              Featured work
+            </NavLink>
+            <NavLink className="menuItem" to="/art">
+              All paintings
+            </NavLink>
+            <NavLink className="menuItem" to="/bio">
               Bio
-            </a>
+            </NavLink>
           </div>
         )
     }

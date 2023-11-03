@@ -1,4 +1,5 @@
 @import '../Styles/colors.scss';
+@import '../Styles/breakpoints.scss';
 
 .view {
     padding-top: 4rem;
@@ -22,13 +23,13 @@ body {
     color: $white;
 }
 
-@media all and (max-width: 450px) {
+@media all and (max-width: $med) {
     html {
         font-size: 12pt;
     }
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: $lg) {
     .view {
         padding: 2.75rem 0 0.25rem 0;
     }
@@ -47,7 +48,7 @@ h1 {
     font-size: 2.5rem;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: $lg) {
 
     body,
     h1,

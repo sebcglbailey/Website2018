@@ -9,6 +9,7 @@ import Header from './Header/';
 import Home from '../Pages/Home/';
 import Detail from '../Pages/Detail/';
 import Art from '../Pages/Art/';
+import Bio from '../Pages/Bio/';
 
 // TODO: rename all pages and components jsx files to index.js
 

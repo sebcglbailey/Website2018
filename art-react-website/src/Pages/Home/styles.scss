@@ -1,10 +1,11 @@
 @import '../../Styles/colors.scss';
+@import '../../Styles/breakpoints.scss';
 
 .artContainer {
     width: 100%;
     padding: 0 2rem;
 
-    @media all and (min-width: 1132px) and (pointer: fine) {
+    @media all and (min-width: $xxxl) and (pointer: fine) {
         width: 1024px;
         margin: 0 auto;
         padding: 2rem 0;
@@ -37,7 +38,7 @@
     overflow-x: scroll;
     display: flex;
 
-    @media all and (min-width: 1132px) and (pointer: fine) {
+    @media all and (min-width: $xxxl) and (pointer: fine) {
         width: 100%;
         padding: 0;
         margin-left: 0;

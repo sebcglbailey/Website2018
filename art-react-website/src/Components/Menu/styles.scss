@@ -1,9 +1,14 @@
 @import '../../Styles/colors.scss';
+@import '../../Styles/breakpoints.scss';
 
 .menuContainer {
   width: 100%;
   display: flex;
   justify-content: center;
+  @media all and (max-width: $med) {
+    flex-direction: column;
+    align-items: center;
+  }
   .menuItem {
     display: inline-block;
     font-size: 1.2rem;
@@ -12,12 +17,22 @@
     text-decoration: none;
     font-family: "Montserrat Alternates", sans-serif;
     cursor: pointer;
+    padding: 0.2rem;
     border-bottom: 1px solid transparent;
+    text-align: center;
     &:not(:last-child) {
       margin-right: 4rem;
+      @media all and (max-width: $xl) {
+        margin-right: 2rem;
+      }
+      @media all and (max-width: $med) {
+        margin-right: 0;
+        margin-bottom: 0.75rem;
+      }
     }
-    &:hover, &:active, &:focus {
+    &:hover, &:active, &:focus, &.active {
       border-bottom: 1px solid $white;
+      cursor: pointer;
     }
   }
 }

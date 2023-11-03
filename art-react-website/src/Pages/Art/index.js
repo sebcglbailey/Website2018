@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import { H2 } from '../../Components/Headers';
+import { H1, H2 } from '../../Components/Headers';
 import Button from '../../Components/Button';
 import Hero from '../../Components/Hero';
-import Menu from '../../Components/Menu/';
+import Menu from '../../Components/Menu';
 
 import images from './src/images';
 
@@ -22,7 +22,7 @@ class Art extends Component {
     }
 
     componentWillMount() {
-        document.title = "Seb Bailey Art"
+        document.title = "Paintings | Seb Bailey Art"
         this.renderImages()
     }
 
@@ -83,7 +83,9 @@ class Art extends Component {
     render() {
         return (
             <Fragment>
-                <Hero background={'sarasa'} />
+                <Hero size="SMALL" background={'double_take'}>
+                    <H1>Artwork</H1>
+                </Hero>
                 <div className='artContainer'>
                     <Menu />
                     <H2>For sale</H2>

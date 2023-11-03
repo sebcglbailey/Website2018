@@ -1,10 +1,11 @@
 @import '../../Styles/colors.scss';
+@import '../../Styles/breakpoints.scss';
 
 .artContainer {
     width: 100%;
-    padding: 0 2rem;
+    padding: 2rem;
 
-    @media all and (min-width: 1132px) and (pointer: fine) {
+    @media all and (min-width: $xxxl) and (pointer: fine) {
         width: 1024px;
         margin: 0 auto;
         padding: 2rem 0;
@@ -14,7 +15,7 @@
         margin-top: 4rem;
         border-bottom: 1px solid $white;
         padding-bottom: 0.5rem;
-        @media all and (max-width: 512px) {
+        @media all and (max-width: $med) {
             border-width: 2px;
         }
     }
@@ -37,7 +38,7 @@
     overflow-x: scroll;
     display: flex;
 
-    @media all and (min-width: 1132px) and (pointer: fine) {
+    @media all and (min-width: $xxxl) and (pointer: fine) {
         width: 100%;
         padding: 0;
         margin-left: 0;
@@ -140,17 +141,17 @@
             }
         }
 
-        @media all and (min-width: 640px) and (pointer: fine) {
+        @media all and (min-width: $lg) and (pointer: fine) {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-column-gap: 2rem;
 
-            @media all and (max-width: 840px) {
+            @media all and (max-width: $xl) {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            @media all and (max-width: 568px) {
+            @media all and (max-width: $med) {
                 grid-template-columns: 1fr;
             }
 

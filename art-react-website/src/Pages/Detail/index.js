@@ -26,7 +26,7 @@ class Detail extends Component {
 
     componentWillMount() {
         let name = images[this.state.id] ? images[this.state.id].name : "NOT FOUND"
-        document.title = `Seb Bailey Art | ${name}`
+        document.title = `${name} | Seb Bailey Art`
 
         this.getPieceData()
     }
@@ -83,7 +83,7 @@ class Detail extends Component {
 
         return (
             <div className='detailContainer'>
-                <Button href='../' className="back">
+                <Button href='../art' className="back">
                     <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
                     Back to all artwork
                 </Button>
@@ -122,7 +122,7 @@ class Detail extends Component {
                                     <p>{this.state.frame}</p>
                                 ) : null}
                                 {this.state.pair ? (
-                                    <p>Pairs with:<br/> {this.state.pair.map(pair => (
+                                    <p>Related pieces:<br/> {this.state.pair.map(pair => (
                                         <a href={`../product/${pair}`}>{images[pair].name}</a>
                                     ))}</p>
                                 ) : null}
