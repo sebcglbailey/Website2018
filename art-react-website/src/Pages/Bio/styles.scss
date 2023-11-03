@@ -1,0 +1,40 @@
+@import '../../Styles/colors.scss';
+@import '../../Styles/breakpoints.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.bioContainer {
+  max-width: $xxl;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 2rem;
+
+  p {
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .bio {
+    display: grid;
+    margin-top: 4rem;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+
+    @media all and (max-width: $xl) {
+      grid-template-columns: 1fr 10rem;
+    }
+    @media all and (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .images img {
+    width: 100%;
+    border-radius: 1rem;
+    // outline: $white solid 1px;
+    outline-offset: 0.25rem;
+    filter: drop-shadow(0 0.25rem 1rem $transparentBlack)
+  }
+}

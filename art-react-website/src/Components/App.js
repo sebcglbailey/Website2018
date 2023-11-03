@@ -6,8 +6,10 @@ import './App.scss';
 import ScrollToTop from './ScrollToTop/';
 
 import Header from './Header/';
-import Art from '../Pages/Art/';
+import Home from '../Pages/Home/';
 import Detail from '../Pages/Detail/';
+import Art from '../Pages/Art/';
+import Bio from '../Pages/Bio/';
 
 // TODO: rename all pages and components jsx files to index.js
 
@@ -42,13 +44,22 @@ class App extends Component {
               <div className='view'>
                 <Switch>
 
-                  <Route path="/:id"
+                  <Route path="/product/:id"
                     render={({ match }) => <Detail
                       piece={match.params.id} />}
                   />
 
-                  <Route path="/"
+                  <Route path="/bio"
+                    render={() => <Bio />}
+                  />
+
+                  <Route path="/art"
                     render={() => <Art
+                      onLoad={this.handlePageLoad} />}
+                  />
+
+                  <Route path="/"
+                    render={() => <Home
                       onLoad={this.handlePageLoad} />}
                   />
 

@@ -3,7 +3,7 @@
 
 .artContainer {
     width: 100%;
-    padding: 2rem;
+    padding: 0 2rem;
 
     @media all and (min-width: $xxxl) and (pointer: fine) {
         width: 1024px;
@@ -15,7 +15,7 @@
         margin-top: 4rem;
         border-bottom: 1px solid $white;
         padding-bottom: 0.5rem;
-        @media all and (max-width: $med) {
+        @media all and (max-width: 512px) {
             border-width: 2px;
         }
     }
@@ -141,17 +141,17 @@
             }
         }
 
-        @media all and (min-width: $lg) and (pointer: fine) {
+        @media all and (min-width: 640px) and (pointer: fine) {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-column-gap: 2rem;
 
-            @media all and (max-width: $xl) {
+            @media all and (max-width: 840px) {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            @media all and (max-width: $med) {
+            @media all and (max-width: 568px) {
                 grid-template-columns: 1fr;
             }
 
@@ -179,4 +179,9 @@
         height: 1.5rem;
         margin-right: 0.5rem;
     }
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
 }
