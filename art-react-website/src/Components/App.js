@@ -10,6 +10,7 @@ import Home from '../Pages/Home/';
 import Detail from '../Pages/Detail/';
 import Art from '../Pages/Art/';
 import Bio from '../Pages/Bio/';
+import Commissions from '../Pages/Commissions/';
 
 // TODO: rename all pages and components jsx files to index.js
 
@@ -51,6 +52,10 @@ class App extends Component {
 
                   <Route path="/bio"
                     render={() => <Bio />}
+                  />
+
+                  <Route path="/commissions"
+                    render={() => <Commissions />}
                   />
 
                   <Route path="/art"
