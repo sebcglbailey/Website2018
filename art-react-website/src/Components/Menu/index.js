@@ -25,6 +25,9 @@ class Menu extends Component {
             <NavLink className="menuItem" to="/bio">
               Bio
             </NavLink>
+            <NavLink className="menuItem" to="/commissions">
+              Commissions
+            </NavLink>
           </div>
         )
     }
