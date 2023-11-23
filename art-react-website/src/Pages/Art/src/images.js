@@ -1,6 +1,21 @@
 import status from './status';
 
 const pieces = {
+    etheldreda: {
+        status: status.COMMISSION,
+        name: "Etheldreda",
+        imgSmall: ["etheldreda_sm.jpg", "etheldreda_mock_sm.png", "etheldreda_full_sm.png", "etheldreda_detail_1_sm.jpg", "etheldreda_detail_2_sm.jpg"],
+        imgLarge: ["etheldreda.jpg", "etheldreda_mock.png", "etheldreda_full.png", "etheldreda_detail_1.jpg", "etheldreda_detail_2.jpg"],
+        imgHero: "etheldreda_hero.jpg",
+        size: "122x91cm",
+        medium: "Acrylic & mixed media on canvas",
+        year: "2023",
+        frame: "Stained redwood floating frame",
+        details: [
+            "Based on the beautiful view of Ely cathedral, over the Cambridgeshire countryside.",
+            "Framed by hand by the artist."
+        ]
+    },
     imperfection: {
         status: status.FOR_SALE,
         name: "Imperfection",
