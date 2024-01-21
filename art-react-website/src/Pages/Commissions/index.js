@@ -29,7 +29,7 @@ class Commissions extends Component {
     render() {
       return (
         <Fragment>
-          <Hero size='SMALL' background='perdita'>
+          <Hero size='SMALL' background='in_agria'>
             <H1>Commissions</H1>
           </Hero>
           <div className="comContainer">

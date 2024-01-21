@@ -1,6 +1,7 @@
 import images from '../../Art/src/images';
 
 const featured = {
+    in_agria: images.in_agria,
     procursus: images.procursus,
     sarasa_ii: images.sarasa_ii,
     contra: images.contra,
