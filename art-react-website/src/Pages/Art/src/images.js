@@ -1,6 +1,22 @@
 import status from './status';
 
 const pieces = {
+    in_agria: {
+        status: status.COMMISSION,
+        name: "in agria viridi casia",
+        imgSmall: ["in_agria_sm.jpg", "in_agria_full_sm.jpg", "in_agria_frame_sm.jpg"],
+        imgLarge: ["in_agria.jpg", "in_agria_full.jpg", "in_agria_frame.jpg"],
+        imgHero: "in_agria_hero.jpg",
+        size: "100x100cm",
+        medium: "Acrylic & mixed media on canvas",
+        year: "2023",
+        frame: "Black redwood floating frame",
+        details: [
+            "Last commission of 2023, bringing together the techniques and contrasting colours found throughout many of the pieces of the year, but introducing a different pallette.",
+            "I absolutely love it when a commission is well received, and this one certainly delivered!",
+            "Framed by hand by the artist."
+        ]
+    },
     etheldreda: {
         status: status.COMMISSION,
         name: "Etheldreda",
