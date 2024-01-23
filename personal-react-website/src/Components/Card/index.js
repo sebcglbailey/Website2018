@@ -15,7 +15,13 @@ class Card extends Component {
     return (
       <div id={this.props.id} className='card'>
         {
-          this.props.link ? (
+          this.props.link && this.props.link.includes('http') ? (
+            <a target={this.props.target} href={this.props.link}>
+              <div className={this.props.landscape ? 'cardContent landscape' : 'cardContent'}>
+                {this.props.children}
+              </div>
+            </a>
+          ) : this.props.link ? (
             <Link target={this.props.target} to={this.props.link}>
               <div className={this.props.landscape ? 'cardContent landscape' : 'cardContent'}>
                 {this.props.children}
