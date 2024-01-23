@@ -88,6 +88,7 @@ class App extends Component {
                   />
 
                   <Redirect exact from="/" to="/resume" />
+                  <Redirect from="/projects/" to="/resume" />
 
                   <Route
                     render={() => <ProjectList
