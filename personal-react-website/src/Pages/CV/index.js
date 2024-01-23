@@ -47,21 +47,23 @@ class Resume extends Component {
         <div className='intro'>
           <Intro />
         </div>
+        <div className='introContent'>
+          {
+            intro.map(line => {
+              return(
+                <p>{line}</p>
+                )
+            })
+          }
+        </div>
         <H2>My experience...</H2>
-        {/* <div className='fields'>
-          <H2>Fields of work</H2>
-          <InfoList types={this.state.fields} />
-        </div> */}
+        <Experience />
         <div className='skills'>
-          {/* <H2>Skills & Experience</H2> */}
           <h3>Software</h3>
           <InfoList types={this.state.skills.software} />
-          {/* <h3>Process</h3>
-          <InfoList types={this.state.skills.process} /> */}
           <h3>Development</h3>
           <InfoList types={this.state.skills.development} />
         </div>
-        <Experience />
         <Education />
         <Hobbies />
       </ContentContainer>

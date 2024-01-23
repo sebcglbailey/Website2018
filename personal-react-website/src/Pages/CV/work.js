@@ -9,9 +9,9 @@ import './styles.scss';
 const info = [
   {
     id: "clearscore-ds",
-    title: "ClearScore Ltd.",
+    title: "ClearScore Technology Ltd.",
     link: "http://www.clearscore.com",
-    role: "Design Systems Lead & Lead Product Designer",
+    role: "Design Systems Lead & Lead Product Designer, Group",
     dates: "Jan 2023 - Present",
     info: [
       "Currently re-establishing a design system across the ClearScore Group",
@@ -26,23 +26,14 @@ const info = [
     id: "clearscore-int",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
-    role: "International Lead Product Designer",
-    dates: "Jul 2022 - Jan 2023",
+    role: "Lead Product Designer, UK & International",
+    dates: "Apr 2020 - Jan 2023",
     info: [
       "In just 6 months, I established a global design team across 3 countries and continents outside of the core UK business",
       "Leading on international product changes",
       "Setting up a strategy for global expansion",
       "Leading on sourcing and technical interviews for junior to senior designers",
       "Established ways of working and principles for the core UK design team to follow in order to support the smaller international teams",
-    ]
-  },
-  {
-    id: "clearscore-uk",
-    title: "ClearScore Ltd.",
-    link: "http://www.clearscore.com",
-    role: "Lead Product Designer – UK",
-    dates: "Apr 2020 - Jul 2022",
-    info: [
       "Worked within the Marketplace team helping users to save money and apply with confidence to credit products",
       "Helped to establish new features and technology within the product",
       "Leading, managing and coaching other product designers to up-skill and progress through their careers",
@@ -67,7 +58,7 @@ const info = [
     id: "clearscore-pd",
     title: "ClearScore Ltd.",
     link: "http://www.clearscore.com",
-    role: "Product Designer, Design Systems Manager",
+    role: "Product Designer",
     dates: "August 2016 - Jul 2018",
     info: [
       "Sole Product Designer in ClearScore R&D Lab",
@@ -96,7 +87,7 @@ const info = [
     id: "imprima",
     title: "Imprima Ltd.",
     link: "http://www.imprima.com",
-    role: "Head of Design, Graphic Designer",
+    role: "Graphic Designer, Product Designer",
     dates: "May 2013 - February 2015",
     info: [
       "Annual report design",
@@ -104,7 +95,7 @@ const info = [
       "Brand development",
       "Design and development of email templates",
       "UX/UI for v2.0 of main iRooms product, including a HTML prototype",
-      "Managing one other graphic designer",
+      "Managing one other designer",
     ]
   },
   {
@@ -145,17 +136,9 @@ const Work = () => {
   return (
     <div className='experience'>
       <h3>Work</h3>
-      {
-        info.length % 2 == 0 ? (
-          <Masonry minWidth={400} margin={16}>
-            {cards}
-          </Masonry>
-        ) : (
-          <div className='experienceCards'>
-            {cards}
-          </div>
-        )
-      }
+        <Masonry minWidth={400} margin={16}>
+          {cards}
+        </Masonry>
     </div>
   )
 }
