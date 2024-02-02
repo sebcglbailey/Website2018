@@ -50,6 +50,12 @@ class App extends Component {
                       piece={match.params.id} />}
                   />
 
+                  <Route path="/featured/:id"
+                    render={({ match }) => <Detail
+                      piece={match.params.id} 
+                      featured />}
+                  />
+
                   <Route path="/bio"
                     render={() => <Bio />}
                   />

@@ -1,6 +1,22 @@
 import status from './status';
 
 const pieces = {
+    attakai_uzu: {
+        status: status.FOR_SALE,
+        name: "Attakai Uzu",
+        imgSmall: ["attakai_uzu_sm.jpg", "attakai_uzu_detail_sm.png"],
+        imgLarge: ["attakai_uzu.jpg", "attakai_uzu_detail.png"],
+        size: "72x36cm",
+        price: "£320",
+        medium: "Acrylic & mixed media on deep edge canvas",
+        year: "2024",
+        frame: "White redwood floating frame",
+        details: [
+            "With warming colours, and deep inks, Attakai Uzu is the perfect piece to brighten up your home coming into the Spring months.",
+            "As with all pieces, Attakai Uzu is carefully varnished with a UV resistant varnish to preserve the painting, and protect it from diminishing over time.",
+            "Framed by hand by the artist."
+        ]
+    },
     in_agria: {
         status: status.COMMISSION,
         name: "in agria viridi casia",
@@ -54,7 +70,7 @@ const pieces = {
         imgLarge: ["procursus.png", "procursus_mock.png", "procursus_detail_1.jpg", "procursus_detail_2.jpg", "procursus_detail_3.jpg"],
         imgHero: "procursus_hero.jpg",
         size: "60x60cm (20x60cm x3)",
-        price: "£480",
+        price: "£380",
         medium: "Acrylic & mixed media on canvas",
         year: "2023",
         frame: "Currently unframed with fluorescent red edges",
@@ -65,7 +81,7 @@ const pieces = {
         ],
     },
     sarasa_iv: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA IV",
         imgSmall: ["sarasa_iv_sm.png", "sarasa_iv_mock_sm.png"],
         imgLarge: ["sarasa_iv.png", "sarasa_iv_mock.png"],
@@ -81,7 +97,7 @@ const pieces = {
         pair: ["sarasa_v", "sarasa_ii", "sarasa"],
     },
     sarasa_v: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA V",
         imgSmall: ["sarasa_v_sm.jpg", "sarasa_v_mock_sm.png", "sarasa_v_full_sm.jpg",],
         imgLarge: ["sarasa_v.jpg", "sarasa_v_mock.png",  "sarasa_v_full.jpg"],
@@ -147,8 +163,8 @@ const pieces = {
     connexa_ii: {
         status: status.FOR_SALE,
         name: "CONNEXA II",
-        imgSmall: ["connexa_ii_sm.jpg"],
-        imgLarge: ["connexa_ii.jpg"],
+        imgSmall: ["connexa_ii_sm.png"],
+        imgLarge: ["connexa_ii.png"],
         size: "40x60cm",
         price: "£290",
         medium: "Acrylic & mixed media on canvas",
