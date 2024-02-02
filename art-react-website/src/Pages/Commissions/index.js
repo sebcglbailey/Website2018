@@ -35,7 +35,7 @@ class Commissions extends Component {
           <div className="comContainer">
             <Menu />
             <div className='comms'>
-              <p>I am currently available for private commissions.</p>
+              <p>I am currently available for private and commercial commissions.</p>
               <p>I will work with you to find out exactly what you need by looking at the space that you want your painting, discussing and matching any colour scheme that you are interested in, and figuring out the style in which to create your new statement piece for your home or business.</p>
               <h4>Typical pricing for a commission based on size:</h4>
               <span>(This is subject to change based on materials used and framing options)</span>
@@ -43,10 +43,9 @@ class Commissions extends Component {
                 <li>60x60cm (minimum size) : <b>£500</b></li>
                 <li>90x90cm : <b>£1,050</b></li>
                 <li>100x100cm : <b>£1,260</b></li>
-                <li>122x91cm : <b>£1,390</b></li>
-                <li>122x122cm : <b>£1,760</b></li>
-                <li>152x102cm : <b>£1,820</b></li>
-                <li>183x122cm : <b>£2,370</b></li>
+                <li>120x90cm : <b>£1,350</b></li>
+                <li>150x100cm : <b>£1,770</b></li>
+                <li>200x140cm : <b>£2,710</b></li>
               </ul>
               <Button
                     size='SMALL'

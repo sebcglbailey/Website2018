@@ -49,9 +49,10 @@ class Bio extends Component {
             <Menu />
             <div className="bio">
               <div className="text">
-                <p>Sebastian Bailey is a self-taught abstract artist, working out of his home studio in South London. After only recently painting more seriously, Seb has quickly found his niche in using bold colours and texture to bring excitement and intrigue to any modern home.</p>
-                <p>Having studied Architecture at University, and continuing into a career in Digital Product Design, Seb has a wide array of creative inspiration. It all culminates into a skill that helps him to create art that you want to touch and be a part of. The texture in Seb's pieces speaks to the landscapes and architecture that surrounds him in his home town of London, while the colour found in so many of the pieces aims to be a deliberate juxtaposition of the monotone and repetetive nature of digital products.</p>
-                <p>Seb is continuously experimenting and creating new pieces for sale and private collection, and is open to private commissions.</p>
+                <p>Seb Bailey is a self-taught abstract artist, working out of his home studio in South London.</p>
+                <p>Having studied Architecture at University, and continuing into a career in Digital Product Design, Seb has a wide array of creative inspiration. It all culminates into a skill that helps him to create art that you want to touch and be a part of.</p>
+                <p>The texture in Seb's pieces speaks to the landscapes and architecture that surrounds him in his home town of London, while the colour found in so many of the pieces aims to be a deliberate juxtaposition of the monotone and repetetive nature of so many digital products today.</p>
+                <p>Seb is continuously experimenting and creating new pieces for sale and private collection, and is open to private and commercial commissions.</p>
                 <Button
                     size='SMALL'
                     href={this.state.contact}

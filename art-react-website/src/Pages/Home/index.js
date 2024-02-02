@@ -45,7 +45,7 @@ class Art extends Component {
 
             var imageNode = (
                 <Link
-                    to={`./product/${id}`}
+                    to={`./featured/${id}`}
                     className='imageLink'
                     key={`image-${piece.name.split(' ').join().toLowerCase()}`}
                 >

@@ -18,6 +18,7 @@ class Detail extends Component {
         this.state = {
             id: this.props.piece,
             activeImage: 0,
+            featured: this.props.featured
         }
 
         this.getPieceData = this.getPieceData.bind(this)
@@ -83,10 +84,17 @@ class Detail extends Component {
 
         return (
             <div className='detailContainer'>
-                <Button href='../art' className="back">
-                    <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
-                    Back to all artwork
-                </Button>
+                {this.state.featured ? (
+                    <Button href='/' className="back">
+                        <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
+                        Back to featured artwork
+                    </Button>
+                ) : (
+                    <Button href='../art' className="back">
+                        <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
+                        Back to all artwork
+                    </Button>
+                )}
                 {images[this.state.id].imgSmall.length > 1 ?
                     (
                         <Selector className='selectorContainer'>
