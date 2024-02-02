@@ -163,8 +163,8 @@ const pieces = {
     connexa_ii: {
         status: status.FOR_SALE,
         name: "CONNEXA II",
-        imgSmall: ["connexa_ii_sm.jpg"],
-        imgLarge: ["connexa_ii.jpg"],
+        imgSmall: ["connexa_ii_sm.png"],
+        imgLarge: ["connexa_ii.png"],
         size: "40x60cm",
         price: "£290",
         medium: "Acrylic & mixed media on canvas",
