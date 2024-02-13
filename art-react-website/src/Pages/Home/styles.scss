@@ -68,6 +68,12 @@
             margin-bottom: 1rem;
             padding-top: 0.1rem;
 
+            s {
+                display: inline-block;
+                margin-right: 0.5rem;
+                color: $red;
+            }
+
             &:last-child {
                 margin-right: 0;
             }

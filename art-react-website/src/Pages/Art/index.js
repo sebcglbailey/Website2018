@@ -39,11 +39,9 @@ class Art extends Component {
 
             var price = piece.price ? (<p>{piece.price}</p>) : null
 
-            var forSale = false;
-
-            if (piece.status == "FOR_SALE") {
-                forSale = true;
-            }
+            var forSale = piece.status == "FOR_SALE" ? true : false;
+            var commission = piece.status == "COMMISSION" ? true : false;
+            var unavailable = piece.status == "UNAVAILABLE" ? true : false;
 
             var imageNode = (
                 <Link
@@ -61,6 +59,10 @@ class Art extends Component {
                     </div>
                     <h4>{piece.name}{piece.size ? ",  " : ""}{piece.size ? piece.size : ""}</h4>
                         {price && forSale ? price : null}
+                        {price && commission ? price : null}
+                        {price && unavailable ? (
+                            <span><s>{price}</s> SOLD</span>
+                        ) : null}
                 </Link>
             )
 
