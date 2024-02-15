@@ -37,8 +37,8 @@ class Commissions extends Component {
             <div className='comms'>
               <p>I am currently available for private and commercial commissions.</p>
               <p>I will work with you to find out exactly what you need by looking at the space that you want your painting, discussing and matching any colour scheme that you are interested in, and figuring out the style in which to create your new statement piece for your home or business.</p>
-              <h4>Typical pricing for a commission based on size:</h4>
-              <span>(This is subject to change based on materials used and framing options)</span>
+              <h4>Typical pricing for a private commission based on size:</h4>
+              <span>(This is subject to change based on materials used, and canvas and framing options)</span>
               <ul>
                 <li>60x60cm (minimum size) : <b>£550</b></li>
                 <li>90x90cm : <b>£1,150</b></li>
