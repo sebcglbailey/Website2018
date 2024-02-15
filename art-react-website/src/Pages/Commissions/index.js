@@ -40,12 +40,12 @@ class Commissions extends Component {
               <h4>Typical pricing for a commission based on size:</h4>
               <span>(This is subject to change based on materials used and framing options)</span>
               <ul>
-                <li>60x60cm (minimum size) : <b>£600</b></li>
-                <li>90x90cm : <b>£1,100</b></li>
-                <li>100x100cm : <b>£1,320</b></li>
-                <li>120x90cm : <b>£1,450</b></li>
-                <li>150x100cm : <b>£1,850</b></li>
-                <li>200x140cm : <b>£2,850</b></li>
+                <li>60x60cm (minimum size) : <b>£550</b></li>
+                <li>90x90cm : <b>£1,050</b></li>
+                <li>100x100cm : <b>£1,275</b></li>
+                <li>120x90cm : <b>£1,350</b></li>
+                <li>150x100cm : <b>£1,750</b></li>
+                <li>200x140cm : <b>£2,750</b></li>
               </ul>
               <Button
                     size='SMALL'
