@@ -37,8 +37,10 @@ class Commissions extends Component {
             <div className='comms'>
               <p>I am currently available for private and commercial commissions.</p>
               <p>I will work with you to find out exactly what you need by looking at the space that you want your painting, discussing and matching any colour scheme that you are interested in, and figuring out the style in which to create your new statement piece for your home or business.</p>
+              <h3>How much does a commission cost?</h3>
+              <p>This question is a difficult one to answer, as it depends on a number of factors, but I have outlined some example costs below based on a typical size canvas. Typically, you can expect to spend 10-20% more than "off the wall" prices due to increased time and effort to find the perfect painting for your space.</p>
+              <p>The below estimates are a minimum I would charge for the size canvas, and this does not include framing. Prices are subject to increase depending on the complexity of the project, and materials used.</p>
               <h4>Typical pricing for a private commission based on size:</h4>
-              <span>(This is subject to change based on materials used, and canvas and framing options)</span>
               <ul>
                 <li>60x60cm (minimum size) : <b>£550</b></li>
                 <li>90x90cm : <b>£1,150</b></li>
