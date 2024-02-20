@@ -17,10 +17,10 @@ html {
 
 body {
     width: 100vw;
-    background: $black;
-    font-weight: 700;
+    background: var(--background);
+    font-weight: var(--bold);
     overflow-x: hidden;
-    color: $white;
+    color: var(--primary);
 }
 
 @media all and (max-width: $med) {

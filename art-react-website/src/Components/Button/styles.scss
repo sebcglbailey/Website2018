@@ -4,13 +4,17 @@
 .contact {
   display: inline-flex;
   width: auto;
-  border: 1px solid $white;
-  color: $white;
+
+  &.PRIMARY {
+    border: 1px solid var(--primary);
+  }
+
+  color: var(--primary);
   background: transparent;
   text-decoration: none;
   margin-top: 1rem;
   text-align: center;
-  font-weight: 100;
+  font-weight: var(--regular);
   align-items: center;
   border-radius: 0.375rem;
   justify-content: center;
@@ -18,11 +22,11 @@
   @media all and (max-width: $lg) {
     width: 100%;
     border-width: 2px;
-    font-weight: 400;
+    font-weight: var(--regular);
   }
 
   &:hover {
-    background: $black;
+    background: var(--tertiary);
     cursor: pointer;
   }
 }

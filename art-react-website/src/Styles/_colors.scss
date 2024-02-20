@@ -1,11 +1,15 @@
 $bg: #f6f6f6;
 $black: rgba(0, 0, 0, 0.85);
 $transparentBlack: rgba(0,0,0,0.4);
+$moreTransparentBlack: rgba(0,0,0,0.24);
+$superTransparentBlack: rgba(0,0,0,0.12);
 $lightBlack: lighten($black, 25%);
 $cardShadow: lighten($black, 75%);
 $grey: lighten(#000, 50%);
 $white: #fff;
 $transparentWhite: rgba(255, 255, 255, 0.5);
+$moreTransparentWhite: rgba(0,0,0,0.32);
+$superTransparentWhite: rgba(0,0,0,0.16);
 $blue: #5C89E3;
 $gd: $blue;
 $red: #DE334E;
@@ -22,21 +26,16 @@ $turquoise: #24E2BE;
 $pr: $turquoise;
 $ph: $grey;
 
-$ps: #00ACC9;
-$ai: #F8863C;
-$id: #FE80A8;
-$ae: #B6AEEC;
-$xd: #FF43C9;
-$sk: #f7c752;
-$fr: #00aaff;
-$ab: #2E2F30;
-$ze: #FFBE22;
-$pi: #AF51D0;
-$fi: #5551ff;
+$primary: $black;
+$secondary: $transparentBlack;
+$tertiary: $superTransparentBlack;
+$background: $white;
+$backgroundSecondary: $transparentWhite;
 
-$fb: #3b5998;
-$ig: #244f76;
-$tw: #55acee;
-$li: #006699;
-$be: #005cff;
-$lf: #e3152b;
+@media (prefers-color-scheme: dark) {
+  $primary: $white;
+  $secondary: $transparentWhite;
+  $tertiary: $superTransparentWhite;
+  $background: $black;
+  $backgroundSecondary: $moreTransparentWhite;
+}

@@ -7,7 +7,8 @@ class Button extends Component {
         super(props);
 
         this.state = {
-          size: this.props.size ? this.props.size : 'LARGE'
+          size: this.props.size ? this.props.size : 'LARGE',
+          variant: this.props.variant ? this.props.variant : 'PRIMARY'
         }
     }
 
@@ -26,7 +27,7 @@ class Button extends Component {
     render() {
         return (
           <a
-              className={`contact ${this.state.className} ${this.props.className ? this.props.className : ""}`}
+              className={`contact ${this.state.className} ${this.props.className ? this.props.className : ""} ${this.state.variant}`}
               href={this.props.href}
               target={this.props.target}
           >
