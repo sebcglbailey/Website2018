@@ -11,7 +11,7 @@
       margin-bottom: 2rem;
 
       svg {
-        fill: $white;
+        fill: var(--primary);
         margin-right: 1rem;
       }
 
@@ -37,26 +37,26 @@
 
     h3 {
       margin-top: 1rem;
-      font-weight: 500;
+      font-weight: var(--bold);
     }
 
     .extraDetails {
-      font-weight: 100;
+      font-weight: var(--regular);
       margin-top: 2rem;
       font-size: 1.2rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid var(--primary);
 
       @media all and (max-width: $lg) {
         font-size: 1rem;
       }
 
       a {
-        color: $transparentWhite;
-        font-weight: 600;
+        color: var(--secondary);
+        font-weight: var(--bold);
         text-decoration: none;
         &:hover, &:focus, &:active {
-          color: $white;
+          color: var(--primary);
         }
         display: inline-block;
         margin-right: 1.5rem;
@@ -76,7 +76,7 @@
     }
 
     .details-p {
-      font-weight: 100;
+      font-weight: var(--regular);
       margin-top: 1.5rem;
       line-height: 150%;
     }

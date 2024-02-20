@@ -91,6 +91,7 @@ class Art extends Component {
                             href='https://instagram.com/sebbaileyart'
                             className='instagram'
                             target='_blank'
+                            variant='SECONDARY'
                         >
                             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <g>

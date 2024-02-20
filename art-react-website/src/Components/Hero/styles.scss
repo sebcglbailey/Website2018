@@ -13,7 +13,8 @@
   align-items: center;
   text-align: center;
   padding: 2rem;
-
+  color: var(--white);
+  
   &.smallContainer {
     height: 40vh;
     padding-top: 4rem;
@@ -28,7 +29,7 @@
   }
 
   h1 {
-    text-shadow: 0 0.175rem 0.5rem $black;
+    text-shadow: 0 0.175rem 0.5rem var(--black);
     font-size: 4rem;
     position: relative;
     margin: 0;
@@ -41,7 +42,7 @@
   .logo {
     height: 6rem;
     width: auto;
-    filter: drop-shadow(0 0.175rem 0.15rem $black);
+    filter: drop-shadow(0 0.175rem 0.15rem var(--black));
     position: relative;
     @media all and (max-width: $med) {
       top: 1rem;

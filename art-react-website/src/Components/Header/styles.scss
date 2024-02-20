@@ -8,9 +8,9 @@
   left: 0;
   width: 100vw;
   height: 4rem;
-  background: transparentize($black, 0.5);
+  background: var(--moreTransparentBlack);
   font-family: "Montserrat Alternates", sans-serif;
-  color: #fff;
+  color: var(--white);
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
     position: relative;
     width: 100%;
     height: 2px;
-    background: $white;
+    background: var(--background);
     border-radius: 0.1rem;
     transition: opacity 0.25s ease, transform 0.25s ease;
 
@@ -80,7 +80,7 @@
 
   a {
     height: 100%;
-    color: $white;
+    color: var(--white);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -95,7 +95,7 @@
     left: 0;
     width: 100%;
     height: 0.15rem;
-    background: $white;
+    background: var(--background);
     transform-origin: 1 0.5;
     transform: scaleX(0);
     transition: transform 0.25s ease;
@@ -118,49 +118,3 @@
     width: 2.5rem;
   }
 }
-
-// @media all and (max-width: $lg) {
-//   .header {
-//     display: block;
-//   }
-//   .navigation {
-//     display: none;
-//     height: 0;
-//   }
-//   .header {
-//     padding: 0 0.5rem;
-//     height: 3.5rem;
-//   }
-//   .logoBurgerWrapper {
-//     width: 100%;
-//     height: 100%;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//   }
-//   .logo {
-//     height: 3rem;
-//     width: 3rem;
-//   }
-//   .burgerMenu {
-//     display: block;
-//   }
-//   .navigation.active {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     height: calc(100vh - 3.5rem);
-//     width: 100vw;
-//     margin-top: 3.5rem;
-//     background: $black;
-//     a {
-//       width: auto;
-//       max-height: 4rem;
-//       flex-shrink: 1;
-//     }
-//   }
-// }

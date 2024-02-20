@@ -12,8 +12,8 @@
   .menuItem {
     display: inline-block;
     font-size: 1.2rem;
-    font-weight: 100;
-    color: $white;
+    font-weight: var(--regular);
+    color: var(--primary);
     text-decoration: none;
     font-family: "Montserrat Alternates", sans-serif;
     cursor: pointer;
@@ -31,7 +31,7 @@
       }
     }
     &:hover, &:active, &:focus, &.active {
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid var(--primary);
       cursor: pointer;
     }
   }
