@@ -57,7 +57,7 @@ const pieces = {
         imgLarge: ["imperfection.png", "imperfection_mock.png"],
         imgHero: "imperfection_hero.jpg",
         size: "40x30cm",
-        price: "£120",
+        price: "£130",
         medium: "Acrylic on canvas",
         year: "2023",
         details: [
@@ -66,7 +66,7 @@ const pieces = {
         ]
     },
     procursus: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "PROCURSUS",
         imgSmall: ["procursus_sm.png", "procursus_mock_sm.png", "procursus_detail_1_sm.jpg", "procursus_detail_2_sm.jpg", "procursus_detail_3_sm.jpg"],
         imgLarge: ["procursus.png", "procursus_mock.png", "procursus_detail_1.jpg", "procursus_detail_2.jpg", "procursus_detail_3.jpg"],
@@ -249,13 +249,12 @@ const pieces = {
         ],
     },
     aequor: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "AEQUOR",
         imgSmall: ["aequor_sm.jpg", "aequor_mock.png"],
         imgLarge: ["aequor.jpg", "aequor_mock.png"],
         imgHero: "aequor_hero.jpg",
         size: "30x30cm",
-        price: "£150",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
     },
