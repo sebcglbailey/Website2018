@@ -71,7 +71,7 @@ class Art extends Component {
     render() {
         return (
             <Fragment>
-                <Hero background={'sarasa'} />
+                <Hero background={'attakai_uzu'} />
                 <div className='artContainer'>
                     <Menu />
                     <H2>Featured</H2>

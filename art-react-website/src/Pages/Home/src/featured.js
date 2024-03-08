@@ -1,6 +1,8 @@
 import images from '../../Art/src/images';
 
 const featured = {
+    aurea_profundis: images.aurea_profundis,
+    flos_in_mari: images.flos_in_mari,
     attakai_uzu: images.attakai_uzu,
     in_agria: images.in_agria,
     procursus: images.procursus,

@@ -85,7 +85,7 @@ class Art extends Component {
     render() {
         return (
             <Fragment>
-                <Hero size="SMALL" background={'double_take'}>
+                <Hero size="SMALL" background={'aurea_profundis'}>
                     <H1>Artwork</H1>
                 </Hero>
                 <div className='artContainer'>

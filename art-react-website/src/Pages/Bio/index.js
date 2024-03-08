@@ -42,7 +42,7 @@ class Bio extends Component {
       let artistPhoto = require('./seb_painting.jpeg');
       return (
         <Fragment>
-          <Hero size='SMALL' background='aequor'>
+          <Hero size='SMALL' background='flos_in_mari'>
             <H1>Biography</H1>
           </Hero>
           <div className="bioContainer">
