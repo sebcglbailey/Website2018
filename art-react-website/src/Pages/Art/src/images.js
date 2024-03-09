@@ -44,7 +44,7 @@ const pieces = {
     },
     sarasa_vi: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA VI",
         imgSmall: ["sarasa_vi_sm.jpg"],
         imgLarge: ["sarasa_vi.jpg"],
         imgHero: "sarasa_vi_hero.jpg",
@@ -62,7 +62,7 @@ const pieces = {
     },
     sarasa_vii: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA VII",
         imgSmall: ["sarasa_vii_sm.jpg"],
         imgLarge: ["sarasa_vii.jpg"],
         size: "30x30cm",
@@ -79,7 +79,7 @@ const pieces = {
     },
     sarasa_viii: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA VIII",
         imgSmall: ["sarasa_viii_sm.jpg"],
         imgLarge: ["sarasa_viii.jpg"],
         imgHero: "sarasa_viii_hero.jpg",
@@ -97,7 +97,7 @@ const pieces = {
     },
     sarasa_ix: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA IX",
         imgSmall: ["sarasa_ix_sm.jpg"],
         imgLarge: ["sarasa_ix.jpg"],
         size: "30x30cm",
@@ -388,7 +388,6 @@ const pieces = {
         imgSmall: ["astra_i_sm.jpg", "astra_mock.jpg"],
         imgLarge: ["astra_i.jpg", "astra_mock.jpg"],
         size: "40x30cm",
-        price: "£170",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
         pair: ['astra_ii'],
