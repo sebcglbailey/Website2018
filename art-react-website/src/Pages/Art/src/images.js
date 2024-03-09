@@ -3,7 +3,7 @@ import status from './status';
 const pieces = {
     aurea_profundis: {
         status: status.FOR_SALE,
-        name: "aurea profundis",
+        name: "AUREA PROFUNDIS",
         imgSmall: ["aurea_profundis_sm.jpg"],
         imgLarge: ["aurea_profundis.jpg"],
         imgHero: "aurea_profundis_hero.jpg",
@@ -15,7 +15,7 @@ const pieces = {
     },
     flos_in_mari: {
         status: status.FOR_SALE,
-        name: "flos in mari",
+        name: "FLOS IN MARI",
         imgSmall: ["flos_in_mari_sm.jpg"],
         imgLarge: ["flos_in_mari.jpg"],
         imgHero: "flos_in_mari_hero.jpg",
@@ -30,7 +30,7 @@ const pieces = {
     },
     in_ore_rubrum: {
         status: status.FOR_SALE,
-        name: "in ore rubrum rupes",
+        name: "IN ORE RUBRUM RUPES",
         imgSmall: ["in_ore_rubrum_sm.jpg"],
         imgLarge: ["in_ore_rubrum.jpg"],
         size: "20x30cm",
@@ -44,7 +44,7 @@ const pieces = {
     },
     sarasa_vi: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA VI",
         imgSmall: ["sarasa_vi_sm.jpg"],
         imgLarge: ["sarasa_vi.jpg"],
         imgHero: "sarasa_vi_hero.jpg",
@@ -62,7 +62,7 @@ const pieces = {
     },
     sarasa_vii: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA VII",
         imgSmall: ["sarasa_vii_sm.jpg"],
         imgLarge: ["sarasa_vii.jpg"],
         size: "30x30cm",
@@ -79,7 +79,7 @@ const pieces = {
     },
     sarasa_viii: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA VIII",
         imgSmall: ["sarasa_viii_sm.jpg"],
         imgLarge: ["sarasa_viii.jpg"],
         imgHero: "sarasa_viii_hero.jpg",
@@ -97,7 +97,7 @@ const pieces = {
     },
     sarasa_ix: {
         status: status.FOR_SALE,
-        name: "SARASA IV",
+        name: "SARASA IX",
         imgSmall: ["sarasa_ix_sm.jpg"],
         imgLarge: ["sarasa_ix.jpg"],
         size: "30x30cm",
@@ -114,7 +114,7 @@ const pieces = {
     },
     attakai_uzu: {
         status: status.FOR_SALE,
-        name: "Attakai Uzu",
+        name: "ATTAKAI UZU",
         imgSmall: ["attakai_uzu_sm.jpg", "attakai_uzu_mock_sm.png", "attakai_uzu_detail_sm.png"],
         imgLarge: ["attakai_uzu.jpg", "attakai_uzu_mock.png", "attakai_uzu_detail.png"],
         imgHero: "attakai_uzu_hero.jpg",
@@ -141,7 +141,7 @@ const pieces = {
     },
     in_agria: {
         status: status.COMMISSION,
-        name: "in agria viridi casia",
+        name: "IN AGRIA VIRIDI CASIA",
         imgSmall: ["in_agria_sm.jpg", "in_agria_full_sm.jpg", "in_agria_frame_sm.jpg"],
         imgLarge: ["in_agria.jpg", "in_agria_full.jpg", "in_agria_frame.jpg"],
         imgHero: "in_agria_hero.jpg",
@@ -158,7 +158,7 @@ const pieces = {
     },
     etheldreda: {
         status: status.COMMISSION,
-        name: "Etheldreda",
+        name: "ETHELDREDA",
         imgSmall: ["etheldreda_sm.jpg", "etheldreda_mock_sm.png", "etheldreda_full_sm.png", "etheldreda_detail_1_sm.jpg", "etheldreda_detail_2_sm.jpg"],
         imgLarge: ["etheldreda.jpg", "etheldreda_mock.png", "etheldreda_full.png", "etheldreda_detail_1.jpg", "etheldreda_detail_2.jpg"],
         imgHero: "etheldreda_hero.jpg",
@@ -174,7 +174,7 @@ const pieces = {
     },
     imperfection: {
         status: status.FOR_SALE,
-        name: "Imperfection",
+        name: "IMPERFECTION",
         imgSmall: ["imperfection_sm.png", "imperfection_mock_sm.png"],
         imgLarge: ["imperfection.png", "imperfection_mock.png"],
         imgHero: "imperfection_hero.jpg",
@@ -273,7 +273,7 @@ const pieces = {
     },
     perdita: {
         status: status.COMMISSION,
-        name: "Perdita",
+        name: "PERDITA",
         imgSmall: ["perdita_sm.jpg", "perdita_mock_sm.jpg", "perdita_detail_1_sm.jpg", "perdita_detail_2_sm.jpg", "perdita_detail_3_sm.jpg"],
         imgLarge: ["perdita.jpg", "perdita_mock.jpg", "perdita_detail_1.jpg", "perdita_detail_2.jpg", "perdita_detail_3.jpg"],
         imgHero: "perdita_hero.jpg",
@@ -388,7 +388,6 @@ const pieces = {
         imgSmall: ["astra_i_sm.jpg", "astra_mock.jpg"],
         imgLarge: ["astra_i.jpg", "astra_mock.jpg"],
         size: "40x30cm",
-        price: "£170",
         medium: "Acryclic & mixed media on canvas",
         year: "2023",
         pair: ['astra_ii'],
@@ -399,7 +398,7 @@ const pieces = {
     },
     double_take: {
         status: status.UNAVAILABLE,
-        name: "Double Take",
+        name: "DOUBLE TAKE",
         imgSmall: ["double_take_sm.jpg", "double_take_mock.png"],
         imgLarge: ["double_take.jpg", "double_take_mock.png"],
         imgHero: 'double_take_hero.jpg',
