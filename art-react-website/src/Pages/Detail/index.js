@@ -110,7 +110,11 @@ class Detail extends Component {
                         <H2>"{this.state.name}"{this.state.size ? ",  " : ""}{this.state.size ? this.state.size : ""}{this.state.year ? ` ${this.state.year}` : ""}</H2>
                         {this.state.price ? (
                             <Fragment>
-                                <h3>{this.state.price}</h3>
+                                {this.state.status == "UNAVAILABLE" ? (
+                                    <h3><s>{this.state.price}</s> SOLD</h3>
+                                ) : (
+                                    <h3>{this.state.price}</h3>
+                                )}
                                 <Button
                                     size='SMALL'
                                     href={this.state.contact}
