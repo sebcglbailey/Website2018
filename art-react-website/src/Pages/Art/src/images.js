@@ -43,7 +43,7 @@ const pieces = {
         ],
     },
     sarasa_vi: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA VI",
         imgSmall: ["sarasa_vi_sm.jpg"],
         imgLarge: ["sarasa_vi.jpg"],
@@ -239,7 +239,7 @@ const pieces = {
         pair: ["sarasa_ii", "sarasa_iv", "sarasa"],
     },
     sarasa_ii: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA II",
         imgSmall: ["sarasa_ii_sm.jpg", "sarasa_ii_mock_sm.png", "sarasa_ii_full_sm.jpg"],
         imgLarge: ["sarasa_ii.jpg", "sarasa_ii_mock.png", "sarasa_ii_full.jpg"],
