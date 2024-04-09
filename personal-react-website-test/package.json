@@ -27,7 +27,7 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
-    "node-sass-chokidar": "^1.1.0",
+    "node-sass-chokidar": "^2.0.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -95,7 +95,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
+    "node-sass": "^9.0.0",
     "react-hot-loader": "^4.0.0",
     "sass-loader": "^6.0.7"
   }
