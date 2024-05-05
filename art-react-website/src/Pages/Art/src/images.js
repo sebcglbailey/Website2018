@@ -61,7 +61,7 @@ const pieces = {
         pair: ["sarasa_vii", "sarasa_viii", "sarasa_ix"],
     },
     sarasa_vii: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA VII",
         imgSmall: ["sarasa_vii_sm.jpg"],
         imgLarge: ["sarasa_vii.jpg"],
