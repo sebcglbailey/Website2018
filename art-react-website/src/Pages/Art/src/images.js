@@ -14,7 +14,7 @@ const pieces = {
         frame: "Unframed – dark deep edge canvas",
     },
     flos_in_mari: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "FLOS IN MARI",
         imgSmall: ["flos_in_mari_sm.jpg"],
         imgLarge: ["flos_in_mari.jpg"],
@@ -29,7 +29,7 @@ const pieces = {
         ],
     },
     in_ore_rubrum: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "IN ORE RUBRUM RUPES",
         imgSmall: ["in_ore_rubrum_sm.jpg"],
         imgLarge: ["in_ore_rubrum.jpg"],
@@ -78,7 +78,7 @@ const pieces = {
         pair: ["sarasa_vi", "sarasa_viii", "sarasa_ix"],
     },
     sarasa_viii: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA VIII",
         imgSmall: ["sarasa_viii_sm.jpg"],
         imgLarge: ["sarasa_viii.jpg"],
@@ -96,7 +96,7 @@ const pieces = {
         pair: ["sarasa_vi", "sarasa_vii", "sarasa_ix"],
     },
     sarasa_ix: {
-        status: status.FOR_SALE,
+        status: status.UNAVAILABLE,
         name: "SARASA IX",
         imgSmall: ["sarasa_ix_sm.jpg"],
         imgLarge: ["sarasa_ix.jpg"],
