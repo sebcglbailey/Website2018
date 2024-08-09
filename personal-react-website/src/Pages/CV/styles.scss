@@ -49,3 +49,50 @@
 		border-bottom: 0.3rem solid $black;
 	}
 }
+
+.cs-container {
+  text-align: left;
+}
+
+.cs-intro {
+  font-size: 1.1rem !important;
+}
+
+.cs-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cs-numbers {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+  padding: 0 1rem 1rem 1rem;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+  flex-wrap: wrap;
+}
+
+.cs-number-info {
+  width: fit-content;
+  margin: 0 1rem;
+  span {
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0;
+    font-family: "Montserrat Alternates";
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.cs-image {
+  span {
+    color: $grey;
+    font-size: 0.75rem;
+  }
+}

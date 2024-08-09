@@ -125,7 +125,7 @@ const Work = () => {
               return (
                 <span
                   className='infoSpan'
-                  key={index}
+                  key={`job-${index}`}
                   dangerouslySetInnerHTML={{ __html: info }}
                 >
                 </span>
