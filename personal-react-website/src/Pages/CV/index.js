@@ -14,6 +14,7 @@ import intro from './introContent';
 
 import Intro from './intro';
 import Education from './education';
+import CaseStudies from './caseStudies';
 import Experience from './work';
 import Hobbies from './hobbies';
 
@@ -56,7 +57,7 @@ class Resume extends Component {
             })
           }
         </div>
-        <H2>My experience...</H2>
+        <CaseStudies />
         <Experience />
         <div className='skills'>
           <h3>Software</h3>

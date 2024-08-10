@@ -54,47 +54,52 @@ class App extends Component {
                     render={() => <ProjectList
                       projects={projects}
                       onLoad={this.handlePageLoad} />}
-                  /> */}
+                  />
 
                   <Route path="/projects/:id"
                     render={({ match }) => <Project
                       project={match.params.id}
                       onLoad={this.handlePageLoad} />}
-                  />
+                  /> */}
 
                   <Route path="/resume"
                     render={() => <CV
                       onLoad={this.handlePageLoad} />}
                   />
 
-                  <Route exact path="/extras"
+                  {/* <Route exact path="/extras"
                     render={() => <Extras
                       onLoad={this.handlePageLoad} />}
-                  />
+                  /> */}
 
-                  <Route path="/extras/:id"
+                  {/* <Route path="/extras/:id"
                     render={({ match }) => <Images
                       onLoad={this.handlePageLoad}
                       id={match.params.id} />}
-                  />
+                  /> */}
 
-                  <Route path="/contact"
+                  {/* <Route path="/contact"
                     render={() => <Contact
                       onLoad={this.handlePageLoad} />}
-                  />
+                  /> */}
 
                   <Route path="/device-size"
                     render={() => <DeviceSize />}
                   />
 
                   <Redirect exact from="/" to="/resume" />
+                  <Redirect from="/projects" to="/resume" />
                   <Redirect from="/projects/" to="/resume" />
+                  <Redirect from="/projects/:id" to="/resume" />
+                  <Redirect from="/extras" to="/resume" />
+                  <Redirect from="/extras/" to="/resume" />
+                  <Redirect from="/extras/:id" to="/resume" />
 
-                  <Route
+                  {/* <Route
                     render={() => <ProjectList
                       projects={projects}
                       onLoad={this.handlePageLoad} />}
-                  />
+                  /> */}
 
                 </Switch>
               </div>
