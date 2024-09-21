@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 import './styles.scss';
 
@@ -54,23 +55,12 @@ class Header extends Component {
         <div
           ref={(elem) => this.nav = elem}
           onClick={this.handleMenuClick}
-          className={this.state.menuOpen ? (`navigatio active`) : 'navigation'}
+          className={this.state.menuOpen ? (`navigation active`) : 'navigation'}
         >
-          {/* <NavLink activeClassName='active' to="/projects">
-              work
-            </NavLink> */}
-          {/* <NavLink activeClassName='active' to="/resume">
-            résumé
-          </NavLink> */}
-          {/* <NavLink activeClassName='active' to="/extras">
-              extras
-            </NavLink> */}
-          {/* <NavLink activeClassName='active' to="/blog">
-              blog
-            </NavLink> */}
-          {/* <NavLink activeClassName='active' to="/contact">
-            contact
-          </NavLink> */}
+          <HashLink smooth to='/resume/#case-studies'>case studies</HashLink>
+          <HashLink smooth to='/resume/#work'>work</HashLink>
+          <HashLink smooth to='/resume/#education'>education</HashLink>
+
           <a href="http://art.sebastianbailey.co.uk" target="_blank">art</a>
           <a
             href="mailto:sebcglbailey@gmail.com?subject=I%20Want%20Your%20Work&body=Let%27s%20talk%20about%20Seb%2C%20Bailey.%20Let%27s%20talk%20about%20you%20and%20me."

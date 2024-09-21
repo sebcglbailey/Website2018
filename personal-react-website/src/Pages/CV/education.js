@@ -60,7 +60,7 @@ const Education = () => {
   })
   return (
     <div className='experience'>
-      <h2>Education</h2>
+      <h2 id="education">Education</h2>
       <div className='experienceCards'>
         {cards}
       </div>

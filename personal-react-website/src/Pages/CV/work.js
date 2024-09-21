@@ -138,7 +138,7 @@ const Work = () => {
   })
   return (
     <div className='experience'>
-      <h3>Work</h3>
+      <h2 id="work">Work</h2>
         <Masonry minWidth={400} margin={16}>
           {cards}
         </Masonry>

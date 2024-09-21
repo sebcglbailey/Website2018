@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 
 import './App.scss';
@@ -6,113 +6,57 @@ import './App.scss';
 import ScrollToTop from './ScrollToTop/';
 
 import Header from './Header/';
-import ProjectList from '../Pages/ProjectList/';
-import Project from '../Pages/Project/';
 import CV from '../Pages/CV/';
-import Extras, { Images } from '../Pages/Extras/';
-import Contact from '../Pages/Contact/';
 import DeviceSize from '../Pages/DeviceSize';
 
-// TODO: rename all pages and components jsx files to index.js
+import Slate from '../Pages/CaseStudies/clearscore-slate';
 
-import projects from '../Projects/js/projects';
+function App() {
+  const [token, setToken] = useState();
 
-import SplashLogo from './SplashLogo/';
+  // if (!token) {
+  //   return <Password setToken={setToken} />
+  // }
 
-class App extends Component {
-  constructor(props) {
-    super(props)
+  return (
+    <Router>
+      <div>
 
-    this.state = {
-      projectsLoaded: false
-    }
+        <ScrollToTop>
+          <div className='container'>
 
-    this.handlePageLoad = this.handlePageLoad.bind(this)
-  }
+            <Header />
 
-  /*
-    Function to handle the images loaded on the page.
-  */
-  handlePageLoad() {
-    // this.setState({ projectsLoaded: true })
-  }
+            <div className='view'>
+              <Switch>
 
-  render() {
-    return (
-      <Router>
-        <div>
+                <Route exact path="/resume">
+                  <CV />
+                </Route>
 
-          <ScrollToTop>
-            <div className='container'>
+                <Route path="/resume/clearscore-design-system">
+                  <Slate />
+                </Route>
 
-              <Header />
+                <Route path="/device-size">
+                  <DeviceSize />
+                </Route>
 
-              <div className='view'>
-                <Switch>
+                <Redirect exact from="/" to="/resume" />
+                <Redirect from="/projects" to="/resume" />
+                <Redirect from="/projects/" to="/resume" />
+                <Redirect from="/projects/:id" to="/resume" />
+                <Redirect from="/extras" to="/resume" />
+                <Redirect from="/extras/" to="/resume" />
+                <Redirect from="/extras/:id" to="/resume" />
 
-                  {/* <Route exact path="/projects"
-                    render={() => <ProjectList
-                      projects={projects}
-                      onLoad={this.handlePageLoad} />}
-                  />
-
-                  <Route path="/projects/:id"
-                    render={({ match }) => <Project
-                      project={match.params.id}
-                      onLoad={this.handlePageLoad} />}
-                  /> */}
-
-                  <Route path="/resume"
-                    render={() => <CV
-                      onLoad={this.handlePageLoad} />}
-                  />
-
-                  {/* <Route exact path="/extras"
-                    render={() => <Extras
-                      onLoad={this.handlePageLoad} />}
-                  /> */}
-
-                  {/* <Route path="/extras/:id"
-                    render={({ match }) => <Images
-                      onLoad={this.handlePageLoad}
-                      id={match.params.id} />}
-                  /> */}
-
-                  {/* <Route path="/contact"
-                    render={() => <Contact
-                      onLoad={this.handlePageLoad} />}
-                  /> */}
-
-                  <Route path="/device-size"
-                    render={() => <DeviceSize />}
-                  />
-
-                  <Redirect exact from="/" to="/resume" />
-                  <Redirect from="/projects" to="/resume" />
-                  <Redirect from="/projects/" to="/resume" />
-                  <Redirect from="/projects/:id" to="/resume" />
-                  <Redirect from="/extras" to="/resume" />
-                  <Redirect from="/extras/" to="/resume" />
-                  <Redirect from="/extras/:id" to="/resume" />
-
-                  {/* <Route
-                    render={() => <ProjectList
-                      projects={projects}
-                      onLoad={this.handlePageLoad} />}
-                  /> */}
-
-                </Switch>
-              </div>
+              </Switch>
             </div>
-          </ScrollToTop>
-          {/*<SplashLogo
-            delay={250}
-            ready={this.state.projectsLoaded}
-          />*/}
-        </div>
-      </Router>
-    );
-  }
+          </div>
+        </ScrollToTop>
+      </div>
+    </Router>
+  )
 }
 
 export default App;
