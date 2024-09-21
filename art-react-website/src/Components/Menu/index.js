@@ -22,6 +22,9 @@ class Menu extends Component {
             <NavLink className="menuItem" to="/art">
               All paintings
             </NavLink>
+            <NavLink className="menuItem" to="/works-on-paper">
+              Works on paper
+            </NavLink>
             <NavLink className="menuItem" to="/bio">
               Bio
             </NavLink>

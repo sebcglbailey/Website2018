@@ -9,6 +9,7 @@ import Header from './Header/';
 import Home from '../Pages/Home/';
 import Detail from '../Pages/Detail/';
 import Art from '../Pages/Art/';
+import Paper from '../Pages/Paper/';
 import Bio from '../Pages/Bio/';
 import Commissions from '../Pages/Commissions/';
 
@@ -47,13 +48,21 @@ class App extends Component {
 
                   <Route path="/product/:id"
                     render={({ match }) => <Detail
-                      piece={match.params.id} />}
+                      piece={match.params.id}
+                      type="ARTWORK" />}
                   />
 
                   <Route path="/featured/:id"
                     render={({ match }) => <Detail
                       piece={match.params.id} 
-                      featured />}
+                      featured
+                      type="ARTWORK" />}
+                  />
+
+                  <Route path="/works-on-paper/:id"
+                    render={({ match }) => <Detail
+                      piece={match.params.id} 
+                      type="PAPER" />}
                   />
 
                   <Route path="/bio"
@@ -66,6 +75,11 @@ class App extends Component {
 
                   <Route path="/art"
                     render={() => <Art
+                      onLoad={this.handlePageLoad} />}
+                  />
+
+                  <Route path="/works-on-paper"
+                    render={() => <Paper
                       onLoad={this.handlePageLoad} />}
                   />
 
