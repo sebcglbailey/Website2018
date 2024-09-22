@@ -5,7 +5,8 @@ import {H1} from '../Headers';
 import logo from "../../logo-white-art.svg";
 import logoPNG from "../../logo-white-art.png";
 
-import images from "../../Pages/Art/src/images";
+import artwork from "../../Pages/Art/src/images";
+import paperWorks from "../../Pages/Paper/src/images";
 
 import './styles.scss';
 
@@ -27,9 +28,11 @@ class Hero extends Component {
     getBackground(image) {
       let img = null
 
-      if (images[image] && images[image].imgHero) {
-        img = require(`../../Pages/Art/src/images/${image}/${images[image].imgHero}`);
-      } else {
+      if (artwork[image] && artwork[image].imgHero) {
+        img = require(`../../Pages/Art/src/images/${image}/${artwork[image].imgHero}`);
+      } else if (artwork[image] && artwork[image].imgHero) {
+        img = require(`../../Pages/Paper/src/images/${image}/${paperWorks[image].imgHero}`);
+      }  else {
         img = null
       }
 

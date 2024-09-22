@@ -7,7 +7,8 @@ import SVG from '../../Components/SVG/';
 import Selector from '../../Components/Selector/';
 import SelectorImage from '../../Components/Selector/components/image';
 
-import images from '../Art/src/images';
+import artwork from '../Art/src/images';
+import paperWork from '../Paper/src/images';
 
 import './styles.scss';
 
@@ -18,7 +19,8 @@ class Detail extends Component {
         this.state = {
             id: this.props.piece,
             activeImage: 0,
-            featured: this.props.featured
+            featured: this.props.featured,
+            type: this.props.type,
         }
 
         this.getPieceData = this.getPieceData.bind(this)
@@ -26,16 +28,16 @@ class Detail extends Component {
     }
 
     componentWillMount() {
-        let name = images[this.state.id] ? images[this.state.id].name : "NOT FOUND"
+        let name = artwork[this.state.id] ? artwork[this.state.id].name : paperWork[this.state.id] ? paperWork[this.state.id].name : "NOT FOUND"
         document.title = `${name} | Seb Bailey Art`
 
         this.getPieceData()
     }
 
     getPieceData() {
-        var piece = images[this.state.id]
+        var piece = artwork[this.state.id] ? artwork[this.state.id] : paperWork[this.state.id] ? paperWork[this.state.id] : null
         var details = null;
-        if (piece.details) {
+        if (piece && piece.details) {
             details = piece.details.map(para => {
                 return (
                     <p className='details-p'>{para}</p>
@@ -43,30 +45,41 @@ class Detail extends Component {
             })
         }
 
-        this.setState({
-            name: piece.name,
-            status: piece.status,
-            size: piece.size,
-            price: piece.price ? piece.price : null,
-            medium: piece.medium,
-            year: piece.year,
-            frame: piece.frame,
-            details: details,
-            pair: piece.pair,
-            image: require(`../Art/src/images/${this.state.id}/${images[this.state.id].imgLarge[0]}`),
-            contact: `mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20${piece.name}.`
-        })
+        if (piece) {
+            this.setState({
+                name: piece.name,
+                status: piece.status,
+                size: piece.size,
+                price: piece.price ? piece.price : null,
+                medium: piece.medium,
+                year: piece.year,
+                frame: piece.frame,
+                details: details,
+                pair: piece.pair,
+                image: this.props.type == "ARTWORK" && this.state.id && artwork[this.state.id] && artwork[this.state.id].imgLarge
+                    ? require(`../Art/src/images/${this.state.id}/${artwork[this.state.id].imgLarge[0]}`)
+                    : this.props.type == "PAPER" && this.state.id && paperWork[this.state.id] && paperWork[this.state.id].imgLarge
+                    ? require(`../Paper/src/images/${this.state.id}/${paperWork[this.state.id].imgLarge[0]}`)
+                    : null,
+                contact: `mailto:sebcglbailey@gmail.com?subject=Artwork%20Enquiry&body=I%27d%20love%20to%20talk%20about%20purchasing%20${piece.name}.`,
+                source: this.props.type == "ARTWORK" ? artwork : this.props.type == "PAPER" ? paperWork : [],
+            })
+        }
     }
 
     setActiveImage(index) {
         this.setState({
             activeImage: index,
-            image: require(`../Art/src/images/${this.state.id}/${images[this.state.id].imgLarge[index]}`)
+            image: this.state.type == "ARTWORK"
+                ? require(`../Art/src/images/${this.state.id}/${this.state.source[this.state.id].imgLarge[index]}`)
+                : this.state.type == "PAPER"
+                ? require(`../Paper/src/images/${this.state.id}/${this.state.source[this.state.id].imgLarge[index]}`)
+                : null
         })
     }
 
     render() {
-        let selectorImages = images[this.state.id].imgSmall.map((imgName, index) => {
+        let selectorImages = this.state.type == "ARTWORK" && this.state.source[this.state.id] && this.state.source[this.state.id].imgSmall ? this.state.source[this.state.id].imgSmall.map((imgName, index) => {
             let img = require(`../../Pages/Art/src/images/${this.state.id}/${imgName}`)
             return (
                 <SelectorImage
@@ -75,12 +88,26 @@ class Detail extends Component {
                     className='selectorImage'
                     index={index}
                     onClick={() => {
-                    this.setActiveImage(index)
+                        this.setActiveImage(index)
                     }}
                     active={this.state.activeImage === index}
                 />
             )
-        })
+        }) : this.state.type == "PAPER" && this.state.source[this.state.id] && this.state.source[this.state.id].imgSmall ? this.state.source[this.state.id].imgSmall.map((imgName, index) => {
+            let img = require(`../../Pages/Paper/src/images/${this.state.id}/${imgName}`)
+            return (
+                <SelectorImage
+                    key={imgName}
+                    src={img}
+                    className='selectorImage'
+                    index={index}
+                    onClick={() => {
+                        this.setActiveImage(index)
+                    }}
+                    active={this.state.activeImage === index}
+                />
+            )
+        }) : null
 
         return (
             <div className='detailContainer'>
@@ -89,13 +116,18 @@ class Detail extends Component {
                         <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
                         Back to featured artwork
                     </Button>
-                ) : (
+                ) : this.state.type == "ARTWORK" ? (
                     <Button href='../art' className="back">
                         <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
                         Back to all artwork
                     </Button>
-                )}
-                {images[this.state.id].imgSmall.length > 1 ?
+                ) : this.state.type == "PAPER" ? (
+                    <Button href='../works-on-paper' className="back">
+                        <SVG className='arrowLeft' id="arrowLeft" width={24} height={24} />
+                        Back to works on paper
+                    </Button>
+                ) : null}
+                {(this.state.source[this.state.id] && this.state.source[this.state.id].imgSmall && this.state.source[this.state.id].imgSmall.length > 1) ?
                     (
                         <Selector className='selectorContainer'>
                             {selectorImages}
@@ -135,7 +167,7 @@ class Detail extends Component {
                                 ) : null}
                                 {this.state.pair ? (
                                     <p>Related pieces:<br/> {this.state.pair.map(pair => (
-                                        <a href={`../product/${pair}`}>{images[pair].name}</a>
+                                        <a href={`../${this.state.type == "ARTWORK" ? ('product') : this.state.type == "PAPER" ? ('works-on-paper') : ''}/${pair}`}>{this.state.source[pair] ? this.state.source[pair].name : null}</a>
                                     ))}</p>
                                 ) : null}
                             </div>

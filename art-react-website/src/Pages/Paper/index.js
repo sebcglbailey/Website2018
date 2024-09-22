@@ -8,7 +8,7 @@ import Menu from '../../Components/Menu';
 
 import images from './src/images';
 
-import './styles.scss';
+import '../Art/styles.scss';
 
 class Art extends Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Art extends Component {
     }
 
     componentWillMount() {
-        document.title = "Paintings | Seb Bailey Art"
+        document.title = "Works on Paper | Seb Bailey Art"
         this.renderImages()
     }
 
@@ -45,7 +45,7 @@ class Art extends Component {
 
             var imageNode = (
                 <Link
-                    to={`./product/${id}`}
+                    to={`./works-on-paper/${id}`}
                     className='imageLink'
                     key={`image-${piece.name.split(' ').join().toLowerCase()}`}
                 >
@@ -85,8 +85,8 @@ class Art extends Component {
     render() {
         return (
             <Fragment>
-                <Hero size="SMALL" background={'aurea_profundis'}>
-                    <H1>Artwork</H1>
+                <Hero size="SMALL" background={'dancing_in_the_desert_a3'}>
+                    <H1>Works on Paper</H1>
                 </Hero>
                 <div className='artContainer'>
                     <Menu />
@@ -106,12 +106,6 @@ class Art extends Component {
                     <div className='artDisplay'>
                         <div className='content'>
                             {this.unavailable}
-                        </div>
-                    </div>
-                    <H2>Commissions</H2>
-                    <div className='artDisplay'>
-                        <div className='content'>
-                            {this.commissions}
                         </div>
                     </div>
                     <Button
