@@ -83,7 +83,7 @@ class Detail extends Component {
             let img = require(`../../Pages/Art/src/images/${this.state.id}/${imgName}`)
             return (
                 <SelectorImage
-                    key={imgName}
+                    key={`${imgName}-${index}`}
                     src={img}
                     className='selectorImage'
                     index={index}
@@ -97,7 +97,7 @@ class Detail extends Component {
             let img = require(`../../Pages/Paper/src/images/${this.state.id}/${imgName}`)
             return (
                 <SelectorImage
-                    key={imgName}
+                    key={`${imgName}-${index}`}
                     src={img}
                     className='selectorImage'
                     index={index}
