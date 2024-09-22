@@ -1,22 +1,21 @@
 import status from './status';
 
 const pieces = {
-    deditionem_i: {
+    aurea_fluctus: {
         status: status.FOR_SALE,
-        name: "Deditionem I",
-        imgSmall: ["deditionem_i_sm.jpg"],
-        imgLarge: ["deditionem_i.jpg"],
-        imgHero: "deditionem_i_hero.jpg",
-        size: "76x76cm",
-        price: "£600",
+        name: "Area Fluctus",
+        imgSmall: ["aurea_fluctus_sm.jpg"],
+        imgLarge: ["aurea_fluctus.jpg"],
+        imgHero: "aurea_fluctus_hero.jpg",
+        size: "100x100cm",
+        price: "£1250",
         medium: "Acrylic & mixed media on deep edge canvas",
         year: "2024",
-        frame: "Unframed – white deep edge canvas",
-        pair: ["deditionem_ii"],
+        frame: "Unframed – dark deep edge canvas",
     },
     deditionem_ii: {
         status: status.UNAVAILABLE,
-        name: "Deditionem I",
+        name: "Deditionem II",
         imgSmall: ["deditionem_ii_sm.jpg"],
         imgLarge: ["deditionem_ii.jpg"],
         imgHero: "deditionem_ii_hero.jpg",
@@ -50,6 +49,19 @@ const pieces = {
         medium: "Acrylic & mixed media on deep edge canvas",
         year: "2024",
         frame: "21mm redwood floating frame – Size with frame: 36x100cm",
+    },
+    deditionem_i: {
+        status: status.FOR_SALE,
+        name: "Deditionem I",
+        imgSmall: ["deditionem_i_sm.jpg"],
+        imgLarge: ["deditionem_i.jpg"],
+        imgHero: "deditionem_i_hero.jpg",
+        size: "76x76cm",
+        price: "£600",
+        medium: "Acrylic & mixed media on deep edge canvas",
+        year: "2024",
+        frame: "Unframed – white deep edge canvas",
+        pair: ["deditionem_ii"],
     },
     aurea_profundis: {
         status: status.FOR_SALE,
