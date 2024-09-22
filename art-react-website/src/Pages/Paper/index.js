@@ -8,8 +8,6 @@ import Menu from '../../Components/Menu';
 
 import images from './src/images';
 
-import '../Art/styles.scss';
-
 class Art extends Component {
     constructor(props) {
         super(props);
