@@ -115,7 +115,6 @@ class Masonry extends Component {
     let columnStyle = {
       noOfColumns: noOfColumns,
       width: `${100 / this.noOfColumns}%`,
-      padding: `0 ${this.props.margin / 2}px`
     }
 
     return columnStyle
@@ -168,7 +167,8 @@ class Masonry extends Component {
   render() {
     return (
       <div ref={(elem) => { this.container = elem }}
-        className='masonryContainer'>
+        className='masonryContainer'
+        style={{gap: `${this.props.margin}px`}}>
         {this.state.columns}
       </div>
     )

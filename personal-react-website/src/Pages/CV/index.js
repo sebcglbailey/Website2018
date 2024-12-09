@@ -14,8 +14,9 @@ import intro from './introContent';
 
 import Intro from './intro';
 import Education from './education';
+import CaseStudies from './caseStudies';
 import Experience from './work';
-import Hobbies from './hobbies';
+// import Hobbies from './hobbies';
 
 class Resume extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Resume extends Component {
 
   render() {
     return (
-      <ContentContainer>
+      <ContentContainer id="welcome">
         <div className='intro'>
           <Intro />
         </div>
@@ -56,7 +57,7 @@ class Resume extends Component {
             })
           }
         </div>
-        <H2>My experience...</H2>
+        <CaseStudies />
         <Experience />
         <div className='skills'>
           <h3>Software</h3>
@@ -65,7 +66,7 @@ class Resume extends Component {
           <InfoList types={this.state.skills.development} />
         </div>
         <Education />
-        <Hobbies />
+        {/* <Hobbies /> */}
       </ContentContainer>
 
     )
